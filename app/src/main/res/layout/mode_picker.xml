@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for a single list item in the list of pets -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/memorize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_margin"
+        android:clickable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/memorizeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/ic_memorize_icon"/>
+        <TextView
+            android:id="@+id/memorizeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Memorize"
+            android:layout_marginLeft="20dp"
+
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D"  />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/spelling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_margin"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        >
+        <ImageView
+            android:id="@+id/spellingIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/ic_spelling_icon"/>
+        <TextView
+            android:id="@+id/spellingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Spelling"
+            android:layout_marginLeft="20dp"
+
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D"  />
+    </LinearLayout>
+</LinearLayout>
