@@ -1,0 +1,200 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\3c68720bf122e57ddb8046a86a34a689\AndroidManifest.xml:17:1-22:12
+MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\android-image-cropper-2.7.0.aar\1f98fc951444aba8ce60262e1b93c8e4\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\ffc301b1185a42ef99227c7b24156624\AndroidManifest.xml:17:1-22:12
+MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\9333cc5ef3566bba002a59e03d0cdd04\AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\dd8daa4119c634f6717da28ac9c0ed7c\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\1ea57bfa5a335949b638112474a242d7\AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\ebe630d4b25329b66edf181bbab1ecbc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\1c27b6ae59326be41b2d2875da295078\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\e445da46fbc2057b8dc6c5ef5bffb83e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\4189e7a6bb939f3db52d2e0cba64f90b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\2047396a2afdfccd6a89c28d0d483323\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\79492e285705bcb516e437dc10718033\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\e7c63d30f8a9793a56ae46870ad7709d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\66560dbf7ffc52fa5f5d30d1bc8dd686\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\804e1b62915ba01b59f67368517bf9c7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:exifinterface:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.1.aar\14ce185320ef39e447735d87ae7b3174\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\ab093e198d7e9ab13a8e02b3cff41952\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\6e413dcbab22cada572eaca6c6671c23\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\71cb359cdfb59748c872bf59bcfcbc60\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\cd0681afed5077eab8b20b51c8d4c4d1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\88fecfceae3b2722dcb719b19926ead2\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f826c7039d3d722a7f8059029dcdf083\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\add6f6dde2c048f8374ea8747e7968bd\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
+	package
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:3:5-39
+		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
+		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
+		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:5:5-80
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:5:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:7:22-64
+application
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:9:5-53:19
+MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\9333cc5ef3566bba002a59e03d0cdd04\AndroidManifest.xml:12:5-20
+MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\9333cc5ef3566bba002a59e03d0cdd04\AndroidManifest.xml:12:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\dd8daa4119c634f6717da28ac9c0ed7c\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\dd8daa4119c634f6717da28ac9c0ed7c\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\1ea57bfa5a335949b638112474a242d7\AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\1ea57bfa5a335949b638112474a242d7\AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\ab093e198d7e9ab13a8e02b3cff41952\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\ab093e198d7e9ab13a8e02b3cff41952\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:12:9-41
+	android:icon
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:14:9-40
+activity#com.example.android.pets.CatalogActivity
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:15:9-23:20
+	android:label
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:17:13-45
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:16:13-44
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:21:27-74
+activity#com.example.android.pets.EditorActivity
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:24:9-33:20
+	android:parentActivityName
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:26:13-58
+	android:theme
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:27:13-47
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:25:13-43
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:30:13-32:52
+	android:value
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:32:17-49
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:31:17-63
+activity#com.theartofdev.edmodo.cropper.CropImageActivity
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:34:9-36:59
+	android:theme
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:36:13-56
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:35:13-76
+provider#com.example.android.pets.data.PetProvider
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:38:9-41:40
+	android:authorities
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:40:13-59
+	android:exported
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:39:13-45
+activity#com.example.android.pets.WordEditorActivity
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:43:9-56
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:43:19-53
+activity#com.example.android.pets.MemorizeActivity
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:44:9-54
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:44:19-51
+activity#com.example.android.pets.SpellingActivity
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:45:9-47:67
+	android:windowSoftInputMode
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:47:13-55
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:46:13-45
+activity#com.example.android.pets.SettingsActivity
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:48:9-52:20
+	android:name
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:48:19-51
+uses-sdk
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\3c68720bf122e57ddb8046a86a34a689\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\3c68720bf122e57ddb8046a86a34a689\AndroidManifest.xml:20:5-44
+MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\android-image-cropper-2.7.0.aar\1f98fc951444aba8ce60262e1b93c8e4\AndroidManifest.xml:7:5-9:41
+MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\android-image-cropper-2.7.0.aar\1f98fc951444aba8ce60262e1b93c8e4\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\ffc301b1185a42ef99227c7b24156624\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\ffc301b1185a42ef99227c7b24156624\AndroidManifest.xml:20:5-44
+MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\9333cc5ef3566bba002a59e03d0cdd04\AndroidManifest.xml:8:5-10:41
+MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\9333cc5ef3566bba002a59e03d0cdd04\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\dd8daa4119c634f6717da28ac9c0ed7c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\dd8daa4119c634f6717da28ac9c0ed7c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\1ea57bfa5a335949b638112474a242d7\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\1ea57bfa5a335949b638112474a242d7\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\ebe630d4b25329b66edf181bbab1ecbc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\ebe630d4b25329b66edf181bbab1ecbc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\1c27b6ae59326be41b2d2875da295078\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\1c27b6ae59326be41b2d2875da295078\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\e445da46fbc2057b8dc6c5ef5bffb83e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\e445da46fbc2057b8dc6c5ef5bffb83e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\4189e7a6bb939f3db52d2e0cba64f90b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\4189e7a6bb939f3db52d2e0cba64f90b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\2047396a2afdfccd6a89c28d0d483323\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\2047396a2afdfccd6a89c28d0d483323\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\79492e285705bcb516e437dc10718033\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\79492e285705bcb516e437dc10718033\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\e7c63d30f8a9793a56ae46870ad7709d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\e7c63d30f8a9793a56ae46870ad7709d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\66560dbf7ffc52fa5f5d30d1bc8dd686\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\66560dbf7ffc52fa5f5d30d1bc8dd686\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\804e1b62915ba01b59f67368517bf9c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\804e1b62915ba01b59f67368517bf9c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:exifinterface:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.1.aar\14ce185320ef39e447735d87ae7b3174\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:exifinterface:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.1.aar\14ce185320ef39e447735d87ae7b3174\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\ab093e198d7e9ab13a8e02b3cff41952\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\ab093e198d7e9ab13a8e02b3cff41952\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\6e413dcbab22cada572eaca6c6671c23\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\6e413dcbab22cada572eaca6c6671c23\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\71cb359cdfb59748c872bf59bcfcbc60\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\71cb359cdfb59748c872bf59bcfcbc60\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\cd0681afed5077eab8b20b51c8d4c4d1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\cd0681afed5077eab8b20b51c8d4c4d1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\88fecfceae3b2722dcb719b19926ead2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\88fecfceae3b2722dcb719b19926ead2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f826c7039d3d722a7f8059029dcdf083\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f826c7039d3d722a7f8059029dcdf083\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\add6f6dde2c048f8374ea8747e7968bd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\add6f6dde2c048f8374ea8747e7968bd\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
