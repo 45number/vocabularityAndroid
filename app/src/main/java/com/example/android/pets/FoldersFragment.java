@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.view.ViewManager;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -222,9 +223,11 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             case R.id.action_add:
                 if ( mTreePath.size() == 1 || (mFoldersQuantity > 0 &&  mAdapterNumber == 0) ) {
                     addFolder();
+//                    pickAddingOption();
                     return true;
                 } else if (mAdapterNumber == 1) {
                     addWords();
+//                    pickAddingOption();
                     return true;
                 } else {
                     pickAddingOption();
@@ -281,7 +284,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
     private void pickAddingOption() {
 
-        final String[] mCatsName ={"Add folder", "Add words"};
+        final String[] mCatsName ={"Add folder", "Add words", "Upload from excel"};
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setItems(mCatsName, new DialogInterface.OnClickListener() {
             @Override
@@ -298,8 +301,44 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                 }
             }
         });
+
+//        builder.setSingleChoiceItems(mCatsName, SampleRates_Index,
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int item) {
+//                        SampleRates_Index = item;
+//
+//                    }
+//                });
+
+
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+
+        /*ListView list = alertDialog.getListView();
+        final ListAdapter adapter = alertDialog.getListView().getAdapter();
+//        final ListAdapter adaptor = alert.getListView().getAdapter();
+
+//        Log.e("uuuuu", " "+mCatsName.length);
+        adapter.getView(1, null, list).setEnabled(false);
+        if (adapter.getView(1, null, list).isEnabled()) {
+            Log.e("ooooooooooo", "------------------");
+        } else {
+            Log.e("uuuuuuuuuu", "+++++++++++++++++");
+        }
+
+        for (int i = 0; i < mCatsName.length; i++) { // index
+            adapter.getView(i, null, list).setEnabled(false);
+//            if (i  == 1) {
+//                // Disable choice in dialog
+//                adapter.getView(i, null, list).setEnabled(false);
+//            } else {
+//                // Enable choice in dialog
+//                adapter.getView(i, null, list).setEnabled(true);
+//            }
+        }*/
+
+//        alertDialog.show();
+
     }
 
     private void chooseMode(final long deckId) {
