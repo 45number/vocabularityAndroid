@@ -238,6 +238,31 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     }
 
 
+    private void pickAddingOption() {
+        final String[] mCatsName ={"Add folder", "Add words", "Upload from excel"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setItems(mCatsName, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                switch (item) {
+                    // Respond to a click on the "Insert dummy data" menu option
+                    case 0:
+                        addFolder();
+                        break;
+                    case 1:
+                        addWords();
+                        break;
+                    case 2:
+                        
+                        break;
+                }
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+
     private void addFolder() {
         Intent intent = new Intent(getActivity(), EditorActivity.class);
         intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1));
@@ -282,64 +307,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
     }
 
-    private void pickAddingOption() {
 
-        final String[] mCatsName ={"Add folder", "Add words", "Upload from excel"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setItems(mCatsName, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int item) {
-
-                switch (item) {
-                    // Respond to a click on the "Insert dummy data" menu option
-                    case 0:
-                        addFolder();
-                        break;
-                    case 1:
-                        addWords();
-                        break;
-                }
-            }
-        });
-
-//        builder.setSingleChoiceItems(mCatsName, SampleRates_Index,
-//                new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int item) {
-//                        SampleRates_Index = item;
-//
-//                    }
-//                });
-
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-
-        /*ListView list = alertDialog.getListView();
-        final ListAdapter adapter = alertDialog.getListView().getAdapter();
-//        final ListAdapter adaptor = alert.getListView().getAdapter();
-
-//        Log.e("uuuuu", " "+mCatsName.length);
-        adapter.getView(1, null, list).setEnabled(false);
-        if (adapter.getView(1, null, list).isEnabled()) {
-            Log.e("ooooooooooo", "------------------");
-        } else {
-            Log.e("uuuuuuuuuu", "+++++++++++++++++");
-        }
-
-        for (int i = 0; i < mCatsName.length; i++) { // index
-            adapter.getView(i, null, list).setEnabled(false);
-//            if (i  == 1) {
-//                // Disable choice in dialog
-//                adapter.getView(i, null, list).setEnabled(false);
-//            } else {
-//                // Enable choice in dialog
-//                adapter.getView(i, null, list).setEnabled(true);
-//            }
-        }*/
-
-//        alertDialog.show();
-
-    }
 
     private void chooseMode(final long deckId) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
