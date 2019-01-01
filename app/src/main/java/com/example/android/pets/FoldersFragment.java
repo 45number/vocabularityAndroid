@@ -366,10 +366,14 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
 
         if (mMemQuantity == 0)
-            ((ViewManager)memorize.getParent()).removeView(memorize);
+//            ((ViewManager)memorize.getParent()).removeView(memorize);
+            memorize.setEnabled(false);
+//            alertDialog.
 
         if (mSpellQuantity == 0)
-            ((ViewManager)spelling.getParent()).removeView(spelling);
+//            ((ViewManager)spelling.getParent()).removeView(spelling);
+            spelling.setEnabled(false);
+//            ((ViewManager)spelling.getParent()).removeView(spelling);
 
         memorize.setOnClickListener(new View.OnClickListener() {
             @Override
