@@ -2,6 +2,7 @@ package com.example.android.pets;
 
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -222,6 +223,12 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             // Respond to a click on the "Add" menu option
             case R.id.action_add:
                 if ( mTreePath.size() == 1 || (mFoldersQuantity > 0 &&  mAdapterNumber == 0) ) {
+//                    DialogSelection ds = new DialogSelection();
+//                    Bundle args=new Bundle();
+//                    String[] selectionArgs = {"Hello", "opa"};
+//                    args.putStringArray("selectionArgs", selectionArgs);
+//                    Dialog alertDialog = ds.onCreateDialog(null);
+//                    alertDialog.show();
                     addFolder();
 //                    pickAddingOption();
                     return true;
