@@ -7,11 +7,13 @@ import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -22,9 +24,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewManager;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.pets.data.WordContract;
@@ -229,22 +233,25 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 //                    args.putStringArray("selectionArgs", selectionArgs);
 //                    Dialog alertDialog = ds.onCreateDialog(null);
 //                    alertDialog.show();
-                    addFolder();
+//                    addFolder();
+                    chooseAddMode(true, false, false);
 //                    pickAddingOption();
                     return true;
                 } else if (mAdapterNumber == 1) {
-                    addWords();
+//                    addWords();
+                    chooseAddMode(false, true, true);
 //                    pickAddingOption();
                     return true;
                 } else {
-                    pickAddingOption();
+//                    pickAddingOption();
+                    chooseAddMode(true,true,true);
                     return true;
                 }
         }
         return super.onOptionsItemSelected(item);
     }
 
-
+    /*
     private void pickAddingOption() {
         final String[] mCatsName ={"Add folder", "Add words", "Upload from excel"};
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -267,7 +274,95 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    } */
+
+
+
+
+
+
+
+
+
+
+
+    private void chooseAddMode(boolean folderEnabled, boolean wordsEnabled, boolean excelEnabled) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = this.getLayoutInflater();
+
+        builder.setView(inflater.inflate(R.layout.add_picker, null));
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+        LinearLayout folderOption = alertDialog.findViewById(R.id.folder);
+        LinearLayout wordsOption = alertDialog.findViewById(R.id.words);
+        LinearLayout excelOption = alertDialog.findViewById(R.id.excel);
+
+        TextView folderTitle = alertDialog.findViewById(R.id.folderTitle);
+        TextView wordsTitle = alertDialog.findViewById(R.id.wordsTitle);
+        TextView excelTitle = alertDialog.findViewById(R.id.excelTitle);
+
+        ImageView folderImage = alertDialog.findViewById(R.id.folderIcon);
+        ImageView wordsImage = alertDialog.findViewById(R.id.wordsIcon);
+        ImageView excelImage = alertDialog.findViewById(R.id.excelIcon);
+
+        int disabledItemColor = ContextCompat.getColor(getActivity(), R.color.textColorDisabledItem);
+
+        if (!folderEnabled) {
+            folderOption.setEnabled(false);
+            folderTitle.setTextColor(disabledItemColor);
+            folderImage.setColorFilter(disabledItemColor);
+        }
+        if (!wordsEnabled) {
+            wordsOption.setEnabled(false);
+            wordsTitle.setTextColor(disabledItemColor);
+            wordsImage.setColorFilter(disabledItemColor);
+        }
+        if (!excelEnabled) {
+            excelOption.setEnabled(false);
+            excelTitle.setTextColor(disabledItemColor);
+            excelImage.setColorFilter(disabledItemColor);
+        }
+
+
+
+        folderOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+                addFolder();
+            }
+        });
+
+        wordsOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+                addWords();
+            }
+        });
+
+        excelOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+//                Intent intent = new Intent(getActivity(), SpellingActivity.class);
+//                intent.putExtra("lang_learning", getArguments().getInt("language_learning"));
+//                startActivity(intent);
+            }
+        });
+
     }
+
+
+
+
+
+
+
+
+
+
 
 
     private void addFolder() {
@@ -365,15 +460,29 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         LinearLayout spelling = alertDialog.findViewById(R.id.spelling);
 
 
-        if (mMemQuantity == 0)
+        TextView memorizeTitle = alertDialog.findViewById(R.id.memorizeTitle);
+        TextView spellingTitle = alertDialog.findViewById(R.id.spellingTitle);
+
+        ImageView memorizeImage = alertDialog.findViewById(R.id.memorizeIcon);
+        ImageView spellingImage = alertDialog.findViewById(R.id.spellingIcon);
+
+        int disabledItemColor = ContextCompat.getColor(getActivity(), R.color.textColorDisabledItem);
+
+        if (mMemQuantity == 0) {
 //            ((ViewManager)memorize.getParent()).removeView(memorize);
             memorize.setEnabled(false);
-//            alertDialog.
+            memorizeTitle.setTextColor(disabledItemColor);
+            memorizeImage.setColorFilter(disabledItemColor);
 
-        if (mSpellQuantity == 0)
+        }
+
+        if (mSpellQuantity == 0) {
 //            ((ViewManager)spelling.getParent()).removeView(spelling);
             spelling.setEnabled(false);
+            spellingTitle.setTextColor(disabledItemColor);
+            spellingImage.setColorFilter(disabledItemColor);
 //            ((ViewManager)spelling.getParent()).removeView(spelling);
+        }
 
         memorize.setOnClickListener(new View.OnClickListener() {
             @Override
