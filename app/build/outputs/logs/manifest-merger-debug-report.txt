@@ -4,6 +4,7 @@ ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main
 INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
 INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
 INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-55:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\36253e8c11e0f4d6d37abd5b1a690724\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\3c68720bf122e57ddb8046a86a34a689\AndroidManifest.xml:17:1-22:12
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\android-image-cropper-2.7.0.aar\1f98fc951444aba8ce60262e1b93c8e4\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\ffc301b1185a42ef99227c7b24156624\AndroidManifest.xml:17:1-22:12
@@ -142,6 +143,8 @@ uses-sdk
 INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\36253e8c11e0f4d6d37abd5b1a690724\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\36253e8c11e0f4d6d37abd5b1a690724\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:design:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\3c68720bf122e57ddb8046a86a34a689\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\3c68720bf122e57ddb8046a86a34a689\AndroidManifest.xml:20:5-44
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\android-image-cropper-2.7.0.aar\1f98fc951444aba8ce60262e1b93c8e4\AndroidManifest.xml:7:5-9:41
