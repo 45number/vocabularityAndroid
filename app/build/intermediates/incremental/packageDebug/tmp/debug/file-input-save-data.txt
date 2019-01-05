@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Jan 03 07:08:06 GST 2019
+#Sat Jan 05 06:51:46 GST 2019
 2.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 0.path=classes.dex
 2.baseType=DIRECTORY

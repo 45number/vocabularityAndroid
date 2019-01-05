@@ -44,12 +44,13 @@
         <activity android:name=".MemorizeActivity" />
         <activity
             android:name=".SpellingActivity"
-            android:windowSoftInputMode="stateVisible"></activity>
+            android:windowSoftInputMode="stateVisible" />
         <activity android:name=".SettingsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CatalogActivity" />
         </activity>
+        <activity android:name=".FileChooser"></activity>
     </application>
 
 </manifest>

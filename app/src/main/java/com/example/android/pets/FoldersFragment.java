@@ -349,24 +349,11 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
-//                Intent intent = new Intent(getActivity(), SpellingActivity.class);
-//                intent.putExtra("lang_learning", getArguments().getInt("language_learning"));
-//                startActivity(intent);
+                uploadExcel();
             }
         });
 
     }
-
-
-
-
-
-
-
-
-
-
-
 
     private void addFolder() {
         Intent intent = new Intent(getActivity(), EditorActivity.class);
@@ -380,6 +367,11 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1));
         intent.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivityForResult(intent, 1);
+    }
+
+    private void uploadExcel() {
+        Intent intent1 = new Intent(getActivity(), FileChooser.class);
+        startActivityForResult(intent1,RESULT_FILE_EXPLORER);
     }
 
     @Override
