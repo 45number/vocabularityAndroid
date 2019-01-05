@@ -48,6 +48,8 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
     private static final int REPEAT_LOADER = 1;
 
+
+
     PetCursorAdapter mCursorAdapter;
     private int mAdapterNumber;
     ListView petListView;
@@ -62,6 +64,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
     private static final int RESULT_SETTINGS = 3;
     private static final int RESULT_SETTINGS_LANGUAGES = 4;
+    private static final int RESULT_FILE_EXPLORER = 5;
 
 
     private ArrayList<Long> mTreePath = new ArrayList<>();
@@ -394,6 +397,12 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                 ((CatalogActivity)getActivity()).setTabs();
                 ((CatalogActivity)getActivity()).updateFolderPageAdapter();
 //                refreshDecks();
+                break;
+            case RESULT_FILE_EXPLORER:
+                /*if (resultCode == RESULT_OK) {
+                    curFileName = data.getStringExtra("GetFileName");
+                    edittext.setText(curFileName);
+                }*/
                 break;
         }
     }
