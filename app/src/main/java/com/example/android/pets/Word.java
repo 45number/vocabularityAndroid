@@ -33,8 +33,8 @@ public class Word implements Comparable {
     public int getToRepeatSpell() {
         return toRepeatSpell;
     }
-    public void setToRepeatSpell(int toRepeatMem) {
-        this.toRepeatSpell = toRepeatMem;
+    public void setToRepeatSpell(int toRepeatSpell) {
+        this.toRepeatSpell = toRepeatSpell;
     }
 
     public int getId() {
