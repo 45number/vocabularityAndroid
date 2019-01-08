@@ -58,8 +58,10 @@ public class PetDbHelper extends SQLiteOpenHelper {
                 + PetEntry.COLUMN_LEARNING_LANGUAGE + " INTEGER NOT NULL, "
                 + PetEntry.COLUMN_FOLDER_NAME + " TEXT NOT NULL, "
                 + PetEntry.COLUMN_IMAGE + " TEXT, "
-                + PetEntry.COLUMN_PARENT + " INTEGER NOT NULL DEFAULT 0"
+                + PetEntry.COLUMN_PARENT + " INTEGER NOT NULL DEFAULT 0,"
+                + " FOREIGN KEY (" + PetEntry.COLUMN_PARENT + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
                 + ");";
+//                + ");";
 
         // Execute the SQL statement
         db.execSQL(SQL_CREATE_PETS_TABLE);
@@ -73,7 +75,8 @@ public class PetDbHelper extends SQLiteOpenHelper {
                 + WordEntry.COLUMN_LANGUAGE_LEARNING + " INTEGER NOT NULL,"
                 + WordEntry.COLUMN_REPEAT_MEM + " INTEGER NOT NULL DEFAULT 0,"
                 + WordEntry.COLUMN_REPEAT_SPELL + " INTEGER NOT NULL DEFAULT 0,"
-                + " FOREIGN KEY (" + WordEntry.COLUMN_FOLDER + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + "));";
+                + " FOREIGN KEY (" + WordEntry.COLUMN_FOLDER + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
+                + ");";
 //                + ");";
 
         // Execute the SQL statement
@@ -94,5 +97,10 @@ public class PetDbHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // The database is still at version 1, so there's nothing to do be done here.
+    }
+
+    @Override
+    public void onConfigure(SQLiteDatabase db){
+        db.setForeignKeyConstraintsEnabled(true);
     }
 }

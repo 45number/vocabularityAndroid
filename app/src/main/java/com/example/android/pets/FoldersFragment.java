@@ -622,7 +622,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                 return true;
             case 1:
 
-                onDeletePressed();
+                onDeletePressed(infoId);
 //                Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
 //                        Toast.LENGTH_SHORT).show();
                 return true;
@@ -634,14 +634,23 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         return true;
     }
 
-    private void onDeletePressed() {
-        Bundle args=new Bundle();
-        args.putString("selection", PetEntry.COLUMN_PARENT + " = ?");
-        Long idLong = getCurrentFolder();
-        String idString = idLong.toString();
+    private void onDeletePressed(Long folder) {
+        /*Bundle args=new Bundle();
+        args.putString("selection", PetEntry._ID + " = ?");
+//        Long idLong = getCurrentFolder();
+        String idString = folder.toString();
         String[] selectionArgs = {idString};
         args.putStringArray("selectionArgs", selectionArgs);
-        getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);
+        getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);*/
+
+
+
+        //Delete values //
+        String [] arguments = new String[1];
+        arguments[0] = folder.toString();
+        String selectionClause = PetEntry._ID + " = ?";
+        int rowsDeleted = getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
+        Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
     }
 
 
