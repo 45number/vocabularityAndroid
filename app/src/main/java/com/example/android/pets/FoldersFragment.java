@@ -371,6 +371,8 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
     private void uploadExcel() {
         Intent intent1 = new Intent(getActivity(), FileChooser.class);
+        intent1.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1));
+        intent1.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivityForResult(intent1,RESULT_FILE_EXPLORER);
     }
 
@@ -395,6 +397,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                     curFileName = data.getStringExtra("GetFileName");
                     edittext.setText(curFileName);
                 }*/
+                refreshDecks();
                 break;
         }
     }
@@ -618,8 +621,10 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                 startActivity(intent);
                 return true;
             case 1:
-                Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
-                        Toast.LENGTH_SHORT).show();
+
+                onDeletePressed();
+//                Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
+//                        Toast.LENGTH_SHORT).show();
                 return true;
             case 2:
                 Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
@@ -629,6 +634,21 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         return true;
     }
 
+    private void onDeletePressed() {
+        Bundle args=new Bundle();
+        args.putString("selection", PetEntry.COLUMN_PARENT + " = ?");
+        Long idLong = getCurrentFolder();
+        String idString = idLong.toString();
+        String[] selectionArgs = {idString};
+        args.putStringArray("selectionArgs", selectionArgs);
+        getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);
+    }
+
+
+
+    private Long getCurrentFolder() {
+        return mTreePath.get(mTreePath.size() - 1);
+    }
 
     @Override
     public void onBackPressed() {

@@ -213,7 +213,10 @@ public class MemorizeActivity extends AppCompatActivity implements
                     public void run() {
                         if(s != TextToSpeech.ERROR) {
                             tts.setPitch(1.1f);
-                            tts.setLanguage(Locale.UK);
+                            if (mLearningLanguage==1)
+                                tts.setLanguage(Locale.UK);
+                            else if (mLearningLanguage==2)
+                                tts.setLanguage(new Locale("ru"));
                         }
                     }
                 }).start();

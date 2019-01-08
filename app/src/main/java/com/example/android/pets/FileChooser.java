@@ -13,14 +13,24 @@ import java.util.Collections;
 import java.util.List;
 import java.text.DateFormat;
 
+import android.app.LoaderManager;
+import android.content.ContentValues;
+import android.content.Loader;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
+
+
+import com.example.android.pets.data.WordContract.WordEntry;
+
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;
@@ -30,7 +40,9 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class FileChooser extends ListActivity {
+public class FileChooser extends ListActivity
+//        implements LoaderManager.LoaderCallbacks<Cursor>
+{
 
     private File currentDir;
     private FileArrayAdapter adapter;
@@ -151,14 +163,16 @@ public class FileChooser extends ListActivity {
             @Override
             public void run() {
                 //TODO your background code
-                ArrayList<ArrayList<String>> dict = readExcelData(currentDir.toString()+"/"+o.getName());
-
+//                 ArrayList<ArrayList<String>> dict =
+                readExcelData(currentDir.toString()+"/"+o.getName());
+                setResult(5);
+                finish();
 //                Log.e("8888", dict.toString());
 
-                Intent intent = new Intent();
+                /*Intent intent = new Intent();
                 intent.putExtra("GetPath",currentDir.toString());
                 intent.putExtra("GetFileName",o.getName());
-                setResult(RESULT_OK, intent);
+                setResult(RESULT_OK, intent);*/
             }
         });
 
@@ -168,13 +182,15 @@ public class FileChooser extends ListActivity {
 
 
 
-    private  ArrayList<ArrayList<String>> readExcelData(String filePath) {
-        Log.d("FileChooser", "readExcelData: Reading Excel File.");
+//    ArrayList<ArrayList<String>>
+
+    private void readExcelData(String filePath) {
+//        Log.d("FileChooser", "readExcelData: Reading Excel File.");
 
         //decarle input file
         File inputFile = new File(filePath);
 
-        ArrayList<ArrayList<String>> dict = new ArrayList<>();
+//        ArrayList<ArrayList<String>> dict = new ArrayList<>();
 
         try {
             InputStream inputStream = new FileInputStream(inputFile);
@@ -236,11 +252,15 @@ public class FileChooser extends ListActivity {
 //                Log.e("Word", wordCell.toString());
 //                Log.e("Translate", translateCell.toString());
 
-                ArrayList<String> pair = new ArrayList<>();
+                /*ArrayList<String> pair = new ArrayList<>();
                 pair.add(wordCell.toString());
                 pair.add(translateCell.toString());
 
-                dict.add(pair);
+                dict.add(pair);*/
+
+
+                saveWord(wordCell.toString(), translateCell.toString());
+
 //                Log.e("Rows count", ""+rowsCount);
 
                 r1++;
@@ -319,8 +339,93 @@ public class FileChooser extends ListActivity {
             Log.e("FileChooser", "readExcelData: Error reading inputstream. " + e.getMessage() );
         }
 
-        return dict;
+//        return dict;
     }
+
+
+
+
+
+
+
+    private void saveWord(String wordString, String translationString) {
+
+//        String wordString = mWordEditText.getText().toString().trim();
+//        String translationString = mTranslationEditText.getText().toString().trim();
+        Long folderIdLong = getIntent().getLongExtra("folder_id", 1L);
+        int languageLearningId = getIntent().getIntExtra("language_learning", 1);
+//        Long folderIdLong = 1L;
+
+       /* if (mCurrentPetUri == null &&
+                TextUtils.isEmpty(wordString)) {
+            // Since no fields were modified, we can return early without creating a new pet.
+            // No need to create ContentValues and no need to do any ContentProvider operations.
+            return;
+        }*/
+
+
+        ContentValues values = new ContentValues();
+        values.put(WordEntry.COLUMN_WORD, wordString);
+        values.put(WordEntry.COLUMN_TRANSLATION, translationString);
+        values.put(WordEntry.COLUMN_FOLDER, folderIdLong);
+        values.put(WordEntry.COLUMN_LANGUAGE_LEARNING, languageLearningId);
+
+
+
+
+        // Determine if this is a new or existing pet by checking if mCurrentPetUri is null or not
+//        if (mCurrentPetUri == null) {
+            // This is a NEW pet, so insert a new pet into the provider,
+            // returning the content URI for the new pet.
+            Uri newUri = getContentResolver().insert(WordEntry.CONTENT_URI, values);
+            // Show a toast message depending on whether or not the insertion was successful.
+            /*if (newUri == null) {
+                // If the new content URI is null, then there was an error with insertion.
+                Toast.makeText(this, getString(R.string.editor_insert_pet_failed),
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                // Otherwise, the insertion was successful and we can display a toast.
+                Toast.makeText(this, getString(R.string.editor_insert_pet_successful),
+                        Toast.LENGTH_SHORT).show();
+            }*/
+        /*} else {
+            // Otherwise this is an EXISTING pet, so update the pet with content URI: mCurrentPetUri
+            // and pass in the new ContentValues. Pass in null for the selection and selection args
+            // because mCurrentPetUri will already identify the correct row in the database that
+            // we want to modify.
+
+            int rowsAffected = getContentResolver().update(mCurrentPetUri, values, null, null);
+            // Show a toast message depending on whether or not the update was successful.
+            if (rowsAffected == 0) {
+                // If no rows were affected, then there was an error with the update.
+                Toast.makeText(this, getString(R.string.editor_update_pet_failed),
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                // Otherwise, the update was successful and we can display a toast.
+                Toast.makeText(this, getString(R.string.editor_update_pet_successful),
+                        Toast.LENGTH_SHORT).show();
+            }
+        }*/
+    }
+
+
+
+
+
+    /*@Override
+    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+        return null;
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+
+    }*/
 
 
 //    private String getCellValue(Cell cell) {
