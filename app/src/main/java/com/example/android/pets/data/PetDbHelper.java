@@ -58,11 +58,12 @@ public class PetDbHelper extends SQLiteOpenHelper {
                 + PetEntry.COLUMN_LEARNING_LANGUAGE + " INTEGER NOT NULL, "
                 + PetEntry.COLUMN_FOLDER_NAME + " TEXT NOT NULL, "
                 + PetEntry.COLUMN_IMAGE + " TEXT, "
-                + PetEntry.COLUMN_PARENT + " INTEGER NOT NULL DEFAULT 0,"
+                + PetEntry.COLUMN_PARENT + " INTEGER,"
                 + " FOREIGN KEY (" + PetEntry.COLUMN_PARENT + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
                 + ");";
 //                + ");";
 
+//        NOT NULL DEFAULT 0
         // Execute the SQL statement
         db.execSQL(SQL_CREATE_PETS_TABLE);
 
@@ -99,8 +100,20 @@ public class PetDbHelper extends SQLiteOpenHelper {
         // The database is still at version 1, so there's nothing to do be done here.
     }
 
-    @Override
+    /*@Override
     public void onConfigure(SQLiteDatabase db){
         db.setForeignKeyConstraintsEnabled(true);
+    }*/
+
+
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+        if (!db.isReadOnly()) {
+            // Enable foreign key constraints
+            db.execSQL("PRAGMA foreign_keys=ON;");
+        }
     }
+
+
 }

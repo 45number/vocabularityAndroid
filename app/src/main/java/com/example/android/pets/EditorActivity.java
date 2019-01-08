@@ -263,8 +263,8 @@ public class EditorActivity extends AppCompatActivity implements
             // returning the content URI for the new pet.
 
 
-            if (folderIdLong == 0L)
-                values.put(PetEntry.COLUMN_PARENT, "NULL");
+//            if (folderIdLong == 0L)
+//                values.put(PetEntry.COLUMN_PARENT, "null");
 
             if (folderIdLong != 0L)
                 values.put(PetEntry.COLUMN_PARENT, folderIdLong);

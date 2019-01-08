@@ -148,15 +148,18 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         ConvertTextToSpeech(" ");
 
         setHasOptionsMenu(true);
-
+//        folder_name is null or folder_name = ?
+//        or " + PetEntry.COLUMN_PARENT + "= ?
         Bundle args=new Bundle();
-        args.putString("selection", PetEntry.COLUMN_PARENT + " = ? AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
-        String idString = "0";
+        args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+//        String idString = "";
         Integer langLearningInteger = getArguments().getInt("language_learning");
         String langLearning = langLearningInteger.toString();
-        String[] selectionArgs = {idString, langLearning};
+        String[] selectionArgs = {/*idString, */langLearning};
         args.putStringArray("selectionArgs", selectionArgs);
         getLoaderManager().initLoader(PET_LOADER, args, FoldersFragment.this);
+
+//        getLoaderManager().initLoader(PET_LOADER, null, FoldersFragment.this);
 
 
         Bundle repeatArgs = new Bundle();
@@ -405,14 +408,35 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     private void refreshDecks() {
 
         Bundle args=new Bundle();
-        args.putString("selection", PetEntry.COLUMN_PARENT + " = ? AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+
         Integer landId = getArguments().getInt("language_learning");
-        String[] selectionArgs = {mTreePath.get(mTreePath.size() - 1).toString(), landId.toString()};
-        args.putStringArray("selectionArgs", selectionArgs);
+
+        if (getCurrentFolder() != 0L) {
+            args.putString("selection", PetEntry.COLUMN_PARENT + " = ? AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+
+            String parent = mTreePath.get(mTreePath.size() - 1).toString();
+
+            String[] selectionArgs = {parent, landId.toString()};
+            args.putStringArray("selectionArgs", selectionArgs);
+        } else {
+            args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+            String[] selectionArgs = {landId.toString()};
+            args.putStringArray("selectionArgs", selectionArgs);
+        }
+
         getLoaderManager().restartLoader(PET_LOADER, args, this);
 
     }
 
+
+    private void refreshMemWords() {
+        Bundle repeatArgs = new Bundle();
+        Integer repeatLangLearningInteger = getArguments().getInt("language_learning");
+        String repeatLangLearning = repeatLangLearningInteger.toString();
+        String[] repeatSelectionArgs = new String[]{ "1",  repeatLangLearning};
+        repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
+        getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
+    }
 
 
     private void chooseMode(final long deckId) {
@@ -651,6 +675,8 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         String selectionClause = PetEntry._ID + " = ?";
         int rowsDeleted = getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
         Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
+
+        refreshMemWords();
     }
 
 
