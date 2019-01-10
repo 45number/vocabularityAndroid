@@ -1,4 +1,4 @@
-#Tue Jan 08 20:04:56 GST 2019
-base.0=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\60
+#Thu Jan 10 13:49:33 GST 2019
+base.0=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\79
 path.0=classes.dex
 renamed.0=classes.dex

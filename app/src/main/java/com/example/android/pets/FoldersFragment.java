@@ -155,6 +155,9 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 //        String idString = "";
         Integer langLearningInteger = getArguments().getInt("language_learning");
         String langLearning = langLearningInteger.toString();
+
+        Log.e("Line 159, learn lang is", langLearning);
+
         String[] selectionArgs = {/*idString, */langLearning};
         args.putStringArray("selectionArgs", selectionArgs);
         getLoaderManager().initLoader(PET_LOADER, args, FoldersFragment.this);
@@ -433,6 +436,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         Bundle repeatArgs = new Bundle();
         Integer repeatLangLearningInteger = getArguments().getInt("language_learning");
         String repeatLangLearning = repeatLangLearningInteger.toString();
+        Log.e("learning lang is", repeatLangLearning);
         String[] repeatSelectionArgs = new String[]{ "1",  repeatLangLearning};
         repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
         getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
@@ -668,7 +672,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);*/
 
 
-
+        refreshMemWords();
         //Delete values //
         String [] arguments = new String[1];
         arguments[0] = folder.toString();
@@ -676,7 +680,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         int rowsDeleted = getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
         Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
 
-        refreshMemWords();
+
     }
 
 

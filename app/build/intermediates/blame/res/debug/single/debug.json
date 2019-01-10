@@ -308,6 +308,10 @@
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\71cb359cdfb59748c872bf59bcfcbc60\\res\\drawable\\notification_icon_background.xml"
     },
     {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\71cb359cdfb59748c872bf59bcfcbc60\\res\\layout\\notification_template_custom_big.xml"
+    },
+    {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
     },
