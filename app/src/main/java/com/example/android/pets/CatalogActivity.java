@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -130,7 +131,25 @@ public class CatalogActivity extends AppCompatActivity implements
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment, fragment.toString());
+//        Log.e("barbara straizand", fragment.toString());
         fragmentTransaction.addToBackStack(fragment.toString());
         fragmentTransaction.commit();
     }
+
+/*    public int returnCurrentFragment() {
+//        mAdapter.DetailOnPageChangeListener().get
+//       return FoldersPagerAdapter.DetailOnPageChangeListener.getCurrentPage();
+        Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.pager + ":" + ViewPager.getCurrentItem());
+    }*/
+
+//    public int getCurrentFragment() {
+////        Fragment hosted = mAdapter.getItem(viewPager.getCurrentItem());
+//        int ii = viewPager.getCurrentItem();
+//        return ii;
+//
+//
+//    }
+
+
+
 }

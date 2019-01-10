@@ -1,6 +1,7 @@
 package com.example.android.pets;
 
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ContentUris;
@@ -14,6 +15,8 @@ import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -42,6 +45,10 @@ import android.support.v4.content.Loader;
 import android.support.v4.content.CursorLoader;
 
 
+import android.os.Handler;
+
+
+
 public class FoldersFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, OnBackPressed {
 
     private static final int PET_LOADER = 0;
@@ -54,6 +61,8 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     private int mAdapterNumber;
     ListView petListView;
 
+
+    View rootView;
     FloatingActionButton fab;
 
     TextToSpeech tts;
@@ -78,7 +87,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_folders, container, false);
+        rootView = inflater.inflate(R.layout.fragment_folders, container, false);
 
 
         mTreePath.add(0L);
@@ -432,15 +441,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     }
 
 
-    private void refreshMemWords() {
-        Bundle repeatArgs = new Bundle();
-        Integer repeatLangLearningInteger = getArguments().getInt("language_learning");
-        String repeatLangLearning = repeatLangLearningInteger.toString();
-        Log.e("learning lang is", repeatLangLearning);
-        String[] repeatSelectionArgs = new String[]{ "1",  repeatLangLearning};
-        repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
-        getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
-    }
+
 
 
     private void chooseMode(final long deckId) {
@@ -594,8 +595,13 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
             if ( mMemQuantity > 0 || mSpellQuantity > 0 ) {
                 fab.show();
+//                Log.e("jk", "Jooooooooooooooooooopaaaaaaaaaaaaaaaaaaaa");
             } else {
+//                Log.e("jk", "Sraka");
+//                fab.setVisibility(View.GONE);
                 fab.hide();
+//                Log.e("jk", "Srachnaya");
+
             }
 
 
@@ -655,6 +661,12 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 //                        Toast.LENGTH_SHORT).show();
                 return true;
             case 2:
+
+//                fab.setBackgroundColor(Color.RED);
+
+//                Fragment f = getActivity().getFragmentManager().findFragmentById(R.id.fragment_container);
+
+                fab.hide();
                 Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
                         Toast.LENGTH_SHORT).show();
                 return true;
@@ -672,7 +684,8 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);*/
 
 
-        refreshMemWords();
+
+//        fab.h
         //Delete values //
         String [] arguments = new String[1];
         arguments[0] = folder.toString();
@@ -680,6 +693,37 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         int rowsDeleted = getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
         Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
 
+
+
+//        final Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                //Do something after 100ms
+//
+//            }
+//        }, 100);
+
+        refreshMemWords();
+    }
+
+
+    private void refreshMemWords() {
+        Bundle repeatArgs = new Bundle();
+        Integer repeatLangLearningInteger = getArguments().getInt("language_learning");
+        String repeatLangLearning = repeatLangLearningInteger.toString();
+
+//        String repeatLangLearning = lang.toString();
+        Log.e("learning lang is", repeatLangLearning);
+        String[] repeatSelectionArgs = new String[]{ "1",  repeatLangLearning};
+        repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
+        getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
+
+//        DetailOnPageChangeListener
+//        ((CatalogActivity)getActivity()).re
+//        Integer opa = ((CatalogActivity) getActivity()).getCurrentFragment();
+//        opa.
+//        Log.e("opopopopopopop0", ""+getArguments().getInt("jopa"));
 
     }
 

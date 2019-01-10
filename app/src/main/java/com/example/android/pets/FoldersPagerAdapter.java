@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 //import android.support.v4.app.FragmentPagerAdapter;
 //import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 //import android.util.Log;
@@ -48,6 +49,7 @@ public class FoldersPagerAdapter extends FragmentStatePagerAdapter {
 
         Bundle args=new Bundle();
         args.putInt("language_learning", mTabsArray.get(position));
+//        args.putInt("jopa", position);
         f.setArguments(args);
 
         return f;
@@ -131,6 +133,19 @@ public class FoldersPagerAdapter extends FragmentStatePagerAdapter {
 
 
 
+//    public class DetailOnPageChangeListener extends ViewPager.SimpleOnPageChangeListener {
+//
+//        private int currentPage;
+//
+//        @Override
+//        public void onPageSelected(int position) {
+//            currentPage = position;
+//        }
+//
+//        public final int getCurrentPage() {
+//            return currentPage;
+//        }
+//    }
 
 
 
