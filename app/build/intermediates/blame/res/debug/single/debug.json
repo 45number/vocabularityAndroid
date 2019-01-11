@@ -16,20 +16,20 @@
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_previous.png"
     },
     {
-        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
-        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
-    },
-    {
-        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_top.xml.flat",
-        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\layout\\activity_settings.xml"
     },
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable_navigation_empty_icon.xml.flat",
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\3c68720bf122e57ddb8046a86a34a689\\res\\drawable\\navigation_empty_icon.xml"
     },
     {
-        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_settings.xml.flat",
-        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\layout\\activity_settings.xml"
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_top.xml.flat",
+        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
+        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -52,24 +52,24 @@
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar_include.xml.flat",
-        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\3c68720bf122e57ddb8046a86a34a689\\res\\layout\\design_layout_snackbar_include.xml"
-    },
-    {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_fab_bg_normal.png.flat",
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\floatingactionbutton-1.10.1.aar\\9333cc5ef3566bba002a59e03d0cdd04\\res\\drawable-mdpi-v4\\fab_bg_normal.png"
+    },
+    {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar_include.xml.flat",
+        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\3c68720bf122e57ddb8046a86a34a689\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_done.png.flat",
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\drawable-xxhdpi\\ic_done.png"
     },
     {
-        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view_list_item.xml.flat",
-        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\layout\\abc_activity_chooser_view_list_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_next.png.flat",
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_next.png"
+    },
+    {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view_list_item.xml.flat",
+        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",

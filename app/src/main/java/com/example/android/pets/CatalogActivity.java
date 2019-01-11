@@ -3,9 +3,11 @@ package com.example.android.pets;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +38,8 @@ public class CatalogActivity extends AppCompatActivity implements
 
     FoldersPagerAdapter mAdapter;
 
+//    public FloatingActionButton fab;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,7 @@ public class CatalogActivity extends AppCompatActivity implements
 
         mSettings = getSharedPreferences(SettingsContract.APP_PREFERENCES, Context.MODE_PRIVATE);
 
-
+//        fab = findViewById(R.id.fab);
 
         mHasVisited = mSettings.getBoolean(SettingsContract.HAS_VISITED, false);
         if (!mHasVisited) {
@@ -68,6 +72,11 @@ public class CatalogActivity extends AppCompatActivity implements
 
     }
 
+
+//    public FloatingActionButton getFab() {
+//        fab = findViewById(R.id.fab);
+//        return fab;
+//    }
 
     public void setTabs() {
 
@@ -150,6 +159,8 @@ public class CatalogActivity extends AppCompatActivity implements
 //
 //    }
 
-
+//    public void opa() {
+//        Fragment fragment = ((FragmentPagerAdapter)viewPager.getAdapter()).getFragment();
+//    }
 
 }

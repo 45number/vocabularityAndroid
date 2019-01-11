@@ -1,13 +1,19 @@
-#Fri Jan 11 11:36:18 GST 2019
-path.3=classes4.dex
-path.2=classes3.dex
-path.1=classes2.dex
+#Fri Jan 11 13:38:48 GST 2019
+path.1=classes.dex
 path.0=classes.dex
+renamed.5=classes6.dex
+renamed.4=classes5.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.3=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\95
-base.2=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\95
-base.1=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\95
-base.0=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\95
+base.5=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\109
+base.4=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\112
+base.3=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\107
+base.2=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\110
+base.1=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\108
+base.0=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\111
+path.5=classes.dex
+path.4=classes.dex
+path.3=classes.dex
+path.2=classes.dex

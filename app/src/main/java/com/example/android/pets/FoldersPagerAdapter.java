@@ -133,6 +133,7 @@ public class FoldersPagerAdapter extends FragmentStatePagerAdapter {
 
 
 
+
 //    public class DetailOnPageChangeListener extends ViewPager.SimpleOnPageChangeListener {
 //
 //        private int currentPage;

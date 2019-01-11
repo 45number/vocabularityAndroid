@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -65,6 +66,10 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     View rootView;
     FloatingActionButton fab;
 
+
+//    FloatingActionButton rootFab;
+
+
     TextToSpeech tts;
     private int s;
 
@@ -89,6 +94,9 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_folders, container, false);
 
+
+//        rootFab = ((CatalogActivity)getActivity()).getFab();
+//        rootFab.hide();
 
         mTreePath.add(0L);
 
@@ -594,11 +602,16 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             mSpellQuantity = data.getInt(spellColumnIndex);
 
             if ( mMemQuantity > 0 || mSpellQuantity > 0 ) {
+//                rootFab = ((CatalogActivity)getActivity()).getFab();
+                fab = rootView.findViewById(R.id.fab);
                 fab.show();
 //                Log.e("jk", "Jooooooooooooooooooopaaaaaaaaaaaaaaaaaaaa");
             } else {
-//                Log.e("jk", "Sraka");
+                Log.e("jk", "Sraka");
 //                fab.setVisibility(View.GONE);
+//                rootFab = ((CatalogActivity)getActivity()).getFab();
+
+                fab = rootView.findViewById(R.id.fab);
                 fab.hide();
 //                Log.e("jk", "Srachnaya");
 
@@ -665,7 +678,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 //                fab.setBackgroundColor(Color.RED);
 
 //                Fragment f = getActivity().getFragmentManager().findFragmentById(R.id.fragment_container);
-
+                fab = rootView.findViewById(R.id.fab);
                 fab.hide();
                 Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
                         Toast.LENGTH_SHORT).show();
