@@ -103,6 +103,9 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
             case PETS:
                 cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, selection,
                         selectionArgs, null, null, sortOrder);
+
+
+                
                 if (cursor.getCount() == 0) {
                     String[] select = {selectionArgs[0]};
                     Long wordsInFolder1 = DatabaseUtils.queryNumEntries(database, WordEntry.TABLE_NAME,
