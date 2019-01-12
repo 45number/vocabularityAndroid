@@ -10,7 +10,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5e2b63f-b925-4f84-afbe-93a19f2f8cb9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/data/PetContract$PetEntry.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/data/PetContract$PetEntry.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/data/PetProvider.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/data/PetProvider.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/data/PetContract$PetEntry.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/data/PetContract$PetEntry.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/data/PetProvider.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/data/PetProvider.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/525/com/example/android/pets/data/PetContract$PetEntry.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/525/com/example/android/pets/data/PetContract$PetEntry.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/525/com/example/android/pets/data/PetProvider.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/525/com/example/android/pets/data/PetProvider.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/136/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/136/classes.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/data/PetContract$PetEntry.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/data/PetContract$PetEntry.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/data/PetProvider.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/data/PetProvider.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/buildId.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/buildId.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/data/PetContract$PetEntry.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/data/PetContract$PetEntry.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/data/PetProvider.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/data/PetProvider.class" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetContract.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetContract.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetProvider.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,8 +61,8 @@
       <file leaf-file-name="FoldersFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-316">
-              <caret line="592" column="65" lean-forward="false" selection-start-line="592" selection-start-column="61" selection-end-line="592" selection-end-column="65" />
+            <state relative-caret-position="551">
+              <caret line="622" column="47" lean-forward="false" selection-start-line="622" selection-start-column="47" selection-end-line="622" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#22090#22091#0" expanded="true" />
@@ -72,9 +97,11 @@
       <file leaf-file-name="PetCursorAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/PetCursorAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="48" column="58" lean-forward="false" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="58" />
-              <folding />
+            <state relative-caret-position="170">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <element signature="e#2028#2069#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,28 +109,38 @@
       <file leaf-file-name="PetProvider.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="108" column="20" lean-forward="false" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
+            <state relative-caret-position="169">
+              <caret line="122" column="102" lean-forward="false" selection-start-line="122" selection-start-column="102" selection-end-line="122" selection-end-column="102" />
               <folding>
-                <element signature="e#19377#19378#0" expanded="true" />
-                <element signature="e#19404#19405#0" expanded="true" />
-                <element signature="e#19494#19495#0" expanded="true" />
-                <element signature="e#19521#19522#0" expanded="true" />
-                <element signature="e#19625#19626#0" expanded="true" />
-                <element signature="e#19652#19653#0" expanded="true" />
-                <element signature="e#19708#19709#0" expanded="true" />
-                <element signature="e#19732#19733#0" expanded="true" />
-                <element signature="e#19791#19792#0" expanded="true" />
-                <element signature="e#19815#19816#0" expanded="true" />
-                <element signature="e#19877#19878#0" expanded="true" />
-                <element signature="e#19901#19902#0" expanded="true" />
-                <element signature="e#19969#19970#0" expanded="true" />
-                <element signature="e#19997#19998#0" expanded="true" />
-                <element signature="e#20052#20053#0" expanded="true" />
-                <element signature="e#20080#20081#0" expanded="true" />
-                <element signature="e#20122#20123#0" expanded="true" />
-                <element signature="e#20149#20150#0" expanded="true" />
+                <element signature="e#20373#20374#0" expanded="true" />
+                <element signature="e#20400#20401#0" expanded="true" />
+                <element signature="e#20490#20491#0" expanded="true" />
+                <element signature="e#20517#20518#0" expanded="true" />
+                <element signature="e#20621#20622#0" expanded="true" />
+                <element signature="e#20648#20649#0" expanded="true" />
+                <element signature="e#20704#20705#0" expanded="true" />
+                <element signature="e#20728#20729#0" expanded="true" />
+                <element signature="e#20787#20788#0" expanded="true" />
+                <element signature="e#20811#20812#0" expanded="true" />
+                <element signature="e#20873#20874#0" expanded="true" />
+                <element signature="e#20897#20898#0" expanded="true" />
+                <element signature="e#20965#20966#0" expanded="true" />
+                <element signature="e#20993#20994#0" expanded="true" />
+                <element signature="e#21048#21049#0" expanded="true" />
+                <element signature="e#21076#21077#0" expanded="true" />
+                <element signature="e#21118#21119#0" expanded="true" />
+                <element signature="e#21145#21146#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PetContract.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetContract.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="56" column="68" lean-forward="false" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2188,11 +2225,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/PetCursorAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/SpellingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_spelling.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetProvider.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="533" />
     <option name="y" value="8" />
     <option name="width" value="697" />
@@ -2223,6 +2261,24 @@
             <path>
               <item name="Vocabularity" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Vocabularity" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="Vocabularity" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="pets" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vocabularity" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="pets" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2411,7 +2467,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2703,25 +2759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="52" column="56" lean-forward="false" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetDbHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="105" column="7" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="105" selection-end-column="7" />
-          <folding>
-            <element signature="e#1626#1627#0" expanded="false" />
-            <element signature="e#1695#1696#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/WordContract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -2744,6 +2781,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
           <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2751,6 +2789,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2799,7 +2838,7 @@
         <state relative-caret-position="2482">
           <caret line="165" column="1" lean-forward="false" selection-start-line="165" selection-start-column="1" selection-end-line="165" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2839,18 +2878,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/PetCursorAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetDbHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="48" column="58" lean-forward="false" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="58" />
+        <state relative-caret-position="1428">
+          <caret line="105" column="7" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="105" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="56" column="68" lean-forward="false" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-316">
-          <caret line="592" column="65" lean-forward="false" selection-start-line="592" selection-start-column="61" selection-end-line="592" selection-end-column="65" />
+        <state relative-caret-position="551">
+          <caret line="622" column="47" lean-forward="false" selection-start-line="622" selection-start-column="47" selection-end-line="622" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#22090#22091#0" expanded="true" />
@@ -2861,29 +2908,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/PetCursorAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#2028#2069#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="108" column="20" lean-forward="false" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
+        <state relative-caret-position="169">
+          <caret line="122" column="102" lean-forward="false" selection-start-line="122" selection-start-column="102" selection-end-line="122" selection-end-column="102" />
           <folding>
-            <element signature="e#19377#19378#0" expanded="true" />
-            <element signature="e#19404#19405#0" expanded="true" />
-            <element signature="e#19494#19495#0" expanded="true" />
-            <element signature="e#19521#19522#0" expanded="true" />
-            <element signature="e#19625#19626#0" expanded="true" />
-            <element signature="e#19652#19653#0" expanded="true" />
-            <element signature="e#19708#19709#0" expanded="true" />
-            <element signature="e#19732#19733#0" expanded="true" />
-            <element signature="e#19791#19792#0" expanded="true" />
-            <element signature="e#19815#19816#0" expanded="true" />
-            <element signature="e#19877#19878#0" expanded="true" />
-            <element signature="e#19901#19902#0" expanded="true" />
-            <element signature="e#19969#19970#0" expanded="true" />
-            <element signature="e#19997#19998#0" expanded="true" />
-            <element signature="e#20052#20053#0" expanded="true" />
-            <element signature="e#20080#20081#0" expanded="true" />
-            <element signature="e#20122#20123#0" expanded="true" />
-            <element signature="e#20149#20150#0" expanded="true" />
+            <element signature="e#20373#20374#0" expanded="true" />
+            <element signature="e#20400#20401#0" expanded="true" />
+            <element signature="e#20490#20491#0" expanded="true" />
+            <element signature="e#20517#20518#0" expanded="true" />
+            <element signature="e#20621#20622#0" expanded="true" />
+            <element signature="e#20648#20649#0" expanded="true" />
+            <element signature="e#20704#20705#0" expanded="true" />
+            <element signature="e#20728#20729#0" expanded="true" />
+            <element signature="e#20787#20788#0" expanded="true" />
+            <element signature="e#20811#20812#0" expanded="true" />
+            <element signature="e#20873#20874#0" expanded="true" />
+            <element signature="e#20897#20898#0" expanded="true" />
+            <element signature="e#20965#20966#0" expanded="true" />
+            <element signature="e#20993#20994#0" expanded="true" />
+            <element signature="e#21048#21049#0" expanded="true" />
+            <element signature="e#21076#21077#0" expanded="true" />
+            <element signature="e#21118#21119#0" expanded="true" />
+            <element signature="e#21145#21146#0" expanded="true" />
           </folding>
         </state>
       </provider>

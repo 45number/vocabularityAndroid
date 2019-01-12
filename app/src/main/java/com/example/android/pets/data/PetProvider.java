@@ -104,10 +104,28 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, selection,
                         selectionArgs, null, null, sortOrder);
 
+                MatrixCursor matrixCursor1 = new MatrixCursor(new String[] {
+                        PetEntry._ID,
+                        PetEntry.COLUMN_FOLDER_NAME,
+                        PetEntry.COLUMN_IMAGE,
+                        PetEntry.COLUMN_STATISTICS
+                });
                 cursor.moveToFirst();
                 for (int counter = 0; counter< cursor.getCount(); counter++) {
-                    
+                    int idColumnIndex = cursor.getColumnIndex(PetEntry._ID);
+                    int nameColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
+                    int imageColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
+
+                    Integer folderId = cursor.getInt(idColumnIndex);
+                    String folderName = cursor.getString(nameColumnIndex);
+                    String folderImage = cursor.getString(imageColumnIndex);
+
+                    matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, "statistics"});
                 }
+                MergeCursor mergeCursor1 = new MergeCursor(new Cursor[] { matrixCursor1, cursor });
+                cursor = mergeCursor1;
+
+
 
                 if (cursor.getCount() == 0) {
                     String[] select = {selectionArgs[0]};

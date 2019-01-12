@@ -54,6 +54,8 @@ public final class PetContract {
 
         public final static String COLUMN_LEARNING_LANGUAGE ="learning_language";
 
+        public final static String COLUMN_STATISTICS = "statistics";
+
         /**
          * Name of the pet.
          *
