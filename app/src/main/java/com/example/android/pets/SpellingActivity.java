@@ -14,6 +14,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.text.InputType;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
@@ -153,11 +154,12 @@ public class SpellingActivity extends AppCompatActivity implements
 
 
 
-        mWordEditText.setOnKeyListener(new View.OnKeyListener() {
+        /*mWordEditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent event) {
                 if (keyCode==KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
                     onEnterPressed();
+                    Log.e("opa", "opa");
                     return true;
                 }
 
@@ -166,6 +168,22 @@ public class SpellingActivity extends AppCompatActivity implements
                     return SpellingActivity.super.onKeyDown(keyCode, event);
                 }
                 return false;
+            }
+        });*/
+
+        mWordEditText.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        mWordEditText.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ( (actionId == EditorInfo.IME_ACTION_DONE) || ((event.getKeyCode() == KeyEvent.KEYCODE_ENTER) && (event.getAction() == KeyEvent.ACTION_DOWN ))){
+                    onEnterPressed();
+//                    Toast.makeText(this,editText.getText().toString()+"Enter Pressed",Toast.LENGTH_LONG).show();
+                    Log.e("opa", "opa");
+                    return true;
+                }
+                else{
+                    return false;
+                }
             }
         });
 

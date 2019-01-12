@@ -104,8 +104,11 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, selection,
                         selectionArgs, null, null, sortOrder);
 
+                cursor.moveToFirst();
+                for (int counter = 0; counter< cursor.getCount(); counter++) {
+                    
+                }
 
-                
                 if (cursor.getCount() == 0) {
                     String[] select = {selectionArgs[0]};
                     Long wordsInFolder1 = DatabaseUtils.queryNumEntries(database, WordEntry.TABLE_NAME,
@@ -120,6 +123,8 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                     if (wordsInFolder > 0) {
 
                         double decksQuantity =  Math.ceil(wordsInFolder / mSettingWordsAtTime);
+                        double moduloDouble = wordsInFolder % mSettingWordsAtTime;
+                        int modulo = (int) moduloDouble;
 //                        Log.e("7777777777", "decks: " + decksQuantity);
                         MatrixCursor matrixCursor = new MatrixCursor(new String[] {
                                 PetEntry._ID,
@@ -130,7 +135,11 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                         for (int counter = 0; counter < decksQuantity; counter++) {
                             // Create a MatrixCursor filled with the rows you want to add.
                             int deckNumber = counter + 1;
-                            matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, mSettingWordsAtTime + " words in deck" });
+                            if (deckNumber == decksQuantity) {
+                                matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "Cards in deck: " + modulo});
+                            } else {
+                                matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "Cards in deck: " + mSettingWordsAtTime });
+                            }
                         }
 
                         // Merge your existing cursor with the matrixCursor you created.
