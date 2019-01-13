@@ -167,14 +167,14 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         setHasOptionsMenu(true);
 //        folder_name is null or folder_name = ?
 //        or " + PetEntry.COLUMN_PARENT + "= ?
+
+
         Bundle args=new Bundle();
         args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
 //        String idString = "";
         Integer langLearningInteger = getArguments().getInt("language_learning");
         String langLearning = langLearningInteger.toString();
-
-        Log.e("Line 159, learn lang is", langLearning);
-
+//        Log.e("Line 159, learn lang is", langLearning);
         String[] selectionArgs = {/*idString, */langLearning};
         args.putStringArray("selectionArgs", selectionArgs);
         getLoaderManager().initLoader(PET_LOADER, args, FoldersFragment.this);
@@ -727,7 +727,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         String repeatLangLearning = repeatLangLearningInteger.toString();
 
 //        String repeatLangLearning = lang.toString();
-        Log.e("learning lang is", repeatLangLearning);
+//        Log.e("learning lang is", repeatLangLearning);
         String[] repeatSelectionArgs = new String[]{ "1",  repeatLangLearning};
         repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
         getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);

@@ -37,9 +37,11 @@ public class PetCursorAdapter extends CursorAdapter {
 
         int nameColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_FOLDER_NAME);
         int breedColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_IMAGE);
+        int summaryColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_STATISTICS);
 
         String petName = cursor.getString(nameColumnIndex);
         String petBreed = cursor.getString(breedColumnIndex);
+        String folderSummary = cursor.getString(summaryColumnIndex);
 
 //        String lastCharacters = petBreed.charAt(petBreed.length() - 4);
 //        Integer symbolsInImageName = petBreed.length();
@@ -68,7 +70,7 @@ public class PetCursorAdapter extends CursorAdapter {
         }
 
         nameTextView.setText(petName);
-        summaryTextView.setText(petBreed);
+        summaryTextView.setText(folderSummary);
     }
 
 

@@ -120,10 +120,17 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                     String folderName = cursor.getString(nameColumnIndex);
                     String folderImage = cursor.getString(imageColumnIndex);
 
-                    matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, "statistics"});
+                    String childrenSelection = PetEntry.COLUMN_PARENT + " = ?";
+                    String[] childrenSelectionArgs = {folderId.toString()};
+                    Cursor childrenCursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, childrenSelection,
+                            childrenSelectionArgs, null, null, sortOrder);
+
+
+                    matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, "Folders: " + childrenCursor.getCount() + " :: Decks: 0 :: Cards: 0"});
+                    cursor.moveToNext();
                 }
-                MergeCursor mergeCursor1 = new MergeCursor(new Cursor[] { matrixCursor1, cursor });
-                cursor = mergeCursor1;
+//                MergeCursor mergeCursor1 = new MergeCursor(new Cursor[] { matrixCursor1, cursor });
+                cursor = matrixCursor1;
 
 
 
@@ -147,17 +154,21 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                         MatrixCursor matrixCursor = new MatrixCursor(new String[] {
                                 PetEntry._ID,
                                 PetEntry.COLUMN_FOLDER_NAME,
-                                PetEntry.COLUMN_IMAGE
+                                PetEntry.COLUMN_IMAGE,
+                                PetEntry.COLUMN_STATISTICS
                         });
 
                         for (int counter = 0; counter < decksQuantity; counter++) {
                             // Create a MatrixCursor filled with the rows you want to add.
                             int deckNumber = counter + 1;
+
+                            String deckStatistics;
                             if (deckNumber == decksQuantity) {
-                                matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "Cards in deck: " + modulo});
+                                deckStatistics = "Cards in deck: " + modulo;
                             } else {
-                                matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "Cards in deck: " + mSettingWordsAtTime });
+                                deckStatistics = "Cards in deck: " + mSettingWordsAtTime;
                             }
+                            matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "image dummy", deckStatistics});
                         }
 
                         // Merge your existing cursor with the matrixCursor you created.
