@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.example.android.pets.Folder;
 import com.example.android.pets.R;
 import com.example.android.pets.data.PetContract.PetEntry;
 import com.example.android.pets.data.WordContract.WordEntry;
@@ -45,7 +46,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
     SharedPreferences mSettings;
     private Integer mSettingWordsAtTime;
 
-    MergeCursor mTree;
+    ArrayList<Folder> mTreeArray;
 
 
     /**
@@ -94,6 +95,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 PetEntry.COLUMN_IMAGE,
                 PetEntry.COLUMN_STATISTICS
         });*/
+        mTreeArray = new ArrayList<>();
 
 
         return true;
@@ -136,11 +138,16 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                     Cursor childrenCursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, childrenSelection,
                             childrenSelectionArgs, null, null, sortOrder);*/
 
-                    Cursor childrenCursor = getChildren(folderId);
+//                    Cursor childrenCursor = getChildren(folderId);
 //                    mTree.
 
+                    Folder folder = createFolder(folderId, folderName, folderImage);
+//                    Folder folder2 = getFolder(folder.getId());
+//                    Log.e("folder", ""+ folder.getName());
+                    ArrayList<Folder> tree = getTreeArray(folder);
+                    int childrenAmount = tree.size() - 1;
 
-                    matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, "Folders: " + childrenCursor.getCount() + " :: Decks: 0 :: Cards: 0"});
+                    matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, "Folders: " + childrenAmount + " :: Decks: 0 :: Cards: 0"});
                     cursor.moveToNext();
                 }
 //                MergeCursor mergeCursor1 = new MergeCursor(new Cursor[] { matrixCursor1, cursor });
@@ -255,9 +262,37 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
     }
 
 
-    public Cursor getChildren(Integer folderId) {
+    public Folder getFolder(Integer folderId) {
         SQLiteDatabase database = mDbHelper.getReadableDatabase();
+        String[] projection = {
+                PetEntry._ID,
+                PetEntry.COLUMN_FOLDER_NAME,
+                PetEntry.COLUMN_IMAGE
+        };
 
+        String selection = PetEntry._ID + " = ?";
+        String[] childrenSelectionArgs = {folderId.toString()};
+        Cursor cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, selection,
+                childrenSelectionArgs, null, null, null);
+        cursor.moveToFirst();
+
+//        int idColumnIndex = cursor.getColumnIndex(PetEntry._ID);
+        int nameColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
+        int imageColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
+
+//        Integer folderId = cursor.getInt(idColumnIndex);
+        String folderName = cursor.getString(nameColumnIndex);
+        String folderImage = cursor.getString(imageColumnIndex);
+
+        return createFolder(folderId, folderName, folderImage);
+    }
+
+    public Folder createFolder(Integer folderId, String folderName, String folderImage) {
+        return new Folder(folderId, folderName, folderImage, getChildrenIds(folderId));
+    }
+
+    public ArrayList<Integer> getChildrenIds(Integer folderId) {
+        SQLiteDatabase database = mDbHelper.getReadableDatabase();
         String[] projection = {
                 PetEntry._ID,
                 PetEntry.COLUMN_FOLDER_NAME,
@@ -266,12 +301,38 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
         String childrenSelection = PetEntry.COLUMN_PARENT + " = ?";
         String[] childrenSelectionArgs = {folderId.toString()};
-        Cursor childrenCursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, childrenSelection,
+        Cursor cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, childrenSelection,
                 childrenSelectionArgs, null, null, null);
-        return  childrenCursor;
+
+
+        ArrayList<Integer> children = new ArrayList<>();
+        cursor.moveToFirst();
+        for (int counter = 0; counter< cursor.getCount(); counter++) {
+            int idColumnIndex = cursor.getColumnIndex(PetEntry._ID);
+
+            Integer childId = cursor.getInt(idColumnIndex);
+            children.add(childId);
+
+            cursor.moveToNext();
+        }
+        return  children;
     }
 
+    public void buildTreeArray(Folder folder) {
+        mTreeArray.add(folder);
+        if (folder.getChildren().size() > 0) {
+            for (Integer childId : folder.getChildren()) {
+                Folder child = getFolder(childId);
+                buildTreeArray(child);
+            }
+        }
+    }
 
+    public ArrayList<Folder> getTreeArray(Folder folder) {
+        mTreeArray.clear();
+        buildTreeArray(folder);
+        return mTreeArray;
+    }
 
     /**
      * Insert new data into the provider with the given ContentValues.

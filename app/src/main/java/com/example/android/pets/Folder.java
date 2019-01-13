@@ -1,0 +1,34 @@
+package com.example.android.pets;
+
+import java.util.ArrayList;
+
+public class Folder {
+    private Integer id;
+    private String name;
+    private String image;
+    private ArrayList<Integer> children;
+
+    public Folder(int id, String name, String image, ArrayList<Integer> children) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.children = children;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public ArrayList<Integer> getChildren() {
+        return children;
+    }
+
+}
