@@ -19,6 +19,7 @@ import com.example.android.pets.R;
 import com.example.android.pets.data.PetContract.PetEntry;
 import com.example.android.pets.data.WordContract.WordEntry;
 
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
@@ -43,6 +44,8 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
     SharedPreferences mSettings;
     private Integer mSettingWordsAtTime;
+
+    MergeCursor mTree;
 
 
     /**
@@ -85,6 +88,14 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
         mSettings = getContext().getSharedPreferences(SettingsContract.APP_PREFERENCES, getContext().MODE_PRIVATE);
 
+        /*mTree = new MatrixCursor(new String[] {
+                PetEntry._ID,
+                PetEntry.COLUMN_FOLDER_NAME,
+                PetEntry.COLUMN_IMAGE,
+                PetEntry.COLUMN_STATISTICS
+        });*/
+
+
         return true;
     }
 
@@ -120,10 +131,13 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                     String folderName = cursor.getString(nameColumnIndex);
                     String folderImage = cursor.getString(imageColumnIndex);
 
-                    String childrenSelection = PetEntry.COLUMN_PARENT + " = ?";
+                    /*String childrenSelection = PetEntry.COLUMN_PARENT + " = ?";
                     String[] childrenSelectionArgs = {folderId.toString()};
                     Cursor childrenCursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, childrenSelection,
-                            childrenSelectionArgs, null, null, sortOrder);
+                            childrenSelectionArgs, null, null, sortOrder);*/
+
+                    Cursor childrenCursor = getChildren(folderId);
+//                    mTree.
 
 
                     matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, "Folders: " + childrenCursor.getCount() + " :: Decks: 0 :: Cards: 0"});
@@ -239,6 +253,25 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
         return cursor;
     }
+
+
+    public Cursor getChildren(Integer folderId) {
+        SQLiteDatabase database = mDbHelper.getReadableDatabase();
+
+        String[] projection = {
+                PetEntry._ID,
+                PetEntry.COLUMN_FOLDER_NAME,
+                PetEntry.COLUMN_IMAGE
+        };
+
+        String childrenSelection = PetEntry.COLUMN_PARENT + " = ?";
+        String[] childrenSelectionArgs = {folderId.toString()};
+        Cursor childrenCursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, childrenSelection,
+                childrenSelectionArgs, null, null, null);
+        return  childrenCursor;
+    }
+
+
 
     /**
      * Insert new data into the provider with the given ContentValues.
