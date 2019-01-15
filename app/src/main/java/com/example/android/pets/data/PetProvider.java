@@ -133,34 +133,34 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                     String folderName = cursor.getString(nameColumnIndex);
                     String folderImage = cursor.getString(imageColumnIndex);
 
-                    /*String childrenSelection = PetEntry.COLUMN_PARENT + " = ?";
-                    String[] childrenSelectionArgs = {folderId.toString()};
-                    Cursor childrenCursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, childrenSelection,
-                            childrenSelectionArgs, null, null, sortOrder);*/
-
-//                    Cursor childrenCursor = getChildren(folderId);
-//                    mTree.
-
                     Folder folder = createFolder(folderId, folderName, folderImage);
-//                    Folder folder2 = getFolder(folder.getId());
-//                    Log.e("folder", ""+ folder.getName());
                     ArrayList<Folder> tree = getTreeArray(folder);
                     int childrenAmount = tree.size() - 1;
 
-                    matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, "Folders: " + childrenAmount + " :: Decks: 0 :: Cards: 0"});
+                    int wordsInFolder = 0;
+                    int decksInFolder = 0;
+                    for (int c = 0; c<tree.size(); c++) {
+                        int wordsQuantity = countWordsInFolder(tree.get(tree.size() - (c+1))).intValue();
+                        wordsInFolder += wordsQuantity;
+                        decksInFolder += countDecks(wordsQuantity);
+                    }
+
+                    String stat = "Empty folder";
+                    if (childrenAmount != 0 || decksInFolder != 0 || wordsInFolder != 0)
+                        stat = "Folders: " + childrenAmount + " :: Decks: " + decksInFolder + " :: Cards: " + wordsInFolder;
+
+
+                    matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, stat});
                     cursor.moveToNext();
                 }
-//                MergeCursor mergeCursor1 = new MergeCursor(new Cursor[] { matrixCursor1, cursor });
                 cursor = matrixCursor1;
 
 
 
                 if (cursor.getCount() == 0) {
-                    String[] select = {selectionArgs[0]};
-                    Long wordsInFolder1 = DatabaseUtils.queryNumEntries(database, WordEntry.TABLE_NAME,
-                    WordEntry.COLUMN_FOLDER + "=?", select);
 
-                    Double wordsInFolder = wordsInFolder1.doubleValue();
+                    String[] select = {selectionArgs[0]};
+                    Double wordsInFolder = countWordsInFolder1(select);
 
                     if(mSettings.contains(SettingsContract.WORDS_AT_TIME)) {
                         mSettingWordsAtTime = mSettings.getInt(SettingsContract.WORDS_AT_TIME, 25);
@@ -171,7 +171,10 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                         double decksQuantity =  Math.ceil(wordsInFolder / mSettingWordsAtTime);
                         double moduloDouble = wordsInFolder % mSettingWordsAtTime;
                         int modulo = (int) moduloDouble;
-//                        Log.e("7777777777", "decks: " + decksQuantity);
+
+                        if (modulo == 0)
+                            modulo = mSettingWordsAtTime;
+
                         MatrixCursor matrixCursor = new MatrixCursor(new String[] {
                                 PetEntry._ID,
                                 PetEntry.COLUMN_FOLDER_NAME,
@@ -332,6 +335,37 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         mTreeArray.clear();
         buildTreeArray(folder);
         return mTreeArray;
+    }
+
+    public Double countWordsInFolder1(String[] select) {
+        SQLiteDatabase database = mDbHelper.getReadableDatabase();
+        Long wordsInFolder1 = DatabaseUtils.queryNumEntries(database, WordEntry.TABLE_NAME,
+                WordEntry.COLUMN_FOLDER + "=?", select);
+        Double wordsInFolder = wordsInFolder1.doubleValue();
+        return wordsInFolder;
+    }
+
+
+    public Double countWordsInFolder(Folder folder) {
+        SQLiteDatabase database = mDbHelper.getReadableDatabase();
+        Integer folderId = folder.getId();
+        String[] select = {folderId.toString()};
+        Long wordsInFolder1 = DatabaseUtils.queryNumEntries(database, WordEntry.TABLE_NAME,
+                WordEntry.COLUMN_FOLDER + "=?", select);
+        Double wordsInFolder = wordsInFolder1.doubleValue();
+        return wordsInFolder;
+    }
+
+    public int countDecks(int wordsInFolder) {
+        if(mSettings.contains(SettingsContract.WORDS_AT_TIME)) {
+            mSettingWordsAtTime = mSettings.getInt(SettingsContract.WORDS_AT_TIME, 25);
+        }
+
+        if (wordsInFolder > 0) {
+            int decksQuantity =  (int) Math.ceil((double) wordsInFolder / mSettingWordsAtTime);
+            return decksQuantity;
+        }
+        return 0;
     }
 
     /**

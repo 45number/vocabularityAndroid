@@ -76,6 +76,22 @@
     <!-- Dialog button text for the option to keep editing the current pet [CHAR LIMIT=20] -->
     <string name="keep_editing">Keep Editing</string>
 
+
+
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="delete_folder_title">Are you sure?</string>
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="delete_folder_msg">Delete the folder and all cards?</string>
+    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
+    <string name="cancel_deleting">Cancel</string>
+    <!-- Dialog button text for the option to keep editing the current pet [CHAR LIMIT=20] -->
+    <string name="ok_delete">Ok</string>
+
+
+
+
+
+
     <!-- Toast message in editor when current pet was successfully deleted [CHAR LIMIT=NONE] -->
     <string name="editor_delete_pet_successful">Pet deleted</string>
     <!-- Toast message in editor when current pet has failed to be deleted [CHAR LIMIT=NONE] -->
@@ -124,9 +140,9 @@
 
 
     <string-array name="menu">
+        <item>Mark</item>
         <item>Edit</item>
         <item>Delete</item>
-        <item>Archive</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

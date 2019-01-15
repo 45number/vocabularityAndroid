@@ -313,6 +313,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
 
     private void chooseAddMode(boolean folderEnabled, boolean wordsEnabled, boolean excelEnabled) {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = this.getLayoutInflater();
 
@@ -662,32 +663,33 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         long infoId = info.id;
         switch (menuItemIndex) {
             case 0:
-                Intent intent = new Intent(getActivity(), EditorActivity.class);
-                Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
-                intent.setData(currentPetUri);
-                startActivity(intent);
-                return true;
-            case 1:
-
-                onDeletePressed(infoId);
-//                Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
-//                        Toast.LENGTH_SHORT).show();
-                return true;
-            case 2:
 
 //                fab.setBackgroundColor(Color.RED);
 
 //                Fragment f = getActivity().getFragmentManager().findFragmentById(R.id.fragment_container);
                 fab = rootView.findViewById(R.id.fab);
-                fab.hide();
+//                fab.hide();
                 Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
                         Toast.LENGTH_SHORT).show();
                 return true;
+            case 1:
+                Intent intent = new Intent(getActivity(), EditorActivity.class);
+                Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
+                intent.setData(currentPetUri);
+                startActivity(intent);
+                return true;
+            case 2:
+
+                onDeletePressed(infoId);
+//                Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
+//                        Toast.LENGTH_SHORT).show();
+                return true;
+
         }
         return true;
     }
 
-    private void onDeletePressed(Long folder) {
+    private void onDeletePressed(final Long folder) {
         /*Bundle args=new Bundle();
         args.putString("selection", PetEntry._ID + " = ?");
 //        Long idLong = getCurrentFolder();
@@ -700,11 +702,11 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
 //        fab.h
         //Delete values //
-        String [] arguments = new String[1];
+        /*String [] arguments = new String[1];
         arguments[0] = folder.toString();
         String selectionClause = PetEntry._ID + " = ?";
         int rowsDeleted = getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
-        Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
+        Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");*/
 
 
 
@@ -717,6 +719,36 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 //            }
 //        }, 100);
 
+//        refreshMemWords();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string.delete_folder_title);
+        builder.setMessage(R.string.delete_folder_msg);
+        builder.setPositiveButton(R.string.ok_delete, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                deleteFolder(folder);
+            }
+        });
+        builder.setNegativeButton(R.string.cancel_deleting, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+
+    private void deleteFolder(Long folder) {
+        String [] arguments = new String[1];
+        arguments[0] = folder.toString();
+        String selectionClause = PetEntry._ID + " = ?";
+//        int rowsDeleted =
+                getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
+//        Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
         refreshMemWords();
     }
 
