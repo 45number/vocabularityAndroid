@@ -663,17 +663,22 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         long infoId = info.id;
         switch (menuItemIndex) {
             case 0:
-
 //                fab.setBackgroundColor(Color.RED);
-
 //                Fragment f = getActivity().getFragmentManager().findFragmentById(R.id.fragment_container);
-                fab = rootView.findViewById(R.id.fab);
+//                fab = rootView.findViewById(R.id.fab);
 //                fab.hide();
-                Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
+                if (mAdapterNumber == 0)
+                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
                         Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(getActivity(), "opachki",
+                            Toast.LENGTH_SHORT).show();
                 return true;
             case 1:
-                Intent intent = new Intent(getActivity(), EditorActivity.class);
+                Class activityClass = EditorActivity.class;
+                if (mAdapterNumber == 1)
+                    activityClass = EditorActivity.class;
+                Intent intent = new Intent(getActivity(), activityClass);
                 Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
                 intent.setData(currentPetUri);
                 startActivity(intent);
