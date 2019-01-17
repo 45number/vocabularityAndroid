@@ -1,41 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Layout for a single list item in the list of pets -->
 
-<LinearLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="@dimen/activity_margin"
     >
-
-    <ImageView
-        android:id="@+id/folderImage"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/ic_add_folder_image"/>
-
     <LinearLayout
-        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_margin"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_margin"
-        android:orientation="vertical"
         >
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/folderImage"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_add_folder_image"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#2B3D4D"  />
+            android:layout_marginLeft="@dimen/activity_margin"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#2B3D4D"  />
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="#AEB6BD"  />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--android:visibility="gone"-->
+    <LinearLayout
+        android:id="@+id/markedBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center" >
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/ic_marked" />
 
         <TextView
-            android:id="@+id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#AEB6BD"  />
+            android:textSize="10sp"
+            android:text="Learned"
+            android:textColor="#26b81f" />
     </LinearLayout>
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

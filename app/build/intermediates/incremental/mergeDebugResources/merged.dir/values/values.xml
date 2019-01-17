@@ -15,6 +15,11 @@
         <item>Edit</item>
         <item>Delete</item>
     </string-array>
+    <string-array name="menu1">
+        <item>Uncheck</item>
+        <item>Edit</item>
+        <item>Delete</item>
+    </string-array>
     <attr format="boolean" name="barrierAllowsGoneWidgets"/>
     <attr format="enum" name="barrierDirection">
         <enum name="left" value="0"/>

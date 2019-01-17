@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -65,6 +66,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
     View rootView;
     FloatingActionButton fab;
+//    LinearLayout markedBadge;
 
 
 //    FloatingActionButton rootFab;
@@ -103,6 +105,8 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         // Setup FAB to open EditorActivity
         fab = rootView.findViewById(R.id.fab);
         fab.hide();
+
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -569,7 +573,8 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             String[] projection = {
                     PetEntry._ID,
                     PetEntry.COLUMN_FOLDER_NAME,
-                    PetEntry.COLUMN_IMAGE
+                    PetEntry.COLUMN_IMAGE,
+                    PetEntry.COLUMN_MARKED
             };
 
             String selection = null;
@@ -646,7 +651,21 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                                     ContextMenu.ContextMenuInfo menuInfo) {
         if (v.getId()==R.id.list) {
             AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
-            String[] menuItems = getResources().getStringArray(R.array.menu);
+
+            View view = info.targetView;
+            LinearLayout markedBadge = view.findViewById(R.id.markedBadge);
+
+            String[] menuItems;
+
+            if (markedBadge.getVisibility() == View.VISIBLE) {
+                // Its visible
+                menuItems = getResources().getStringArray(R.array.menu1);
+            } else {
+                // Either gone or invisible
+                menuItems = getResources().getStringArray(R.array.menu);
+            }
+
+//            String[] menuItems = getResources().getStringArray(R.array.menu);
             for (int i = 0; i<menuItems.length; i++) {
                 menu.add(Menu.NONE, i, i, menuItems[i]);
             }
@@ -657,27 +676,57 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
         int menuItemIndex = item.getItemId();
-        String[] menuItems = getResources().getStringArray(R.array.menu);
-        String menuItemName = menuItems[menuItemIndex];
+
+        View view = info.targetView;
+        LinearLayout markedBadge = view.findViewById(R.id.markedBadge);
+
+        /*String[] menuItems;
+
+        if (markedBadge.getVisibility() == View.VISIBLE) {
+            // Its visible
+            menuItems = getResources().getStringArray(R.array.menu1);
+        } else {
+            // Either gone or invisible
+            menuItems = getResources().getStringArray(R.array.menu);
+        }
+
+
+//        String[] menuItems = getResources().getStringArray(R.array.menu);
+        String menuItemName = menuItems[menuItemIndex];*/
+
+
 
         long infoId = info.id;
+
         switch (menuItemIndex) {
             case 0:
 //                fab.setBackgroundColor(Color.RED);
 //                Fragment f = getActivity().getFragmentManager().findFragmentById(R.id.fragment_container);
 //                fab = rootView.findViewById(R.id.fab);
 //                fab.hide();
-                if (mAdapterNumber == 0)
-                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
-                        Toast.LENGTH_SHORT).show();
-                else
+                if (mAdapterNumber == 0) {
+//                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
+//                            Toast.LENGTH_SHORT).show();
+
+
+
+                    if (markedBadge.getVisibility() == View.VISIBLE) {
+                        // Its visible
+                        markFolder(infoId, false);
+                    } else {
+                        // Either gone or invisible
+                        markFolder(infoId, true);
+                    }
+
+                } else {
                     Toast.makeText(getActivity(), "opachki",
                             Toast.LENGTH_SHORT).show();
+                }
                 return true;
             case 1:
                 Class activityClass = EditorActivity.class;
                 if (mAdapterNumber == 1)
-                    activityClass = EditorActivity.class;
+                    activityClass = EditorActivity.class; // Need to be changed
                 Intent intent = new Intent(getActivity(), activityClass);
                 Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
                 intent.setData(currentPetUri);
@@ -782,6 +831,19 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     private Long getCurrentFolder() {
         return mTreePath.get(mTreePath.size() - 1);
     }
+
+
+    private void markFolder(Long infoId, boolean markValue) {
+        Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
+        ContentValues values = new ContentValues();
+        int value = 0;
+        if (markValue)
+            value = 1;
+        values.put(PetEntry.COLUMN_MARKED, value);
+//        int rowsAffected =
+                getActivity().getContentResolver().update(currentPetUri, values, null, null);
+    }
+
 
     @Override
     public void onBackPressed() {

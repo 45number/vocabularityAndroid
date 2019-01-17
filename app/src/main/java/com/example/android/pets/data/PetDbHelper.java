@@ -59,6 +59,7 @@ public class PetDbHelper extends SQLiteOpenHelper {
                 + PetEntry.COLUMN_FOLDER_NAME + " TEXT NOT NULL, "
                 + PetEntry.COLUMN_IMAGE + " TEXT, "
                 + PetEntry.COLUMN_PARENT + " INTEGER,"
+                + PetEntry.COLUMN_MARKED + " INTEGER NOT NULL DEFAULT 0,"
                 + " FOREIGN KEY (" + PetEntry.COLUMN_PARENT + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
                 + ");";
 //                + ");";

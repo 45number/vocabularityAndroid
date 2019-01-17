@@ -121,6 +121,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                         PetEntry._ID,
                         PetEntry.COLUMN_FOLDER_NAME,
                         PetEntry.COLUMN_IMAGE,
+                        PetEntry.COLUMN_MARKED,
                         PetEntry.COLUMN_STATISTICS
                 });
                 cursor.moveToFirst();
@@ -128,12 +129,14 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                     int idColumnIndex = cursor.getColumnIndex(PetEntry._ID);
                     int nameColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
                     int imageColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
+                    int markedColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_MARKED);
 
                     Integer folderId = cursor.getInt(idColumnIndex);
                     String folderName = cursor.getString(nameColumnIndex);
                     String folderImage = cursor.getString(imageColumnIndex);
+                    Integer folderMarked = cursor.getInt(markedColumnIndex);
 
-                    Folder folder = createFolder(folderId, folderName, folderImage);
+                    Folder folder = createFolder(folderId, folderName, folderImage, folderMarked);
                     ArrayList<Folder> tree = getTreeArray(folder);
                     int childrenAmount = tree.size() - 1;
 
@@ -150,7 +153,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                         stat = "Folders: " + childrenAmount + " :: Decks: " + decksInFolder + " :: Cards: " + wordsInFolder;
 
 
-                    matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, stat});
+                    matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, folderMarked, stat});
                     cursor.moveToNext();
                 }
                 cursor = matrixCursor1;
@@ -270,7 +273,8 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         String[] projection = {
                 PetEntry._ID,
                 PetEntry.COLUMN_FOLDER_NAME,
-                PetEntry.COLUMN_IMAGE
+                PetEntry.COLUMN_IMAGE,
+                PetEntry.COLUMN_MARKED
         };
 
         String selection = PetEntry._ID + " = ?";
@@ -282,16 +286,18 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 //        int idColumnIndex = cursor.getColumnIndex(PetEntry._ID);
         int nameColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
         int imageColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
+        int markedColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
 
 //        Integer folderId = cursor.getInt(idColumnIndex);
         String folderName = cursor.getString(nameColumnIndex);
         String folderImage = cursor.getString(imageColumnIndex);
+        int folderMarked = cursor.getInt(markedColumnIndex);
 
-        return createFolder(folderId, folderName, folderImage);
+        return createFolder(folderId, folderName, folderImage, folderMarked);
     }
 
-    public Folder createFolder(Integer folderId, String folderName, String folderImage) {
-        return new Folder(folderId, folderName, folderImage, getChildrenIds(folderId));
+    public Folder createFolder(Integer folderId, String folderName, String folderImage, Integer folderMarked) {
+        return new Folder(folderId, folderName, folderImage, folderMarked, getChildrenIds(folderId));
     }
 
     public ArrayList<Integer> getChildrenIds(Integer folderId) {

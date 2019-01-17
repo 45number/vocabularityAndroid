@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.text.TextUtils;
 
@@ -18,6 +19,8 @@ import com.example.android.pets.data.PetContract;
 import java.io.File;
 
 public class PetCursorAdapter extends CursorAdapter {
+
+
 
     public PetCursorAdapter(Context context, Cursor c) {
         super(context, c, 0 /* flags */);
@@ -31,6 +34,11 @@ public class PetCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
+
+        LinearLayout markedBadge = view.findViewById(R.id.markedBadge);
+        markedBadge.setVisibility(View.GONE);
+
+
         TextView nameTextView = (TextView) view.findViewById(R.id.name);
         TextView summaryTextView = (TextView) view.findViewById(R.id.summary);
         ImageView pictureImageView = (ImageView) view.findViewById(R.id.folderImage);
@@ -38,10 +46,12 @@ public class PetCursorAdapter extends CursorAdapter {
         int nameColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_FOLDER_NAME);
         int breedColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_IMAGE);
         int summaryColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_STATISTICS);
+        int markedColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_MARKED);
 
         String petName = cursor.getString(nameColumnIndex);
         String petBreed = cursor.getString(breedColumnIndex);
         String folderSummary = cursor.getString(summaryColumnIndex);
+        int folderMarked = cursor.getInt(markedColumnIndex);
 
 //        String lastCharacters = petBreed.charAt(petBreed.length() - 4);
 //        Integer symbolsInImageName = petBreed.length();
@@ -68,6 +78,12 @@ public class PetCursorAdapter extends CursorAdapter {
                 e.printStackTrace();
             }
         }
+
+
+        if (folderMarked == 1) {
+            markedBadge.setVisibility(View.VISIBLE);
+        }
+
 
         nameTextView.setText(petName);
         summaryTextView.setText(folderSummary);

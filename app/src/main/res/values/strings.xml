@@ -145,6 +145,12 @@
         <item>Delete</item>
     </string-array>
 
+    <string-array name="menu1">
+        <item>Uncheck</item>
+        <item>Edit</item>
+        <item>Delete</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

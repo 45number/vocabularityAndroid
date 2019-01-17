@@ -76,6 +76,7 @@ public final class PetContract {
         public final static String COLUMN_PARENT = "parent_id";
 
 
+        public final static String COLUMN_MARKED ="marked";
 
 
 
