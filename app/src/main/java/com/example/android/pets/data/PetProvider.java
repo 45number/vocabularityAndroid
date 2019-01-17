@@ -4,6 +4,7 @@ import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.SharedPreferences;
 import android.content.UriMatcher;
 import android.database.Cursor;
@@ -20,6 +21,8 @@ import com.example.android.pets.R;
 import com.example.android.pets.data.PetContract.PetEntry;
 import com.example.android.pets.data.WordContract.WordEntry;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
@@ -182,6 +185,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                                 PetEntry._ID,
                                 PetEntry.COLUMN_FOLDER_NAME,
                                 PetEntry.COLUMN_IMAGE,
+                                PetEntry.COLUMN_MARKED,
                                 PetEntry.COLUMN_STATISTICS
                         });
 
@@ -195,7 +199,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                             } else {
                                 deckStatistics = "Cards in deck: " + mSettingWordsAtTime;
                             }
-                            matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "image dummy", deckStatistics});
+                            matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "image dummy", 0, deckStatistics});
                         }
 
                         // Merge your existing cursor with the matrixCursor you created.
@@ -584,24 +588,79 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         final int match = sUriMatcher.match(uri);
         switch (match) {
             case PETS:
+
+                Log.e("pa", "I aaaaaam heeeeeereeeee 1");
+
                 // Delete all rows that match the selection and selection args
                 rowsDeleted = database.delete(PetEntry.TABLE_NAME, selection, selectionArgs);
                 break;
             case PET_ID:
                 // Delete a single row given by the ID in the URI
 
+//                Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
+
                 long folderId = ContentUris.parseId(uri);
+
+                String[] projection = {
+                        PetEntry._ID,
+                        PetEntry.COLUMN_FOLDER_NAME,
+                        PetEntry.COLUMN_IMAGE,
+                        PetEntry.COLUMN_MARKED
+                };
+
+                Cursor cursor = query(uri, projection ,selection, selectionArgs, null);
+                cursor.moveToFirst();
+
+                int idColumnIndex = cursor.getColumnIndex(PetEntry._ID);
+                int nameColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
+                int imageColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
+                int markedColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_MARKED);
+
+                Integer id = cursor.getInt(idColumnIndex);
+                String name = cursor.getString(nameColumnIndex);
+                String image = cursor.getString(imageColumnIndex);
+                Integer marked = cursor.getInt(markedColumnIndex);
+
+                Folder folder = createFolder(id, name, image, marked);
+                ArrayList<Folder> tree = getTreeArray(folder);
+
+                for (int c = 0; c<tree.size(); c++) {
+                    Folder f = tree.get(tree.size() - (c+1));
+                    String imageName = f.getImage();
+
+//                    Log.e("pa", "I aaaaaam heeeeeereeeee 2");
+
+                    if (imageName != "" && imageName != null) {
+//                        Log.e("pa", imageName);
+                        try {
+                            ContextWrapper cw = new ContextWrapper(getContext());
+                            File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+                            File file = new File(directory, imageName);
+                            boolean deleted = file.delete();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                }
 
                 selection = PetEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(folderId) };
                 rowsDeleted = database.delete(PetEntry.TABLE_NAME, selection, selectionArgs);
+//                rowsDeleted = 0;
                 break;
 
             case WORDS:
+
+                Log.e("pa", "I aaaaaam heeeeeereeeee 3");
+
                 // Delete all rows that match the selection and selection args
                 rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, selectionArgs);
                 break;
             case WORD_ID:
+
+                Log.e("pa", "I aaaaaam heeeeeereeeee 4");
+
                 // Delete a single row given by the ID in the URI
                 selection = WordEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };

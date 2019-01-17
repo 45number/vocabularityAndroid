@@ -613,7 +613,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                 fab.show();
 //                Log.e("jk", "Jooooooooooooooooooopaaaaaaaaaaaaaaaaaaaa");
             } else {
-                Log.e("jk", "Sraka");
+//                Log.e("jk", "Sraka");
 //                fab.setVisibility(View.GONE);
 //                rootFab = ((CatalogActivity)getActivity()).getFab();
 
@@ -800,9 +800,14 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         String [] arguments = new String[1];
         arguments[0] = folder.toString();
         String selectionClause = PetEntry._ID + " = ?";
+
+        Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, folder);
+
 //        int rowsDeleted =
-                getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
+//                getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
 //        Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
+        getActivity().getContentResolver().delete(currentPetUri, selectionClause, arguments);
+
         refreshMemWords();
     }
 
