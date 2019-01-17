@@ -589,8 +589,11 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 break;
             case PET_ID:
                 // Delete a single row given by the ID in the URI
+
+                long folderId = ContentUris.parseId(uri);
+
                 selection = PetEntry._ID + "=?";
-                selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
+                selectionArgs = new String[] { String.valueOf(folderId) };
                 rowsDeleted = database.delete(PetEntry.TABLE_NAME, selection, selectionArgs);
                 break;
 
