@@ -680,19 +680,15 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         View view = info.targetView;
         LinearLayout markedBadge = view.findViewById(R.id.markedBadge);
 
-        /*String[] menuItems;
-
-        if (markedBadge.getVisibility() == View.VISIBLE) {
-            // Its visible
-            menuItems = getResources().getStringArray(R.array.menu1);
-        } else {
-            // Either gone or invisible
-            menuItems = getResources().getStringArray(R.array.menu);
-        }
+        String[] menuItems = getResources().getStringArray(R.array.menu);
+        String menuItemName = menuItems[menuItemIndex];
 
 
-//        String[] menuItems = getResources().getStringArray(R.array.menu);
-        String menuItemName = menuItems[menuItemIndex];*/
+        ImageView folderImage = view.findViewById(R.id.folderImage);
+//        String imageName = getResources().getResourceName(R.id.folderImage);
+//        String lastCharacters = getLastCharacters(imageName, 4);
+//        if ( !".png".equals(lastCharacters) ) {}
+//        if (isDeck(folderImage)) {}
 
 
 
@@ -704,12 +700,13 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 //                Fragment f = getActivity().getFragmentManager().findFragmentById(R.id.fragment_container);
 //                fab = rootView.findViewById(R.id.fab);
 //                fab.hide();
-                if (mAdapterNumber == 0) {
+
+//                if ( !".png".equals(lastCharacters) ) {
+                if (isFolder(folderImage)) {
+//                if (mAdapterNumber == 0) {
+
 //                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
 //                            Toast.LENGTH_SHORT).show();
-
-
-
                     if (markedBadge.getVisibility() == View.VISIBLE) {
                         // Its visible
                         markFolder(infoId, false);
@@ -719,7 +716,8 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                     }
 
                 } else {
-                    Toast.makeText(getActivity(), "opachki",
+
+                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
                             Toast.LENGTH_SHORT).show();
                 }
                 return true;
@@ -733,8 +731,13 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                 startActivity(intent);
                 return true;
             case 2:
+                if (isFolder(folderImage)) {
+//                if (mAdapterNumber == 0) {
+                    onDeletePressed(infoId);
+                } else {
+                    onDeleteWordsPressed(infoId);
+                }
 
-                onDeletePressed(infoId);
 //                Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
 //                        Toast.LENGTH_SHORT).show();
                 return true;
@@ -744,36 +747,6 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     }
 
     private void onDeletePressed(final Long folder) {
-        /*Bundle args=new Bundle();
-        args.putString("selection", PetEntry._ID + " = ?");
-//        Long idLong = getCurrentFolder();
-        String idString = folder.toString();
-        String[] selectionArgs = {idString};
-        args.putStringArray("selectionArgs", selectionArgs);
-        getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);*/
-
-
-
-//        fab.h
-        //Delete values //
-        /*String [] arguments = new String[1];
-        arguments[0] = folder.toString();
-        String selectionClause = PetEntry._ID + " = ?";
-        int rowsDeleted = getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
-        Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");*/
-
-
-
-//        final Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                //Do something after 100ms
-//
-//            }
-//        }, 100);
-
-//        refreshMemWords();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.delete_folder_title);
@@ -796,19 +769,53 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
     }
 
+    private void onDeleteWordsPressed(final Long deck) {
+        final Long folder = getCurrentFolder();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string.delete_deck_title);
+        builder.setMessage(R.string.delete_deck_msg);
+        builder.setPositiveButton(R.string.ok_delete, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                deleteDeck(folder, deck);
+            }
+        });
+        builder.setNegativeButton(R.string.cancel_deleting, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
     private void deleteFolder(Long folder) {
         String [] arguments = new String[1];
         arguments[0] = folder.toString();
         String selectionClause = PetEntry._ID + " = ?";
-
         Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, folder);
-
-//        int rowsDeleted =
-//                getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
+//        int rowsDeleted = getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
 //        Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
         getActivity().getContentResolver().delete(currentPetUri, selectionClause, arguments);
 
         refreshMemWords();
+    }
+
+
+    private void deleteDeck(Long folder, Long deck) {
+        String [] arguments = new String[2];
+        arguments[0] = folder.toString();
+        arguments[1] = deck.toString();
+//        String selectionClause = PetEntry._ID + " = ?";
+        String selectionClause = PetEntry._ID + " = ?";
+//        Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, folder);
+        getActivity().getContentResolver().delete(WordContract.WordEntry.CONTENT_URI, selectionClause, arguments);
+
+        refreshMemWords();
+        refreshDecks();
     }
 
 
@@ -830,6 +837,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 //        Log.e("opopopopopopop0", ""+getArguments().getInt("jopa"));
 
     }
+
 
 
 
@@ -865,4 +873,29 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             return;
         }
     }
+
+
+    /*private String getLastCharacters(String word, int number) {
+        if (word != null) {
+            if (word.length() == number) {
+                return word;
+            } else if (word.length() > number) {
+                return word.substring(word.length() - number);
+            } else {
+                return "no image";
+            }
+        } else {
+            return "image is null";
+        }
+    }*/
+
+
+    private boolean isFolder(ImageView v) {
+        if (v.getDrawable().getConstantState() == getResources().getDrawable( R.drawable.ic_deck).getConstantState())
+            return false;
+
+        return true;
+    }
+
+
 }

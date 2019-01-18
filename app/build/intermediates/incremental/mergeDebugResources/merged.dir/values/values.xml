@@ -908,6 +908,8 @@
     <string name="crop_image_menu_rotate_right">Rotate</string>
     <string name="deck_dummy">Deck</string>
     <string name="delete">Delete</string>
+    <string name="delete_deck_msg">Delete the deck? All decks will be recalculated.</string>
+    <string name="delete_deck_title">Are you sure?</string>
     <string name="delete_dialog_msg">Delete this pet?</string>
     <string name="delete_folder_msg">Delete the folder and all cards?</string>
     <string name="delete_folder_title">Are you sure?</string>

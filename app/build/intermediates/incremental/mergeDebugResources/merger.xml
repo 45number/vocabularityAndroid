@@ -1929,7 +1929,7 @@
         <item>Uncheck</item>
         <item>Edit</item>
         <item>Delete</item>
-    </string-array></file><file path="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    </string-array><string name="delete_deck_msg">Delete the deck? All decks will be recalculated.</string><string name="delete_deck_title">Are you sure?</string></file><file path="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

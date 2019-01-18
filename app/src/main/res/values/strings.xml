@@ -88,6 +88,13 @@
     <string name="ok_delete">Ok</string>
 
 
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="delete_deck_title">Are you sure?</string>
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="delete_deck_msg">Delete the deck? All decks will be recalculated.</string>
+
+
+
 
 
 

@@ -589,7 +589,18 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         switch (match) {
             case PETS:
 
-                Log.e("pa", "I aaaaaam heeeeeereeeee 1");
+//                Log.e("pa", "I aaaaaam heeeeeereeeee 1");
+
+//                selection = PetEntry._ID + " = ?";
+//                folder deck
+
+
+
+//                rowsDeleted = database.execSQL("DELETE FROM " + WordEntry.TABLE_NAME
+//                        + " WHERE " + WordEntry._ID + "='"+value+"'");
+//                database.close();
+
+
 
                 // Delete all rows that match the selection and selection args
                 rowsDeleted = database.delete(PetEntry.TABLE_NAME, selection, selectionArgs);
@@ -654,12 +665,32 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
                 Log.e("pa", "I aaaaaam heeeeeereeeee 3");
 
+
+
+                if(mSettings.contains(SettingsContract.WORDS_AT_TIME)) {
+                    mSettingWordsAtTime = mSettings.getInt(SettingsContract.WORDS_AT_TIME, 25);
+                }
+
+
+                String[] args = {selectionArgs[0]};
+                int skipInt = Integer.parseInt(selectionArgs[1]) * mSettingWordsAtTime;
+
+
+                selection = WordEntry._ID + " in (select " + WordEntry._ID + " from "
+                        + WordEntry.TABLE_NAME + " where " + WordEntry.COLUMN_FOLDER
+                        + " = ? order by " + WordEntry._ID + " LIMIT " + skipInt + "," + mSettingWordsAtTime + ")";
+
+                rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, args);
+
+
+
+
                 // Delete all rows that match the selection and selection args
-                rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, selectionArgs);
+//                rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, selectionArgs);
                 break;
             case WORD_ID:
 
-                Log.e("pa", "I aaaaaam heeeeeereeeee 4");
+//                Log.e("pa", "I aaaaaam heeeeeereeeee 4");
 
                 // Delete a single row given by the ID in the URI
                 selection = WordEntry._ID + "=?";
