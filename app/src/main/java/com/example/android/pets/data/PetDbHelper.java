@@ -79,10 +79,26 @@ public class PetDbHelper extends SQLiteOpenHelper {
                 + WordEntry.COLUMN_REPEAT_SPELL + " INTEGER NOT NULL DEFAULT 0,"
                 + " FOREIGN KEY (" + WordEntry.COLUMN_FOLDER + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
                 + ");";
-//                + ");";
 
         // Execute the SQL statement
         db.execSQL(SQL_CREATE_WORDS_TABLE);
+
+
+
+        // Create a String that contains the SQL statement to create the pets table
+        String SQL_CREATE_DECKS_TABLE =  "CREATE TABLE " + WordEntry.TABLE_NAME + " ("
+                + WordEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + WordEntry.COLUMN_WORD + " TEXT NOT NULL, "
+                + WordEntry.COLUMN_TRANSLATION + " TEXT NOT NULL, "
+                + WordEntry.COLUMN_FOLDER + " INTEGER NOT NULL,"
+                + WordEntry.COLUMN_LANGUAGE_LEARNING + " INTEGER NOT NULL,"
+                + WordEntry.COLUMN_REPEAT_MEM + " INTEGER NOT NULL DEFAULT 0,"
+                + WordEntry.COLUMN_REPEAT_SPELL + " INTEGER NOT NULL DEFAULT 0,"
+                + " FOREIGN KEY (" + WordEntry.COLUMN_FOLDER + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
+                + ");";
+
+        // Execute the SQL statement
+        db.execSQL(SQL_CREATE_DECKS_TABLE);
 
 
 
