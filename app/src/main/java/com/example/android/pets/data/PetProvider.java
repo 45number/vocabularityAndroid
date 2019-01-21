@@ -193,13 +193,19 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                             // Create a MatrixCursor filled with the rows you want to add.
                             int deckNumber = counter + 1;
 
+                            int isDeckMarked = 0;
+                            if (isDeckMarked(select, counter)) {
+                                isDeckMarked = 1;
+                            }
+
+
                             String deckStatistics;
                             if (deckNumber == decksQuantity) {
                                 deckStatistics = "Cards in deck: " + modulo;
                             } else {
                                 deckStatistics = "Cards in deck: " + mSettingWordsAtTime;
                             }
-                            matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "image dummy", 0, deckStatistics});
+                            matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "image dummy", isDeckMarked, deckStatistics});
                         }
 
                         // Merge your existing cursor with the matrixCursor you created.
@@ -279,6 +285,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
     }
 
 
+
     public Folder getFolder(Integer folderId) {
         SQLiteDatabase database = mDbHelper.getReadableDatabase();
         String[] projection = {
@@ -352,6 +359,29 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         mTreeArray.clear();
         buildTreeArray(folder);
         return mTreeArray;
+    }
+
+    public boolean isDeckMarked(String[] select, Integer deck) {
+        SQLiteDatabase database = mDbHelper.getReadableDatabase();
+        String[] projection = {
+                DeckEntry._ID
+        };
+
+//        ,
+//        DeckEntry.COLUMN_DECK,
+//                DeckEntry.COLUMN_FOLDER
+
+        String selection = DeckEntry.COLUMN_FOLDER + " = ? AND " + DeckEntry.COLUMN_DECK + " = ? ";
+
+        String [] selectionArgs = new String[2];
+        selectionArgs[0] = select[0];
+        selectionArgs[1] = deck.toString();
+
+        Cursor cursor = database.query(DeckContract.DeckEntry.TABLE_NAME, projection, selection,
+                selectionArgs, null, null, null);
+        if (cursor.getCount() > 0)
+            return true;
+        return false;
     }
 
     public Double countWordsInFolder1(String[] select) {
@@ -493,7 +523,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         if (id == -1) {
             Log.e(LOG_TAG, "Failed to insert row for " + uri);
             return null;
-        }
+        } else {Log.e(LOG_TAG, "uhuuuuuuuuuuuuuuuuuu " + id);}
         // Notify all listeners that the data has changed for the pet content URI
         getContext().getContentResolver().notifyChange(uri, null);
         // Return the new URI with the ID (of the newly inserted row) appended at the end
@@ -713,7 +743,15 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, selectionArgs);
                 break;
 
+            case DECKS:
+                Log.e("pa", "I aaaaaam heeeeeereeeee 5");
+//                selection = DeckEntry._ID + "=?";
+//                selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
+                rowsDeleted = database.delete(DeckEntry.TABLE_NAME, selection, selectionArgs);
+                break;
+
             case DECK_ID:
+//                Log.e("pa", "I aaaaaam heeeeeereeeee 5");
                 selection = DeckEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
                 rowsDeleted = database.delete(DeckEntry.TABLE_NAME, selection, selectionArgs);

@@ -91,7 +91,7 @@ public class PetDbHelper extends SQLiteOpenHelper {
                 + DeckEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + DeckEntry.COLUMN_DECK + " INTEGER NOT NULL, "
                 + DeckEntry.COLUMN_FOLDER + " INTEGER NOT NULL,"
-                + " FOREIGN KEY (" + WordEntry.COLUMN_FOLDER + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
+                + " FOREIGN KEY (" + DeckEntry.COLUMN_FOLDER + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
                 + ");";
 
         // Execute the SQL statement

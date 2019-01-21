@@ -722,9 +722,9 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                     LinearLayout markedBadge1 = view1.findViewById(R.id.markedBadge);
 
                     if (markedBadge1.getVisibility() == View.VISIBLE) {
-                        markDeckSwitch(infoId, true);
-                    } else {
                         markDeckSwitch(infoId, false);
+                    } else {
+                        markDeckSwitch(infoId, true);
                     }
 
 
@@ -871,18 +871,34 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
     private void markDeckSwitch(Long infoId, boolean isToCreate) {
 
-        Uri currentPetUri = ContentUris.withAppendedId(DeckContract.DeckEntry.CONTENT_URI, infoId);
-
-        ContentValues values = new ContentValues();
-        values.put(DeckContract.DeckEntry.COLUMN_DECK, infoId);
-        values.put(DeckContract.DeckEntry.COLUMN_FOLDER, getCurrentFolder());
-
+//        Uri currentPetUri = ContentUris.withAppendedId(DeckContract.DeckEntry.CONTENT_URI, infoId);
+        
         if (isToCreate) {
+//            Log.e("Mark", "Mark");
             //        Uri newUri =
+            ContentValues values = new ContentValues();
+            values.put(DeckContract.DeckEntry.COLUMN_DECK, infoId);
+            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, getCurrentFolder());
+
             getActivity().getContentResolver().insert(DeckContract.DeckEntry.CONTENT_URI, values);
         } else {
-            //        int rowsDeleted =
-            getActivity().getContentResolver().delete(currentPetUri, null, null);
+//            Log.e("UnMark", "UnMark");
+
+            String selection = DeckContract.DeckEntry.COLUMN_FOLDER + " = ? AND " + DeckContract.DeckEntry.COLUMN_DECK + " = ?";
+            String[] selectionArgs = new String[2];
+            selectionArgs[0] = getCurrentFolder().toString();
+            selectionArgs[1] = infoId.toString();
+
+//                    int rowsDeleted =
+            getActivity().getContentResolver().delete(DeckContract.DeckEntry.CONTENT_URI, selection, selectionArgs);
+
+/*            if (rowsDeleted == 0) {
+                // If no rows were deleted, then there was an error with the delete.
+                Log.e("Deleted", "Successful");
+            } else {
+                // Otherwise, the delete was successful and we can display a toast.
+                Log.e("Deleted", "UnSuccessful Error");
+            }*/
         }
 
         refreshDecks();
