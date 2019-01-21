@@ -20,6 +20,7 @@ import com.example.android.pets.Folder;
 import com.example.android.pets.R;
 import com.example.android.pets.data.PetContract.PetEntry;
 import com.example.android.pets.data.WordContract.WordEntry;
+import com.example.android.pets.data.DeckContract.DeckEntry;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,6 +42,9 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
     private static final int WORDS = 200;
     private static final int WORD_ID = 201;
+
+    private static final int DECKS = 300;
+    private static final int DECK_ID = 301;
 
     private static final int FOLDER_TO_REPEAT = 202;
 
@@ -73,6 +77,9 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
         sUriMatcher.addURI(WordContract.CONTENT_AUTHORITY, WordContract.PATH_REPEAT_COUNT, FOLDER_TO_REPEAT);
 
+        sUriMatcher.addURI(DeckContract.CONTENT_AUTHORITY, DeckContract.PATH_DECKS, DECKS);
+        sUriMatcher.addURI(DeckContract.CONTENT_AUTHORITY, DeckContract.PATH_DECKS + "/#", DECK_ID);
+
 //        sUriMatcher.addURI(WordContract.CONTENT_AUTHORITY, WordContract.PATH_WORDS + "/#/#", DECK);
     }
 
@@ -92,14 +99,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
         mSettings = getContext().getSharedPreferences(SettingsContract.APP_PREFERENCES, getContext().MODE_PRIVATE);
 
-        /*mTree = new MatrixCursor(new String[] {
-                PetEntry._ID,
-                PetEntry.COLUMN_FOLDER_NAME,
-                PetEntry.COLUMN_IMAGE,
-                PetEntry.COLUMN_STATISTICS
-        });*/
         mTreeArray = new ArrayList<>();
-
 
         return true;
     }
@@ -222,10 +222,10 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                         selectionArgs, null, null, sortOrder);
                 break;
 
-//            case DECK:
-//                cursor = database.query(WordContract.WordEntry.TABLE_NAME, projection, selection,
-//                        selectionArgs, null, null, sortOrder);
-//                break;
+            case DECKS:
+                cursor = database.query(DeckContract.DeckEntry.TABLE_NAME, projection, selection,
+                        selectionArgs, null, null, sortOrder);
+                break;
 
             case FOLDER_TO_REPEAT:
 //                Log.e("PetProvider", selectionArgs.toString());
@@ -258,6 +258,13 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 selection = WordContract.WordEntry._ID + "=?";
                 selectionArgs = new String[]{ String.valueOf(ContentUris.parseId(uri)) };
                 cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, selection,
+                        selectionArgs, null, null, sortOrder);
+                break;
+
+            case DECK_ID:
+                selection = DeckContract.DeckEntry._ID + "=?";
+                selectionArgs = new String[]{ String.valueOf(ContentUris.parseId(uri)) };
+                cursor = database.query(DeckContract.DeckEntry.TABLE_NAME, projection, selection,
                         selectionArgs, null, null, sortOrder);
                 break;
 
@@ -389,6 +396,8 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 return insertPet(uri, contentValues);
             case WORDS:
                 return insertWord(uri, contentValues);
+            case DECKS:
+                return insertDeck(uri, contentValues);
             default:
                 throw new IllegalArgumentException("Insertion is not supported for " + uri);
         }
@@ -463,6 +472,33 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         return ContentUris.withAppendedId(uri, id);
     }
 
+    private Uri insertDeck(Uri uri, ContentValues values) {
+
+        // Check that the name is not null
+        String deck = values.getAsString(DeckEntry.COLUMN_DECK);
+        if (deck == null) {
+            throw new IllegalArgumentException("Deck cannot be empty");
+        }
+
+        String folder_id = values.getAsString(DeckEntry.COLUMN_FOLDER);
+        if (folder_id == null) {
+            throw new IllegalArgumentException("Deck should be in a folder");
+        }
+
+        // Get writeable database
+        SQLiteDatabase database = mDbHelper.getWritableDatabase();
+        // Insert the new pet with the given values
+        long id = database.insert(DeckEntry.TABLE_NAME, null, values);
+        // If the ID is -1, then the insertion failed. Log an error and return null.
+        if (id == -1) {
+            Log.e(LOG_TAG, "Failed to insert row for " + uri);
+            return null;
+        }
+        // Notify all listeners that the data has changed for the pet content URI
+        getContext().getContentResolver().notifyChange(uri, null);
+        // Return the new URI with the ID (of the newly inserted row) appended at the end
+        return ContentUris.withAppendedId(uri, id);
+    }
 
 
     @Override
@@ -589,26 +625,11 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         switch (match) {
             case PETS:
 
-//                Log.e("pa", "I aaaaaam heeeeeereeeee 1");
-
-//                selection = PetEntry._ID + " = ?";
-//                folder deck
-
-
-
-//                rowsDeleted = database.execSQL("DELETE FROM " + WordEntry.TABLE_NAME
-//                        + " WHERE " + WordEntry._ID + "='"+value+"'");
-//                database.close();
-
-
-
                 // Delete all rows that match the selection and selection args
                 rowsDeleted = database.delete(PetEntry.TABLE_NAME, selection, selectionArgs);
                 break;
             case PET_ID:
                 // Delete a single row given by the ID in the URI
-
-//                Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
 
                 long folderId = ContentUris.parseId(uri);
 
@@ -663,14 +684,11 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
             case WORDS:
 
-                Log.e("pa", "I aaaaaam heeeeeereeeee 3");
-
-
+//                Log.e("pa", "I aaaaaam heeeeeereeeee 3");
 
                 if(mSettings.contains(SettingsContract.WORDS_AT_TIME)) {
                     mSettingWordsAtTime = mSettings.getInt(SettingsContract.WORDS_AT_TIME, 25);
                 }
-
 
                 String[] args = {selectionArgs[0]};
                 int skipInt = Integer.parseInt(selectionArgs[1]) * mSettingWordsAtTime;
@@ -681,9 +699,6 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                         + " = ? order by " + WordEntry._ID + " LIMIT " + skipInt + "," + mSettingWordsAtTime + ")";
 
                 rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, args);
-
-
-
 
                 // Delete all rows that match the selection and selection args
 //                rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, selectionArgs);
@@ -696,6 +711,12 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 selection = WordEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
                 rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, selectionArgs);
+                break;
+
+            case DECK_ID:
+                selection = DeckEntry._ID + "=?";
+                selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
+                rowsDeleted = database.delete(DeckEntry.TABLE_NAME, selection, selectionArgs);
                 break;
 
             default:

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="27"
+    api-level="28"
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
+    ir-eligibility="FIELD_ADDED"
     plugin-version="3.1.3"
-    timestamp="1547846014943"
+    timestamp="1548079506008"
     token="-7627957922794117916"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2949" />
+        duration="14585" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="123" />
+        duration="1072" />
     <task
         name="verifier"
-        duration="21" />
+        duration="624" />
 
     <artifact
         location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -30,7 +30,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1547845727043"
+        timestamp="1548073043379"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -74,8 +74,8 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1547846014943"
+        ir-eligibility="FIELD_ADDED"
+        timestamp="1548079506008"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_2.apk"

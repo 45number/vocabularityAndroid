@@ -36,6 +36,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.pets.data.DeckContract;
 import com.example.android.pets.data.WordContract;
 import com.example.android.pets.data.PetContract.PetEntry;
 
@@ -717,8 +718,18 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
                 } else {
 
-                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
-                            Toast.LENGTH_SHORT).show();
+                    View view1 = info.targetView;
+                    LinearLayout markedBadge1 = view1.findViewById(R.id.markedBadge);
+
+                    if (markedBadge1.getVisibility() == View.VISIBLE) {
+                        markDeckSwitch(infoId, true);
+                    } else {
+                        markDeckSwitch(infoId, false);
+                    }
+
+
+//                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
+//                            Toast.LENGTH_SHORT).show();
                 }
                 return true;
             case 1:
@@ -858,6 +869,26 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     }
 
 
+    private void markDeckSwitch(Long infoId, boolean isToCreate) {
+
+        Uri currentPetUri = ContentUris.withAppendedId(DeckContract.DeckEntry.CONTENT_URI, infoId);
+
+        ContentValues values = new ContentValues();
+        values.put(DeckContract.DeckEntry.COLUMN_DECK, infoId);
+        values.put(DeckContract.DeckEntry.COLUMN_FOLDER, getCurrentFolder());
+
+        if (isToCreate) {
+            //        Uri newUri =
+            getActivity().getContentResolver().insert(DeckContract.DeckEntry.CONTENT_URI, values);
+        } else {
+            //        int rowsDeleted =
+            getActivity().getContentResolver().delete(currentPetUri, null, null);
+        }
+
+        refreshDecks();
+    }
+
+
     @Override
     public void onBackPressed() {
         if (FoldersFragment.this.mTreePath.size() > 1) {
@@ -875,27 +906,17 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     }
 
 
-    /*private String getLastCharacters(String word, int number) {
-        if (word != null) {
-            if (word.length() == number) {
-                return word;
-            } else if (word.length() > number) {
-                return word.substring(word.length() - number);
-            } else {
-                return "no image";
-            }
-        } else {
-            return "image is null";
-        }
-    }*/
-
-
     private boolean isFolder(ImageView v) {
         if (v.getDrawable().getConstantState() == getResources().getDrawable( R.drawable.ic_deck).getConstantState())
             return false;
-
         return true;
     }
+
+//    private boolean isDeckMarked(ImageView v) {
+//        if (v.getDrawable().getConstantState() == getResources().getDrawable( R.drawable.ic_deck).getConstantState())
+//            return false;
+//        return true;
+//    }
 
 
 }

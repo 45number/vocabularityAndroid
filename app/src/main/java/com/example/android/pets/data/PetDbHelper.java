@@ -21,6 +21,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.android.pets.data.PetContract.PetEntry;
 import com.example.android.pets.data.WordContract.WordEntry;
+import com.example.android.pets.data.DeckContract.DeckEntry;
 //import com.example.android.pets.data.LanguagesContract.LanguagesEntry;
 
 /**
@@ -86,14 +87,10 @@ public class PetDbHelper extends SQLiteOpenHelper {
 
 
         // Create a String that contains the SQL statement to create the pets table
-        String SQL_CREATE_DECKS_TABLE =  "CREATE TABLE " + WordEntry.TABLE_NAME + " ("
-                + WordEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + WordEntry.COLUMN_WORD + " TEXT NOT NULL, "
-                + WordEntry.COLUMN_TRANSLATION + " TEXT NOT NULL, "
-                + WordEntry.COLUMN_FOLDER + " INTEGER NOT NULL,"
-                + WordEntry.COLUMN_LANGUAGE_LEARNING + " INTEGER NOT NULL,"
-                + WordEntry.COLUMN_REPEAT_MEM + " INTEGER NOT NULL DEFAULT 0,"
-                + WordEntry.COLUMN_REPEAT_SPELL + " INTEGER NOT NULL DEFAULT 0,"
+        String SQL_CREATE_DECKS_TABLE =  "CREATE TABLE " + DeckEntry.TABLE_NAME + " ("
+                + DeckEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + DeckEntry.COLUMN_DECK + " INTEGER NOT NULL, "
+                + DeckEntry.COLUMN_FOLDER + " INTEGER NOT NULL,"
                 + " FOREIGN KEY (" + WordEntry.COLUMN_FOLDER + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
                 + ");";
 
