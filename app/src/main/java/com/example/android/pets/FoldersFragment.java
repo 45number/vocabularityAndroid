@@ -156,6 +156,8 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                     args.putStringArray("selectionArgs", selectionArgs);
                     getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);
 
+                    Log.e(PATH_TREE + " onClick ", mTreePath.toString());
+
                 } else {
                     chooseMode(id);
                 }
@@ -901,11 +903,13 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         if (isToCreate) {
 //            Log.e("Mark", "Mark");
             //        Uri newUri =
+            Log.e(PATH_TREE + " onMark ", mTreePath.toString());
             ContentValues values = new ContentValues();
             values.put(DeckContract.DeckEntry.COLUMN_DECK, infoId);
             values.put(DeckContract.DeckEntry.COLUMN_FOLDER, getCurrentFolder().toString());
 
             getActivity().getContentResolver().insert(DeckContract.DeckEntry.CONTENT_URI, values);
+            Log.e(PATH_TREE + " onMark ", mTreePath.toString());
         } else {
 //            Log.e("UnMark", "UnMark");
 
