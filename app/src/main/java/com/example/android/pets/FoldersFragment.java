@@ -704,29 +704,33 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
 //                if ( !".png".equals(lastCharacters) ) {
                 if (isFolder(folderImage)) {
-//                if (mAdapterNumber == 0) {
-
 //                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
 //                            Toast.LENGTH_SHORT).show();
+//                    Log.e("opa", "0");
                     if (markedBadge.getVisibility() == View.VISIBLE) {
                         // Its visible
                         markFolder(infoId, false);
+                        Log.e("opa", "0 1");
                     } else {
                         // Either gone or invisible
                         markFolder(infoId, true);
+                        Log.e("opa", "0 2");
                     }
 
                 } else {
 
-                    View view1 = info.targetView;
-                    LinearLayout markedBadge1 = view1.findViewById(R.id.markedBadge);
+//                    View view1 = info.targetView;
+//                    LinearLayout markedBadge1 = view1.findViewById(R.id.markedBadge);
 
-                    if (markedBadge1.getVisibility() == View.VISIBLE) {
+//                    Log.e("opa", "1");
+                    if (markedBadge.getVisibility() == View.VISIBLE) {
                         markDeckSwitch(infoId, false);
+                        Log.e("opa", "1 1 " + getCurrentFolder());
                     } else {
                         markDeckSwitch(infoId, true);
+                        Log.e("opa", "1 2 " + getCurrentFolder());
                     }
-
+                    Log.e("Da da da", mTreePath.toString());
 
 //                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
 //                            Toast.LENGTH_SHORT).show();
@@ -872,7 +876,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     private void markDeckSwitch(Long infoId, boolean isToCreate) {
 
 //        Uri currentPetUri = ContentUris.withAppendedId(DeckContract.DeckEntry.CONTENT_URI, infoId);
-        
+
         if (isToCreate) {
 //            Log.e("Mark", "Mark");
             //        Uri newUri =
