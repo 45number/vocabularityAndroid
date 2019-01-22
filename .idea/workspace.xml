@@ -12,45 +12,13 @@
     <list default="true" id="d5e2b63f-b925-4f84-afbe-93a19f2f8cb9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$12.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$13.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$14.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$15.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$12.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$13.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$14.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$15.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$12.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$12.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$13.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$13.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$14.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$14.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$15.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$15.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/155/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/155/classes.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$12.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$13.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$14.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$15.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/buildId.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/buildId.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$12.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$13.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$14.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$15.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment.class" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,27 +41,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FoldersFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FoldersFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="152" column="9" lean-forward="false" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
+            <state relative-caret-position="-833">
+              <caret line="442" column="64" lean-forward="false" selection-start-line="442" selection-start-column="64" selection-end-line="442" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#22262#22263#0" expanded="true" />
-                <element signature="e#22309#22310#0" expanded="true" />
-                <element signature="e#30752#30753#0" expanded="true" />
-                <element signature="e#30810#30811#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditorActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/EditorActivity.java">
+      <file leaf-file-name="SettingsActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/SettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8432">
-              <caret line="558" column="13" lean-forward="false" selection-start-line="550" selection-start-column="12" selection-end-line="558" selection-end-column="13" />
+            <state relative-caret-position="362">
+              <caret line="93" column="31" lean-forward="false" selection-start-line="91" selection-start-column="16" selection-end-line="93" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CatalogActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/CatalogActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsContract.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/SettingsContract.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,8 +86,8 @@
       <file leaf-file-name="PetProvider.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12274">
-              <caret line="748" column="29" lean-forward="false" selection-start-line="747" selection-start-column="18" selection-end-line="748" selection-end-column="29" />
+            <state relative-caret-position="8585">
+              <caret line="520" column="0" lean-forward="false" selection-start-line="520" selection-start-column="0" selection-end-line="520" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#32428#32429#0" expanded="true" />
@@ -124,7 +108,22 @@
                 <element signature="e#33131#33132#0" expanded="true" />
                 <element signature="e#33173#33174#0" expanded="true" />
                 <element signature="e#33200#33201#0" expanded="true" />
-                <marker date="1548106479259" expanded="true" signature="5578:5682" ph="..." />
+                <marker date="1548193240428" expanded="true" signature="16158:16194" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="16249:16655" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="16702:17064" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="17227:17668" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="17885:18920" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="18982:20329" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="20389:21585" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="21726:22937" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="23311:24542" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="24648:26165" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="26344:31737" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="31862:32377" ph="{...}" />
+                <marker date="1548193240428" expanded="true" signature="32462:32485" ph="@{...}" />
+                <marker date="1548193240428" expanded="true" signature="32579:32602" ph="@{...}" />
+                <marker date="1548193240428" expanded="true" signature="33341:33349" ph="{}" />
+                <marker date="1548193240428" expanded="true" signature="33491:33499" ph="{}" />
               </folding>
             </state>
           </provider>
@@ -2257,7 +2256,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="533" />
     <option name="y" value="8" />
     <option name="width" value="697" />
@@ -2301,9 +2300,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -2487,10 +2486,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2500,7 +2499,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7450658" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45230263" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2513,13 +2512,35 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7450658" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21255673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2647,14 +2668,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-98">
           <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/StartupLanguagesFragment.java">
@@ -2666,8 +2687,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="29" />
+        <state relative-caret-position="362">
+          <caret line="93" column="31" lean-forward="false" selection-start-line="91" selection-start-column="16" selection-end-line="93" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2682,7 +2704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2718,8 +2739,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/CatalogActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2482">
-          <caret line="165" column="1" lean-forward="false" selection-start-line="165" selection-start-column="1" selection-end-line="165" selection-end-column="1" />
+        <state relative-caret-position="289">
+          <caret line="40" column="38" lean-forward="false" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2896,8 +2918,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/PetProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12274">
-          <caret line="748" column="29" lean-forward="false" selection-start-line="747" selection-start-column="18" selection-end-line="748" selection-end-column="29" />
+        <state relative-caret-position="8585">
+          <caret line="520" column="0" lean-forward="false" selection-start-line="520" selection-start-column="0" selection-end-line="520" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#32428#32429#0" expanded="true" />
@@ -2918,7 +2940,22 @@
             <element signature="e#33131#33132#0" expanded="true" />
             <element signature="e#33173#33174#0" expanded="true" />
             <element signature="e#33200#33201#0" expanded="true" />
-            <marker date="1548106479259" expanded="true" signature="5578:5682" ph="..." />
+            <marker date="1548193240428" expanded="true" signature="16158:16194" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="16249:16655" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="16702:17064" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="17227:17668" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="17885:18920" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="18982:20329" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="20389:21585" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="21726:22937" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="23311:24542" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="24648:26165" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="26344:31737" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="31862:32377" ph="{...}" />
+            <marker date="1548193240428" expanded="true" signature="32462:32485" ph="@{...}" />
+            <marker date="1548193240428" expanded="true" signature="32579:32602" ph="@{...}" />
+            <marker date="1548193240428" expanded="true" signature="33341:33349" ph="{}" />
+            <marker date="1548193240428" expanded="true" signature="33491:33499" ph="{}" />
           </folding>
         </state>
       </provider>
@@ -2940,14 +2977,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="152" column="9" lean-forward="false" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
+        <state relative-caret-position="-833">
+          <caret line="442" column="64" lean-forward="false" selection-start-line="442" selection-start-column="64" selection-end-line="442" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#22262#22263#0" expanded="true" />
-            <element signature="e#22309#22310#0" expanded="true" />
-            <element signature="e#30752#30753#0" expanded="true" />
-            <element signature="e#30810#30811#0" expanded="true" />
           </folding>
         </state>
       </provider>
