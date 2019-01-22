@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -39,6 +40,7 @@ import android.widget.Toast;
 import com.example.android.pets.data.DeckContract;
 import com.example.android.pets.data.WordContract;
 import com.example.android.pets.data.PetContract.PetEntry;
+import com.example.android.pets.data.pathItem;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -83,8 +85,10 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     private static final int RESULT_SETTINGS_LANGUAGES = 4;
     private static final int RESULT_FILE_EXPLORER = 5;
 
+    private static final String PATH_TREE = "path";
 
-    private ArrayList<Long> mTreePath = new ArrayList<>();
+
+    private ArrayList<pathItem> mTreePath = new ArrayList<>();
 
     int mFoldersQuantity;
 
@@ -101,7 +105,15 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 //        rootFab = ((CatalogActivity)getActivity()).getFab();
 //        rootFab.hide();
 
-        mTreePath.add(0L);
+
+        if(savedInstanceState == null || !savedInstanceState.containsKey(PATH_TREE)) {
+            mTreePath.add(new pathItem(0L));
+        } else {
+            mTreePath = savedInstanceState.getParcelableArrayList(PATH_TREE);
+        }
+
+
+
 
         // Setup FAB to open EditorActivity
         fab = rootView.findViewById(R.id.fab);
@@ -134,7 +146,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
                 if (mAdapterNumber == 0) {
-                    mTreePath.add(id);
+                    mTreePath.add(new pathItem(id));
 
                     Bundle args=new Bundle();
                     args.putString("selection", PetEntry.COLUMN_PARENT + " = ?");
@@ -437,17 +449,23 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
         Integer landId = getArguments().getInt("language_learning");
 
-        if (getCurrentFolder() != 0L) {
+        pathItem currentFolder = getCurrentFolder();
+
+        if (currentFolder.getId() != 0L) {
             args.putString("selection", PetEntry.COLUMN_PARENT + " = ? AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
 
             String parent = mTreePath.get(mTreePath.size() - 1).toString();
 
             String[] selectionArgs = {parent, landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
+
+            Log.e("0000000", "0000000000");
         } else {
             args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
             String[] selectionArgs = {landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
+
+            Log.e("1111111111", "111111111");
         }
 
         getLoaderManager().restartLoader(PET_LOADER, args, this);
@@ -455,8 +473,11 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     }
 
 
-
-
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putParcelableArrayList(PATH_TREE, mTreePath);
+        super.onSaveInstanceState(outState);
+    }
 
     private void chooseMode(final long deckId) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -785,7 +806,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     }
 
     private void onDeleteWordsPressed(final Long deck) {
-        final Long folder = getCurrentFolder();
+        final pathItem folder = getCurrentFolder();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.delete_deck_title);
@@ -820,7 +841,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     }
 
 
-    private void deleteDeck(Long folder, Long deck) {
+    private void deleteDeck(pathItem folder, Long deck) {
         String [] arguments = new String[2];
         arguments[0] = folder.toString();
         arguments[1] = deck.toString();
@@ -856,7 +877,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
 
 
-    private Long getCurrentFolder() {
+    private pathItem getCurrentFolder() {
         return mTreePath.get(mTreePath.size() - 1);
     }
 
@@ -882,7 +903,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             //        Uri newUri =
             ContentValues values = new ContentValues();
             values.put(DeckContract.DeckEntry.COLUMN_DECK, infoId);
-            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, getCurrentFolder());
+            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, getCurrentFolder().toString());
 
             getActivity().getContentResolver().insert(DeckContract.DeckEntry.CONTENT_URI, values);
         } else {
@@ -913,9 +934,11 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     public void onBackPressed() {
         if (FoldersFragment.this.mTreePath.size() > 1) {
 
+
             mTreePath.remove(mTreePath.size() - 1);
 
             refreshDecks();
+            Log.e("opa", mTreePath.toString());
 
             return;
         }
