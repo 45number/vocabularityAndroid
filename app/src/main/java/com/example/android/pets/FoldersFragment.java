@@ -827,7 +827,9 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     }
 
     private void onDeleteWordsPressed(final Long deck) {
-        final pathItem folder = getCurrentFolder();
+
+        final pathItem folder = new pathItem(mSettings.getLong(SettingsContract.LAST_FOLDER, 0));
+//                getCurrentFolder();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.delete_deck_title);

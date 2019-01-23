@@ -20,102 +20,38 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$10.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$11.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$11.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$12.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$13.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$14.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$15.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$3$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$3$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$3.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$4.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$5.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$6.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$7.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$8.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment$9.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/FoldersFragment.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/data/SettingsContract.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/android/pets/data/SettingsContract.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$10.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$11.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$11.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$12.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$13.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$14.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$15.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$3$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$3$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$3.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$4.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$5.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$6.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$7.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$8.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment$9.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/FoldersFragment.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/data/SettingsContract.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/android/pets/data/SettingsContract.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/processInstantRunDebugResourcesApk/package_resources-debug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/processInstantRunDebugResourcesApk/package_resources-debug/dex-renamer-state.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/resources/instant-run/debug/resources-debug.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/instant-run/debug/resources-debug.apk" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$1.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$1.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$10.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$10.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$11.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$11.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$12.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$12.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$13.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$13.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$14.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$14.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$15.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$15.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$2.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$2.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$3$1.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$3$1.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$3.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$3.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$4.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$4.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$5.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$5.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$6.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$6.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$7.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$7.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$8.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$8.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$9.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment$9.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/FoldersFragment.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/data/SettingsContract.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/546/com/example/android/pets/data/SettingsContract.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/155/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/155/classes.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$10.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$11.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$11.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$12.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$13.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$14.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$15.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$3$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$3$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$3.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$4.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$5.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$6.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$7.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$8.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment$9.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/FoldersFragment.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/data/SettingsContract.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/example/android/pets/data/SettingsContract.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/buildId.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/buildId.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$10.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$11.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$11.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$12.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$13.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$14.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$15.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$3$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$3$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$3.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$4.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$5.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$6.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$7.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$8.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment$9.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/FoldersFragment.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/data/SettingsContract.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/2/com/example/android/pets/data/SettingsContract.class" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/SettingsContract.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/SettingsContract.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -141,8 +77,8 @@
       <file leaf-file-name="FoldersFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-299">
-              <caret line="753" column="21" lean-forward="true" selection-start-line="753" selection-start-column="21" selection-end-line="753" selection-end-column="21" />
+            <state relative-caret-position="-527">
+              <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
               <folding>
                 <element signature="e#3579#3734#0" expanded="true" />
                 <element signature="e#3733#3734#0" expanded="true" />
@@ -168,22 +104,14 @@
                 <element signature="e#20397#20398#0" expanded="true" />
                 <element signature="e#20438#20812#0" expanded="true" />
                 <element signature="e#20811#20812#0" expanded="true" />
-                <element signature="e#28729#28757#0" expanded="true" />
-                <element signature="e#28787#28813#0" expanded="true" />
-                <element signature="e#28850#28868#0" expanded="true" />
                 <element signature="e#28870#29037#0" expanded="true" />
                 <element signature="e#29036#29037#0" expanded="true" />
-                <element signature="e#29074#29098#0" expanded="true" />
                 <element signature="e#29100#29323#0" expanded="true" />
                 <element signature="e#29322#29323#0" expanded="true" />
-                <element signature="e#29628#29654#0" expanded="true" />
-                <element signature="e#29684#29708#0" expanded="true" />
-                <element signature="e#29745#29763#0" expanded="true" />
-                <element signature="e#29765#29936#0" expanded="true" />
-                <element signature="e#29935#29936#0" expanded="true" />
-                <element signature="e#29973#29997#0" expanded="true" />
-                <element signature="e#29999#30222#0" expanded="true" />
-                <element signature="e#30221#30222#0" expanded="true" />
+                <element signature="e#29850#30021#0" expanded="true" />
+                <element signature="e#30020#30021#0" expanded="true" />
+                <element signature="e#30084#30307#0" expanded="true" />
+                <element signature="e#30306#30307#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -341,7 +269,6 @@
       <find>delete</find>
       <find>CONTENT_URI</find>
       <find>chooseMode</find>
-      <find>deleteDeck</find>
       <find>refreshDecks</find>
       <find>getcurre</find>
       <find>refre</find>
@@ -356,6 +283,7 @@
       <find>Da da da</find>
       <find>markDeck</find>
       <find>markDeckSwitch</find>
+      <find>deleteDeck</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2644,7 +2572,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2660,7 +2587,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21255673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21255673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3017,6 +2944,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8432">
           <caret line="558" column="13" lean-forward="false" selection-start-line="550" selection-start-column="12" selection-end-line="558" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3098,14 +3026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/SettingsContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
@@ -3114,10 +3034,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/data/SettingsContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-299">
-          <caret line="753" column="21" lean-forward="true" selection-start-line="753" selection-start-column="21" selection-end-line="753" selection-end-column="21" />
+        <state relative-caret-position="-527">
+          <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
           <folding>
             <element signature="e#3579#3734#0" expanded="true" />
             <element signature="e#3733#3734#0" expanded="true" />
@@ -3143,22 +3071,14 @@
             <element signature="e#20397#20398#0" expanded="true" />
             <element signature="e#20438#20812#0" expanded="true" />
             <element signature="e#20811#20812#0" expanded="true" />
-            <element signature="e#28729#28757#0" expanded="true" />
-            <element signature="e#28787#28813#0" expanded="true" />
-            <element signature="e#28850#28868#0" expanded="true" />
             <element signature="e#28870#29037#0" expanded="true" />
             <element signature="e#29036#29037#0" expanded="true" />
-            <element signature="e#29074#29098#0" expanded="true" />
             <element signature="e#29100#29323#0" expanded="true" />
             <element signature="e#29322#29323#0" expanded="true" />
-            <element signature="e#29628#29654#0" expanded="true" />
-            <element signature="e#29684#29708#0" expanded="true" />
-            <element signature="e#29745#29763#0" expanded="true" />
-            <element signature="e#29765#29936#0" expanded="true" />
-            <element signature="e#29935#29936#0" expanded="true" />
-            <element signature="e#29973#29997#0" expanded="true" />
-            <element signature="e#29999#30222#0" expanded="true" />
-            <element signature="e#30221#30222#0" expanded="true" />
+            <element signature="e#29850#30021#0" expanded="true" />
+            <element signature="e#30020#30021#0" expanded="true" />
+            <element signature="e#30084#30307#0" expanded="true" />
+            <element signature="e#30306#30307#0" expanded="true" />
           </folding>
         </state>
       </provider>
