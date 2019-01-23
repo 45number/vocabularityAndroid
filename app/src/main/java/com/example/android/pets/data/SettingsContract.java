@@ -21,5 +21,5 @@ public class SettingsContract {
     public static final String IS_LOOPED = "isLooped";
     public static final String IS_DIRECTION_REVERSED = "isDirectionReversed";
 
-
+    public static final String LAST_FOLDER = "lastFolder";
 }

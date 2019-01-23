@@ -8,6 +8,7 @@ import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
@@ -38,6 +39,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.pets.data.DeckContract;
+import com.example.android.pets.data.SettingsContract;
 import com.example.android.pets.data.WordContract;
 import com.example.android.pets.data.PetContract.PetEntry;
 import com.example.android.pets.data.pathItem;
@@ -66,6 +68,8 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
     private int mAdapterNumber;
     ListView petListView;
 
+
+    SharedPreferences mSettings;
 
     View rootView;
     FloatingActionButton fab;
@@ -102,6 +106,9 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         rootView = inflater.inflate(R.layout.fragment_folders, container, false);
 
 
+        mSettings = getContext().getSharedPreferences(SettingsContract.APP_PREFERENCES, getContext().MODE_PRIVATE);
+
+
 //        rootFab = ((CatalogActivity)getActivity()).getFab();
 //        rootFab.hide();
 
@@ -111,8 +118,6 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         } else {
             mTreePath = savedInstanceState.getParcelableArrayList(PATH_TREE);
         }
-
-
 
 
         // Setup FAB to open EditorActivity
@@ -155,6 +160,10 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                     String[] selectionArgs = {idString};
                     args.putStringArray("selectionArgs", selectionArgs);
                     getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);
+
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    editor.putLong(SettingsContract.LAST_FOLDER, getCurrentFolder().getId());
+                    editor.apply();
 
                     Log.e(PATH_TREE + " onClick ", mTreePath.toString());
 
@@ -451,17 +460,21 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
         Integer landId = getArguments().getInt("language_learning");
 
-        pathItem currentFolder = getCurrentFolder();
+//        pathItem currentFolder = getCurrentFolder();
 
-        if (currentFolder.getId() != 0L) {
+
+        if (mSettings.getLong(SettingsContract.LAST_FOLDER, 0) != 0L) {
             args.putString("selection", PetEntry.COLUMN_PARENT + " = ? AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
 
-            String parent = mTreePath.get(mTreePath.size() - 1).toString();
+            Long parentLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
+            String parent = parentLong.toString();
+//                    mTreePath.get(mTreePath.size() - 1).toString();
 
             String[] selectionArgs = {parent, landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
 
             Log.e("0000000", "0000000000");
+            Log.e("0000000", parent);
         } else {
             args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
             String[] selectionArgs = {landId.toString()};
@@ -733,30 +746,36 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                     if (markedBadge.getVisibility() == View.VISIBLE) {
                         // Its visible
                         markFolder(infoId, false);
-                        Log.e("opa", "0 1");
+//                        Log.e("opa", "0 1");
                     } else {
                         // Either gone or invisible
                         markFolder(infoId, true);
-                        Log.e("opa", "0 2");
+//                        Log.e("opa", "0 2");
                     }
 
                 } else {
 
 //                    View view1 = info.targetView;
 //                    LinearLayout markedBadge1 = view1.findViewById(R.id.markedBadge);
-
 //                    Log.e("opa", "1");
+
                     if (markedBadge.getVisibility() == View.VISIBLE) {
                         markDeckSwitch(infoId, false);
-                        Log.e("opa", "1 1 " + getCurrentFolder());
+//                        Log.e("opa", "1 1 " + getCurrentFolder());
+                        markedBadge.setVisibility(View.INVISIBLE);
+
                     } else {
                         markDeckSwitch(infoId, true);
-                        Log.e("opa", "1 2 " + getCurrentFolder());
-                    }
-                    Log.e("Da da da", mTreePath.toString());
+//                        Log.e("opa", "1 2 " + getCurrentFolder());
+                        markedBadge.setVisibility(View.VISIBLE);
 
+                    }
+
+//                    Log.e("Da da da", mTreePath.toString());
+//                    refreshDecks();
 //                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
 //                            Toast.LENGTH_SHORT).show();
+
                 }
                 return true;
             case 1:
@@ -906,7 +925,9 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             Log.e(PATH_TREE + " onMark ", mTreePath.toString());
             ContentValues values = new ContentValues();
             values.put(DeckContract.DeckEntry.COLUMN_DECK, infoId);
-            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, getCurrentFolder().toString());
+            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, mSettings.getLong(SettingsContract.LAST_FOLDER, 0));
+
+//            getCurrentFolder().toString()
 
             getActivity().getContentResolver().insert(DeckContract.DeckEntry.CONTENT_URI, values);
             Log.e(PATH_TREE + " onMark ", mTreePath.toString());
@@ -915,22 +936,25 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
             String selection = DeckContract.DeckEntry.COLUMN_FOLDER + " = ? AND " + DeckContract.DeckEntry.COLUMN_DECK + " = ?";
             String[] selectionArgs = new String[2];
-            selectionArgs[0] = getCurrentFolder().toString();
+            Long folderLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
+            selectionArgs[0] = folderLong.toString();
             selectionArgs[1] = infoId.toString();
 
 //                    int rowsDeleted =
             getActivity().getContentResolver().delete(DeckContract.DeckEntry.CONTENT_URI, selection, selectionArgs);
 
-/*            if (rowsDeleted == 0) {
-                // If no rows were deleted, then there was an error with the delete.
-                Log.e("Deleted", "Successful");
-            } else {
-                // Otherwise, the delete was successful and we can display a toast.
-                Log.e("Deleted", "UnSuccessful Error");
-            }*/
         }
 
         refreshDecks();
+
+//        Bundle args=new Bundle();
+//        args.putString("selection", PetEntry.COLUMN_PARENT + " = ?");
+//        Long idLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
+//        String idString = idLong.toString();
+//        String[] selectionArgs = {idString};
+//        args.putStringArray("selectionArgs", selectionArgs);
+//        getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);
+
     }
 
 
@@ -940,6 +964,10 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
 
             mTreePath.remove(mTreePath.size() - 1);
+
+            SharedPreferences.Editor editor = mSettings.edit();
+            editor.putLong(SettingsContract.LAST_FOLDER, mTreePath.get(mTreePath.size() - 1).getId());
+            editor.apply();
 
             refreshDecks();
             Log.e("opa", mTreePath.toString());
