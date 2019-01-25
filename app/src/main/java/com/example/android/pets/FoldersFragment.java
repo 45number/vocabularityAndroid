@@ -56,7 +56,8 @@ import android.os.Handler;
 
 
 
-public class FoldersFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, OnBackPressed {
+public class FoldersFragment extends Fragment
+        implements LoaderManager.LoaderCallbacks<Cursor>, OnBackPressed /*, refreshDecksDogNail*/ {
 
     private static final int PET_LOADER = 0;
 
@@ -409,21 +410,21 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
     private void addFolder() {
         Intent intent = new Intent(getActivity(), EditorActivity.class);
-        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1));
+        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
         intent.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivity(intent);
     }
 
     private void addWords() {
         Intent intent = new Intent(getActivity(), WordEditorActivity.class);
-        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1));
+        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
         intent.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivityForResult(intent, 1);
     }
 
     private void uploadExcel() {
         Intent intent1 = new Intent(getActivity(), FileChooser.class);
-        intent1.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1));
+        intent1.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
         intent1.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivityForResult(intent1,RESULT_FILE_EXPLORER);
     }
@@ -454,7 +455,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         }
     }
 
-    private void refreshDecks() {
+    public void refreshDecks() {
 
         Bundle args=new Bundle();
 
@@ -509,7 +510,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
                 alertDialog.dismiss();
 
                 Intent intent = new Intent(getActivity(), MemorizeActivity.class);
-                intent.putExtra("folder", mTreePath.get(mTreePath.size() - 1));
+                intent.putExtra("folder", mTreePath.get(mTreePath.size() - 1).getId());
                 intent.putExtra("deck", deckId);
                 startActivity(intent);
 
@@ -523,7 +524,7 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             public void onClick(View view) {
                 alertDialog.dismiss();
                 Intent intent = new Intent(getActivity(), SpellingActivity.class);
-                intent.putExtra("folder", mTreePath.get(mTreePath.size() - 1));
+                intent.putExtra("folder", mTreePath.get(mTreePath.size() - 1).getId());
                 intent.putExtra("deck", deckId);
                 startActivity(intent);
             }
@@ -647,7 +648,6 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             if ( mMemQuantity > 0 || mSpellQuantity > 0 ) {
                 fab = rootView.findViewById(R.id.fab);
                 fab.show();
-//                Log.e("jk", "Jooooooooooooooooooopaaaaaaaaaaaaaaaaaaaa");
             } else {
 //                Log.e("jk", "Sraka");
 //                fab.setVisibility(View.GONE);
@@ -655,7 +655,6 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 
                 fab = rootView.findViewById(R.id.fab);
                 fab.hide();
-//                Log.e("jk", "Srachnaya");
 
             }
 
@@ -877,8 +876,24 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 //        petListView.removeViewsInLayout(1, 2);
 //        petListView.removeView(petListView.getChildAt(2));
 
-        refreshMemWords();
-        refreshDecks();
+//        mCursorAdapter.
+
+//        petListView.
+
+//        refreshMemWords();
+//        refreshDecks();
+
+//        petListView.set
+//        View emptyView = rootView.findViewById(R.id.empty_view);
+//        petListView.setEmptyView(emptyView);
+
+
+//        ((CatalogActivity.java).getActivity()).opop();
+//        mTreePath.remove(mTreePath.size() - 1);
+
+
+        ((CatalogActivity)getActivity()).refreshDecksDogNail();
+
 
         mCursorAdapter.notifyDataSetChanged();
     }
@@ -988,12 +1003,18 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
         }
     }
 
+//    @Override
+//    public void refreshDecksDogNail() {
+//
+//    }
+
 
     private boolean isFolder(ImageView v) {
         if (v.getDrawable().getConstantState() == getResources().getDrawable( R.drawable.ic_deck).getConstantState())
             return false;
         return true;
     }
+
 
 //    private boolean isDeckMarked(ImageView v) {
 //        if (v.getDrawable().getConstantState() == getResources().getDrawable( R.drawable.ic_deck).getConstantState())

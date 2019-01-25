@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.example.android.pets.data.SettingsContract;
 
@@ -135,6 +136,14 @@ public class CatalogActivity extends AppCompatActivity implements
         }
     }
 
+
+    public void refreshDecksDogNail() {
+        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
+        ((FoldersFragment)f).refreshDecks();
+        return;
+    }
+
+
     @Override
     public void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -144,6 +153,7 @@ public class CatalogActivity extends AppCompatActivity implements
         fragmentTransaction.addToBackStack(fragment.toString());
         fragmentTransaction.commit();
     }
+
 
 /*    public int returnCurrentFragment() {
 //        mAdapter.DetailOnPageChangeListener().get
