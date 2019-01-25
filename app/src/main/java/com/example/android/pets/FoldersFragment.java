@@ -873,8 +873,15 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
 //        Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, folder);
         getActivity().getContentResolver().delete(WordContract.WordEntry.CONTENT_URI, selectionClause, arguments);
 
+//        petListView.remove
+//        mCursorAdapter.remove
+//        petListView.removeViewsInLayout(1, 2);
+//        petListView.removeView(petListView.getChildAt(2));
+
         refreshMemWords();
         refreshDecks();
+
+        mCursorAdapter.notifyDataSetChanged();
     }
 
 
