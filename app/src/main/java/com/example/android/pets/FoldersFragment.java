@@ -645,7 +645,6 @@ public class FoldersFragment extends Fragment implements LoaderManager.LoaderCal
             mSpellQuantity = data.getInt(spellColumnIndex);
 
             if ( mMemQuantity > 0 || mSpellQuantity > 0 ) {
-//                rootFab = ((CatalogActivity)getActivity()).getFab();
                 fab = rootView.findViewById(R.id.fab);
                 fab.show();
 //                Log.e("jk", "Jooooooooooooooooooopaaaaaaaaaaaaaaaaaaaa");
