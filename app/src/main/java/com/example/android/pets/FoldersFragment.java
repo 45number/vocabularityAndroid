@@ -306,41 +306,6 @@ public class FoldersFragment extends Fragment
         return super.onOptionsItemSelected(item);
     }
 
-    /*
-    private void pickAddingOption() {
-        final String[] mCatsName ={"Add folder", "Add words", "Upload from excel"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setItems(mCatsName, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int item) {
-                switch (item) {
-                    // Respond to a click on the "Insert dummy data" menu option
-                    case 0:
-                        addFolder();
-                        break;
-                    case 1:
-                        addWords();
-                        break;
-                    case 2:
-                        
-                        break;
-                }
-            }
-        });
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    } */
-
-
-
-
-
-
-
-
-
-
-
     private void chooseAddMode(boolean folderEnabled, boolean wordsEnabled, boolean excelEnabled) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
