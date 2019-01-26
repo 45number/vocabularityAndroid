@@ -267,12 +267,14 @@ public class FoldersFragment extends Fragment
         ((CatalogActivity)getActivity()).refreshDecks();
         ((CatalogActivity)getActivity()).refreshMemWords();*/
 
-       /* Bundle repeatArgs = new Bundle();
+//        ((CatalogActivity)getActivity()).refreshMemWords();
+
+        Bundle repeatArgs = new Bundle();
         Integer repeatLangLearningInteger = getArguments().getInt("language_learning");
         String repeatLangLearning = repeatLangLearningInteger.toString();
         String[] repeatSelectionArgs = new String[]{ "1",  repeatLangLearning};
         repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
-        getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);*/
+        getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
     }
 
     @Override
