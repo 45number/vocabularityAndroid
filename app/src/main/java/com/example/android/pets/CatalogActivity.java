@@ -137,7 +137,7 @@ public class CatalogActivity extends AppCompatActivity implements
     }
 
 
-    public void refreshDecksDogNail() {
+    public void refreshDecks() {
         Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
         ((FoldersFragment)f).refreshDecks();
         return;
@@ -152,12 +152,19 @@ public class CatalogActivity extends AppCompatActivity implements
 
     @Override
     public void replaceFragment(Fragment fragment) {
+
+//        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
+//        ((FoldersFragment)f).clearTreePath();
+//        ((FoldersFragment)f).refreshDecks();
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment, fragment.toString());
-//        Log.e("barbara straizand", fragment.toString());
         fragmentTransaction.addToBackStack(fragment.toString());
         fragmentTransaction.commit();
+
+//        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
+//        ((FoldersFragment)f).clearTreePath();
     }
 
 

@@ -167,10 +167,13 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 //                    Log.e("Case ", "two");
 
 //                selection == PetEntry.COLUMN_PARENT + " = ?"
+                String selection1 =  PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?";
+                String selection2 = PetEntry.COLUMN_PARENT + " = ?";
+                String selection3 = PetEntry.COLUMN_PARENT + " = ? AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?";
 
 
-                if (selection != PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?"
-                        && cursor.getCount() == 0) {
+                if ((selection == selection2 && cursor.getCount() == 0) ||
+                        (selection == selection3 && cursor.getCount() == 0)) {
 
                     String[] select = {selectionArgs[0]};
                     Double wordsInFolder = countWordsInFolder1(select);
