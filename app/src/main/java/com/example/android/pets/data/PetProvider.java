@@ -176,6 +176,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                         (selection == selection2 && cursor.getCount() == 0) ||
                         (selection == selection3 && cursor.getCount() == 0)
                         ) {
+
                     String[] select = {selectionArgs[0]};
                     Double wordsInFolder = countWordsInFolder1(select);
 
@@ -377,10 +378,6 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         String[] projection = {
                 DeckEntry._ID
         };
-
-//        ,
-//        DeckEntry.COLUMN_DECK,
-//                DeckEntry.COLUMN_FOLDER
 
         String selection = DeckEntry.COLUMN_FOLDER + " = ? AND " + DeckEntry.COLUMN_DECK + " = ? ";
 
@@ -728,8 +725,6 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
             case WORDS:
 
-//                Log.e("pa", "I aaaaaam heeeeeereeeee 3");
-
                 if(mSettings.contains(SettingsContract.WORDS_AT_TIME)) {
                     mSettingWordsAtTime = mSettings.getInt(SettingsContract.WORDS_AT_TIME, 25);
                 }
@@ -737,16 +732,68 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 String[] args = {selectionArgs[0]};
                 int skipInt = Integer.parseInt(selectionArgs[1]) * mSettingWordsAtTime;
 
-
                 selection = WordEntry._ID + " in (select " + WordEntry._ID + " from "
                         + WordEntry.TABLE_NAME + " where " + WordEntry.COLUMN_FOLDER
                         + " = ? order by " + WordEntry._ID + " LIMIT " + skipInt + "," + mSettingWordsAtTime + ")";
 
                 rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, args);
 
-                // Delete all rows that match the selection and selection args
-//                rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, selectionArgs);
+                String selectionDeck = DeckEntry.COLUMN_FOLDER + " = ? AND " + DeckEntry.COLUMN_DECK + " = ?";
+                int rowsDeleted1 = database.delete(DeckEntry.TABLE_NAME, selectionDeck, selectionArgs);
+
+
+
+                Integer deckNumber = Integer.parseInt(selectionArgs[1]);
+//                Log.e("deckNumber", ""+deckNumber);
+
+                String selectionDeck1 = DeckEntry.COLUMN_FOLDER + " = ? ";
+                String[] projectionDeck1 = {
+                        DeckEntry._ID,
+                        DeckEntry.COLUMN_DECK,
+                        DeckEntry.COLUMN_FOLDER
+                };
+                Cursor cursorDeck1 = database.query(DeckEntry.TABLE_NAME, projectionDeck1, selectionDeck1,
+                    args, null, null, DeckEntry.COLUMN_DECK);
+                cursorDeck1.moveToFirst();
+                for (int c = 0; c < cursorDeck1.getCount(); c++) {
+                    int idColumnIndexDeck1 = cursorDeck1.getColumnIndex(DeckEntry._ID);
+                    int deckColumnIndexDeck1 = cursorDeck1.getColumnIndex(DeckEntry.COLUMN_DECK);
+                    int folderColumnIndexDeck1 = cursorDeck1.getColumnIndex(DeckEntry.COLUMN_FOLDER);
+
+                    Integer deckId = cursorDeck1.getInt(idColumnIndexDeck1);
+                    Integer deckName = cursorDeck1.getInt(deckColumnIndexDeck1);
+                    Integer folderName = cursorDeck1.getInt(folderColumnIndexDeck1);
+
+//                    Log.e("deckName", ""+deckName);
+//                    Log.e("deckNumber", ""+deckNumber);
+
+                    if (deckName > deckNumber) {
+
+                        String selectionDeck2 = DeckEntry._ID + " = ? ";
+                        String[] selectionArgsDeck2 = {deckId.toString()};
+                        int rowsDeleted2 = database.delete(DeckEntry.TABLE_NAME, selectionDeck2, selectionArgsDeck2);
+
+//                        Log.e("yes", "yew");
+
+                        ContentValues valuesDeck2 = new ContentValues();
+                        valuesDeck2.put(DeckEntry.COLUMN_DECK, deckName - 1);
+                        valuesDeck2.put(DeckEntry.COLUMN_FOLDER, folderName);
+                        insertDeck(DeckEntry.CONTENT_URI, valuesDeck2);
+
+                    }
+
+                    cursorDeck1.moveToNext();
+                }
+
+
+//                String[] select = {selectionArgs[0]};
+//                Double wordsInFolder = countWordsInFolder1(args);
+//                double decksQuantity =  Math.ceil(wordsInFolder / mSettingWordsAtTime);
+//                double moduloDouble = wordsInFolder % mSettingWordsAtTime;
+//                int modulo = (int) moduloDouble;
+
                 break;
+
             case WORD_ID:
 
 //                Log.e("pa", "I aaaaaam heeeeeereeeee 4");
