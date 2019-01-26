@@ -143,6 +143,12 @@ public class CatalogActivity extends AppCompatActivity implements
         return;
     }
 
+    public void refreshMemWords() {
+        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
+        ((FoldersFragment)f).refreshMemWords();
+        return;
+    }
+
 
     @Override
     public void replaceFragment(Fragment fragment) {

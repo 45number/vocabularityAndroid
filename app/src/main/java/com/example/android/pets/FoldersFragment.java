@@ -198,6 +198,7 @@ public class FoldersFragment extends Fragment
 //        or " + PetEntry.COLUMN_PARENT + "= ?
 
 
+
         Bundle args=new Bundle();
         args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
 //        String idString = "";
@@ -207,8 +208,8 @@ public class FoldersFragment extends Fragment
         String[] selectionArgs = {/*idString, */langLearning};
         args.putStringArray("selectionArgs", selectionArgs);
         getLoaderManager().initLoader(PET_LOADER, args, FoldersFragment.this);
-
 //        getLoaderManager().initLoader(PET_LOADER, null, FoldersFragment.this);
+
 
 
         Bundle repeatArgs = new Bundle();
@@ -426,27 +427,19 @@ public class FoldersFragment extends Fragment
 
         Integer landId = getArguments().getInt("language_learning");
 
-//        pathItem currentFolder = getCurrentFolder();
-
-
         if (mSettings.getLong(SettingsContract.LAST_FOLDER, 0) != 0L) {
             args.putString("selection", PetEntry.COLUMN_PARENT + " = ? AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
 
             Long parentLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
             String parent = parentLong.toString();
-//                    mTreePath.get(mTreePath.size() - 1).toString();
 
             String[] selectionArgs = {parent, landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
 
-            Log.e("0000000", "0000000000");
-            Log.e("0000000", parent);
         } else {
             args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
             String[] selectionArgs = {landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
-
-            Log.e("1111111111", "111111111");
         }
 
         getLoaderManager().restartLoader(PET_LOADER, args, this);
@@ -823,7 +816,8 @@ public class FoldersFragment extends Fragment
 //        Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
         getActivity().getContentResolver().delete(currentPetUri, selectionClause, arguments);
 
-        refreshMemWords();
+//        refreshMemWords();
+        ((CatalogActivity)getActivity()).refreshMemWords();
     }
 
 
@@ -831,40 +825,17 @@ public class FoldersFragment extends Fragment
         String [] arguments = new String[2];
         arguments[0] = folder.toString();
         arguments[1] = deck.toString();
-//        String selectionClause = PetEntry._ID + " = ?";
         String selectionClause = PetEntry._ID + " = ?";
-//        Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, folder);
         getActivity().getContentResolver().delete(WordContract.WordEntry.CONTENT_URI, selectionClause, arguments);
 
-//        petListView.remove
-//        mCursorAdapter.remove
-//        petListView.removeViewsInLayout(1, 2);
-//        petListView.removeView(petListView.getChildAt(2));
-
-//        mCursorAdapter.
-
-//        petListView.
-
-//        refreshMemWords();
-//        refreshDecks();
-
-//        petListView.set
-//        View emptyView = rootView.findViewById(R.id.empty_view);
-//        petListView.setEmptyView(emptyView);
-
-
-//        ((CatalogActivity.java).getActivity()).opop();
-//        mTreePath.remove(mTreePath.size() - 1);
-
-
         ((CatalogActivity)getActivity()).refreshDecksDogNail();
-
+        ((CatalogActivity)getActivity()).refreshMemWords();
 
         mCursorAdapter.notifyDataSetChanged();
     }
 
 
-    private void refreshMemWords() {
+    public void refreshMemWords() {
         Bundle repeatArgs = new Bundle();
         Integer repeatLangLearningInteger = getArguments().getInt("language_learning");
         String repeatLangLearning = repeatLangLearningInteger.toString();

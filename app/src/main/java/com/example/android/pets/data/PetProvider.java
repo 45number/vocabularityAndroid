@@ -161,9 +161,16 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 }
                 cursor = matrixCursor1;
 
+//                if (selection == PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?")
+//                    Log.e("Case ", "one");
+//                else
+//                    Log.e("Case ", "two");
+
+//                selection == PetEntry.COLUMN_PARENT + " = ?"
 
 
-                if (cursor.getCount() == 0) {
+                if (selection != PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?"
+                        && cursor.getCount() == 0) {
 
                     String[] select = {selectionArgs[0]};
                     Double wordsInFolder = countWordsInFolder1(select);
@@ -385,9 +392,12 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
     }
 
     public Double countWordsInFolder1(String[] select) {
+        /*select = new String[1];
+        select[0] = "10";*/
         SQLiteDatabase database = mDbHelper.getReadableDatabase();
         Long wordsInFolder1 = DatabaseUtils.queryNumEntries(database, WordEntry.TABLE_NAME,
                 WordEntry.COLUMN_FOLDER + "=?", select);
+//        Log.e(WordEntry.COLUMN_FOLDER, ""+select[0]);
         Double wordsInFolder = wordsInFolder1.doubleValue();
         return wordsInFolder;
     }
