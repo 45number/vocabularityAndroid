@@ -305,7 +305,6 @@ public class FoldersFragment extends Fragment
 //                    alertDialog.show();
 //                    addFolder();
                     chooseAddMode(true, false, false);
-//                    pickAddingOption();
                     return true;
                 } else if (mAdapterNumber == 1) {
 //                    addWords();
