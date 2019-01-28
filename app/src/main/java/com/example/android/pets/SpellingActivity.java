@@ -8,6 +8,7 @@ import android.content.Loader;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.content.ContextCompat;
@@ -32,6 +33,7 @@ import android.widget.ToggleButton;
 import com.example.android.pets.data.SettingsContract;
 import com.example.android.pets.data.WordContract.WordEntry;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -85,8 +87,14 @@ public class SpellingActivity extends AppCompatActivity implements
 
     private boolean mIsCorrectAnswer = false;
 
+    private int mLearningLanguage;
+
 
     private int mWrongWordCursorPosition;
+
+    static final String AUDIO_PATH =
+            "https://translate.google.com/translate_tts?ie=UTF-8&tl=ar-AR&client=tw-ob&q=";
+    private MediaPlayer mediaPlayer;
 
 
 
@@ -226,8 +234,11 @@ public class SpellingActivity extends AppCompatActivity implements
                 new Thread(new Runnable() {
                     public void run() {
                         if(s != TextToSpeech.ERROR) {
-                            tts.setPitch(1.1f); // saw from internet
-                            tts.setLanguage(Locale.UK);
+                            tts.setPitch(1.1f);
+                            if (mLearningLanguage==1)
+                                tts.setLanguage(Locale.UK);
+                            else if (mLearningLanguage==2)
+                                tts.setLanguage(new Locale("ru"));
                         }
                     }
                 }).start();
@@ -335,7 +346,8 @@ public class SpellingActivity extends AppCompatActivity implements
         mSpeakButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ConvertTextToSpeech();
+                playAudio(AUDIO_PATH + mWord);
+//                ConvertTextToSpeech();
             }
         });
 
@@ -371,6 +383,40 @@ public class SpellingActivity extends AppCompatActivity implements
 
 
 
+    private void playAudio(final String url) {
+        if (mLearningLanguage == 3) {
+            new Thread(new Runnable() {
+                public void run() {
+                    killMediaPlayer();
+                    mediaPlayer = new MediaPlayer();
+                    try {
+                        mediaPlayer.setDataSource(url);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        mediaPlayer.prepare();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    mediaPlayer.start();
+                }
+            }).start();
+        } else {
+            ConvertTextToSpeech();
+        }
+    }
+
+    private void killMediaPlayer() {
+        if(mediaPlayer!=null) {
+            try {
+                mediaPlayer.release();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 //    @Override
 //    protected void onSaveInstanceState (Bundle outState) {
 //        super.onSaveInstanceState(outState);
@@ -517,8 +563,10 @@ public class SpellingActivity extends AppCompatActivity implements
             String userWordString = mWordEditText.getText().toString().trim();
             if (userWordString != null && !userWordString.isEmpty()) {
 
-                ConvertTextToSpeech();
+//                ConvertTextToSpeech();
 
+                playAudio(AUDIO_PATH + mWord);
+                
                 ArrayList<String> tags = stringToArrayList(mWord);
                 ArrayList<Integer> indicesOfWrong = checkWord(mWord, userWordString);
                 SpannableStringBuilder sourceWord = setTags(tags, indicesOfWrong);
@@ -646,6 +694,7 @@ public class SpellingActivity extends AppCompatActivity implements
                 WordEntry._ID,
                 WordEntry.COLUMN_WORD,
                 WordEntry.COLUMN_TRANSLATION,
+                WordEntry.COLUMN_LANGUAGE_LEARNING,
                 WordEntry.COLUMN_REPEAT_MEM,
                 WordEntry.COLUMN_REPEAT_SPELL
         };
@@ -681,6 +730,7 @@ public class SpellingActivity extends AppCompatActivity implements
                 int translationColumnIndex = cursor.getColumnIndex(WordEntry.COLUMN_TRANSLATION);
                 int toRepeatColumnIndex = cursor.getColumnIndex(WordEntry.COLUMN_REPEAT_SPELL);
                 int toRepeatMemColumnIndex = cursor.getColumnIndex(WordEntry.COLUMN_REPEAT_MEM);
+                int learningLanguageColumnIndex = cursor.getColumnIndex(WordEntry.COLUMN_LANGUAGE_LEARNING);
 
                 Integer wordId = cursor.getInt(wordIdColumnIndex);
                 String word = cursor.getString(wordColumnIndex);
@@ -688,9 +738,13 @@ public class SpellingActivity extends AppCompatActivity implements
                 Integer toRepeat = cursor.getInt(toRepeatColumnIndex);
                 Integer toRepeatMem = cursor.getInt(toRepeatMemColumnIndex);
 
+                mLearningLanguage = cursor.getInt(learningLanguageColumnIndex);
+
                 mCursorData.add(new Word(wordId, word, translation, toRepeatMem, toRepeat));
             }
-            Collections.shuffle(mCursorData);
+            if (mIsShuffled)
+                Collections.shuffle(mCursorData);
+
             assignValues1(mInitCounterValue);
             cursor.close();
 

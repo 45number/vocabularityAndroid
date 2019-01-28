@@ -77,7 +77,6 @@
     <string name="keep_editing">Keep Editing</string>
 
 
-
     <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
     <string name="delete_folder_title">Are you sure?</string>
     <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
@@ -92,11 +91,6 @@
     <string name="delete_deck_title">Are you sure?</string>
     <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
     <string name="delete_deck_msg">Delete the deck? All decks will be recalculated.</string>
-
-
-
-
-
 
 
     <!-- Toast message in editor when current pet was successfully deleted [CHAR LIMIT=NONE] -->

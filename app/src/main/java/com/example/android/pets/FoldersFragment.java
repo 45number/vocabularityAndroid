@@ -752,8 +752,10 @@ public class FoldersFragment extends Fragment
                 return true;
             case 1:
                 Class activityClass = EditorActivity.class;
-                if (mAdapterNumber == 1)
-                    activityClass = EditorActivity.class; // Need to be changed
+                if (!isFolder(folderImage)) {
+                    activityClass = EditorDeckActivity.class; // Need to be changed
+                }
+//                if (mAdapterNumber == 1)
                 Intent intent = new Intent(getActivity(), activityClass);
                 Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
                 intent.setData(currentPetUri);
