@@ -566,7 +566,7 @@ public class SpellingActivity extends AppCompatActivity implements
 //                ConvertTextToSpeech();
 
                 playAudio(AUDIO_PATH + mWord);
-                
+
                 ArrayList<String> tags = stringToArrayList(mWord);
                 ArrayList<Integer> indicesOfWrong = checkWord(mWord, userWordString);
                 SpannableStringBuilder sourceWord = setTags(tags, indicesOfWrong);
