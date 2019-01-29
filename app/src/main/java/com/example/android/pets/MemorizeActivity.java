@@ -59,6 +59,7 @@ public class MemorizeActivity extends AppCompatActivity implements
     ToggleButton mLoopToggle;
     ToggleButton mShuffleToggle;
     ImageButton mSpeakButton;
+    ImageButton mEditButton;
 
 
     private int mLearningLanguage;
@@ -143,6 +144,8 @@ public class MemorizeActivity extends AppCompatActivity implements
 
         mShuffleToggle = findViewById(R.id.shuffleToggle);
 
+        mEditButton = findViewById(R.id.editButton);
+
         if (mIsShuffled)
             mShuffleToggle.setChecked(true);
         else
@@ -168,12 +171,12 @@ public class MemorizeActivity extends AppCompatActivity implements
 
         directionToggle = findViewById(R.id.directionToggle);
 
-        directionToggle.setText("Ru - En");
+//        directionToggle.setText("Ru - En");
         // Sets the text for when the button is first created.
 
-        directionToggle.setTextOff("Ru - En");
+//        directionToggle.setTextOff("Ru - En");
         // Sets the text for when the button is not in the checked state.
-        directionToggle.setTextOn("En - Ru");
+//        directionToggle.setTextOn("En - Ru");
 
         if (mIsDirectionReversed) {
             directionToggle.setChecked(true);
@@ -270,6 +273,13 @@ public class MemorizeActivity extends AppCompatActivity implements
                 else {
                     markWordToRepeat(0);
                 }
+            }
+        });
+
+        mEditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("editButton", "Clicked");
             }
         });
 
