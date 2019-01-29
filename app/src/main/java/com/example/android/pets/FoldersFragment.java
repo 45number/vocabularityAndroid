@@ -31,6 +31,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewManager;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -74,6 +75,7 @@ public class FoldersFragment extends Fragment
 
     View rootView;
     FloatingActionButton fab;
+    Button addButtonEmpty;
 //    LinearLayout markedBadge;
 
 
@@ -110,6 +112,7 @@ public class FoldersFragment extends Fragment
         mSettings = getContext().getSharedPreferences(SettingsContract.APP_PREFERENCES, getContext().MODE_PRIVATE);
 
 
+
 //        rootFab = ((CatalogActivity)getActivity()).getFab();
 //        rootFab.hide();
 
@@ -127,7 +130,8 @@ public class FoldersFragment extends Fragment
 
 
 
-        fab.setOnClickListener(new View.OnClickListener() {
+
+                fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chooseRepeatMode();
@@ -143,6 +147,15 @@ public class FoldersFragment extends Fragment
 
         mCursorAdapter = new PetCursorAdapter(getActivity(), null);
         petListView.setAdapter(mCursorAdapter);
+
+
+        addButtonEmpty = rootView.findViewById(R.id.addButtonEmpty);
+        addButtonEmpty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addOptions();
+            }
+        });
 
 
         registerForContextMenu(petListView);
@@ -296,29 +309,25 @@ public class FoldersFragment extends Fragment
 
             // Respond to a click on the "Add" menu option
             case R.id.action_add:
-                if ( mTreePath.size() == 1 || (mFoldersQuantity > 0 &&  mAdapterNumber == 0) ) {
-//                    DialogSelection ds = new DialogSelection();
-//                    Bundle args=new Bundle();
-//                    String[] selectionArgs = {"Hello", "opa"};
-//                    args.putStringArray("selectionArgs", selectionArgs);
-//                    Dialog alertDialog = ds.onCreateDialog(null);
-//                    alertDialog.show();
-//                    addFolder();
-                    chooseAddMode(true, false, false);
-                    return true;
-                } else if (mAdapterNumber == 1) {
-//                    addWords();
-                    chooseAddMode(false, true, true);
-//                    pickAddingOption();
-                    return true;
-                } else {
-//                    pickAddingOption();
-                    chooseAddMode(true,true,true);
-                    return true;
-                }
+                addOptions();
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+    private boolean addOptions() {
+        if ( mTreePath.size() == 1 || (mFoldersQuantity > 0 &&  mAdapterNumber == 0) ) {
+            chooseAddMode(true, false, false);
+            return true;
+        } else if (mAdapterNumber == 1) {
+            chooseAddMode(false, true, true);
+            return true;
+        } else {
+            chooseAddMode(true,true,true);
+            return true;
+        }
+    }
+
 
     private void chooseAddMode(boolean folderEnabled, boolean wordsEnabled, boolean excelEnabled) {
 

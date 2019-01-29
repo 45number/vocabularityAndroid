@@ -1,11 +1,13 @@
 package com.example.android.pets;
 
 
+import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.CursorLoader;
+import android.content.DialogInterface;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -20,7 +22,10 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -59,7 +64,14 @@ public class MemorizeActivity extends AppCompatActivity implements
     ToggleButton mLoopToggle;
     ToggleButton mShuffleToggle;
     ImageButton mSpeakButton;
+
     ImageButton mEditButton;
+    EditText mWordEdit;
+    EditText mTranslationEdit;
+    LinearLayout mEditActions;
+    Button mDeleteButton;
+    Button mCancelButton;
+    Button mSaveButton;
 
 
     private int mLearningLanguage;
@@ -145,6 +157,19 @@ public class MemorizeActivity extends AppCompatActivity implements
         mShuffleToggle = findViewById(R.id.shuffleToggle);
 
         mEditButton = findViewById(R.id.editButton);
+
+        mWordEdit = findViewById(R.id.wordEdit);
+        mTranslationEdit = findViewById(R.id.translationEdit);
+
+        mWordEdit.setVisibility(View.GONE);
+        mTranslationEdit.setVisibility(View.GONE);
+
+        mEditActions = findViewById(R.id.editActions);
+        mEditActions.setVisibility(View.GONE);
+
+        mDeleteButton = findViewById(R.id.deleteButton);
+        mCancelButton = findViewById(R.id.cancelButton);
+        mSaveButton = findViewById(R.id.saveButton);
 
         if (mIsShuffled)
             mShuffleToggle.setChecked(true);
@@ -279,9 +304,44 @@ public class MemorizeActivity extends AppCompatActivity implements
         mEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("editButton", "Clicked");
+                mWordEdit.setVisibility(View.VISIBLE);
+                mTranslationEdit.setVisibility(View.VISIBLE);
+                mEditActions.setVisibility(View.VISIBLE);
+
+                wordTextView.setVisibility(View.GONE);
+                translationTextView.setVisibility(View.GONE);
+                mEditButton.setVisibility(View.GONE);
             }
         });
+
+
+        mDeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDeleteDialog();
+            }
+        });
+
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mWordEdit.setVisibility(View.GONE);
+                mTranslationEdit.setVisibility(View.GONE);
+                mEditActions.setVisibility(View.GONE);
+
+                wordTextView.setVisibility(View.VISIBLE);
+                translationTextView.setVisibility(View.VISIBLE);
+                mEditButton.setVisibility(View.VISIBLE);
+            }
+        });
+
+        mSaveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
 
         mLoopToggle.setOnClickListener(new View.OnClickListener() {
@@ -377,6 +437,26 @@ public class MemorizeActivity extends AppCompatActivity implements
     }
 
 
+    public void showDeleteDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.delete_card_title);
+        builder.setMessage(R.string.delete_card_msg);
+        builder.setPositiveButton(R.string.ok_delete, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+
+            }
+        });
+        builder.setNegativeButton(R.string.cancel_deleting, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 
     private void playAudio(final String url)// throws Exception
     {
@@ -528,10 +608,14 @@ public class MemorizeActivity extends AppCompatActivity implements
 
         if (mIsDirectionReversed) {
             wordTextView.setText(mWord);
+            mWordEdit.setText(mWord);
             translationTextView.setText("");
+            mTranslationEdit.setText(mTranslation);
         } else {
             wordTextView.setText(mTranslation);
+            mWordEdit.setText(mTranslation);
             translationTextView.setText("");
+            mTranslationEdit.setText(mWord);
         }
 
 

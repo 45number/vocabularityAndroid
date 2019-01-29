@@ -21,21 +21,25 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
-        <ImageView
-            android:id="@+id/empty_shelter_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_empty_shelter"/>
+        <!--<ImageView-->
+            <!--android:id="@+id/empty_shelter_image"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:src="@drawable/ic_empty_shelter"/>-->
+
+        <!--android:layout_below="@+id/empty_shelter_image"-->
+        <!--android:layout_below="@+id/addButton"-->
+        <!--android:paddingTop="16dp"-->
 
         <TextView
             android:id="@+id/empty_title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/empty_shelter_image"
+
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-medium"
-            android:paddingTop="16dp"
+
             android:text="@string/empty_view_title_text"
             android:textAppearance="?android:textAppearanceMedium"/>
 
@@ -50,6 +54,22 @@
             android:text="@string/empty_view_subtitle_text"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="#A2AAB0"/>
+
+        <Button
+            android:id="@+id/addButtonEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/cancel_button"
+            android:textColor="@color/white"
+            android:layout_marginTop="26dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="Create"
+            android:layout_below="@+id/empty_subtitle_text"
+            style="?android:attr/borderlessButtonStyle"/>
+
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton

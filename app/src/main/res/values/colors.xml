@@ -72,6 +72,11 @@
     <!-- Magnitude circle color for an earthquake with magnitude between 9 and 10 -->
     <color name="magnitude9">#D93218</color>
 
+    <color name="deleteButton">#fe0000</color>
+
+
+    <color name="saveButton">#3dc420</color>
+
     <!-- Magnitude circle color for an earthquake with magnitude over 10 -->
     <color name="magnitude10plus">#C03823</color>
 
