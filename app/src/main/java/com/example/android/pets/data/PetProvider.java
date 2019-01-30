@@ -562,7 +562,6 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
             case WORD_ID:
                 selection = WordEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
-//                Log.e("hhhhhhhhhhhhhh", "HHHHHHHHHHHHHHHH");
                 return updateWord(uri, contentValues, selection, selectionArgs);
 
             default:

@@ -3,6 +3,7 @@ package com.example.android.pets;
 
 import android.app.AlertDialog;
 import android.app.LoaderManager;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -11,7 +12,9 @@ import android.content.DialogInterface;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -73,6 +76,7 @@ public class MemorizeActivity extends AppCompatActivity implements
     Button mCancelButton;
     Button mSaveButton;
 
+    CardView card;
 
     private int mLearningLanguage;
 
@@ -264,7 +268,8 @@ public class MemorizeActivity extends AppCompatActivity implements
         wordTextView.setTypeface(typeface);
         translationTextView.setTypeface(typeface);
 
-        CardView card = findViewById(R.id.cardView);
+//        final CardView
+                card = findViewById(R.id.cardView);
         card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -311,6 +316,8 @@ public class MemorizeActivity extends AppCompatActivity implements
                 wordTextView.setVisibility(View.GONE);
                 translationTextView.setVisibility(View.GONE);
                 mEditButton.setVisibility(View.GONE);
+
+                card.setOnClickListener(null);
             }
         });
 
@@ -325,13 +332,7 @@ public class MemorizeActivity extends AppCompatActivity implements
         mCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mWordEdit.setVisibility(View.GONE);
-                mTranslationEdit.setVisibility(View.GONE);
-                mEditActions.setVisibility(View.GONE);
-
-                wordTextView.setVisibility(View.VISIBLE);
-                translationTextView.setVisibility(View.VISIBLE);
-                mEditButton.setVisibility(View.VISIBLE);
+                finishEditing();
             }
         });
 
@@ -339,6 +340,45 @@ public class MemorizeActivity extends AppCompatActivity implements
             @Override
             public void onClick(View view) {
 
+                String word = mTranslationEdit.getText().toString();
+                String translation = mWordEdit.getText().toString();
+                if (mIsDirectionReversed) {
+                    word = mWordEdit.getText().toString();
+                    translation = mTranslationEdit.getText().toString();
+                }
+
+                Uri currentWordUri = ContentUris.withAppendedId(WordEntry.CONTENT_URI, mWordId);
+                ContentValues values = new ContentValues();
+                values.put(WordEntry.COLUMN_WORD, word);
+                values.put(WordEntry.COLUMN_TRANSLATION, translation);
+
+                int rowsAffected = getContentResolver().update(currentWordUri, values, null, null);
+
+                if (rowsAffected == 0) {
+                    Toast.makeText(MemorizeActivity.this, getString(R.string.editor_update_pet_failed),
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    // Otherwise, the update was successful and we can display a toast.
+                    mWord = word;
+                    mTranslation = translation;
+                    if (mIsDirectionReversed) {
+                        wordTextView.setText(mWord);
+                        mWordEdit.setText(mWord);
+                        translationTextView.setText("");
+                        mTranslationEdit.setText(mTranslation);
+                    } else {
+                        wordTextView.setText(mTranslation);
+                        mWordEdit.setText(mTranslation);
+                        translationTextView.setText("");
+                        mTranslationEdit.setText(mWord);
+                    }
+                    Word wordCurrent = mCursorData.get(mInitCounterValue);
+                    wordCurrent.setWord(mWord);
+                    wordCurrent.setTranslation(mTranslation);
+                }
+
+                finishEditing();
+//                Log.e("info", mWordId + mWord + mTranslation);
             }
         });
 
@@ -436,6 +476,23 @@ public class MemorizeActivity extends AppCompatActivity implements
 
     }
 
+    public void finishEditing() {
+        mWordEdit.setVisibility(View.GONE);
+        mTranslationEdit.setVisibility(View.GONE);
+        mEditActions.setVisibility(View.GONE);
+
+        wordTextView.setVisibility(View.VISIBLE);
+        translationTextView.setVisibility(View.VISIBLE);
+        mEditButton.setVisibility(View.VISIBLE);
+
+        card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onCardClick();
+            }
+        });
+
+    }
 
     public void showDeleteDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -443,6 +500,8 @@ public class MemorizeActivity extends AppCompatActivity implements
         builder.setMessage(R.string.delete_card_msg);
         builder.setPositiveButton(R.string.ok_delete, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+
+                deleteCard();
 
             }
         });
@@ -511,6 +570,45 @@ public class MemorizeActivity extends AppCompatActivity implements
     }
 
 
+    private void deleteCard() {
+
+        Log.e("mInitCounterValue", mInitCounterValue+"");
+        Log.e("mWordsInDeck - 1", mWordsInDeck - 1+"");
+        Log.e("mWordId", mWordId+"");
+//        finish();
+
+        Uri currentWordUri = ContentUris.withAppendedId(WordEntry.CONTENT_URI, mWordId);
+        if (currentWordUri != null) {
+            int rowsDeleted = getContentResolver().delete(currentWordUri, null, null);
+            if (rowsDeleted == 0) {
+                Toast.makeText(this, getString(R.string.editor_delete_pet_failed),
+                        Toast.LENGTH_SHORT).show();
+            } else {
+
+                mCursorData.remove(mInitCounterValue);
+                mWordsInDeck--;
+
+                if (!mCursorData.isEmpty()) {
+                    if (mInitCounterValue < mWordsInDeck - 1) {
+                        assignValues1(mInitCounterValue);
+                    } else {
+                        if (mIsLooped) {
+                            mInitCounterValue = 0;
+                            assignValues1(mInitCounterValue);
+                        } else {
+                            if (mInitCounterValue > 0)
+                                mInitCounterValue--;
+                            assignValues1(mInitCounterValue);
+                        }
+                    }
+//                    assignValues1(mInitCounterValue);
+                } else {
+                    finish();
+                }
+
+            }
+        }
+    }
 
 
     @Override
@@ -553,14 +651,11 @@ public class MemorizeActivity extends AppCompatActivity implements
             else
                 translationTextView.setText(mWord);
 
-//            ConvertTextToSpeech();
-
             try {
                 playAudio(AUDIO_PATH + mWord);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
 
         } else {
             moveToNext();
