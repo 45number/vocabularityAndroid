@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
@@ -32,6 +33,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.example.android.pets.data.PetProvider;
 import com.example.android.pets.data.SettingsContract;
 import com.example.android.pets.data.WordContract.WordEntry;
 
@@ -572,14 +575,31 @@ public class MemorizeActivity extends AppCompatActivity implements
 
     private void deleteCard() {
 
-        Log.e("mInitCounterValue", mInitCounterValue+"");
-        Log.e("mWordsInDeck - 1", mWordsInDeck - 1+"");
-        Log.e("mWordId", mWordId+"");
+        setResult(3);
+
+//        Log.e("mInitCounterValue", mInitCounterValue+"");
+//        Log.e("mWordsInDeck - 1", mWordsInDeck - 1+"");
+//        Log.e("mWordId", mWordId+"");
 //        finish();
 
         Uri currentWordUri = ContentUris.withAppendedId(WordEntry.CONTENT_URI, mWordId);
         if (currentWordUri != null) {
-            int rowsDeleted = getContentResolver().delete(currentWordUri, null, null);
+
+
+            Long folderLong = getIntent().getLongExtra("folder", -1L);
+            Long deckLong = getIntent().getLongExtra("deck", -1L);
+            String[] selectionArgs = new String[] {folderLong.toString(), deckLong.toString()};
+
+//            String[] selectionArgs = null;
+            String select = null;
+            if (mCursorData.size() == 1) {
+//                Long folderLong = getIntent().getLongExtra("folder", -1L);
+//                Long deckLong = getIntent().getLongExtra("deck", -1L);
+//                selectionArgs = new String[] {folderLong.toString(), deckLong.toString()};
+                select = "dummy";
+            }
+
+            int rowsDeleted = getContentResolver().delete(currentWordUri, select, selectionArgs);
             if (rowsDeleted == 0) {
                 Toast.makeText(this, getString(R.string.editor_delete_pet_failed),
                         Toast.LENGTH_SHORT).show();
@@ -603,13 +623,14 @@ public class MemorizeActivity extends AppCompatActivity implements
                     }
 //                    assignValues1(mInitCounterValue);
                 } else {
+//                    PetProvider.shiftDecks();
+                    setResult(6);
                     finish();
                 }
 
             }
         }
     }
-
 
     @Override
     protected void onPause() {

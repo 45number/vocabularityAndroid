@@ -91,6 +91,7 @@ public class FoldersFragment extends Fragment
     private static final int RESULT_SETTINGS = 3;
     private static final int RESULT_SETTINGS_LANGUAGES = 4;
     private static final int RESULT_FILE_EXPLORER = 5;
+    private static final int RESULT_DELETED_DECK = 6;
 
     private static final String PATH_TREE = "path";
 
@@ -443,6 +444,10 @@ public class FoldersFragment extends Fragment
                 ((CatalogActivity)getActivity()).refreshDecks();
 //                refreshDecks();
                 break;
+            case RESULT_DELETED_DECK:
+                ((CatalogActivity)getActivity()).refreshDecks();
+
+                break;
         }
     }
 
@@ -495,7 +500,9 @@ public class FoldersFragment extends Fragment
                 Intent intent = new Intent(getActivity(), MemorizeActivity.class);
                 intent.putExtra("folder", mTreePath.get(mTreePath.size() - 1).getId());
                 intent.putExtra("deck", deckId);
-                startActivity(intent);
+//                startActivity(intent);
+
+                startActivityForResult(intent, RESULT_SETTINGS);
 
 
             }

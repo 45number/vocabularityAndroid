@@ -398,7 +398,6 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         SQLiteDatabase database = mDbHelper.getReadableDatabase();
         Long wordsInFolder1 = DatabaseUtils.queryNumEntries(database, WordEntry.TABLE_NAME,
                 WordEntry.COLUMN_FOLDER + "=?", select);
-//        Log.e(WordEntry.COLUMN_FOLDER, ""+select[0]);
         Double wordsInFolder = wordsInFolder1.doubleValue();
         return wordsInFolder;
     }
@@ -513,7 +512,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         return ContentUris.withAppendedId(uri, id);
     }
 
-    private Uri insertDeck(Uri uri, ContentValues values) {
+    public Uri insertDeck(Uri uri, ContentValues values) {
 
         // Check that the name is not null
         String deck = values.getAsString(DeckEntry.COLUMN_DECK);
@@ -737,13 +736,13 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
                 rowsDeleted = database.delete(WordEntry.TABLE_NAME, selection, args);
 
-                String selectionDeck = DeckEntry.COLUMN_FOLDER + " = ? AND " + DeckEntry.COLUMN_DECK + " = ?";
+                shiftDecks(selectionArgs);
+
+
+                /*String selectionDeck = DeckEntry.COLUMN_FOLDER + " = ? AND " + DeckEntry.COLUMN_DECK + " = ?";
                 int rowsDeleted1 = database.delete(DeckEntry.TABLE_NAME, selectionDeck, selectionArgs);
 
-
-
                 Integer deckNumber = Integer.parseInt(selectionArgs[1]);
-//                Log.e("deckNumber", ""+deckNumber);
 
                 String selectionDeck1 = DeckEntry.COLUMN_FOLDER + " = ? ";
                 String[] projectionDeck1 = {
@@ -763,16 +762,11 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                     Integer deckName = cursorDeck1.getInt(deckColumnIndexDeck1);
                     Integer folderName = cursorDeck1.getInt(folderColumnIndexDeck1);
 
-//                    Log.e("deckName", ""+deckName);
-//                    Log.e("deckNumber", ""+deckNumber);
-
                     if (deckName > deckNumber) {
 
                         String selectionDeck2 = DeckEntry._ID + " = ? ";
                         String[] selectionArgsDeck2 = {deckId.toString()};
                         int rowsDeleted2 = database.delete(DeckEntry.TABLE_NAME, selectionDeck2, selectionArgsDeck2);
-
-//                        Log.e("yes", "yew");
 
                         ContentValues valuesDeck2 = new ContentValues();
                         valuesDeck2.put(DeckEntry.COLUMN_DECK, deckName - 1);
@@ -780,22 +774,33 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                         insertDeck(DeckEntry.CONTENT_URI, valuesDeck2);
 
                     }
-
                     cursorDeck1.moveToNext();
-                }
-
-
-//                String[] select = {selectionArgs[0]};
-//                Double wordsInFolder = countWordsInFolder1(args);
-//                double decksQuantity =  Math.ceil(wordsInFolder / mSettingWordsAtTime);
-//                double moduloDouble = wordsInFolder % mSettingWordsAtTime;
-//                int modulo = (int) moduloDouble;
+                }*/
 
                 break;
 
             case WORD_ID:
 
-//                Log.e("pa", "I aaaaaam heeeeeereeeee 4");
+                uncheckLastDeckIfNeeded(selectionArgs[0]);
+
+                if (selection != null) {
+                    shiftDecks(selectionArgs);
+                }
+
+                /*if(mSettings.contains(SettingsContract.WORDS_AT_TIME)) {
+                    mSettingWordsAtTime = mSettings.getInt(SettingsContract.WORDS_AT_TIME, 25);
+                }
+                Double wordsInFolder = countWordsInFolder1(new String[] {selectionArgs[0]});
+                double decksQuantity =  Math.ceil(wordsInFolder / mSettingWordsAtTime);
+                double moduloDouble = wordsInFolder % mSettingWordsAtTime;
+                int modulo = (int) moduloDouble;
+//                if (modulo == 0)
+//                    modulo = mSettingWordsAtTime;
+                if (modulo == 1) {
+                    selection = DeckEntry._ID + "=?";
+                    selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
+                    database.delete(DeckEntry.TABLE_NAME, selection, selectionArgs);
+                }*/
 
                 // Delete a single row given by the ID in the URI
                 selection = WordEntry._ID + "=?";
@@ -804,7 +809,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 break;
 
             case DECKS:
-                Log.e("pa", "I aaaaaam heeeeeereeeee 5");
+//                Log.e("pa", "I aaaaaam heeeeeereeeee 5");
 //                selection = DeckEntry._ID + "=?";
 //                selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
                 rowsDeleted = database.delete(DeckEntry.TABLE_NAME, selection, selectionArgs);
@@ -829,6 +834,69 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         // Return the number of rows deleted
         return rowsDeleted;
 
+    }
+
+    public void uncheckLastDeckIfNeeded(String folderId) {
+        SQLiteDatabase database = mDbHelper.getWritableDatabase();
+        if(mSettings.contains(SettingsContract.WORDS_AT_TIME)) {
+            mSettingWordsAtTime = mSettings.getInt(SettingsContract.WORDS_AT_TIME, 25);
+        }
+        Double wordsInFolder = countWordsInFolder1(new String[] {folderId});
+        double decksQuantity =  Math.ceil(wordsInFolder / mSettingWordsAtTime);
+        double moduloDouble = wordsInFolder % mSettingWordsAtTime;
+        int modulo = (int) moduloDouble;
+        Integer lastDeck = (int) decksQuantity - 1;
+
+        if (modulo == 1) {
+            String selection = DeckEntry.COLUMN_FOLDER + " =? AND " + DeckEntry.COLUMN_DECK + " =? ";
+            String[] selectionArgs = new String[] { folderId, lastDeck.toString() };
+            database.delete(DeckEntry.TABLE_NAME, selection, selectionArgs);
+        }
+    }
+
+    public void shiftDecks(String[] selectionArgs) {
+
+        SQLiteDatabase database = mDbHelper.getWritableDatabase();
+        String selectionDeck = DeckEntry.COLUMN_FOLDER + " = ? AND " + DeckEntry.COLUMN_DECK + " = ?";
+        int rowsDeleted1 = database.delete(DeckEntry.TABLE_NAME, selectionDeck, selectionArgs);
+
+        Integer deckNumber = Integer.parseInt(selectionArgs[1]);
+
+        String selectionDeck1 = DeckEntry.COLUMN_FOLDER + " = ? ";
+        String[] projectionDeck1 = {
+                DeckEntry._ID,
+                DeckEntry.COLUMN_DECK,
+                DeckEntry.COLUMN_FOLDER
+        };
+
+        String[] args = {selectionArgs[0]};
+
+        Cursor cursorDeck1 = database.query(DeckEntry.TABLE_NAME, projectionDeck1, selectionDeck1,
+                args, null, null, DeckEntry.COLUMN_DECK);
+        cursorDeck1.moveToFirst();
+        for (int c = 0; c < cursorDeck1.getCount(); c++) {
+            int idColumnIndexDeck1 = cursorDeck1.getColumnIndex(DeckEntry._ID);
+            int deckColumnIndexDeck1 = cursorDeck1.getColumnIndex(DeckEntry.COLUMN_DECK);
+            int folderColumnIndexDeck1 = cursorDeck1.getColumnIndex(DeckEntry.COLUMN_FOLDER);
+
+            Integer deckId = cursorDeck1.getInt(idColumnIndexDeck1);
+            Integer deckName = cursorDeck1.getInt(deckColumnIndexDeck1);
+            Integer folderName = cursorDeck1.getInt(folderColumnIndexDeck1);
+
+            if (deckName > deckNumber) {
+
+                String selectionDeck2 = DeckEntry._ID + " = ? ";
+                String[] selectionArgsDeck2 = {deckId.toString()};
+                int rowsDeleted2 = database.delete(DeckEntry.TABLE_NAME, selectionDeck2, selectionArgsDeck2);
+
+                ContentValues valuesDeck2 = new ContentValues();
+                valuesDeck2.put(DeckEntry.COLUMN_DECK, deckName - 1);
+                valuesDeck2.put(DeckEntry.COLUMN_FOLDER, folderName);
+                insertDeck(DeckEntry.CONTENT_URI, valuesDeck2);
+
+            }
+            cursorDeck1.moveToNext();
+        }
     }
 
     /**
