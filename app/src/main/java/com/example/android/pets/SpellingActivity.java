@@ -1,12 +1,16 @@
 package com.example.android.pets;
 
+import android.app.AlertDialog;
 import android.app.LoaderManager;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.CursorLoader;
+import android.content.DialogInterface;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -24,8 +28,10 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -61,6 +67,16 @@ public class SpellingActivity extends AppCompatActivity implements
     ToggleButton mShuffleToggle;
     ImageButton mSpeakButton;
     EditText mWordEditText;
+
+    ImageButton mEditButton;
+    EditText mWordEdit;
+    EditText mTranslationEdit;
+    LinearLayout mEditActions;
+    Button mDeleteButton;
+    Button mCancelButton;
+    Button mSaveButton;
+
+
 
     TextToSpeech tts;
 
@@ -134,6 +150,19 @@ public class SpellingActivity extends AppCompatActivity implements
         mWordEditText.setGravity(Gravity.CENTER_HORIZONTAL);
 
 
+        mEditButton = findViewById(R.id.editButton);
+        mWordEdit = findViewById(R.id.wordEdit);
+        mTranslationEdit = findViewById(R.id.translationEdit);
+        mWordEdit.setVisibility(View.GONE);
+        mTranslationEdit.setVisibility(View.GONE);
+        mEditActions = findViewById(R.id.editActions);
+        mEditActions.setVisibility(View.GONE);
+        mDeleteButton = findViewById(R.id.deleteButton);
+        mCancelButton = findViewById(R.id.cancelButton);
+        mSaveButton = findViewById(R.id.saveButton);
+
+
+
 
         mSettings = getSharedPreferences(SettingsContract.APP_PREFERENCES, Context.MODE_PRIVATE);
         if(mSettings.contains(SettingsContract.WORDS_AT_TIME)) {
@@ -186,7 +215,7 @@ public class SpellingActivity extends AppCompatActivity implements
                 if ( (actionId == EditorInfo.IME_ACTION_DONE) || ((event.getKeyCode() == KeyEvent.KEYCODE_ENTER) && (event.getAction() == KeyEvent.ACTION_DOWN ))){
                     onEnterPressed();
 //                    Toast.makeText(this,editText.getText().toString()+"Enter Pressed",Toast.LENGTH_LONG).show();
-                    Log.e("opa", "opa");
+//                    Log.e("opa", "opa");
                     return true;
                 }
                 else{
@@ -352,6 +381,92 @@ public class SpellingActivity extends AppCompatActivity implements
         });
 
 
+        mEditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mWordEdit.setVisibility(View.VISIBLE);
+                mTranslationEdit.setVisibility(View.VISIBLE);
+                mEditActions.setVisibility(View.VISIBLE);
+
+                wordTextView.setVisibility(View.GONE);
+                translationTextView.setVisibility(View.GONE);
+                mEditButton.setVisibility(View.GONE);
+
+                mWordEdit.requestFocus();
+
+
+//                mWordEditText.setFocusable(false);
+//                mWordEditText.setEnabled(false);
+//                mWordEditText.setCursorVisible(false);
+//                mWordEdit.setKeyListener(null);
+//                mWordEdit.setBackgroundColor(Color.TRANSPARENT);
+            }
+        });
+
+        mDeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDeleteDialog();
+            }
+        });
+
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finishEditing();
+            }
+        });
+
+        mSaveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String word = mTranslationEdit.getText().toString();
+                String translation = mWordEdit.getText().toString();
+//                if (mIsDirectionReversed) {
+//                    word = mWordEdit.getText().toString();
+//                    translation = mTranslationEdit.getText().toString();
+//                }
+
+                Uri currentWordUri = ContentUris.withAppendedId(WordEntry.CONTENT_URI, mWordId);
+                ContentValues values = new ContentValues();
+                values.put(WordEntry.COLUMN_WORD, word);
+                values.put(WordEntry.COLUMN_TRANSLATION, translation);
+
+                int rowsAffected = getContentResolver().update(currentWordUri, values, null, null);
+
+                if (rowsAffected == 0) {
+                    Toast.makeText(SpellingActivity.this, getString(R.string.editor_update_pet_failed),
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    // Otherwise, the update was successful and we can display a toast.
+                    mWord = word;
+                    mTranslation = translation;
+//                    if (mIsDirectionReversed) {
+//                        wordTextView.setText(mWord);
+//                        mWordEdit.setText(mWord);
+//                        translationTextView.setText("");
+//                        mTranslationEdit.setText(mTranslation);
+//                    } else {
+                        wordTextView.setText(mTranslation);
+                        mWordEdit.setText(mTranslation);
+                        translationTextView.setText("");
+                        mTranslationEdit.setText(mWord);
+//                    }
+                    Word wordCurrent = mCursorData.get(mInitCounterValue);
+                    wordCurrent.setWord(mWord);
+                    wordCurrent.setTranslation(mTranslation);
+                }
+
+                finishEditing();
+//                Log.e("info", mWordId + mWord + mTranslation);
+            }
+        });
+
+
+
+
+
         Long folderIdLong = getIntent().getLongExtra("folder", -1L);
         Long deckIdLong = getIntent().getLongExtra("deck", -1L);
 
@@ -379,6 +494,106 @@ public class SpellingActivity extends AppCompatActivity implements
         getLoaderManager().initLoader(DECK_LOADER, args, this);
     }
 
+
+
+    public void finishEditing() {
+        mWordEdit.setVisibility(View.GONE);
+        mTranslationEdit.setVisibility(View.GONE);
+        mEditActions.setVisibility(View.GONE);
+
+        wordTextView.setVisibility(View.VISIBLE);
+        translationTextView.setVisibility(View.VISIBLE);
+        mEditButton.setVisibility(View.VISIBLE);
+
+        mWordEditText.setFocusable(true);
+        mWordEditText.setEnabled(true);
+        mWordEditText.setCursorVisible(true);
+        mWordEditText.requestFocus();
+//        mWordEdit.setKeyListener(null);
+//        mWordEdit.setBackgroundColor(Color.TRANSPARENT);
+    }
+
+    public void showDeleteDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.delete_card_title);
+        builder.setMessage(R.string.delete_card_msg);
+        builder.setPositiveButton(R.string.ok_delete, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+
+                deleteCard();
+
+            }
+        });
+        builder.setNegativeButton(R.string.cancel_deleting, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    private void deleteCard() {
+
+        setResult(3);
+
+//        Log.e("mInitCounterValue", mInitCounterValue+"");
+//        Log.e("mWordsInDeck - 1", mWordsInDeck - 1+"");
+//        Log.e("mWordId", mWordId+"");
+//        finish();
+
+        Uri currentWordUri = ContentUris.withAppendedId(WordEntry.CONTENT_URI, mWordId);
+        if (currentWordUri != null) {
+
+
+            Long folderLong = getIntent().getLongExtra("folder", -1L);
+            Long deckLong = getIntent().getLongExtra("deck", -1L);
+            String[] selectionArgs = new String[] {folderLong.toString(), deckLong.toString()};
+
+//            String[] selectionArgs = null;
+            String select = null;
+            if (mCursorData.size() == 1) {
+//                Long folderLong = getIntent().getLongExtra("folder", -1L);
+//                Long deckLong = getIntent().getLongExtra("deck", -1L);
+//                selectionArgs = new String[] {folderLong.toString(), deckLong.toString()};
+                select = "dummy";
+            }
+
+            int rowsDeleted = getContentResolver().delete(currentWordUri, select, selectionArgs);
+            if (rowsDeleted == 0) {
+                Toast.makeText(this, getString(R.string.editor_delete_pet_failed),
+                        Toast.LENGTH_SHORT).show();
+            } else {
+
+                mCursorData.remove(mInitCounterValue);
+                mWordsInDeck--;
+
+                if (!mCursorData.isEmpty()) {
+                    if (mInitCounterValue < mWordsInDeck - 1) {
+                        assignValues1(mInitCounterValue);
+                    } else {
+                        if (mIsLooped) {
+                            mInitCounterValue = 0;
+                            assignValues1(mInitCounterValue);
+                        } else {
+                            if (mInitCounterValue > 0)
+                                mInitCounterValue--;
+                            assignValues1(mInitCounterValue);
+                        }
+                    }
+//                    assignValues1(mInitCounterValue);
+                } else {
+//                    PetProvider.shiftDecks();
+                    setResult(6);
+                    finish();
+                }
+
+            }
+        }
+    }
 
 
 
@@ -670,13 +885,11 @@ public class SpellingActivity extends AppCompatActivity implements
 
         mWordEditText.setText("");
 
-//        if (mIsDirectionReversed) {
-//            wordTextView.setText(mWord);
-//            translationTextView.setText("");
-//        } else {
-            wordTextView.setText(mTranslation);
-            translationTextView.setText("");
-//        }
+        wordTextView.setText(mTranslation);
+        translationTextView.setText("");
+
+        mWordEdit.setText(mTranslation);
+        mTranslationEdit.setText(mWord);
 
 
         if (mToRepeat == 1) {
