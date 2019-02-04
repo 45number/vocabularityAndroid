@@ -494,7 +494,6 @@ public class MemorizeActivity extends AppCompatActivity implements
                 onCardClick();
             }
         });
-
     }
 
     public void showDeleteDialog() {

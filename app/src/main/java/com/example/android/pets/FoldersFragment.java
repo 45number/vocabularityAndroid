@@ -76,9 +76,8 @@ public class FoldersFragment extends Fragment
     View rootView;
     FloatingActionButton fab;
     Button addButtonEmpty;
+
 //    LinearLayout markedBadge;
-
-
 //    FloatingActionButton rootFab;
 
 
@@ -132,7 +131,7 @@ public class FoldersFragment extends Fragment
 
 
 
-                fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chooseRepeatMode();
@@ -215,7 +214,6 @@ public class FoldersFragment extends Fragment
 
         Bundle args=new Bundle();
         args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
-//        String idString = "";
         Integer langLearningInteger = getArguments().getInt("language_learning");
         String langLearning = langLearningInteger.toString();
 //        Log.e("Line 159, learn lang is", langLearning);
@@ -589,7 +587,6 @@ public class FoldersFragment extends Fragment
             if (bundle != null)
                 selectionArgs = bundle.getStringArray("selectionArgs");
 
-//            Log.e("uuuuu", selectionArgs.toString());
             return new CursorLoader(getActivity(),
                     WordContract.WordEntry.TO_REP_COUNT_URI,
                     null,
@@ -639,15 +636,9 @@ public class FoldersFragment extends Fragment
                 fab = rootView.findViewById(R.id.fab);
                 fab.show();
             } else {
-//                Log.e("jk", "Sraka");
-//                fab.setVisibility(View.GONE);
-//                rootFab = ((CatalogActivity)getActivity()).getFab();
-
                 fab = rootView.findViewById(R.id.fab);
                 fab.hide();
-
             }
-
 
         } else {
 
@@ -721,65 +712,50 @@ public class FoldersFragment extends Fragment
 
         switch (menuItemIndex) {
             case 0:
-//                fab.setBackgroundColor(Color.RED);
-//                Fragment f = getActivity().getFragmentManager().findFragmentById(R.id.fragment_container);
-//                fab = rootView.findViewById(R.id.fab);
-//                fab.hide();
 
-//                if ( !".png".equals(lastCharacters) ) {
                 if (isFolder(folderImage)) {
-//                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
-//                            Toast.LENGTH_SHORT).show();
-//                    Log.e("opa", "0");
                     if (markedBadge.getVisibility() == View.VISIBLE) {
                         // Its visible
                         markFolder(infoId, false);
-//                        Log.e("opa", "0 1");
                     } else {
                         // Either gone or invisible
                         markFolder(infoId, true);
-//                        Log.e("opa", "0 2");
                     }
 
                 } else {
 
-//                    View view1 = info.targetView;
-//                    LinearLayout markedBadge1 = view1.findViewById(R.id.markedBadge);
-//                    Log.e("opa", "1");
-
                     if (markedBadge.getVisibility() == View.VISIBLE) {
                         markDeckSwitch(infoId, false);
-//                        Log.e("opa", "1 1 " + getCurrentFolder());
                         markedBadge.setVisibility(View.INVISIBLE);
 
                     } else {
                         markDeckSwitch(infoId, true);
-//                        Log.e("opa", "1 2 " + getCurrentFolder());
                         markedBadge.setVisibility(View.VISIBLE);
 
                     }
 
-//                    Log.e("Da da da", mTreePath.toString());
-//                    refreshDecks();
-//                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
-//                            Toast.LENGTH_SHORT).show();
-
                 }
                 return true;
             case 1:
-                Class activityClass = EditorActivity.class;
-                if (!isFolder(folderImage)) {
-                    activityClass = EditorDeckActivity.class; // Need to be changed
+
+                if (isFolder(folderImage)) {
+                    Class activityClass = EditorActivity.class;
+                    Intent intent = new Intent(getActivity(), activityClass);
+                    Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
+                    intent.setData(currentPetUri);
+                    startActivity(intent);
+                } else {
+                    Class activityClass = EditorDeckActivity.class; // Need to be changed
+                    Intent intent = new Intent(getActivity(), activityClass);
+                    intent.putExtra("folder", mSettings.getLong(SettingsContract.LAST_FOLDER, 0));
+                    intent.putExtra("deck", infoId);
+                    startActivityForResult(intent, RESULT_SETTINGS);
+//                    Log.e("folder id is", getCurrentFolder().getId() + "");
                 }
-//                if (mAdapterNumber == 1)
-                Intent intent = new Intent(getActivity(), activityClass);
-                Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
-                intent.setData(currentPetUri);
-                startActivity(intent);
+
                 return true;
             case 2:
                 if (isFolder(folderImage)) {
-//                if (mAdapterNumber == 0) {
                     onDeletePressed(infoId);
                 } else {
                     onDeleteWordsPressed(infoId);
@@ -819,7 +795,6 @@ public class FoldersFragment extends Fragment
     private void onDeleteWordsPressed(final Long deck) {
 
         final pathItem folder = new pathItem(mSettings.getLong(SettingsContract.LAST_FOLDER, 0));
-//                getCurrentFolder();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.delete_deck_title);
@@ -995,13 +970,5 @@ public class FoldersFragment extends Fragment
         clearTreePath();
 
     }
-
-
-    //    private boolean isDeckMarked(ImageView v) {
-//        if (v.getDrawable().getConstantState() == getResources().getDrawable( R.drawable.ic_deck).getConstantState())
-//            return false;
-//        return true;
-//    }
-
 
 }

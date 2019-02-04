@@ -4523,6 +4523,7 @@ public final class R {
     public static final int set_words_at_time_dialog=0x7f0b004e;
     public static final int startup_languages=0x7f0b004f;
     public static final int support_simple_spinner_dropdown_item=0x7f0b0050;
+    public static final int word_list_item=0x7f0b0051;
   }
   public static final class menu {
     public static final int crop_image_menu=0x7f0c0000;

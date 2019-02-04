@@ -27,7 +27,6 @@
             android:parentActivityName=".CatalogActivity"
             android:screenOrientation="portrait"
             android:theme="@style/EditorTheme">
-
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -63,7 +62,9 @@
         <activity
             android:name=".FileChooser"
             android:screenOrientation="portrait" />
-        <activity android:name=".EditorDeckActivity"></activity>
+        <activity
+            android:name=".EditorDeckActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

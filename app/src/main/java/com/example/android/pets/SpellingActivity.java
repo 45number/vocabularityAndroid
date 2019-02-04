@@ -396,7 +396,8 @@ public class SpellingActivity extends AppCompatActivity implements
 
 
 //                mWordEditText.setFocusable(false);
-//                mWordEditText.setEnabled(false);
+                mWordEditText.setEnabled(false);
+                mWordEditText.setText("");
 //                mWordEditText.setCursorVisible(false);
 //                mWordEdit.setKeyListener(null);
 //                mWordEdit.setBackgroundColor(Color.TRANSPARENT);
@@ -423,10 +424,6 @@ public class SpellingActivity extends AppCompatActivity implements
 
                 String word = mTranslationEdit.getText().toString();
                 String translation = mWordEdit.getText().toString();
-//                if (mIsDirectionReversed) {
-//                    word = mWordEdit.getText().toString();
-//                    translation = mTranslationEdit.getText().toString();
-//                }
 
                 Uri currentWordUri = ContentUris.withAppendedId(WordEntry.CONTENT_URI, mWordId);
                 ContentValues values = new ContentValues();
@@ -442,24 +439,19 @@ public class SpellingActivity extends AppCompatActivity implements
                     // Otherwise, the update was successful and we can display a toast.
                     mWord = word;
                     mTranslation = translation;
-//                    if (mIsDirectionReversed) {
-//                        wordTextView.setText(mWord);
-//                        mWordEdit.setText(mWord);
-//                        translationTextView.setText("");
-//                        mTranslationEdit.setText(mTranslation);
-//                    } else {
-                        wordTextView.setText(mTranslation);
-                        mWordEdit.setText(mTranslation);
-                        translationTextView.setText("");
-                        mTranslationEdit.setText(mWord);
-//                    }
+
+                    wordTextView.setText(mTranslation);
+                    mWordEdit.setText(mTranslation);
+                    translationTextView.setText("");
+                    mTranslationEdit.setText(mWord);
+
                     Word wordCurrent = mCursorData.get(mInitCounterValue);
                     wordCurrent.setWord(mWord);
                     wordCurrent.setTranslation(mTranslation);
-                }
 
+
+                }
                 finishEditing();
-//                Log.e("info", mWordId + mWord + mTranslation);
             }
         });
 
@@ -505,9 +497,9 @@ public class SpellingActivity extends AppCompatActivity implements
         translationTextView.setVisibility(View.VISIBLE);
         mEditButton.setVisibility(View.VISIBLE);
 
-        mWordEditText.setFocusable(true);
+//        mWordEditText.setFocusable(true);
         mWordEditText.setEnabled(true);
-        mWordEditText.setCursorVisible(true);
+//        mWordEditText.setCursorVisible(true);
         mWordEditText.requestFocus();
 //        mWordEdit.setKeyListener(null);
 //        mWordEdit.setBackgroundColor(Color.TRANSPARENT);

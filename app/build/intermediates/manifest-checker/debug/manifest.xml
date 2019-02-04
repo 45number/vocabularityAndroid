@@ -72,7 +72,9 @@
         <activity
             android:name="com.example.android.pets.FileChooser"
             android:screenOrientation="portrait" />
-        <activity android:name="com.example.android.pets.EditorDeckActivity" />
+        <activity
+            android:name="com.example.android.pets.EditorDeckActivity"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
