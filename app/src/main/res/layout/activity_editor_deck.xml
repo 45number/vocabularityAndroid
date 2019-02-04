@@ -6,10 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".EditorDeckActivity">
 
-    <ListView
-        android:id="@+id/list"
+    <!--<ListView-->
+    <!--android:id="@+id/list"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--/>-->
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:layout_marginBottom="50dp">
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/ok_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:text="Ok" />
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

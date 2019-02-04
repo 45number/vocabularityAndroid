@@ -780,7 +780,6 @@ public class MemorizeActivity extends AppCompatActivity implements
 
             mWordsInDeck = data.getCount();
             mIsFirstStart = false;
-//            Log.e("4444", "I am here");
 
             for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
                 int wordIdColumnIndex = cursor.getColumnIndex(WordEntry._ID);
