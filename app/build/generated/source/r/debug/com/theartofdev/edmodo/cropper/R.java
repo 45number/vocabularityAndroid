@@ -409,8 +409,8 @@ public final class R {
         public static final int switch_thumb_material_light = 0x7f060075;
         public static final int switch_thumb_normal_material_dark = 0x7f060076;
         public static final int switch_thumb_normal_material_light = 0x7f060077;
-        public static final int tooltip_background_dark = 0x7f06007b;
-        public static final int tooltip_background_light = 0x7f06007c;
+        public static final int tooltip_background_dark = 0x7f06007c;
+        public static final int tooltip_background_light = 0x7f06007d;
     }
     public static final class dimen {
         public static final int abc_action_bar_content_inset_material = 0x7f070000;
@@ -625,8 +625,8 @@ public final class R {
         public static final int notification_template_icon_low_bg = 0x7f08009b;
         public static final int notification_tile_bg = 0x7f08009c;
         public static final int notify_panel_notification_icon_bg = 0x7f08009d;
-        public static final int tooltip_frame_dark = 0x7f0800a4;
-        public static final int tooltip_frame_light = 0x7f0800a5;
+        public static final int tooltip_frame_dark = 0x7f0800a5;
+        public static final int tooltip_frame_light = 0x7f0800a6;
     }
     public static final class id {
         public static final int CropOverlayView = 0x7f090002;
@@ -831,17 +831,17 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f0e001a;
         public static final int abc_shareactionprovider_share_with_application = 0x7f0e001b;
         public static final int abc_toolbar_collapse_description = 0x7f0e001c;
-        public static final int crop_image_activity_no_permissions = 0x7f0e002c;
-        public static final int crop_image_activity_title = 0x7f0e002d;
-        public static final int crop_image_menu_crop = 0x7f0e002e;
-        public static final int crop_image_menu_flip = 0x7f0e002f;
-        public static final int crop_image_menu_flip_horizontally = 0x7f0e0030;
-        public static final int crop_image_menu_flip_vertically = 0x7f0e0031;
-        public static final int crop_image_menu_rotate_left = 0x7f0e0032;
-        public static final int crop_image_menu_rotate_right = 0x7f0e0033;
-        public static final int pick_image_intent_chooser_title = 0x7f0e005f;
-        public static final int search_menu_title = 0x7f0e0061;
-        public static final int status_bar_notification_info_overflow = 0x7f0e0063;
+        public static final int crop_image_activity_no_permissions = 0x7f0e002e;
+        public static final int crop_image_activity_title = 0x7f0e002f;
+        public static final int crop_image_menu_crop = 0x7f0e0030;
+        public static final int crop_image_menu_flip = 0x7f0e0031;
+        public static final int crop_image_menu_flip_horizontally = 0x7f0e0032;
+        public static final int crop_image_menu_flip_vertically = 0x7f0e0033;
+        public static final int crop_image_menu_rotate_left = 0x7f0e0034;
+        public static final int crop_image_menu_rotate_right = 0x7f0e0035;
+        public static final int pick_image_intent_chooser_title = 0x7f0e0061;
+        public static final int search_menu_title = 0x7f0e0063;
+        public static final int status_bar_notification_info_overflow = 0x7f0e0065;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f0f0000;

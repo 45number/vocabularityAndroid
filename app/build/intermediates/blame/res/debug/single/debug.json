@@ -2376,6 +2376,10 @@
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\layout\\set_words_at_time_dialog.xml"
     },
     {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable_row_counter_border.xml.flat",
+        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\drawable\\row_counter_border.xml"
+    },
+    {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_light.xml.flat",
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\color\\switch_thumb_material_light.xml"
     },

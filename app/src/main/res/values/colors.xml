@@ -86,6 +86,8 @@
     <!-- Text color for the details of the earthquake in the list item -->
     <color name="textColorDisabledItem">#CCCCCC</color>
 
+    <color name="tableBordersColor">#CCCCCC</color>
+
     <!-- Text color for the primary location of the earthquake in the list item -->
     <color name="textColorEarthquakeLocation">#2B3D4D</color>
 </resources>

@@ -12,36 +12,92 @@
     <!--android:layout_height="match_parent"-->
     <!--/>-->
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="23dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:background="@drawable/row_counter_border"
+            android:gravity="center"/>
+        <View
+            android:layout_width="0.2dp"
+            android:layout_height="match_parent"
+            android:background="@color/tableBordersColor">
+        </View>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="match_parent"
+            android:text="@string/column_word_title"
+            android:textColor="@color/white"
+            android:background="@drawable/row_counter_border"
+            android:gravity="center"/>
+        <View
+            android:layout_width="0.2dp"
+            android:layout_height="match_parent"
+            android:background="@color/tableBordersColor">
+        </View>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="match_parent"
+            android:text="@string/column_translation_title"
+            android:textColor="@color/white"
+            android:background="@drawable/row_counter_border"
+            android:gravity="center"/>
+    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="50dp">
-
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="40dp">
         <TableLayout
             android:id="@+id/table"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></TableLayout>
+            android:layout_height="match_parent">
+        </TableLayout>
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="0dp"
+
         app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:layout_width="23dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/row_counter_border"
+            >
+        </View>
+
+        <!--android:background="@color/colorAccent"-->
 
         <Button
             android:id="@+id/cancel_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".5"
+            android:layout_margin="0dp"
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"
+            style="?android:attr/borderlessButtonStyle"
             android:text="Cancel" />
 
+        <!--android:background="@drawable/save_button"-->
         <Button
             android:id="@+id/ok_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".5"
-            android:text="Ok" />
+            android:layout_margin="0dp"
+            android:textColor="@color/white"
+            android:background="@color/saveButton"
+            style="?android:attr/borderlessButtonStyle"
+            android:text="Save" />
     </LinearLayout>
 
 

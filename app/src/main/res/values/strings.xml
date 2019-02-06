@@ -140,6 +140,9 @@
 
     <string name="you_are_learning">You are learning</string>
 
+    <string name="column_word_title">Word</string>
+    <string name="column_translation_title">Translation</string>
+
 
     <string name="english">English</string>
     <string name="russian">Russian</string>

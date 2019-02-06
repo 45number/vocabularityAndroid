@@ -74,7 +74,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.example.android.pets.EditorDeckActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

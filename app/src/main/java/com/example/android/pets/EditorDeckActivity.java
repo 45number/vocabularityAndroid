@@ -1,15 +1,23 @@
 package com.example.android.pets;
 
+import android.app.ActionBar;
+import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Loader;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.LoaderManager;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -17,6 +25,7 @@ import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.pets.data.SettingsContract;
 import com.example.android.pets.data.WordContract.WordEntry;
@@ -40,7 +49,18 @@ public class EditorDeckActivity extends AppCompatActivity implements LoaderManag
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Remove title bar
+//        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //Remove notification bar
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+//        ActionBar actionBar = getActionBar();
+//        actionBar.hide();
+
         setContentView(R.layout.activity_editor_deck);
+
+        getSupportActionBar().hide();
 
 //        wordListView = findViewById(R.id.list);
 //        mCursorAdapter = new WordCursorAdapter(this, null);
@@ -59,7 +79,7 @@ public class EditorDeckActivity extends AppCompatActivity implements LoaderManag
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                onSaveButtonClicked();
             }
         });
 
@@ -158,19 +178,33 @@ public class EditorDeckActivity extends AppCompatActivity implements LoaderManag
 
         TextView counterView = new TextView(this);
         counterView.setText(counter.toString());
-        counterView.setLayoutParams(new TableRow.LayoutParams(100, TableRow.LayoutParams.MATCH_PARENT));
-        counterView.setBackgroundColor(Color.parseColor("#000000"));
+        TableRow.LayoutParams counterParams = new TableRow.LayoutParams(
+                60,
+                TableRow.LayoutParams.MATCH_PARENT
+        );
+//        counterParams.setMargins(0, 10, 0, 0);
+        counterView.setLayoutParams(counterParams);
+//        counterView.setPadding(5, 20, 0, 0);
+        counterView.setGravity(Gravity.CENTER);
+//        counterView.setBackgroundColor(Color.parseColor("#000000"));
+        counterView.setBackgroundResource(R.drawable.row_counter_border);
         counterView.setTextColor(Color.parseColor("#FFFFFF"));
 
 
+        TextView idTextView = new TextView(this);
+        Integer wordId = word.getId();
+        idTextView.setText(wordId.toString());
+        idTextView.setLayoutParams(new TableRow.LayoutParams(0,0));
+        idTextView.setVisibility(View.INVISIBLE);
 
-        TableRow.LayoutParams wrapperParams = new TableRow.LayoutParams(
-                TableRow.LayoutParams.FILL_PARENT,
-                TableRow.LayoutParams.WRAP_CONTENT
-        );
-        wrapperParams.setMargins(100, 20, 0, 0);
-        LinearLayout wrapper = new LinearLayout(this);
-        wrapper.setLayoutParams(wrapperParams);
+
+//        TableRow.LayoutParams wrapperParams = new TableRow.LayoutParams(
+//                TableRow.LayoutParams.MATCH_PARENT,
+//                TableRow.LayoutParams.WRAP_CONTENT
+//        );
+//        wrapperParams.setMargins(60, 0, 0, 0);
+//        LinearLayout wrapper = new LinearLayout(this);
+//        wrapper.setLayoutParams(wrapperParams);
 
 
 
@@ -194,12 +228,17 @@ public class EditorDeckActivity extends AppCompatActivity implements LoaderManag
         /*tr.addView(wordEditText);
         tr.addView(separator);
         tr.addView(translateEditText);*/
-        wrapper.addView(wordEditText);
-        wrapper.addView(separator);
-        wrapper.addView(translateEditText);
+//        wrapper.addView(wordEditText);
+//        wrapper.addView(separator);
+//        wrapper.addView(translateEditText);
 
+//        tr.addView(counterView);
         tr.addView(counterView);
-        tr.addView(wrapper);
+        tr.addView(idTextView);
+        tr.addView(wordEditText);
+        tr.addView(separator);
+        tr.addView(translateEditText);
+
 
 
 
@@ -212,5 +251,43 @@ public class EditorDeckActivity extends AppCompatActivity implements LoaderManag
         tl.addView(tr, new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
 //        tl.addView(tr, separator_horizontal);
     }
+
+    private void onSaveButtonClicked() {
+        TableLayout table = findViewById(R.id.table);
+        for (int counter = 0; counter < table.getChildCount(); counter++) {
+            TableRow row = (TableRow) table.getChildAt(counter);
+
+//            TextView cTextView = (TextView) row.getVirtualChildAt(0);
+//            String counterString = cTextView.getText().toString();
+//            int c = Integer.parseInt(counterString);
+
+            TextView idTextView = (TextView) row.getVirtualChildAt(1);
+            String idString = idTextView.getText().toString();
+            int id = Integer.parseInt(idString);
+
+            EditText wordEditText = (EditText) row.getVirtualChildAt(2);
+            String word = wordEditText.getText().toString();
+
+            EditText translationEditText = (EditText) row.getVirtualChildAt(4);
+            String translation = translationEditText.getText().toString();
+
+            Uri currentWordUri = ContentUris.withAppendedId(WordEntry.CONTENT_URI, id);
+            ContentValues values = new ContentValues();
+            values.put(WordEntry.COLUMN_WORD, word);
+            values.put(WordEntry.COLUMN_TRANSLATION, translation);
+            int rowsAffected = getContentResolver().update(currentWordUri, values, null, null);
+
+            if (rowsAffected == 0) {
+                Toast.makeText(EditorDeckActivity.this, getString(R.string.editor_update_pet_failed),
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                finish();
+            }
+
+//            Log.e("Child", c + " : " + id + " / " + word + " / " + translation);
+        }
+
+    }
+
 
 }

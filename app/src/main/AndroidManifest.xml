@@ -64,7 +64,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".EditorDeckActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>
