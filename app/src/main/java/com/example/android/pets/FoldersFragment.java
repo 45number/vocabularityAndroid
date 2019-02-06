@@ -179,7 +179,7 @@ public class FoldersFragment extends Fragment
 //                    editor.putLong(SettingsContract.LAST_FOLDER, getCurrentFolder().getId());
 //                    editor.apply();
 
-                    Log.e(PATH_TREE + " onClick ", mTreePath.toString());
+//                    Log.e(PATH_TREE + " onClick ", mTreePath.toString());
 
                 } else {
                     chooseMode(id);

@@ -9,7 +9,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5e2b63f-b925-4f84-afbe-93a19f2f8cb9" name="Default" comment="" />
+    <list default="true" id="d5e2b63f-b925-4f84-afbe-93a19f2f8cb9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,12 +67,12 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="177">
-              <caret line="178" column="65" lean-forward="false" selection-start-line="178" selection-start-column="54" selection-end-line="178" selection-end-column="65" />
+              <caret line="181" column="27" lean-forward="false" selection-start-line="181" selection-start-column="22" selection-end-line="181" selection-end-column="27" />
               <folding>
-                <element signature="e#23051#23052#0" expanded="true" />
-                <element signature="e#23098#23099#0" expanded="true" />
-                <element signature="e#31183#31184#0" expanded="true" />
-                <element signature="e#31241#31242#0" expanded="true" />
+                <element signature="e#23053#23054#0" expanded="true" />
+                <element signature="e#23100#23101#0" expanded="true" />
+                <element signature="e#31185#31186#0" expanded="true" />
+                <element signature="e#31243#31244#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,9 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fini</find>
-      <find>EditorDec</find>
-      <find>EditorDeck</find>
       <find>mSetting</find>
       <find>mSettingWordsAtTime</find>
       <find>mSettings</find>
@@ -120,6 +119,9 @@
       <find>save</find>
       <find>getCurrentFolder</find>
       <find>LAST_FOLDER</find>
+      <find>log</find>
+      <find>log.</find>
+      <find>log.e</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2957,12 +2959,12 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FoldersFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
-          <caret line="178" column="65" lean-forward="false" selection-start-line="178" selection-start-column="54" selection-end-line="178" selection-end-column="65" />
+          <caret line="181" column="27" lean-forward="false" selection-start-line="181" selection-start-column="22" selection-end-line="181" selection-end-column="27" />
           <folding>
-            <element signature="e#23051#23052#0" expanded="true" />
-            <element signature="e#23098#23099#0" expanded="true" />
-            <element signature="e#31183#31184#0" expanded="true" />
-            <element signature="e#31241#31242#0" expanded="true" />
+            <element signature="e#23053#23054#0" expanded="true" />
+            <element signature="e#23100#23101#0" expanded="true" />
+            <element signature="e#31185#31186#0" expanded="true" />
+            <element signature="e#31243#31244#0" expanded="true" />
           </folding>
         </state>
       </provider>
