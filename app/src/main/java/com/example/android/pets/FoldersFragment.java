@@ -175,9 +175,9 @@ public class FoldersFragment extends Fragment
                     args.putStringArray("selectionArgs", selectionArgs);
                     getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);
 
-                    SharedPreferences.Editor editor = mSettings.edit();
-                    editor.putLong(SettingsContract.LAST_FOLDER, getCurrentFolder().getId());
-                    editor.apply();
+//                    SharedPreferences.Editor editor = mSettings.edit();
+//                    editor.putLong(SettingsContract.LAST_FOLDER, getCurrentFolder().getId());
+//                    editor.apply();
 
                     Log.e(PATH_TREE + " onClick ", mTreePath.toString());
 
@@ -248,9 +248,9 @@ public class FoldersFragment extends Fragment
 //        Log.e("treePath", "Cleared");
         mTreePath.clear();
         mTreePath.add(new pathItem(0L));
-        SharedPreferences.Editor editor = mSettings.edit();
-        editor.putLong(SettingsContract.LAST_FOLDER, 0L);
-        editor.apply();
+//        SharedPreferences.Editor editor = mSettings.edit();
+//        editor.putLong(SettingsContract.LAST_FOLDER, 0L);
+//        editor.apply();
     }
 /* private void insertPet() {
 
@@ -455,10 +455,13 @@ public class FoldersFragment extends Fragment
 
         Integer landId = getArguments().getInt("language_learning");
 
-        if (mSettings.getLong(SettingsContract.LAST_FOLDER, 0) != 0L) {
+//        if (mSettings.getLong(SettingsContract.LAST_FOLDER, 0) != 0L) {
+        if (((CatalogActivity)getActivity()).getCurrentFolder() != 0L) {
             args.putString("selection", PetEntry.COLUMN_PARENT + " = ? AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
 
-            Long parentLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
+//            Long parentLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
+            Long parentLong = ((CatalogActivity)getActivity()).getCurrentFolder();
+
             String parent = parentLong.toString();
 
             String[] selectionArgs = {parent, landId.toString()};
@@ -747,7 +750,7 @@ public class FoldersFragment extends Fragment
                 } else {
                     Class activityClass = EditorDeckActivity.class; // Need to be changed
                     Intent intent = new Intent(getActivity(), activityClass);
-                    intent.putExtra("folder", mSettings.getLong(SettingsContract.LAST_FOLDER, 0));
+                    intent.putExtra("folder", ((CatalogActivity)getActivity()).getCurrentFolder() );
                     intent.putExtra("deck", infoId);
                     startActivityForResult(intent, RESULT_SETTINGS);
 //                    Log.e("folder id is", getCurrentFolder().getId() + "");
@@ -794,7 +797,7 @@ public class FoldersFragment extends Fragment
 
     private void onDeleteWordsPressed(final Long deck) {
 
-        final pathItem folder = new pathItem(mSettings.getLong(SettingsContract.LAST_FOLDER, 0));
+        final pathItem folder = new pathItem( ((CatalogActivity)getActivity()).getCurrentFolder() );
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.delete_deck_title);
@@ -873,7 +876,7 @@ public class FoldersFragment extends Fragment
 
 
 
-    private pathItem getCurrentFolder() {
+    public pathItem getCurrentFolder() {
         return mTreePath.get(mTreePath.size() - 1);
     }
 
@@ -897,7 +900,9 @@ public class FoldersFragment extends Fragment
 //            Log.e(PATH_TREE + " onMark ", mTreePath.toString());
             ContentValues values = new ContentValues();
             values.put(DeckContract.DeckEntry.COLUMN_DECK, infoId);
-            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, mSettings.getLong(SettingsContract.LAST_FOLDER, 0));
+//            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, mSettings.getLong(SettingsContract.LAST_FOLDER, 0));
+
+            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, ((CatalogActivity)getActivity()).getCurrentFolder());
 
             getActivity().getContentResolver().insert(DeckContract.DeckEntry.CONTENT_URI, values);
 //            Log.e(PATH_TREE + " onMark ", mTreePath.toString());
@@ -905,7 +910,8 @@ public class FoldersFragment extends Fragment
 
             String selection = DeckContract.DeckEntry.COLUMN_FOLDER + " = ? AND " + DeckContract.DeckEntry.COLUMN_DECK + " = ?";
             String[] selectionArgs = new String[2];
-            Long folderLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
+//            Long folderLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
+            Long folderLong = ((CatalogActivity)getActivity()).getCurrentFolder();
             selectionArgs[0] = folderLong.toString();
             selectionArgs[1] = infoId.toString();
 
@@ -936,9 +942,9 @@ public class FoldersFragment extends Fragment
 
             mTreePath.remove(mTreePath.size() - 1);
 
-            SharedPreferences.Editor editor = mSettings.edit();
-            editor.putLong(SettingsContract.LAST_FOLDER, mTreePath.get(mTreePath.size() - 1).getId());
-            editor.apply();
+//            SharedPreferences.Editor editor = mSettings.edit();
+//            editor.putLong(SettingsContract.LAST_FOLDER, mTreePath.get(mTreePath.size() - 1).getId());
+//            editor.apply();
 
             ((CatalogActivity)getActivity()).refreshDecks();
 //            refreshDecks();

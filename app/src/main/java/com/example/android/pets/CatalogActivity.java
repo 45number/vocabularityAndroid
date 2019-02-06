@@ -17,6 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.example.android.pets.data.SettingsContract;
+import com.example.android.pets.data.pathItem;
 
 import java.util.ArrayList;
 
@@ -38,9 +39,6 @@ public class CatalogActivity extends AppCompatActivity implements
     private boolean mIsArabicStudying;
 
     FoldersPagerAdapter mAdapter;
-
-//    public FloatingActionButton fab;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,6 +145,11 @@ public class CatalogActivity extends AppCompatActivity implements
         Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
         ((FoldersFragment)f).refreshMemWords();
         return;
+    }
+
+    public Long getCurrentFolder() {
+        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
+        return ((FoldersFragment)f).getCurrentFolder().getId();
     }
 
 
