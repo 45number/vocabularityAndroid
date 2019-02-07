@@ -152,6 +152,11 @@ public class CatalogActivity extends AppCompatActivity implements
         return ((FoldersFragment)f).getCurrentFolder().getId();
     }
 
+    public ArrayList<pathItem> getFoldersPath() {
+        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
+        return ((FoldersFragment)f).getFoldersPath();
+    }
+
 
     @Override
     public void replaceFragment(Fragment fragment) {

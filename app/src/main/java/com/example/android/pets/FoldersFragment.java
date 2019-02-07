@@ -76,6 +76,7 @@ public class FoldersFragment extends Fragment
     View rootView;
     FloatingActionButton fab;
     Button addButtonEmpty;
+    TextView pathTextView;
 
 //    LinearLayout markedBadge;
 //    FloatingActionButton rootFab;
@@ -93,6 +94,8 @@ public class FoldersFragment extends Fragment
     private static final int RESULT_DELETED_DECK = 6;
 
     private static final String PATH_TREE = "path";
+
+    public static final String PATH_SEPARATOR = "/";
 
 
     private ArrayList<pathItem> mTreePath = new ArrayList<>();
@@ -124,12 +127,12 @@ public class FoldersFragment extends Fragment
         }
 
 
+        pathTextView = rootView.findViewById(R.id.pathTextView);
+
+
         // Setup FAB to open EditorActivity
         fab = rootView.findViewById(R.id.fab);
         fab.hide();
-
-
-
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,6 +169,10 @@ public class FoldersFragment extends Fragment
 
                 if (mAdapterNumber == 0) {
                     mTreePath.add(new pathItem(id));
+
+                    TextView folderNameTextView = (TextView) view.findViewById(R.id.name);
+                    String folderName = folderNameTextView.getText().toString();
+                    Log.e("folder", folderName);
 
                     Bundle args=new Bundle();
                     args.putString("selection", PetEntry.COLUMN_PARENT + " = ?");
@@ -243,6 +250,9 @@ public class FoldersFragment extends Fragment
         }).start();
     }
 
+    public ArrayList<pathItem> getFoldersPath() {
+        return mTreePath;
+    }
 
     public void clearTreePath() {
 //        Log.e("treePath", "Cleared");
@@ -467,10 +477,15 @@ public class FoldersFragment extends Fragment
             String[] selectionArgs = {parent, landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
 
+//            ((CatalogActivity)getActivity()).getFoldersPath();
+//            Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
+
         } else {
             args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
             String[] selectionArgs = {landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
+
+//            Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
         }
 
         getLoaderManager().restartLoader(PET_LOADER, args, this);
@@ -656,6 +671,9 @@ public class FoldersFragment extends Fragment
                 }
             }
             mCursorAdapter.swapCursor(data);
+
+            Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
+
         }
     }
 
