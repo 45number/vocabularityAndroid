@@ -239,6 +239,7 @@ public class FoldersFragment extends Fragment
         repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
         getLoaderManager().initLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
 
+//        updatePathTextView();
 
         return rootView;
     }
@@ -681,7 +682,9 @@ public class FoldersFragment extends Fragment
             mCursorAdapter.swapCursor(data);
 
 //            pathTextView.setText( ((CatalogActivity)getActivity()).getPath() );
-            updatePathTextView();
+//            Log.e("reload", "yes");
+            ((CatalogActivity)getActivity()).updatePathTextView();
+//            Log.e("reload", "yes");
 //            ((CatalogActivity)getActivity()).updateFolderPageAdapter();
 //            ((CatalogActivity)getActivity()).updateFolderPageAdapter();
 //            Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
@@ -689,10 +692,26 @@ public class FoldersFragment extends Fragment
         }
     }
 
+/*    public String getPath() {
+        String path = "";
+
+//        FoldersFragment.this.mTreePath.size();
+
+        for (int c = 0; c < ((CatalogActivity)getActivity()).getFoldersPath().size(); c++) {
+//            for (int c = 0; c < ((CatalogActivity)getActivity()).getFoldersPath().size(); c++) {
+            path += PATH_SEPARATOR + ((CatalogActivity)getActivity()).getFoldersPath().get(c).getName();
+        }
+        StringBuilder sb = new StringBuilder(path);
+        sb.deleteCharAt(0);
+        path = sb.toString();
+        return path;
+    }*/
+
+
     public String getPath() {
         String path = "";
-        for (int c = 0; c < ((CatalogActivity)getActivity()).getFoldersPath().size(); c++) {
-            path += PATH_SEPARATOR + ((CatalogActivity)getActivity()).getFoldersPath().get(c).getName();
+        for (int c = 0; c < FoldersFragment.this.mTreePath.size(); c++) {
+            path += PATH_SEPARATOR + FoldersFragment.this.mTreePath.get(c).getName();
         }
         StringBuilder sb = new StringBuilder(path);
         sb.deleteCharAt(0);
@@ -700,15 +719,17 @@ public class FoldersFragment extends Fragment
         return path;
     }
 
+
     public void updatePathTextView() {
-        pathTextView.setText( ((CatalogActivity)getActivity()).getPath() );
-//        pathTextView.setText(getPath());
+//        pathTextView.setText( ((CatalogActivity)getActivity()).getPath() );
+        pathTextView.setText(getPath());
     }
 
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mCursorAdapter.swapCursor(null);
+        updatePathTextView();
     }
 
 
@@ -926,6 +947,7 @@ public class FoldersFragment extends Fragment
         super.onPause();
 //        clearTreePath();
 //        ((CatalogActivity)getActivity()).refreshDecks();
+        updatePathTextView();
     }
 
 
