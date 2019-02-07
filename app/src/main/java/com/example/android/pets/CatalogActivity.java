@@ -147,9 +147,9 @@ public class CatalogActivity extends AppCompatActivity implements
         return;
     }
 
-    public Long getCurrentFolder() {
+    public pathItem getCurrentFolder() {
         Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
-        return ((FoldersFragment)f).getCurrentFolder().getId();
+        return ((FoldersFragment)f).getCurrentFolder();
     }
 
     public ArrayList<pathItem> getFoldersPath() {
@@ -157,6 +157,15 @@ public class CatalogActivity extends AppCompatActivity implements
         return ((FoldersFragment)f).getFoldersPath();
     }
 
+    public void updatePathTextView() {
+        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
+        ((FoldersFragment)f).updatePathTextView();
+    }
+
+    public String getPath() {
+        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
+        return  ((FoldersFragment)f).getPath();
+    }
 
     @Override
     public void replaceFragment(Fragment fragment) {
@@ -170,6 +179,8 @@ public class CatalogActivity extends AppCompatActivity implements
         fragmentTransaction.replace(R.id.frame_layout, fragment, fragment.toString());
         fragmentTransaction.addToBackStack(fragment.toString());
         fragmentTransaction.commit();
+
+//        updatePathTextView();
 
 //        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
 //        ((FoldersFragment)f).clearTreePath();

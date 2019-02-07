@@ -6,9 +6,11 @@ import android.os.Parcelable;
 public class pathItem implements Parcelable {
 
     Long id;
+    String name;
 
-    public pathItem(Long id) {
+    public pathItem(Long id, String name) {
         this.id = id;
+        this.name = name;
     }
 
     protected pathItem(Parcel in) {
@@ -45,4 +47,6 @@ public class pathItem implements Parcelable {
     public Long getId() {
         return id;
     }
+
+    public String getName() { return name; }
 }
