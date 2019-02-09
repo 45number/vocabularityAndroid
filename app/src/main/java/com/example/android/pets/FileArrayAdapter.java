@@ -46,7 +46,7 @@ public class FileArrayAdapter extends ArrayAdapter<FilesItem>{
         if (o != null) {
             TextView t1 = (TextView) v.findViewById(R.id.TextView01);
             TextView t2 = (TextView) v.findViewById(R.id.TextView02);
-            TextView t3 = (TextView) v.findViewById(R.id.TextViewDate);
+//            TextView t3 = (TextView) v.findViewById(R.id.TextViewDate);
             /* Take the ImageView from layout and set the city's image */
             ImageView imageCity = (ImageView) v.findViewById(R.id.fd_Icon1);
             String uri = "drawable/" + o.getImage();
@@ -58,8 +58,8 @@ public class FileArrayAdapter extends ArrayAdapter<FilesItem>{
                 t1.setText(o.getName());
             if(t2!=null)
                 t2.setText(o.getData());
-            if(t3!=null)
-                t3.setText(o.getDate());
+//            if(t3!=null)
+//                t3.setText(o.getDate());
         }
         return v;
     }

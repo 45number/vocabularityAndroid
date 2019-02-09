@@ -186,7 +186,6 @@ public class FoldersFragment extends Fragment
 //                    SharedPreferences.Editor editor = mSettings.edit();
 //                    editor.putLong(SettingsContract.LAST_FOLDER, getCurrentFolder().getId());
 //                    editor.apply();
-
 //                    Log.e(PATH_TREE + " onClick ", mTreePath.toString());
 
                 } else {
@@ -297,15 +296,12 @@ public class FoldersFragment extends Fragment
         repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
         getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
 
-
 //        clearTreePath();
 //        ((CatalogActivity)getActivity()).refreshDecks();
 
-
-
-        Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
+//        Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
         updatePathTextView();
-        Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
+//        Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
     }
 
     @Override
@@ -386,8 +382,6 @@ public class FoldersFragment extends Fragment
             excelImage.setColorFilter(disabledItemColor);
         }
 
-
-
         folderOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -416,21 +410,24 @@ public class FoldersFragment extends Fragment
 
     private void addFolder() {
         Intent intent = new Intent(getActivity(), EditorActivity.class);
-        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
+//        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
+        intent.putExtra("folder_id", ((CatalogActivity)getActivity()).getCurrentFolder().getId());
         intent.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivity(intent);
     }
 
     private void addWords() {
         Intent intent = new Intent(getActivity(), WordEditorActivity.class);
-        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
+//        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
+        intent.putExtra("folder_id", ((CatalogActivity)getActivity()).getCurrentFolder().getId());
         intent.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivityForResult(intent, 1);
     }
 
     private void uploadExcel() {
         Intent intent1 = new Intent(getActivity(), FileChooser.class);
-        intent1.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
+//        intent1.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
+        intent1.putExtra("folder_id", ((CatalogActivity)getActivity()).getCurrentFolder().getId());
         intent1.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivityForResult(intent1,RESULT_FILE_EXPLORER);
     }
@@ -818,7 +815,7 @@ public class FoldersFragment extends Fragment
                 } else {
                     Class activityClass = EditorDeckActivity.class; // Need to be changed
                     Intent intent = new Intent(getActivity(), activityClass);
-                    intent.putExtra("folder", ((CatalogActivity)getActivity()).getCurrentFolder() );
+                    intent.putExtra("folder", ((CatalogActivity)getActivity()).getCurrentFolder().getId() );
                     intent.putExtra("deck", infoId);
                     startActivityForResult(intent, RESULT_SETTINGS);
 //                    Log.e("folder id is", getCurrentFolder().getId() + "");

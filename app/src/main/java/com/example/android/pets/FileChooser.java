@@ -110,9 +110,8 @@ public class FileChooser extends ListActivity
 
                     //String formated = lastModDate.toString();
                     dir.add(new FilesItem(ff.getName(),num_item,date_modify,ff.getAbsolutePath(),"directory_icon"));
-                }
-                else
-                {
+//                    dir.add(new FilesItem(ff.getName(),num_item,date_modify,ff.getAbsolutePath(),"ic_folder"));
+                } else {
                     int dotPosition= ff.getName().lastIndexOf(".");
                     String ext = ff.getName().substring(dotPosition + 1, ff.getName().length());
 
