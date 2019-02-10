@@ -640,7 +640,7 @@ public class FoldersFragment extends Fragment
                     projection,
                     selection,
                     selectionArgs,
-                    null);
+                    PetEntry._ID + " DESC");
         }
     }
 
