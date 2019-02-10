@@ -65,8 +65,8 @@ public class FileChooser extends ListActivity
         fill(currentDir);
         uploadData = new ArrayList<>();
     }
-    private void fill(File f)
-    {
+
+    private void fill(File f) {
         File[]dirs = f.listFiles();
         this.setTitle("Current Dir: "+f.getName());
         List<FilesItem> dir = new ArrayList<>();
