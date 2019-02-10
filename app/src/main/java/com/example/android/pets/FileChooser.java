@@ -64,6 +64,7 @@ public class FileChooser extends ListActivity
         currentDir = new File("/sdcard/");
         fill(currentDir);
         uploadData = new ArrayList<>();
+
     }
 
     private void fill(File f) {
