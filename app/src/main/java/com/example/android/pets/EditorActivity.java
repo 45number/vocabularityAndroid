@@ -80,7 +80,7 @@ public class EditorActivity extends AppCompatActivity implements
     private EditText mNameEditText;
 
     /** EditText field to enter the pet's breed */
-    private EditText mBreedEditText;
+//    private EditText mBreedEditText;
 
 
     private ImageView mFolderImageButton;
@@ -118,7 +118,7 @@ public class EditorActivity extends AppCompatActivity implements
          * My code
          * */
         mFolderImageButton = (ImageView) findViewById(R.id.folderImageButton);
-        mOkButton = (Button) findViewById(R.id.okButton);
+        mOkButton = (Button) findViewById(R.id.ok_button);
         mFolderImageBackground = findViewById(R.id.imageWrapper);
 
         mFolderImageButton.setOnClickListener(new View.OnClickListener() {
@@ -142,22 +142,26 @@ public class EditorActivity extends AppCompatActivity implements
             invalidateOptionsMenu();
         } else {
             setTitle(getString(R.string.editor_activity_title_edit_pet));
-
             getLoaderManager().initLoader(EXISTING_PET_LOADER, null, this);
-
-
         }
 
         // Find all relevant views that we will need to read user input from
         mNameEditText = (EditText) findViewById(R.id.edit_pet_name);
-        mBreedEditText = (EditText) findViewById(R.id.edit_pet_breed);
+
+//        mNameEditText.requestFocus();
+//        mBreedEditText = (EditText) findViewById(R.id.edit_pet_breed);
+
+//        mNameEditText.setFocusableInTouchMode(true);
+        mNameEditText.requestFocus();
+
 
 
         // Setup OnTouchListeners on all the input fields, so we can determine if the user
         // has touched or modified them. This will let us know if there are unsaved changes
         // or not, if the user tries to leave the editor without saving.
         mNameEditText.setOnTouchListener(mTouchListener);
-        mBreedEditText.setOnTouchListener(mTouchListener);
+
+//        mBreedEditText.setOnTouchListener(mTouchListener);
 
     }
 
@@ -387,7 +391,8 @@ public class EditorActivity extends AppCompatActivity implements
                 // If the pet hasn't changed, continue with navigating up to parent activity
                 // which is the {@link CatalogActivity}.
                 if (!mPetHasChanged) {
-                    NavUtils.navigateUpFromSameTask(EditorActivity.this);
+                    finish();
+//                    NavUtils.navigateUpFromSameTask(EditorActivity.this);
                     return true;
                 }
                 // Otherwise if there are unsaved changes, setup a dialog to warn the user.
@@ -398,7 +403,8 @@ public class EditorActivity extends AppCompatActivity implements
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 // User clicked "Discard" button, navigate to parent activity.
-                                NavUtils.navigateUpFromSameTask(EditorActivity.this);
+//                                NavUtils.navigateUpFromSameTask(EditorActivity.this);
+                                finish();
                             }
                         };
                 // Show a dialog that notifies the user they have unsaved changes
@@ -466,7 +472,7 @@ public class EditorActivity extends AppCompatActivity implements
             mExistingImage = cursor.getString(breedColumnIndex);
             // Update the views on the screen with the values from the database
             mNameEditText.setText(name);
-            mBreedEditText.setText(mExistingImage);
+//            mBreedEditText.setText(mExistingImage);
 
             if (mExistingImage != null)
                 readFileFromInternalStorage(mExistingImage);
@@ -476,9 +482,11 @@ public class EditorActivity extends AppCompatActivity implements
     public void onLoaderReset(Loader<Cursor> loader) {
         // If the loader is invalidated, clear out all the data from the input fields.
         mNameEditText.setText("");
-        mBreedEditText.setText("");
+//        mBreedEditText.setText("");
 
     }
+
+
 
     /**
      * Show a dialog that warns the user there are unsaved changes that will be lost

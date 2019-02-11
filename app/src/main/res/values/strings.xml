@@ -87,13 +87,10 @@
     <string name="ok_delete">Ok</string>
 
 
-
     <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
     <string name="delete_card_title">Are you sure?</string>
     <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
     <string name="delete_card_msg">Delete the card</string>
-
-
 
 
     <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->

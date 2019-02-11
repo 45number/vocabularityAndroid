@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.List;
 import java.text.DateFormat;
 
+import android.app.Activity;
 import android.app.LoaderManager;
 import android.content.ContentValues;
 import android.content.Loader;
@@ -22,9 +23,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -40,7 +44,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class FileChooser extends ListActivity
+public class FileChooser extends AppCompatActivity //ListActivity
 //        implements LoaderManager.LoaderCallbacks<Cursor>
 {
 
@@ -48,6 +52,8 @@ public class FileChooser extends ListActivity
     private FileArrayAdapter adapter;
 
     ArrayList<XYValue> uploadData;
+
+    ListView listView;
 
 //    List<FilesItem>dir;
 //    List<FilesItem>fls;
@@ -58,6 +64,11 @@ public class FileChooser extends ListActivity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.activity_file_explorer);
+        listView = (ListView) findViewById(R.id.list);
+
+
+
 //        dir = new ArrayList<>();
 //        fls = new ArrayList<>();
 
@@ -65,11 +76,26 @@ public class FileChooser extends ListActivity
         fill(currentDir);
         uploadData = new ArrayList<>();
 
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                FilesItem o = adapter.getItem(i);
+
+                if(o.getImage().equalsIgnoreCase("ic_folder")||o.getImage().equalsIgnoreCase("directory_up")){
+                    currentDir = new File(o.getPath());
+                    fill(currentDir);
+                } else {
+                    onFileClick(o);
+                }
+            }
+        });
     }
 
     private void fill(File f) {
         File[]dirs = f.listFiles();
-        this.setTitle("Current Dir: "+f.getName());
+//        "Current Dir: "+
+        this.setTitle(f.getName());
         List<FilesItem> dir = new ArrayList<>();
         List<FilesItem> fls = new ArrayList<>();
         try{
@@ -140,13 +166,17 @@ public class FileChooser extends ListActivity
         if(!f.getName().equalsIgnoreCase("sdcard"))
             dir.add(0,new FilesItem("..","Parent Directory","",f.getParent(),"ic_folder"));
 //            dir.add(0,new FilesItem("..","Parent Directory","",f.getParent(),"directory_up"));
-        adapter = new FileArrayAdapter(FileChooser.this, R.layout.list_item_files, dir);
-        this.setListAdapter(adapter);
+//        adapter = new FileArrayAdapter(FileChooser.this, R.layout.list_item_files, dir);
+        adapter = new FileArrayAdapter(this, R.layout.list_item_files, dir);
+//        this.setListAdapter(adapter);
+
+//        Log.e("oo", listView.toString());
+        listView.setAdapter(adapter);
     }
 
 
 
-    @Override
+    /*@Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         // TODO Auto-generated method stub
         super.onListItemClick(l, v, position, id);
@@ -158,6 +188,19 @@ public class FileChooser extends ListActivity
         } else {
             onFileClick(o);
         }
+    }*/
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                finish();
+                break;
+//                this.onBackPressed();
+//                break;
+            }
+        }
+        return true;
     }
 
 

@@ -16,6 +16,6 @@
     <!-- Common margin value used throughout the app -->
     <dimen name="activity_margin">16dp</dimen>
 
-    <dimen name="file_explorer_margin">12dp</dimen>
+    <dimen name="file_explorer_margin">10dp</dimen>
 </resources>
 

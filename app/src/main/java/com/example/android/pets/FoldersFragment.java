@@ -111,10 +111,7 @@ public class FoldersFragment extends Fragment
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_folders, container, false);
 
-
         mSettings = getContext().getSharedPreferences(SettingsContract.APP_PREFERENCES, getContext().MODE_PRIVATE);
-
-
 
 //        rootFab = ((CatalogActivity)getActivity()).getFab();
 //        rootFab.hide();

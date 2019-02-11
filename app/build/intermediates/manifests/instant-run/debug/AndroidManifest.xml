@@ -35,7 +35,8 @@
             android:name="com.example.android.pets.EditorActivity"
             android:parentActivityName="com.example.android.pets.CatalogActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/EditorTheme" >
+            android:theme="@style/EditorTheme"
+            android:windowSoftInputMode="stateVisible" >
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
@@ -71,12 +72,16 @@
         </activity>
         <activity
             android:name="com.example.android.pets.FileChooser"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CatalogActivity" />
+        </activity>
         <activity
             android:name="com.example.android.pets.EditorDeckActivity"
             android:screenOrientation="portrait" >
         </activity>
-
+        <!-- <activity android:name=".FileExplorer"></activity> -->
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
             android:authorities="com.example.android.pets.com.android.tools.ir.server.InstantRunContentProvider"
