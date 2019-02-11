@@ -19,6 +19,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -32,8 +34,11 @@ public class WordEditorActivity extends AppCompatActivity  implements
 
     private EditText mWordEditText;
     private EditText mTranslationEditText;
-    private boolean mWordHasChanged = false;
+//    private boolean mWordHasChanged = false;
     private Uri mCurrentPetUri;
+
+    private Button finishButton;
+    private Button saveButton;
 
 
     /** Identifier for the pet data loader */
@@ -51,30 +56,49 @@ public class WordEditorActivity extends AppCompatActivity  implements
         Intent intent = getIntent();
         mCurrentPetUri = intent.getData();
 
+        setTitle(getString(R.string.editor_activity_title_new_word));
 
-        if (mCurrentPetUri == null) {
-            setTitle(getString(R.string.editor_activity_title_new_pet));
+/*//        if (mCurrentPetUri == null) {
+            setTitle(getString(R.string.editor_activity_title_new_word));
             // Invalidate the options menu, so the "Delete" menu option can be hidden.
             // (It doesn't make sense to delete a pet that hasn't been created yet.)
-            invalidateOptionsMenu();
-        } else {
+//            invalidateOptionsMenu();
+        *//*} else {
             setTitle(getString(R.string.editor_activity_title_edit_pet));
             getLoaderManager().initLoader(EXISTING_PET_LOADER, null, this);
-        }
+        }*/
+
+        finishButton = findViewById(R.id.cancel_button);
+        saveButton = findViewById(R.id.ok_button);
+
+        finishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveWord();
+                setResult(1);
+            }
+        });
 
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_editor, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()) {
-            // Respond to a click on the "Save" menu option
+            /*// Respond to a click on the "Save" menu option
             case R.id.action_save:
                 // Save pet to database
                 saveWord();
@@ -87,11 +111,14 @@ public class WordEditorActivity extends AppCompatActivity  implements
                 // Pop up confirmation dialog for deletion
 //                showDeleteConfirmationDialog();
                 return true;
-            // Respond to a click on the "Up" arrow button in the app bar
+            // Respond to a click on the "Up" arrow button in the app bar*/
             case android.R.id.home:
+
+                finish();
+
                 // If the pet hasn't changed, continue with navigating up to parent activity
                 // which is the {@link CatalogActivity}.
-                if (!mWordHasChanged) {
+                /*if (!mWordHasChanged) {
                     NavUtils.navigateUpFromSameTask(WordEditorActivity.this);
                     return true;
                 }
@@ -107,7 +134,7 @@ public class WordEditorActivity extends AppCompatActivity  implements
                             }
                         };
                 // Show a dialog that notifies the user they have unsaved changes
-                showUnsavedChangesDialog(discardButtonClickListener);
+                showUnsavedChangesDialog(discardButtonClickListener);*/
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -124,12 +151,18 @@ public class WordEditorActivity extends AppCompatActivity  implements
         int languageLearningId = getIntent().getIntExtra("language_learning", 1);
 //        Long folderIdLong = 1L;
 
-        if (mCurrentPetUri == null &&
+        if ("".equals(wordString) || "".equals(translationString)
+                || TextUtils.isEmpty(wordString) || TextUtils.isEmpty(translationString)) {
+            Log.e("empty", "fields");
+            return;
+        }
+
+        /*if (mCurrentPetUri == null &&
                 TextUtils.isEmpty(wordString)) {
             // Since no fields were modified, we can return early without creating a new pet.
             // No need to create ContentValues and no need to do any ContentProvider operations.
             return;
-        }
+        }*/
 
 
         ContentValues values = new ContentValues();
@@ -142,7 +175,7 @@ public class WordEditorActivity extends AppCompatActivity  implements
 
 
         // Determine if this is a new or existing pet by checking if mCurrentPetUri is null or not
-        if (mCurrentPetUri == null) {
+//        if (mCurrentPetUri == null) {
             // This is a NEW pet, so insert a new pet into the provider,
             // returning the content URI for the new pet.
             Uri newUri = getContentResolver().insert(WordEntry.CONTENT_URI, values);
@@ -155,8 +188,12 @@ public class WordEditorActivity extends AppCompatActivity  implements
                 // Otherwise, the insertion was successful and we can display a toast.
                 Toast.makeText(this, getString(R.string.editor_insert_pet_successful),
                         Toast.LENGTH_SHORT).show();
+
+                mWordEditText.setText("");
+                mTranslationEditText.setText("");
+
             }
-        } else {
+        /*} else {
             // Otherwise this is an EXISTING pet, so update the pet with content URI: mCurrentPetUri
             // and pass in the new ContentValues. Pass in null for the selection and selection args
             // because mCurrentPetUri will already identify the correct row in the database that
@@ -173,7 +210,7 @@ public class WordEditorActivity extends AppCompatActivity  implements
                 Toast.makeText(this, getString(R.string.editor_update_pet_successful),
                         Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
     }
 
 

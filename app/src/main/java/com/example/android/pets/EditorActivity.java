@@ -85,6 +85,7 @@ public class EditorActivity extends AppCompatActivity implements
 
     private ImageView mFolderImageButton;
     private Button mOkButton;
+    private Button mCancelButton;
     private static final int GALLERY_REQUEST = 1;
     private FrameLayout mFolderImageBackground;
     private String mImageName;
@@ -119,6 +120,7 @@ public class EditorActivity extends AppCompatActivity implements
          * */
         mFolderImageButton = (ImageView) findViewById(R.id.folderImageButton);
         mOkButton = (Button) findViewById(R.id.ok_button);
+        mCancelButton = findViewById(R.id.cancel_button);
         mFolderImageBackground = findViewById(R.id.imageWrapper);
 
         mFolderImageButton.setOnClickListener(new View.OnClickListener() {
@@ -163,6 +165,23 @@ public class EditorActivity extends AppCompatActivity implements
 
 //        mBreedEditText.setOnTouchListener(mTouchListener);
 
+
+        mOkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                savePet();
+                finish();
+            }
+        });
+
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                exitActivity();
+            }
+        });
+
+
     }
 
     @Override
@@ -181,7 +200,6 @@ public class EditorActivity extends AppCompatActivity implements
                     .start(this);
 
         }
-
 
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
@@ -243,6 +261,11 @@ public class EditorActivity extends AppCompatActivity implements
 
         String nameString = mNameEditText.getText().toString().trim();
 
+        if (nameString.isEmpty()) {
+            Toast.makeText(this, "Folder title cannot be empty", Toast.LENGTH_LONG);
+            return;
+        }
+
         Long folderIdLong = getIntent().getLongExtra("folder_id", 1L);
         int languageLearningId = getIntent().getIntExtra("language_learning", 1);
 
@@ -253,19 +276,13 @@ public class EditorActivity extends AppCompatActivity implements
             return;
         }
 
-
         ContentValues values = new ContentValues();
         values.put(PetEntry.COLUMN_FOLDER_NAME, nameString);
-
-
-
-
 
         // Determine if this is a new or existing pet by checking if mCurrentPetUri is null or not
         if (mCurrentPetUri == null) {
             // This is a NEW pet, so insert a new pet into the provider,
             // returning the content URI for the new pet.
-
 
 //            if (folderIdLong == 0L)
 //                values.put(PetEntry.COLUMN_PARENT, "null");
@@ -273,10 +290,8 @@ public class EditorActivity extends AppCompatActivity implements
             if (folderIdLong != 0L)
                 values.put(PetEntry.COLUMN_PARENT, folderIdLong);
 
-
             values.put(PetEntry.COLUMN_IMAGE, mImageName);
             values.put(PetEntry.COLUMN_LEARNING_LANGUAGE, languageLearningId);
-
 
             Uri newUri = getContentResolver().insert(PetEntry.CONTENT_URI, values);
             // Show a toast message depending on whether or not the insertion was successful.
@@ -322,8 +337,6 @@ public class EditorActivity extends AppCompatActivity implements
 
             }
 
-
-
             int rowsAffected = getContentResolver().update(mCurrentPetUri, values, null, null);
             // Show a toast message depending on whether or not the update was successful.
             if (rowsAffected == 0) {
@@ -344,20 +357,19 @@ public class EditorActivity extends AppCompatActivity implements
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu options from the res/menu/menu_editor.xml file.
         // This adds menu items to the app bar.
         getMenuInflater().inflate(R.menu.menu_editor, menu);
         return true;
-    }
-
+    }*/
 
     /**
      * This method is called after invalidateOptionsMenu(), so that the
      * menu can be updated (some menu items can be hidden or made visible).
      */
-    @Override
+    /*@Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
         // If this is a new pet, hide the "Delete" menu item.
@@ -366,16 +378,14 @@ public class EditorActivity extends AppCompatActivity implements
             menuItem.setVisible(false);
         }
         return true;
-    }
-
-
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()) {
             // Respond to a click on the "Save" menu option
-            case R.id.action_save:
+            /*case R.id.action_save:
                 // Save pet to database
                 savePet();
                 // Exit activity
@@ -385,38 +395,31 @@ public class EditorActivity extends AppCompatActivity implements
             case R.id.action_delete:
                 // Pop up confirmation dialog for deletion
                 showDeleteConfirmationDialog();
-                return true;
+                return true;*/
             // Respond to a click on the "Up" arrow button in the app bar
             case android.R.id.home:
-                // If the pet hasn't changed, continue with navigating up to parent activity
-                // which is the {@link CatalogActivity}.
-                if (!mPetHasChanged) {
-                    finish();
-//                    NavUtils.navigateUpFromSameTask(EditorActivity.this);
-                    return true;
-                }
-                // Otherwise if there are unsaved changes, setup a dialog to warn the user.
-                // Create a click listener to handle the user confirming that
-                // changes should be discarded.
-                DialogInterface.OnClickListener discardButtonClickListener =
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                // User clicked "Discard" button, navigate to parent activity.
-//                                NavUtils.navigateUpFromSameTask(EditorActivity.this);
-                                finish();
-                            }
-                        };
-                // Show a dialog that notifies the user they have unsaved changes
-                showUnsavedChangesDialog(discardButtonClickListener);
+                exitActivity();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * This method is called when the back button is pressed.
-     */
+
+    public void exitActivity() {
+        if (!mPetHasChanged) {
+            finish();
+            return;
+        }
+        DialogInterface.OnClickListener discardButtonClickListener =
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                };
+        showUnsavedChangesDialog(discardButtonClickListener);
+    }
+
     @Override
     public void onBackPressed() {
         // If the pet hasn't changed, continue with handling back button press
@@ -456,6 +459,7 @@ public class EditorActivity extends AppCompatActivity implements
                 null,                   // No selection arguments
                 null);                  // Default sort order
     }
+
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
         // Bail early if the cursor is null or there is less than 1 row in the cursor
@@ -472,21 +476,20 @@ public class EditorActivity extends AppCompatActivity implements
             mExistingImage = cursor.getString(breedColumnIndex);
             // Update the views on the screen with the values from the database
             mNameEditText.setText(name);
+            mNameEditText.setSelection(mNameEditText.getText().length());
 //            mBreedEditText.setText(mExistingImage);
 
             if (mExistingImage != null)
                 readFileFromInternalStorage(mExistingImage);
         }
     }
+
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         // If the loader is invalidated, clear out all the data from the input fields.
         mNameEditText.setText("");
 //        mBreedEditText.setText("");
-
     }
-
-
 
     /**
      * Show a dialog that warns the user there are unsaved changes that will be lost
@@ -542,6 +545,7 @@ public class EditorActivity extends AppCompatActivity implements
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
     /**
      * Perform the deletion of the pet in the database.
      */
