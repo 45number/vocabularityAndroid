@@ -9,9 +9,6 @@
     tools:context=".CatalogActivity"
     >
 
-    <!--android:paddingTop="10dp"-->
-    <!--android:paddingBottom="10dp"-->
-
     <TextView
         android:id="@+id/pathTextView"
         android:layout_width="match_parent"
@@ -31,6 +28,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
+
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progress_bar"-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:layout_centerInParent="true"/>-->
+
     <!-- Empty view for the list -->
     <RelativeLayout
         android:id="@+id/empty_view"
@@ -38,25 +42,14 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
-        <!--<ImageView-->
-            <!--android:id="@+id/empty_shelter_image"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:src="@drawable/ic_empty_shelter"/>-->
 
-        <!--android:layout_below="@+id/empty_shelter_image"-->
-        <!--android:layout_below="@+id/addButton"-->
-        <!--android:paddingTop="16dp"-->
 
         <TextView
             android:id="@+id/empty_title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-medium"
-
             android:text="@string/empty_view_title_text"
             android:textAppearance="?android:textAppearanceMedium"/>
 
@@ -86,7 +79,6 @@
             android:text="Create"
             android:layout_below="@+id/empty_subtitle_text"
             style="?android:attr/borderlessButtonStyle"/>
-
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton

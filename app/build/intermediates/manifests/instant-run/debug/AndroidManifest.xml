@@ -55,7 +55,10 @@
 
         <activity
             android:name="com.example.android.pets.WordEditorActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName="com.example.android.pets.CatalogActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/EditorTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.example.android.pets.MemorizeActivity"
             android:screenOrientation="portrait" />
