@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
@@ -31,6 +32,8 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
 
     private ArrayList<Boolean> mSelectedLanguagesBoolean;
 
+    CheckedTextView englishCheckedTextView;
+
     private boolean mSettingIsEngStudying = false;
     private boolean mSettingIsRuStudying = false;
     private boolean mSettingIsArStudying = false;
@@ -43,6 +46,20 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
         setContentView(R.layout.activity_settings);
 
         mSettings = getSharedPreferences(SettingsContract.APP_PREFERENCES, Context.MODE_PRIVATE);
+
+
+        englishCheckedTextView = findViewById(R.id.englishCheckedTextView);
+        englishCheckedTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (englishCheckedTextView.isChecked()) {
+                    englishCheckedTextView.setChecked(false);
+                } else {
+                    englishCheckedTextView.setChecked(true);
+                }
+            }
+        });
+
 
         Button b = findViewById(R.id.button11);
         b.setOnClickListener(new View.OnClickListener(){
