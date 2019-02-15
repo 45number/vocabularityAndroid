@@ -2284,6 +2284,10 @@
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\layout_settings_row.xml.flat",
+        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\layout\\settings_row.xml"
+    },
+    {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_direction_checked.png.flat",
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_direction_checked.png"
     },
@@ -2842,6 +2846,10 @@
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_vector_test.xml.flat",
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\layout_settings_row_words_at_time.xml.flat",
+        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\layout\\settings_row_words_at_time.xml"
     },
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",

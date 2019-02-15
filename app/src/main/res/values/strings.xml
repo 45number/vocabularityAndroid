@@ -169,4 +169,9 @@
 
     <string name="root">Root</string>
 
+    <string name="learning_languages">Learning languages</string>
+    <!--<string name="words_at_time">Learning languages</string>-->
+
+    <string name="settings">Settings</string>
+
 </resources>
