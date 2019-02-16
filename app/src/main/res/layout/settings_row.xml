@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/txt_title"
-    android:layout_width="fill_parent"
-    android:layout_height="40dp"
-    android:gravity="center_vertical"
-    android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-    android:padding="5sp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    android:textSize="15dp"
-    />
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    >
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:paddingTop="20dp"-->
+    <!--android:paddingBottom="20dp"-->
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_height="match_parent" />
+    <View
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+    </View>
+    <Switch
+        android:id="@+id/language_switch"
+        android:layout_width="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:clickable="false"/>
+    <!--<CheckedTextView-->
+        <!--android:id="@+id/txt_title"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:checkMark="?android:attr/listChoiceIndicatorMultiple"-->
+        <!--android:padding="5sp"-->
+        <!--android:textSize="15dp"-->
+        <!--/>-->
+</LinearLayout>

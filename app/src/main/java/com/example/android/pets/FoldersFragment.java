@@ -993,7 +993,6 @@ public class FoldersFragment extends Fragment
         ((CatalogActivity)getActivity()).refreshDecks();
 
 //        refreshDecks();
-
 //        Bundle args=new Bundle();
 //        args.putString("selection", PetEntry.COLUMN_PARENT + " = ?");
 //        Long idLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);

@@ -16,8 +16,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckedTextView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.NumberPicker;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.android.pets.data.SettingsContract;
@@ -94,14 +97,38 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
     protected void onStart() {
         super.onStart();
 
+
+        ArrayList<LanguageSettingListItem> arrayOfLanguages = new ArrayList<>();
+        LanguageSettingAdapter adapterLanguages = new LanguageSettingAdapter(this, arrayOfLanguages);
         ListView languagesListView = findViewById(R.id.languagesList);
+        languagesListView.setAdapter(adapterLanguages);
+
+
+
+
+        ThreeViewsListItem wordsAtTimeItem =
+                new ThreeViewsListItem(
+                        "Words at time",
+                        "How many words do you plan to learn every day?",
+                        wat.toString());
+        adapterWordsAtTime.add(wordsAtTimeItem);
+
+
+        /*ListView languagesListView = findViewById(R.id.languagesList);
         languagesListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         String[] languages = {"English","Russian","Arabic"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.settings_row, R.id.txt_title, languages);
-        languagesListView.setAdapter(adapter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.settings_row, R.id.title_text_view, languages);
+        languagesListView.setAdapter(adapter);*/
         languagesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Switch languageSwitch = view.findViewById(R.id.language_switch);
+                languageSwitch.setChecked(true);
+
+//                CheckedTextView checkedTextView = view.findViewById(R.id.txt_title);
+//                checkedTextView.setChecked(true);
+
 
             }
         });
