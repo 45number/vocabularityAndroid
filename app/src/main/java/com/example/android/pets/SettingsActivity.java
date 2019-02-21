@@ -105,13 +105,23 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
 
 
 
+        addLanguageToAdapter(
+                adapterLanguages,
+                getString(R.string.english),
+                mSettings.getBoolean(SettingsContract.IS_ENG_STUDYING, true)
+        );
 
-        ThreeViewsListItem wordsAtTimeItem =
-                new ThreeViewsListItem(
-                        "Words at time",
-                        "How many words do you plan to learn every day?",
-                        wat.toString());
-        adapterWordsAtTime.add(wordsAtTimeItem);
+        addLanguageToAdapter(
+                adapterLanguages,
+                getString(R.string.russian),
+                mSettings.getBoolean(SettingsContract.IS_RU_STUDYING, true)
+        );
+
+        addLanguageToAdapter(
+                adapterLanguages,
+                getString(R.string.arabic),
+                mSettings.getBoolean(SettingsContract.IS_AR_STUDYING, true)
+        );
 
 
         /*ListView languagesListView = findViewById(R.id.languagesList);
@@ -124,7 +134,13 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 Switch languageSwitch = view.findViewById(R.id.language_switch);
-                languageSwitch.setChecked(true);
+
+                if (languageSwitch.isChecked()) {
+                    languageSwitch.setChecked(false);
+                } else {
+                    languageSwitch.setChecked(true);
+                }
+
 
 //                CheckedTextView checkedTextView = view.findViewById(R.id.txt_title);
 //                checkedTextView.setChecked(true);
@@ -157,6 +173,13 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
         });
 
     }
+
+
+    public void addLanguageToAdapter(LanguageSettingAdapter adapter, String name, Boolean isLearning) {
+        LanguageSettingListItem item = new LanguageSettingListItem(name, isLearning);
+        adapter.add(item);
+    }
+
 
     @Override
     public void onValueChange(NumberPicker numberPicker, int oldVal, int newVal) {
