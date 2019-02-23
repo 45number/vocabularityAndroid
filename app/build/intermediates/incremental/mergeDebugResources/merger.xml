@@ -1929,7 +1929,7 @@
         <item>Uncheck</item>
         <item>Edit</item>
         <item>Delete</item>
-    </string-array><string name="hello_blank_fragment">Hello blank fragment</string><string name="root">Root</string><string name="learning_languages">Learning languages</string><string name="settings">Settings</string></file><file path="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    </string-array><string name="hello_blank_fragment">Hello blank fragment</string><string name="root">Root</string><string name="learning_languages">Learning languages</string><string name="settings">Settings</string><string name="are_you_sure">Are you sure?</string><string name="delete_language_alert_text">This action will delete all folders and cards that belong to this language</string></file><file path="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

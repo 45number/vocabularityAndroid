@@ -174,4 +174,8 @@
 
     <string name="settings">Settings</string>
 
+    <string name="are_you_sure">Are you sure?</string>
+
+    <string name="delete_language_alert_text">This action will delete all folders and cards that belong to this language</string>
+
 </resources>

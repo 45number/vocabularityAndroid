@@ -23,6 +23,7 @@ import android.widget.NumberPicker;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.android.pets.data.PetContract;
 import com.example.android.pets.data.SettingsContract;
 
 import org.json.JSONArray;
@@ -83,13 +84,13 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
 //            }
 //        });
 
-        Button bl = findViewById(R.id.buttonLanguages);
+        /*Button bl = findViewById(R.id.buttonLanguages);
         bl.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 showLanguagesDialog();
             }
-        });
+        });*/
 
     }
 
@@ -97,30 +98,27 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
     protected void onStart() {
         super.onStart();
 
-
         ArrayList<LanguageSettingListItem> arrayOfLanguages = new ArrayList<>();
         LanguageSettingAdapter adapterLanguages = new LanguageSettingAdapter(this, arrayOfLanguages);
         ListView languagesListView = findViewById(R.id.languagesList);
         languagesListView.setAdapter(adapterLanguages);
 
-
-
         addLanguageToAdapter(
                 adapterLanguages,
                 getString(R.string.english),
-                mSettings.getBoolean(SettingsContract.IS_ENG_STUDYING, true)
+                mSettings.getBoolean(SettingsContract.IS_ENG_STUDYING, false)
         );
 
         addLanguageToAdapter(
                 adapterLanguages,
                 getString(R.string.russian),
-                mSettings.getBoolean(SettingsContract.IS_RU_STUDYING, true)
+                mSettings.getBoolean(SettingsContract.IS_RU_STUDYING, false)
         );
 
         addLanguageToAdapter(
                 adapterLanguages,
                 getString(R.string.arabic),
-                mSettings.getBoolean(SettingsContract.IS_AR_STUDYING, true)
+                mSettings.getBoolean(SettingsContract.IS_AR_STUDYING, false)
         );
 
 
@@ -131,13 +129,57 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
         languagesListView.setAdapter(adapter);*/
         languagesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
 
-                Switch languageSwitch = view.findViewById(R.id.language_switch);
+                final Switch languageSwitch = view.findViewById(R.id.language_switch);
+
+//                Log.e("int i:", i+"");
+//                Log.e("long l:", l+"");
 
                 if (languageSwitch.isChecked()) {
-                    languageSwitch.setChecked(false);
+
+
+                    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(SettingsActivity.this);
+                    dialogBuilder.setTitle(R.string.are_you_sure);
+                    dialogBuilder.setMessage(R.string.delete_language_alert_text);
+
+                    dialogBuilder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                            /*SharedPreferences.Editor editor = mSettings.edit();
+                            if (i == 0)
+                                editor.putBoolean(SettingsContract.IS_ENG_STUDYING, false);
+
+                            if (i == 1)
+                                editor.putBoolean(SettingsContract.IS_RU_STUDYING, false);
+
+                            if (i == 2)
+                                editor.putBoolean(SettingsContract.IS_AR_STUDYING, false);
+                            editor.apply();
+
+                            setResult(4);*/
+
+                            setLanguages(i, false);
+
+                            deleteFolders(i+1);
+
+                            languageSwitch.setChecked(false);
+
+                        }
+                    });
+                    dialogBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            if (dialog != null) {
+                                dialog.dismiss();
+                            }
+                        }
+                    });
+
+                    AlertDialog alertDialog = dialogBuilder.create();
+                    alertDialog.show();
+
                 } else {
+                    setLanguages(i, true);
                     languageSwitch.setChecked(true);
                 }
 
@@ -173,6 +215,25 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
         });
 
     }
+
+
+    public void setLanguages(int i, boolean value) {
+
+        SharedPreferences.Editor editor = mSettings.edit();
+
+        if (i == 0)
+            editor.putBoolean(SettingsContract.IS_ENG_STUDYING, value);
+        if (i == 1)
+            editor.putBoolean(SettingsContract.IS_RU_STUDYING, value);
+        if (i == 2)
+            editor.putBoolean(SettingsContract.IS_AR_STUDYING, value);
+
+        editor.apply();
+
+        setResult(4);
+
+    }
+
 
 
     public void addLanguageToAdapter(LanguageSettingAdapter adapter, String name, Boolean isLearning) {
@@ -223,15 +284,10 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
                 editor.putInt(SettingsContract.WORDS_AT_TIME, wordsAtTime);
                 editor.apply();
 
-//                wordsAtTimeListView.
-
                 adapterWordsAtTime.clear();
                 setWordsAtTimeListView();
 
-
-
-
-                setResult(3);
+                setResult(4);
             }
         });
         dialogBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -257,30 +313,32 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
         adapterWordsAtTime.add(wordsAtTimeItem);
     }
 
+    private void deleteFolders(Integer language) {
+        String selection = PetContract.PetEntry.COLUMN_LEARNING_LANGUAGE + " = ? ";
+//        String[] languages = new String[language];
+
+        String [] arguments = new String[1];
+        arguments[0] = language.toString();
+
+//        Log.e("langs", arguments[0]);
+
+//        int rowsDeleted =
+        getContentResolver().delete(PetContract.PetEntry.CONTENT_URI, selection, arguments);
+
+//        Log.e("Settings", rowsDeleted + " rows deleted from pet database");
+    }
 
 
-    public void showLanguagesDialog() {
 
-//        if(mSettings.contains(SettingsContract.WORDS_AT_TIME)) {
-//            mSettingWordsAtTime = mSettings.getInt(SettingsContract.WORDS_AT_TIME, 25);
-//        }
+
+   /* public void showLanguagesDialog() {
 
         mSelectedLanguages = new ArrayList();
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
-        //        View dialogView =
         inflater.inflate(R.layout.set_words_at_time_dialog, null);
 
-
-
-
-
-//        dialogBuilder.setView(dialogView);
         dialogBuilder.setTitle(R.string.you_are_learning);
-
-
-
-
 
         if(mSettings.contains(SettingsContract.IS_ENG_STUDYING)) {
             mSettingIsEngStudying = mSettings.getBoolean(SettingsContract.IS_ENG_STUDYING, true);
@@ -295,9 +353,9 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
         }
 
         final boolean[] checkedLanguages = new boolean[]{
-                mSettingIsEngStudying, // Red
-                mSettingIsRuStudying, // Green
-                mSettingIsArStudying // Blue
+                mSettingIsEngStudying,
+                mSettingIsRuStudying,
+                mSettingIsArStudying
         };
 
 
@@ -310,44 +368,17 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
                         if (isChecked) {
                             // If the user checked the item, add it to the selected items
                             mSelectedLanguages.add(which);
-//                            mSelectedLanguagesBoolean.add(true);
                         }
                         else if (mSelectedLanguages.contains(which)) {
                             // Else, if the item is already in the array, remove it
                             mSelectedLanguages.remove(Integer.valueOf(which));
-//                            mSelectedLanguagesBoolean.add(false);
                         }
-                        /*else {
-                            mSelectedLanguagesBoolean.add(false);
-                        }*/
+
                     }
                 });
 
-//        final NumberPicker np = dialogView.findViewById(R.id.numberPicker1);
-//        np.setMaxValue(100);
-//        np.setMinValue(5);
-//        np.setValue(mSettingWordsAtTime);
-//        np.setWrapSelectorWheel(false);
-//        np.setOnValueChangedListener(this);
-
         dialogBuilder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-//                Integer wordsAtTime = np.getValue();
-//                SharedPreferences.Editor editor = mSettings.edit();
-//                editor.putInt(SettingsContract.WORDS_AT_TIME, wordsAtTime);
-//                editor.apply();
-
-//                Set langsHashSet = new HashSet(mSelectedLanguages);
-
-                /*Set<Integer> langsHashSet = new HashSet<>();
-                langsHashSet.addAll(mSelectedLanguages);
-                scoreEditor.putStringSet("key", set);
-                scoreEditor.commit();*/
-
-//                Log.e("--------------------",  checkedLanguages[0] + " " +
-//                        checkedLanguages[1] + " " +
-//                        checkedLanguages[2]);
-
 
                 SharedPreferences.Editor editor = mSettings.edit();
 
@@ -371,27 +402,7 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
 
                 setResult(4);
 
-                /*for (int i=0; i < mSelectedLanguages.size(); i++) {
 
-                    if (mSelectedLanguages.get(i) == 0) {
-                        SharedPreferences.Editor editor = mSettings.edit();
-                        editor.putBoolean(SettingsContract.IS_ENG_STUDYING, true);
-                        editor.apply();
-                    } else if (mSelectedLanguages.get(i) == 1) {
-                        SharedPreferences.Editor editor = mSettings.edit();
-                        editor.putBoolean(SettingsContract.IS_RU_STUDYING, true);
-                        editor.apply();
-                    } else if (mSelectedLanguages.get(i) == 2) {
-                        SharedPreferences.Editor editor = mSettings.edit();
-                        editor.putBoolean(SettingsContract.IS_AR_STUDYING, true);
-                        editor.apply();
-                    }
-
-                }*/
-
-                /*SharedPreferences.Editor editor = mSettings.edit();
-                editor.putStringSet(SettingsContract.WORDS_AT_TIME, langsHashSet);
-                editor.apply();*/
             }
         });
         dialogBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -404,15 +415,11 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
-    }
+    }*/
 
 
     @Override
     public void onBackPressed() {
-//        Intent returnIntent = new Intent();
-//        returnIntent.putExtra("result",result);
-
         finish();
-//        super.onBackPressed();
     }
 }
