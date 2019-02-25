@@ -2455,7 +2455,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
@@ -4086,68 +4086,77 @@ public final class R {
     public static final int direction_toggle=0x7f080067;
     public static final int directory_icon=0x7f080068;
     public static final int directory_up=0x7f080069;
-    public static final int fab_bg_mini=0x7f08006a;
-    public static final int fab_bg_normal=0x7f08006b;
-    public static final int file_icon=0x7f08006c;
-    public static final int ic_action_overflow=0x7f08006d;
-    public static final int ic_add=0x7f08006e;
-    public static final int ic_add_folder_image=0x7f08006f;
-    public static final int ic_add_pet=0x7f080070;
-    public static final int ic_back=0x7f080071;
-    public static final int ic_bookmark_checked=0x7f080072;
-    public static final int ic_bookmark_toggle=0x7f080073;
-    public static final int ic_bookmark_unchecked=0x7f080074;
-    public static final int ic_deck=0x7f080075;
-    public static final int ic_direction=0x7f080076;
-    public static final int ic_direction_checked=0x7f080077;
-    public static final int ic_done=0x7f080078;
-    public static final int ic_empty_shelter=0x7f080079;
-    public static final int ic_excel=0x7f08007a;
-    public static final int ic_excel_file_explorer=0x7f08007b;
-    public static final int ic_folder=0x7f08007c;
-    public static final int ic_launcher_background=0x7f08007d;
-    public static final int ic_launcher_foreground=0x7f08007e;
-    public static final int ic_marked=0x7f08007f;
-    public static final int ic_memorize_icon=0x7f080080;
-    public static final int ic_next=0x7f080081;
-    public static final int ic_next_pressed=0x7f080082;
-    public static final int ic_pencil=0x7f080083;
-    public static final int ic_previous=0x7f080084;
-    public static final int ic_previous_pressed=0x7f080085;
-    public static final int ic_repeat_checked=0x7f080086;
-    public static final int ic_repeat_toggle=0x7f080087;
-    public static final int ic_repeat_unchecked=0x7f080088;
-    public static final int ic_shuffle_checked=0x7f080089;
-    public static final int ic_shuffle_toggle=0x7f08008a;
-    public static final int ic_shuffle_unchecked=0x7f08008b;
-    public static final int ic_speaking=0x7f08008c;
-    public static final int ic_speaking_pressed=0x7f08008d;
-    public static final int ic_spelling_icon=0x7f08008e;
-    public static final int ic_words=0x7f08008f;
-    public static final int magnitude_circle=0x7f080090;
-    public static final int navigation_empty_icon=0x7f080091;
-    public static final int next_button=0x7f080092;
-    public static final int notification_action_background=0x7f080093;
-    public static final int notification_bg=0x7f080094;
-    public static final int notification_bg_low=0x7f080095;
-    public static final int notification_bg_low_normal=0x7f080096;
-    public static final int notification_bg_low_pressed=0x7f080097;
-    public static final int notification_bg_normal=0x7f080098;
-    public static final int notification_bg_normal_pressed=0x7f080099;
-    public static final int notification_icon_background=0x7f08009a;
-    public static final int notification_template_icon_bg=0x7f08009b;
-    public static final int notification_template_icon_low_bg=0x7f08009c;
-    public static final int notification_tile_bg=0x7f08009d;
-    public static final int notify_panel_notification_icon_bg=0x7f08009e;
-    public static final int previous_button=0x7f08009f;
-    public static final int round_background=0x7f0800a0;
-    public static final int round_corner=0x7f0800a1;
-    public static final int row_border=0x7f0800a2;
-    public static final int row_counter_border=0x7f0800a3;
-    public static final int save_button=0x7f0800a4;
-    public static final int speak_button=0x7f0800a5;
-    public static final int tooltip_frame_dark=0x7f0800a6;
-    public static final int tooltip_frame_light=0x7f0800a7;
+    public static final int drawable_switch=0x7f08006a;
+    public static final int drawable_switch_bg=0x7f08006b;
+    public static final int fab_bg_mini=0x7f08006c;
+    public static final int fab_bg_normal=0x7f08006d;
+    public static final int file_icon=0x7f08006e;
+    public static final int ic_action_overflow=0x7f08006f;
+    public static final int ic_add=0x7f080070;
+    public static final int ic_add_folder_image=0x7f080071;
+    public static final int ic_add_pet=0x7f080072;
+    public static final int ic_back=0x7f080073;
+    public static final int ic_bookmark_checked=0x7f080074;
+    public static final int ic_bookmark_toggle=0x7f080075;
+    public static final int ic_bookmark_unchecked=0x7f080076;
+    public static final int ic_deck=0x7f080077;
+    public static final int ic_direction=0x7f080078;
+    public static final int ic_direction_checked=0x7f080079;
+    public static final int ic_done=0x7f08007a;
+    public static final int ic_empty_shelter=0x7f08007b;
+    public static final int ic_excel=0x7f08007c;
+    public static final int ic_excel_file_explorer=0x7f08007d;
+    public static final int ic_folder=0x7f08007e;
+    public static final int ic_launcher_background=0x7f08007f;
+    public static final int ic_launcher_foreground=0x7f080080;
+    public static final int ic_marked=0x7f080081;
+    public static final int ic_memorize_icon=0x7f080082;
+    public static final int ic_next=0x7f080083;
+    public static final int ic_next_pressed=0x7f080084;
+    public static final int ic_pencil=0x7f080085;
+    public static final int ic_previous=0x7f080086;
+    public static final int ic_previous_pressed=0x7f080087;
+    public static final int ic_repeat_checked=0x7f080088;
+    public static final int ic_repeat_toggle=0x7f080089;
+    public static final int ic_repeat_unchecked=0x7f08008a;
+    public static final int ic_shuffle_checked=0x7f08008b;
+    public static final int ic_shuffle_toggle=0x7f08008c;
+    public static final int ic_shuffle_unchecked=0x7f08008d;
+    public static final int ic_speaking=0x7f08008e;
+    public static final int ic_speaking_pressed=0x7f08008f;
+    public static final int ic_spelling_icon=0x7f080090;
+    public static final int ic_words=0x7f080091;
+    public static final int magnitude_circle=0x7f080092;
+    public static final int navigation_empty_icon=0x7f080093;
+    public static final int next_button=0x7f080094;
+    public static final int notification_action_background=0x7f080095;
+    public static final int notification_bg=0x7f080096;
+    public static final int notification_bg_low=0x7f080097;
+    public static final int notification_bg_low_normal=0x7f080098;
+    public static final int notification_bg_low_pressed=0x7f080099;
+    public static final int notification_bg_normal=0x7f08009a;
+    public static final int notification_bg_normal_pressed=0x7f08009b;
+    public static final int notification_icon_background=0x7f08009c;
+    public static final int notification_template_icon_bg=0x7f08009d;
+    public static final int notification_template_icon_low_bg=0x7f08009e;
+    public static final int notification_tile_bg=0x7f08009f;
+    public static final int notify_panel_notification_icon_bg=0x7f0800a0;
+    public static final int previous_button=0x7f0800a1;
+    public static final int round_background=0x7f0800a2;
+    public static final int round_corner=0x7f0800a3;
+    public static final int row_border=0x7f0800a4;
+    public static final int row_counter_border=0x7f0800a5;
+    public static final int save_button=0x7f0800a6;
+    public static final int speak_button=0x7f0800a7;
+    public static final int switch_bg_default=0x7f0800a8;
+    public static final int switch_bg_disabled=0x7f0800a9;
+    public static final int switch_bg_focused=0x7f0800aa;
+    public static final int switch_default=0x7f0800ab;
+    public static final int switch_disabled=0x7f0800ac;
+    public static final int switch_enabled=0x7f0800ad;
+    public static final int switch_pressed=0x7f0800ae;
+    public static final int tooltip_frame_dark=0x7f0800af;
+    public static final int tooltip_frame_light=0x7f0800b0;
   }
   public static final class id {
     public static final int ALT=0x7f090000;
@@ -9998,7 +10007,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>

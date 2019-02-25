@@ -21,11 +21,15 @@
     </View>
     <Switch
         android:id="@+id/language_switch"
-        android:layout_width="wrap_content"
+        android:layout_width="32dp"
+        android:layout_height="16dp"
         android:gravity="center_vertical"
-        android:layout_height="wrap_content"
         android:focusable="false"
-        android:clickable="false"/>
+        android:clickable="false"
+        android:thumb="@drawable/drawable_switch"
+        android:track="@drawable/drawable_switch_bg"
+        android:textOff=""
+        android:textOn=""/>
     <!--<CheckedTextView-->
         <!--android:id="@+id/txt_title"-->
         <!--android:layout_width="fill_parent"-->

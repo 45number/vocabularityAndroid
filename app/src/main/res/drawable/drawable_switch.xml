@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="16dp"
+    >
+    <item android:state_enabled="false" android:drawable="@drawable/switch_disabled" android:width="16dp" android:height="16dp"/>
+    <item android:state_pressed="true"  android:drawable="@drawable/switch_pressed" android:width="16dp" android:height="16dp"/>
+    <item android:state_checked="true"  android:drawable="@drawable/switch_enabled" android:width="16dp" android:height="16dp"/>
+    <item android:drawable="@drawable/switch_default" />
+</selector>
