@@ -4155,8 +4155,13 @@ public final class R {
     public static final int switch_disabled=0x7f0800ac;
     public static final int switch_enabled=0x7f0800ad;
     public static final int switch_pressed=0x7f0800ae;
-    public static final int tooltip_frame_dark=0x7f0800af;
-    public static final int tooltip_frame_light=0x7f0800b0;
+    public static final int switch_thumb=0x7f0800af;
+    public static final int switch_thumb_selector=0x7f0800b0;
+    public static final int switch_track_off=0x7f0800b1;
+    public static final int switch_track_on=0x7f0800b2;
+    public static final int switch_track_selector=0x7f0800b3;
+    public static final int tooltip_frame_dark=0x7f0800b4;
+    public static final int tooltip_frame_light=0x7f0800b5;
   }
   public static final class id {
     public static final int ALT=0x7f090000;
