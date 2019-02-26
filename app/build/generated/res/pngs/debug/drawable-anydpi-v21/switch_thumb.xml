@@ -11,6 +11,7 @@
         <group
             android:translateX="40.000000"
             android:translateY="103.000000">
+            
             <path
                 android:fillColor="#FFFFFF"
                 android:fillType="evenOdd"

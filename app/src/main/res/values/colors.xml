@@ -89,6 +89,7 @@
     <color name="tableBordersColor">#CCCCCC</color>
 
     <color name="grey">#CCCCCC</color>
+    <color name="lightGrey">#f2efef</color>
 
     <!-- Text color for the primary location of the earthquake in the list item -->
     <color name="textColorEarthquakeLocation">#2B3D4D</color>
