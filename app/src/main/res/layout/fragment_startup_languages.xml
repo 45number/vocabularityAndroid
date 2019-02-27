@@ -7,33 +7,143 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".SettingsActivity">
 
-    <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".StartupLanguagesFragment">
-        <CheckBox
-            android:id="@+id/englishCheckBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/english" />
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
 
-        <CheckBox
-            android:id="@+id/russianCheckBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/russian" />
 
-        <CheckBox
-            android:id="@+id/arabicCheckBox"
+
+
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@color/white"-->
+    <!--android:orientation="vertical"-->
+    <!--tools:context=".StartupLanguagesFragment">-->
+        <!--<CheckBox-->
+            <!--android:id="@+id/englishCheckBox"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/english" />-->
+
+        <!--<CheckBox-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/linear_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="76dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.0"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.0">-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="64dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="@string/what_languages_are_you_going_to_learn"-->
+        <!--android:textColor="@color/colorAccent"-->
+        <!--android:textSize="18sp"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--<com.example.android.pets.NonScrollListView-->
+        <!--android:id="@+id/languagesList"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--</com.example.android.pets.NonScrollListView>-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--<ListView-->
+        <!--android:id="@+id/languagesList"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="500dp"-->
+       <!--&gt;-->
+    <!--</ListView>-->
+
+    <!--android:layout_marginTop="112dp"-->
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="60dp"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/arabic" />
-    </LinearLayout>
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="@string/what_languages_are_you_going_to_learn"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <com.example.android.pets.NonScrollListView
+                android:id="@+id/languagesList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"></com.example.android.pets.NonScrollListView>
+
+            <!--<ListView-->
+            <!--android:id="@+id/languagesList"-->
+            <!--android:layout_marginTop="2dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--/>-->
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+            <!--android:id="@+id/russianCheckBox"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/russian" />-->
+
+        <!--<CheckBox-->
+            <!--android:id="@+id/arabicCheckBox"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/arabic" />-->
+    <!--</LinearLayout>-->
 
     <!--<Button-->
         <!--android:id="@+id/nextButton"-->
@@ -52,13 +162,16 @@ tools:context=".SettingsActivity">
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_weight="1"
         android:background="@drawable/cancel_button"
         android:text="@string/next"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </android.support.constraint.ConstraintLayout>

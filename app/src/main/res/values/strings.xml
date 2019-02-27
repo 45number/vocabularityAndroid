@@ -184,4 +184,8 @@
     <string name="oops">Oops!</string>
     <string name="you_should_learn_one_language">You should learn at least one language</string>
 
+    <string name="what_languages_are_you_going_to_learn">What languages are you going to learn?</string>
+
+    <string name="how_many_words">How many words do you plan to learn every day?</string>
+
 </resources>
