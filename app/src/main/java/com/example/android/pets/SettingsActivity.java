@@ -48,7 +48,7 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
     private boolean mSettingIsRuStudying = false;
     private boolean mSettingIsArStudying = false;*/
 
-    ListView wordsAtTimeListView;
+    NonScrollListView wordsAtTimeListView;
     ThreeViewsAdapter adapterWordsAtTime;
 
     @Override
@@ -63,16 +63,9 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
     protected void onStart() {
         super.onStart();
 
-
-
-
-
-
-
-
         ArrayList<LanguageSettingListItem> arrayOfLanguages = new ArrayList<>();
         LanguageSettingAdapter adapterLanguages = new LanguageSettingAdapter(this, arrayOfLanguages);
-        ListView languagesListView = findViewById(R.id.languagesList);
+        NonScrollListView languagesListView = findViewById(R.id.languagesList);
         languagesListView.setAdapter(adapterLanguages);
 
         addLanguageToAdapter(
