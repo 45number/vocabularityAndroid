@@ -25,14 +25,12 @@ public class CatalogActivity extends AppCompatActivity implements
         FragmentChangeListener {
 
     ViewPager viewPager;
-//    FrameLayout frameLayout;
 
     SharedPreferences mSettings;
 
-    boolean mHasVisited;
+//    boolean mHasVisited;
 
     private ArrayList<Integer> mTabsTitles = new ArrayList<>();
-
 
     private boolean mIsEnglishStudying;
     private boolean mIsRussianStudying;
@@ -46,10 +44,13 @@ public class CatalogActivity extends AppCompatActivity implements
 
         mSettings = getSharedPreferences(SettingsContract.APP_PREFERENCES, Context.MODE_PRIVATE);
 
-//        fab = findViewById(R.id.fab);
+        mIsEnglishStudying = mSettings.getBoolean(SettingsContract.IS_ENG_STUDYING, false);
+        mIsRussianStudying = mSettings.getBoolean(SettingsContract.IS_RU_STUDYING, false);
+        mIsArabicStudying = mSettings.getBoolean(SettingsContract.IS_AR_STUDYING, false);
 
-        mHasVisited = mSettings.getBoolean(SettingsContract.HAS_VISITED, false);
-        if (!mHasVisited) {
+//        mHasVisited = mSettings.getBoolean(SettingsContract.HAS_VISITED, false);
+
+        if (!mIsEnglishStudying && !mIsRussianStudying && !mIsArabicStudying) {
             setContentView(R.layout.activity_startup);
 
             getSupportFragmentManager().beginTransaction()
@@ -71,16 +72,8 @@ public class CatalogActivity extends AppCompatActivity implements
 
     }
 
-
-//    public FloatingActionButton getFab() {
-//        fab = findViewById(R.id.fab);
-//        return fab;
-//    }
-
     public void setTabs() {
-
         TabLayout tabLayout = findViewById(R.id.tabs);
-
         mTabsTitles.clear();
 
         if(mSettings.contains(SettingsContract.IS_ENG_STUDYING)) {
@@ -108,32 +101,22 @@ public class CatalogActivity extends AppCompatActivity implements
         } else {
             tabLayout.setVisibility(View.GONE);
         }
-
     }
 
     public void updateFolderPageAdapter() {
         viewPager.getAdapter().notifyDataSetChanged();
     }
 
-
     @Override
     public void onBackPressed() {
-        if (!mHasVisited) {
+        if (!mIsEnglishStudying && !mIsRussianStudying && !mIsArabicStudying) {
             super.onBackPressed();
         } else {
-//            Fragment f = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.viewpager + ":" + viewPager.getCurrentItem());
-
-
             Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
-
-//            int position = viewPager.getCurrentItem();
-//            Fragment f =(FoldersFragment)FoldersPagerAdapter.getRegisteredFragment(position);
-
             ((FoldersFragment)f).onBackPressed();
             return;
         }
     }
-
 
     public void refreshDecks() {
         Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
@@ -152,10 +135,10 @@ public class CatalogActivity extends AppCompatActivity implements
         return ((FoldersFragment)f).getCurrentFolder();
     }
 
-    public ArrayList<pathItem> getFoldersPath() {
+    /*public ArrayList<pathItem> getFoldersPath() {
         Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
         return ((FoldersFragment)f).getFoldersPath();
-    }
+    }*/
 
     public void updatePathTextView() {
         Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
@@ -170,39 +153,10 @@ public class CatalogActivity extends AppCompatActivity implements
     @Override
     public void replaceFragment(Fragment fragment) {
 
-//        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
-//        ((FoldersFragment)f).clearTreePath();
-//        ((FoldersFragment)f).refreshDecks();
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment, fragment.toString());
         fragmentTransaction.addToBackStack(fragment.toString());
         fragmentTransaction.commit();
-
-//        updatePathTextView();
-
-//        Fragment f = mAdapter.getRegisteredFragment(viewPager.getCurrentItem());
-//        ((FoldersFragment)f).clearTreePath();
     }
-
-
-/*    public int returnCurrentFragment() {
-//        mAdapter.DetailOnPageChangeListener().get
-//       return FoldersPagerAdapter.DetailOnPageChangeListener.getCurrentPage();
-        Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.pager + ":" + ViewPager.getCurrentItem());
-    }*/
-
-//    public int getCurrentFragment() {
-////        Fragment hosted = mAdapter.getItem(viewPager.getCurrentItem());
-//        int ii = viewPager.getCurrentItem();
-//        return ii;
-//
-//
-//    }
-
-//    public void opa() {
-//        Fragment fragment = ((FragmentPagerAdapter)viewPager.getAdapter()).getFragment();
-//    }
-
 }
