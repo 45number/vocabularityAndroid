@@ -486,6 +486,9 @@ public class FoldersFragment extends Fragment
             String[] selectionArgs = {parent, landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
 
+
+
+
 //            ((CatalogActivity)getActivity()).getFoldersPath();
 //            Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
 
@@ -681,6 +684,17 @@ public class FoldersFragment extends Fragment
                 emptyFolderView.setVisibility(View.GONE);
 
             } else {
+
+                if (((CatalogActivity)getActivity()).getCurrentFolder() != null) {
+                    if (((CatalogActivity)getActivity()).getCurrentFolder().getId() != 0L) {
+                        TextView emptyTitle = rootView.findViewById(R.id.empty_title_text);
+                        emptyTitle.setText(R.string.the_folder_is_empty);
+
+                        TextView emptyDescription = rootView.findViewById(R.id.empty_subtitle_text);
+                        emptyDescription.setText(R.string.create_folder_or_upload_words);
+                    }
+                }
+
                 emptyFolderView.setVisibility(View.VISIBLE);
 //                emptyView.setVisibility(View.INVISIBLE);
             }

@@ -188,4 +188,7 @@
 
     <string name="how_many_words">How many words do you plan to learn every day?</string>
 
+    <string name="the_folder_is_empty">The folder is empty</string>
+    <string name="create_folder_or_upload_words">Create another folder here or upload words</string>
+
 </resources>

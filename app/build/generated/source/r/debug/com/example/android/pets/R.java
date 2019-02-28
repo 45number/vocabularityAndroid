@@ -2455,7 +2455,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
@@ -4615,77 +4615,79 @@ public final class R {
     public static final int character_counter_pattern=0x7f0e002e;
     public static final int column_translation_title=0x7f0e002f;
     public static final int column_word_title=0x7f0e0030;
-    public static final int crop_image_activity_no_permissions=0x7f0e0031;
-    public static final int crop_image_activity_title=0x7f0e0032;
-    public static final int crop_image_menu_crop=0x7f0e0033;
-    public static final int crop_image_menu_flip=0x7f0e0034;
-    public static final int crop_image_menu_flip_horizontally=0x7f0e0035;
-    public static final int crop_image_menu_flip_vertically=0x7f0e0036;
-    public static final int crop_image_menu_rotate_left=0x7f0e0037;
-    public static final int crop_image_menu_rotate_right=0x7f0e0038;
-    public static final int deck_dummy=0x7f0e0039;
-    public static final int delete=0x7f0e003a;
-    public static final int delete_card_msg=0x7f0e003b;
-    public static final int delete_card_title=0x7f0e003c;
-    public static final int delete_deck_msg=0x7f0e003d;
-    public static final int delete_deck_title=0x7f0e003e;
-    public static final int delete_dialog_msg=0x7f0e003f;
-    public static final int delete_folder_msg=0x7f0e0040;
-    public static final int delete_folder_title=0x7f0e0041;
-    public static final int delete_language_alert_text=0x7f0e0042;
-    public static final int discard=0x7f0e0043;
-    public static final int editor_activity_title_edit_pet=0x7f0e0044;
-    public static final int editor_activity_title_new_pet=0x7f0e0045;
-    public static final int editor_activity_title_new_word=0x7f0e0046;
-    public static final int editor_delete_pet_failed=0x7f0e0047;
-    public static final int editor_delete_pet_successful=0x7f0e0048;
-    public static final int editor_insert_pet_failed=0x7f0e0049;
-    public static final int editor_insert_pet_successful=0x7f0e004a;
-    public static final int editor_update_pet_failed=0x7f0e004b;
-    public static final int editor_update_pet_successful=0x7f0e004c;
-    public static final int empty_view_subtitle_text=0x7f0e004d;
-    public static final int empty_view_title_text=0x7f0e004e;
-    public static final int english=0x7f0e004f;
-    public static final int folder_image_button_description=0x7f0e0050;
-    public static final int folder_name=0x7f0e0051;
-    public static final int gender_female=0x7f0e0052;
-    public static final int gender_male=0x7f0e0053;
-    public static final int gender_unknown=0x7f0e0054;
-    public static final int hello_blank_fragment=0x7f0e0055;
-    public static final int hint_add_word=0x7f0e0056;
-    public static final int hint_add_word_translation=0x7f0e0057;
-    public static final int hint_folder_name=0x7f0e0058;
-    public static final int hint_pet_breed=0x7f0e0059;
-    public static final int hint_pet_weight=0x7f0e005a;
-    public static final int how_many_words=0x7f0e005b;
-    public static final int keep_editing=0x7f0e005c;
-    public static final int learning_languages=0x7f0e005d;
-    public static final int lets_start=0x7f0e005e;
-    public static final int next=0x7f0e005f;
-    public static final int ok_button=0x7f0e0060;
-    public static final int ok_delete=0x7f0e0061;
-    public static final int oops=0x7f0e0062;
-    public static final int options=0x7f0e0063;
-    public static final int password_toggle_content_description=0x7f0e0064;
-    public static final int path_password_eye=0x7f0e0065;
-    public static final int path_password_eye_mask_strike_through=0x7f0e0066;
-    public static final int path_password_eye_mask_visible=0x7f0e0067;
-    public static final int path_password_strike_through=0x7f0e0068;
-    public static final int pick_image_intent_chooser_title=0x7f0e0069;
-    public static final int root=0x7f0e006a;
-    public static final int russian=0x7f0e006b;
-    public static final int search_menu_title=0x7f0e006c;
-    public static final int set_words_at_time=0x7f0e006d;
-    public static final int settings=0x7f0e006e;
-    public static final int status_bar_notification_info_overflow=0x7f0e006f;
-    public static final int unit_pet_weight=0x7f0e0070;
-    public static final int unknown_breed=0x7f0e0071;
-    public static final int unsaved_changes_dialog_msg=0x7f0e0072;
-    public static final int version=0x7f0e0073;
-    public static final int what_languages_are_you_going_to_learn=0x7f0e0074;
-    public static final int words_at_time=0x7f0e0075;
-    public static final int you_are_learning=0x7f0e0076;
-    public static final int you_should_learn_one_language=0x7f0e0077;
+    public static final int create_folder_or_upload_words=0x7f0e0031;
+    public static final int crop_image_activity_no_permissions=0x7f0e0032;
+    public static final int crop_image_activity_title=0x7f0e0033;
+    public static final int crop_image_menu_crop=0x7f0e0034;
+    public static final int crop_image_menu_flip=0x7f0e0035;
+    public static final int crop_image_menu_flip_horizontally=0x7f0e0036;
+    public static final int crop_image_menu_flip_vertically=0x7f0e0037;
+    public static final int crop_image_menu_rotate_left=0x7f0e0038;
+    public static final int crop_image_menu_rotate_right=0x7f0e0039;
+    public static final int deck_dummy=0x7f0e003a;
+    public static final int delete=0x7f0e003b;
+    public static final int delete_card_msg=0x7f0e003c;
+    public static final int delete_card_title=0x7f0e003d;
+    public static final int delete_deck_msg=0x7f0e003e;
+    public static final int delete_deck_title=0x7f0e003f;
+    public static final int delete_dialog_msg=0x7f0e0040;
+    public static final int delete_folder_msg=0x7f0e0041;
+    public static final int delete_folder_title=0x7f0e0042;
+    public static final int delete_language_alert_text=0x7f0e0043;
+    public static final int discard=0x7f0e0044;
+    public static final int editor_activity_title_edit_pet=0x7f0e0045;
+    public static final int editor_activity_title_new_pet=0x7f0e0046;
+    public static final int editor_activity_title_new_word=0x7f0e0047;
+    public static final int editor_delete_pet_failed=0x7f0e0048;
+    public static final int editor_delete_pet_successful=0x7f0e0049;
+    public static final int editor_insert_pet_failed=0x7f0e004a;
+    public static final int editor_insert_pet_successful=0x7f0e004b;
+    public static final int editor_update_pet_failed=0x7f0e004c;
+    public static final int editor_update_pet_successful=0x7f0e004d;
+    public static final int empty_view_subtitle_text=0x7f0e004e;
+    public static final int empty_view_title_text=0x7f0e004f;
+    public static final int english=0x7f0e0050;
+    public static final int folder_image_button_description=0x7f0e0051;
+    public static final int folder_name=0x7f0e0052;
+    public static final int gender_female=0x7f0e0053;
+    public static final int gender_male=0x7f0e0054;
+    public static final int gender_unknown=0x7f0e0055;
+    public static final int hello_blank_fragment=0x7f0e0056;
+    public static final int hint_add_word=0x7f0e0057;
+    public static final int hint_add_word_translation=0x7f0e0058;
+    public static final int hint_folder_name=0x7f0e0059;
+    public static final int hint_pet_breed=0x7f0e005a;
+    public static final int hint_pet_weight=0x7f0e005b;
+    public static final int how_many_words=0x7f0e005c;
+    public static final int keep_editing=0x7f0e005d;
+    public static final int learning_languages=0x7f0e005e;
+    public static final int lets_start=0x7f0e005f;
+    public static final int next=0x7f0e0060;
+    public static final int ok_button=0x7f0e0061;
+    public static final int ok_delete=0x7f0e0062;
+    public static final int oops=0x7f0e0063;
+    public static final int options=0x7f0e0064;
+    public static final int password_toggle_content_description=0x7f0e0065;
+    public static final int path_password_eye=0x7f0e0066;
+    public static final int path_password_eye_mask_strike_through=0x7f0e0067;
+    public static final int path_password_eye_mask_visible=0x7f0e0068;
+    public static final int path_password_strike_through=0x7f0e0069;
+    public static final int pick_image_intent_chooser_title=0x7f0e006a;
+    public static final int root=0x7f0e006b;
+    public static final int russian=0x7f0e006c;
+    public static final int search_menu_title=0x7f0e006d;
+    public static final int set_words_at_time=0x7f0e006e;
+    public static final int settings=0x7f0e006f;
+    public static final int status_bar_notification_info_overflow=0x7f0e0070;
+    public static final int the_folder_is_empty=0x7f0e0071;
+    public static final int unit_pet_weight=0x7f0e0072;
+    public static final int unknown_breed=0x7f0e0073;
+    public static final int unsaved_changes_dialog_msg=0x7f0e0074;
+    public static final int version=0x7f0e0075;
+    public static final int what_languages_are_you_going_to_learn=0x7f0e0076;
+    public static final int words_at_time=0x7f0e0077;
+    public static final int you_are_learning=0x7f0e0078;
+    public static final int you_should_learn_one_language=0x7f0e0079;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0f0000;
@@ -10023,7 +10025,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
