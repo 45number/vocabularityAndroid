@@ -94,7 +94,7 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
 
                 if (languageSwitch.isChecked()) {
 
-//                    if (countLanguages() > 1) {
+                    if (countLanguages() > 1) {
 
                         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(SettingsActivity.this);
                         dialogBuilder.setTitle(R.string.are_you_sure);
@@ -119,9 +119,9 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
                         AlertDialog alertDialog = dialogBuilder.create();
                         alertDialog.show();
 
-//                    } else {
-//                        showOopsDialog();
-//                    }
+                    } else {
+                        showOopsDialog();
+                    }
 
                 } else {
                     setLanguages(i, true);

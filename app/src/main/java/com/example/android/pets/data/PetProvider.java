@@ -699,10 +699,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                     Folder f = tree.get(tree.size() - (c+1));
                     String imageName = f.getImage();
 
-//                    Log.e("pa", "I aaaaaam heeeeeereeeee 2");
-
                     if (imageName != "" && imageName != null) {
-//                        Log.e("pa", imageName);
                         try {
                             ContextWrapper cw = new ContextWrapper(getContext());
                             File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
