@@ -77,6 +77,8 @@ public class FoldersFragment extends Fragment
     FloatingActionButton fab;
     Button addButtonEmpty;
     TextView pathTextView;
+    View emptyFolderView;
+    View emptyView;
 
 //    LinearLayout markedBadge;
 //    FloatingActionButton rootFab;
@@ -142,8 +144,13 @@ public class FoldersFragment extends Fragment
         // Find the ListView which will be populated with the pet data
         petListView = rootView.findViewById(R.id.list);
         // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
-        View emptyView = rootView.findViewById(R.id.empty_view);
-        petListView.setEmptyView(emptyView);
+//        emptyView = rootView.findViewById(R.id.progress_bar);
+//        petListView.setEmptyView(emptyView);
+
+
+        emptyFolderView = rootView.findViewById(R.id.empty_view);
+        emptyFolderView.setVisibility(View.GONE);
+
 
         mCursorAdapter = new PetCursorAdapter(getActivity(), null);
         petListView.setAdapter(mCursorAdapter);
@@ -168,7 +175,6 @@ public class FoldersFragment extends Fragment
 
                     TextView folderNameTextView = view.findViewById(R.id.name);
                     String folderName = folderNameTextView.getText().toString();
-//                    Log.e("folder", folderName);
 
                     mTreePath.add(new pathItem(id, folderName));
 
@@ -672,6 +678,11 @@ public class FoldersFragment extends Fragment
                 if (deckNumber == 0) {
                     mAdapterNumber = 1;
                 }
+                emptyFolderView.setVisibility(View.GONE);
+
+            } else {
+                emptyFolderView.setVisibility(View.VISIBLE);
+//                emptyView.setVisibility(View.INVISIBLE);
             }
             mCursorAdapter.swapCursor(data);
 

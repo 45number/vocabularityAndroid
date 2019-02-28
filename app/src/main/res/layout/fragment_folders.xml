@@ -36,6 +36,14 @@
         <!--android:layout_height="30dp"-->
         <!--android:layout_centerInParent="true"/>-->
 
+
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progress_bar"-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:layout_centerInParent="true"/>-->
+
+
     <!-- Empty view for the list -->
     <RelativeLayout
         android:id="@+id/empty_view"
@@ -72,6 +80,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:background="@drawable/cancel_button"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
             android:textColor="@color/white"
             android:layout_marginTop="26dp"
             android:layout_marginRight="5dp"
