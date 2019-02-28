@@ -214,8 +214,6 @@ public class SpellingActivity extends AppCompatActivity implements
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if ( (actionId == EditorInfo.IME_ACTION_DONE) || ((event.getKeyCode() == KeyEvent.KEYCODE_ENTER) && (event.getAction() == KeyEvent.ACTION_DOWN ))){
                     onEnterPressed();
-//                    Toast.makeText(this,editText.getText().toString()+"Enter Pressed",Toast.LENGTH_LONG).show();
-//                    Log.e("opa", "opa");
                     return true;
                 }
                 else{
@@ -676,8 +674,6 @@ public class SpellingActivity extends AppCompatActivity implements
             Word word = mCursorData.get(mInitCounterValue);
             word.setToRepeatMem(value);
             mToRepeat = word.getToRepeatSpell();
-            Toast.makeText(this, getString(R.string.editor_update_pet_successful),
-                    Toast.LENGTH_SHORT).show();
         }
     }
 

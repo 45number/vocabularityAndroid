@@ -42,6 +42,10 @@ public class CatalogActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setElevation(0);
+        }
+
         mSettings = getSharedPreferences(SettingsContract.APP_PREFERENCES, Context.MODE_PRIVATE);
 
         mIsEnglishStudying = mSettings.getBoolean(SettingsContract.IS_ENG_STUDYING, false);

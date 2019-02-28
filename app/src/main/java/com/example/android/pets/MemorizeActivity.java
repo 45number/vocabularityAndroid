@@ -659,8 +659,6 @@ public class MemorizeActivity extends AppCompatActivity implements
             Word word = mCursorData.get(mInitCounterValue);
             word.setToRepeatMem(value);
             mToRepeat = word.getToRepeatMem();
-            Toast.makeText(this, getString(R.string.editor_update_pet_successful),
-                    Toast.LENGTH_SHORT).show();
         }
     }
 

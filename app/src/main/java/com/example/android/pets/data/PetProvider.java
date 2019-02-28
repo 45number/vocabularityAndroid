@@ -664,6 +664,52 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         switch (match) {
             case PETS:
 
+                String[] projection1 = {
+                        PetEntry._ID,
+                        PetEntry.COLUMN_FOLDER_NAME,
+                        PetEntry.COLUMN_IMAGE,
+                        PetEntry.COLUMN_MARKED
+                };
+                Cursor cursor1 = query(uri, projection1 ,selection, selectionArgs, null);
+                cursor1.moveToFirst();
+
+                for (int c = 0; c < cursor1.getCount(); c++) {
+
+                    int idColumnIndex = cursor1.getColumnIndex(PetEntry._ID);
+                    int nameColumnIndex = cursor1.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
+                    int imageColumnIndex = cursor1.getColumnIndex(PetEntry.COLUMN_IMAGE);
+                    int markedColumnIndex = cursor1.getColumnIndex(PetEntry.COLUMN_MARKED);
+
+                    Integer id = cursor1.getInt(idColumnIndex);
+                    String name = cursor1.getString(nameColumnIndex);
+                    String image = cursor1.getString(imageColumnIndex);
+                    Integer marked = cursor1.getInt(markedColumnIndex);
+
+                    Folder folder = createFolder(id, name, image, marked);
+                    ArrayList<Folder> tree = getTreeArray(folder);
+
+                    for (int c1 = 0; c1<tree.size(); c1++) {
+                        Folder f = tree.get(tree.size() - (c1+1));
+                        String imageName = f.getImage();
+
+                        if (imageName != "" && imageName != null) {
+                            try {
+                                ContextWrapper cw = new ContextWrapper(getContext());
+                                File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+                                File file = new File(directory, imageName);
+                                boolean deleted = file.delete();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                    }
+
+                    cursor1.moveToNext();
+                }
+                cursor1.close();
+
+
                 // Delete all rows that match the selection and selection args
                 rowsDeleted = database.delete(PetEntry.TABLE_NAME, selection, selectionArgs);
                 break;
