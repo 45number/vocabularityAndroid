@@ -405,11 +405,48 @@ public class FoldersFragment extends Fragment
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
+                showExcelExcelExplanation();
+//                uploadExcel();
+            }
+        });
+    }
+
+
+
+
+
+    private void showExcelExcelExplanation() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = this.getLayoutInflater();
+
+        builder.setView(inflater.inflate(R.layout.excel_explanation, null));
+
+
+
+        builder.setPositiveButton(R.string.ok_delete, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
                 uploadExcel();
             }
         });
+        builder.setNegativeButton(R.string.cancel_deleting, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+            }
+        });
+
+
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
 
     }
+
+
+
+
 
     private void addFolder() {
         Intent intent = new Intent(getActivity(), EditorActivity.class);

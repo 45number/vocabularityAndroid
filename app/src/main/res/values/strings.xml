@@ -191,4 +191,8 @@
     <string name="the_folder_is_empty">The folder is empty</string>
     <string name="create_folder_or_upload_words">Create another folder here or upload words</string>
 
+
+    <string name="upload_words_from_excel_file">Upload words from excel file</string>
+    <string name="upload_words_description">To create decks from excel put words in the A column and translation into B column</string>
+
 </resources>
