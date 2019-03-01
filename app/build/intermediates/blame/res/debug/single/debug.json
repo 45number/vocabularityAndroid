@@ -1412,12 +1412,12 @@
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\3c68720bf122e57ddb8046a86a34a689\\res\\drawable-xhdpi-v4\\design_ic_visibility.png"
     },
     {
-        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_edittext.xml.flat",
-        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\color-v23\\abc_tint_edittext.xml"
-    },
-    {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_shuffle_unchecked.xml.flat",
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_shuffle_unchecked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_edittext.xml.flat",
+        "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
@@ -1844,6 +1844,10 @@
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\switch_track_on.png"
     },
     {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_excel_screenshot.png.flat",
+        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\drawable-mdpi\\excel_screenshot.png"
+    },
+    {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21_design_bottom_sheet_slide_in.xml.flat",
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\3c68720bf122e57ddb8046a86a34a689\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
     },
@@ -1942,6 +1946,10 @@
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\layout_add_picker.xml.flat",
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\layout\\add_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_excel_screenshot.png.flat",
+        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\drawable-xhdpi\\excel_screenshot.png"
     },
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
@@ -2148,6 +2156,10 @@
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_excel_screenshot.png.flat",
+        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\drawable-hdpi\\excel_screenshot.png"
+    },
+    {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_back.png.flat",
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_back.png"
     },
@@ -2186,6 +2198,10 @@
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_btn_colored_text_material.xml.flat",
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\color\\abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_excel_screenshot.png.flat",
+        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\drawable-xxxhdpi\\excel_screenshot.png"
     },
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -2734,6 +2750,10 @@
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\Professional\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ffc301b1185a42ef99227c7b24156624\\res\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_excel_screenshot.png.flat",
+        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\drawable-xxhdpi\\excel_screenshot.png"
     },
     {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",

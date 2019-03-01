@@ -36,6 +36,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -405,8 +406,13 @@ public class FoldersFragment extends Fragment
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
-                showExcelExcelExplanation();
-//                uploadExcel();
+
+                boolean noHelper = mSettings.getBoolean(SettingsContract.DO_NOT_SHOW_EXCEL_HELPER, false);
+                if (noHelper)
+                    uploadExcel();
+                else
+                    showExcelExcelExplanation();
+
             }
         });
     }
@@ -421,8 +427,6 @@ public class FoldersFragment extends Fragment
         LayoutInflater inflater = this.getLayoutInflater();
 
         builder.setView(inflater.inflate(R.layout.excel_explanation, null));
-
-
 
         builder.setPositiveButton(R.string.ok_delete, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -441,6 +445,21 @@ public class FoldersFragment extends Fragment
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
 
+        final Switch doNotShowSwitch = alertDialog.findViewById(R.id.doNotShowSwitch);
+        doNotShowSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (doNotShowSwitch.isChecked()) {
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    editor.putBoolean(SettingsContract.DO_NOT_SHOW_EXCEL_HELPER, true);
+                    editor.apply();
+                } else {
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    editor.putBoolean(SettingsContract.DO_NOT_SHOW_EXCEL_HELPER, false);
+                    editor.apply();
+                }
+            }
+        });
 
     }
 

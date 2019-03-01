@@ -22,4 +22,6 @@ public class SettingsContract {
     public static final String IS_DIRECTION_REVERSED = "isDirectionReversed";
 
     public static final String LAST_FOLDER = "lastFolder";
+
+    public static final String DO_NOT_SHOW_EXCEL_HELPER = "doNotShowExcelHelper";
 }

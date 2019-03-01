@@ -18,6 +18,7 @@
         android:layout_width="wrap_content"
         android:gravity="center_vertical"
         android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
         android:textSize="15sp"
         android:textColor="#2B3D4D"/>
     <View
@@ -27,7 +28,7 @@
     </View>
     <Switch
         android:id="@+id/language_switch"
-        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
         android:focusable="false"
         android:clickable="false"
         android:layout_width="wrap_content"

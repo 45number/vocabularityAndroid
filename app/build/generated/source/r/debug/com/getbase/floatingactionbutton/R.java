@@ -38,18 +38,18 @@ public final class R {
         public static final int fab_stroke_width = 0x7f070086;
     }
     public static final class drawable {
-        public static final int fab_bg_mini = 0x7f08006c;
-        public static final int fab_bg_normal = 0x7f08006d;
+        public static final int fab_bg_mini = 0x7f08006d;
+        public static final int fab_bg_normal = 0x7f08006e;
     }
     public static final class id {
-        public static final int down = 0x7f09005e;
-        public static final int fab_expand_menu_button = 0x7f090075;
-        public static final int fab_label = 0x7f090076;
-        public static final int left = 0x7f090094;
-        public static final int mini = 0x7f0900a2;
-        public static final int normal = 0x7f0900a9;
-        public static final int right = 0x7f0900c2;
-        public static final int up = 0x7f090111;
+        public static final int down = 0x7f09005f;
+        public static final int fab_expand_menu_button = 0x7f090076;
+        public static final int fab_label = 0x7f090077;
+        public static final int left = 0x7f090097;
+        public static final int mini = 0x7f0900a5;
+        public static final int normal = 0x7f0900ac;
+        public static final int right = 0x7f0900c5;
+        public static final int up = 0x7f090114;
     }
     public static final class styleable {
         public static final int[] AddFloatingActionButton = { 0x7f0400cb };

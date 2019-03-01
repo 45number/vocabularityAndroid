@@ -146,6 +146,50 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
 
 //        setListViewHeightBasedOnChildren(languagesListView);
 
+
+
+
+        ArrayList<LanguageSettingListItem> arrayOfInterfaceSettings = new ArrayList<>();
+        LanguageSettingAdapter adapterInterface = new LanguageSettingAdapter(this, arrayOfInterfaceSettings);
+        NonScrollListView interfaceListView = findViewById(R.id.interfaceList);
+        interfaceListView.setAdapter(adapterInterface);
+
+
+        boolean doNotShow = mSettings.getBoolean(SettingsContract.DO_NOT_SHOW_EXCEL_HELPER, false);
+
+        LanguageSettingListItem item = new LanguageSettingListItem(getString(R.string.show_tips), !doNotShow);
+        adapterInterface.add(item);
+
+
+        /*addLanguageToAdapter(
+                adapterInterface,
+                getString(R.string.show_tips),
+                mSettings.getBoolean(SettingsContract.DO_NOT_SHOW_EXCEL_HELPER, false)
+        );*/
+
+        interfaceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
+                final Switch languageSwitch = view.findViewById(R.id.language_switch);
+
+                if (languageSwitch.isChecked()) {
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    editor.putBoolean(SettingsContract.DO_NOT_SHOW_EXCEL_HELPER, true);
+                    editor.apply();
+                    languageSwitch.setChecked(false);
+                } else {
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    editor.putBoolean(SettingsContract.DO_NOT_SHOW_EXCEL_HELPER, false);
+                    editor.apply();
+                    languageSwitch.setChecked(true);
+                }
+            }
+        });
+
+
+
+
+
     }
 
     /*public static void setListViewHeightBasedOnChildren(ListView listView) {

@@ -97,6 +97,52 @@
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
+
+
+
+
+
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/interfaceCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="0dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/interface_settings"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorAccent"
+                    />
+                <com.example.android.pets.NonScrollListView
+                    android:id="@+id/interfaceList"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </com.example.android.pets.NonScrollListView>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+
         <android.support.v7.widget.CardView
             android:id="@+id/cardView3"
             android:layout_width="match_parent"
