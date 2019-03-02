@@ -5,33 +5,35 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
     plugin-version="3.1.3"
-    timestamp="1551534400381"
+    timestamp="1551554967976"
     token="-7627957922794117916"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="20010" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="734" />
+        duration="0" />
     <task
         name="verifier"
-        duration="110" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1551533793235"
+        timestamp="1551553726574"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            type="SPLIT" />
         <artifact
             location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
@@ -57,9 +59,6 @@
             location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
@@ -74,11 +73,34 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1551534400381"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1551554546663"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
+            location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1551554967976"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
     </build>
 

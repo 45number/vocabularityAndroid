@@ -229,7 +229,7 @@ public class EditorActivity extends AppCompatActivity implements
             fos = new FileOutputStream(mypath);
             // Use the compress method on the BitMap object to write image to the OutputStream
             bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
-            Toast.makeText(this, "IMAGE SAVED", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "IMAGE SAVED", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -307,8 +307,8 @@ public class EditorActivity extends AppCompatActivity implements
                     saveImage(bitmap);
                 }
 
-                Toast.makeText(this, getString(R.string.editor_insert_pet_successful),
-                        Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(this, getString(R.string.editor_insert_pet_successful),
+                        Toast.LENGTH_SHORT).show();*/
             }
         } else {
             // Otherwise this is an EXISTING pet, so update the pet with content URI: mCurrentPetUri
@@ -351,8 +351,8 @@ public class EditorActivity extends AppCompatActivity implements
                 }
 
                 // Otherwise, the update was successful and we can display a toast.
-                Toast.makeText(this, getString(R.string.editor_update_pet_successful),
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, getString(R.string.editor_update_pet_successful),
+//                        Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -566,8 +566,8 @@ public class EditorActivity extends AppCompatActivity implements
                         Toast.LENGTH_SHORT).show();
             } else {
                 // Otherwise, the delete was successful and we can display a toast.
-                Toast.makeText(this, getString(R.string.editor_delete_pet_successful),
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, getString(R.string.editor_delete_pet_successful),
+//                        Toast.LENGTH_SHORT).show();
             }
         }
         // Close the activity

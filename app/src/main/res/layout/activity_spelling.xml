@@ -180,7 +180,8 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
-                    android:text="Delete" />
+                    android:text="@string/delete"
+                    style="?android:attr/borderlessButtonStyle"/>
 
                 <Button
                     android:id="@+id/cancelButton"
@@ -191,7 +192,8 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
-                    android:text="Cancel" />
+                    android:text="@string/cancel"
+                    style="?android:attr/borderlessButtonStyle"/>
 
                 <Button
                     android:id="@+id/saveButton"
@@ -202,7 +204,8 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
-                    android:text="Save" />
+                    android:text="@string/save"
+                    style="?android:attr/borderlessButtonStyle"/>
             </LinearLayout>
 
 

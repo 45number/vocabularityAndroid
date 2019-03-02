@@ -96,6 +96,8 @@ public class FoldersFragment extends Fragment
     private static final int RESULT_FILE_EXPLORER = 5;
     private static final int RESULT_DELETED_DECK = 6;
 
+    private static final int RESULT_INVALID_DATA = 7;
+
     private static final String PATH_TREE = "path";
 
     public static final String PATH_SEPARATOR = "/";
@@ -519,7 +521,10 @@ public class FoldersFragment extends Fragment
                 break;
             case RESULT_DELETED_DECK:
                 ((CatalogActivity)getActivity()).refreshDecks();
-
+                break;
+            case RESULT_INVALID_DATA:
+                Toast.makeText(getActivity(), getString(R.string.invalid_data),
+                        Toast.LENGTH_SHORT).show();
                 break;
         }
     }

@@ -70,7 +70,7 @@
     <string name="editor_insert_pet_successful">Pet saved</string>
 
     <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
-    <string name="editor_insert_pet_failed">Error with saving pet</string>
+    <string name="editor_insert_pet_failed">Error with saving folder</string>
 
     <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
     <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
@@ -201,5 +201,9 @@
 
     <string name="uploading">Uploading</string>
 
+    <string name="invalid_data">Invalid data</string>
+    <string name="requires_android_5">Not supported. Android 5 or above is required</string>
 
+    <string name="create">Create</string>
+    <string name="save">Save</string>
 </resources>
