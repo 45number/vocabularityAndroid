@@ -48,8 +48,8 @@ public final class R {
         public static final int left = 0x7f090097;
         public static final int mini = 0x7f0900a5;
         public static final int normal = 0x7f0900ac;
-        public static final int right = 0x7f0900c5;
-        public static final int up = 0x7f090114;
+        public static final int right = 0x7f0900c7;
+        public static final int up = 0x7f090116;
     }
     public static final class styleable {
         public static final int[] AddFloatingActionButton = { 0x7f0400cb };

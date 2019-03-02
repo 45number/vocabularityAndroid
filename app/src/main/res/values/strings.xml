@@ -198,4 +198,8 @@
 
     <string name="show_tips">Show tips</string>
     <string name="interface_settings">Interface settings</string>
+
+    <string name="uploading">Uploading</string>
+
+
 </resources>

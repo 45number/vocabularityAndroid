@@ -24,6 +24,7 @@ import android.os.Bundle;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
@@ -55,6 +56,9 @@ public class FileChooser extends AppCompatActivity //ListActivity
 
     ListView listView;
 
+    View progressBackground;
+    CardView progressCard;
+
 //    List<FilesItem>dir;
 //    List<FilesItem>fls;
 
@@ -65,8 +69,12 @@ public class FileChooser extends AppCompatActivity //ListActivity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_file_explorer);
-        listView = (ListView) findViewById(R.id.list);
+        listView = findViewById(R.id.list);
 
+        progressBackground = findViewById(R.id.progressBackground);
+        progressCard = findViewById(R.id.progressCard);
+        progressBackground.setVisibility(View.GONE);
+        progressCard.setVisibility(View.GONE);
 
 
 //        dir = new ArrayList<>();
@@ -217,6 +225,9 @@ public class FileChooser extends AppCompatActivity //ListActivity
     private void onFileClick(final FilesItem o)
     {
 
+        progressBackground.setVisibility(View.VISIBLE);
+        progressCard.setVisibility(View.VISIBLE);
+
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
@@ -233,11 +244,19 @@ public class FileChooser extends AppCompatActivity //ListActivity
 
         File inputFile = new File(filePath);
 
+        Log.e("hello", "hello");
+
         try {
             InputStream inputStream = new FileInputStream(inputFile);
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
             XSSFSheet sheet = workbook.getSheetAt(0);
             int rowsCount = sheet.getPhysicalNumberOfRows();
+
+            Log.e("getPhysicalNumberOfRows", rowsCount+"");
+
+//            if (rowsCount == 0)
+//                Log.e("rows", "zero");
+////                return;
 
             //outter loop, loops through rows
             int r = 0;
@@ -246,6 +265,9 @@ public class FileChooser extends AppCompatActivity //ListActivity
 
                 Row row = sheet.getRow(r1);
 
+//                if (r1 == 0 && row == null)
+//                    Log.e("r1", "zero");
+
                 if (row == null) {
                     r1++;
                     continue;
@@ -253,6 +275,8 @@ public class FileChooser extends AppCompatActivity //ListActivity
 
                 Cell wordCell = row.getCell(0);
                 Cell translateCell = row.getCell(1);
+
+                
 
                 if (wordCell == null || wordCell.getCellType() == Cell.CELL_TYPE_BLANK
                         || translateCell == null || translateCell.getCellType() == Cell.CELL_TYPE_BLANK) {
