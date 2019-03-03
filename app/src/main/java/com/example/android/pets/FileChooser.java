@@ -388,8 +388,8 @@ public class FileChooser extends AppCompatActivity //ListActivity
         int languageLearningId = getIntent().getIntExtra("language_learning", 1);
 
         ContentValues values = new ContentValues();
-        values.put(WordEntry.COLUMN_WORD, wordString);
-        values.put(WordEntry.COLUMN_TRANSLATION, translationString);
+        values.put(WordEntry.COLUMN_WORD, wordString.trim());
+        values.put(WordEntry.COLUMN_TRANSLATION, translationString.trim());
         values.put(WordEntry.COLUMN_FOLDER, folderIdLong);
         values.put(WordEntry.COLUMN_LANGUAGE_LEARNING, languageLearningId);
 

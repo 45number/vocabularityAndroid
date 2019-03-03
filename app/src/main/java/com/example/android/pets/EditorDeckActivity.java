@@ -175,11 +175,18 @@ public class EditorDeckActivity extends AppCompatActivity implements LoaderManag
 //        Button b = new Button(this);
 //        b.setText("Dynamic Button");
 //        b.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+//        getContext()
+
+
+        final float scale = EditorDeckActivity.this.getResources().getDisplayMetrics().density;
+        int pixels = (int) (23 * scale + 0.5f);
+
+
 
         TextView counterView = new TextView(this);
         counterView.setText(counter.toString());
         TableRow.LayoutParams counterParams = new TableRow.LayoutParams(
-                60,
+                pixels,
                 TableRow.LayoutParams.MATCH_PARENT
         );
 //        counterParams.setMargins(0, 10, 0, 0);
@@ -266,10 +273,10 @@ public class EditorDeckActivity extends AppCompatActivity implements LoaderManag
             int id = Integer.parseInt(idString);
 
             EditText wordEditText = (EditText) row.getVirtualChildAt(2);
-            String word = wordEditText.getText().toString();
+            String word = wordEditText.getText().toString().trim();
 
             EditText translationEditText = (EditText) row.getVirtualChildAt(4);
-            String translation = translationEditText.getText().toString();
+            String translation = translationEditText.getText().toString().trim();
 
             Uri currentWordUri = ContentUris.withAppendedId(WordEntry.CONTENT_URI, id);
             ContentValues values = new ContentValues();

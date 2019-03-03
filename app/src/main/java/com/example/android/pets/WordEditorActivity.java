@@ -153,7 +153,7 @@ public class WordEditorActivity extends AppCompatActivity  implements
 
         if ("".equals(wordString) || "".equals(translationString)
                 || TextUtils.isEmpty(wordString) || TextUtils.isEmpty(translationString)) {
-            Log.e("empty", "fields");
+//            Log.e("empty", "fields");
             return;
         }
 

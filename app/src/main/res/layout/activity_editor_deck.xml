@@ -64,13 +64,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="0dp"
-
         app:layout_constraintBottom_toBottomOf="parent">
-
+        <!--android:background="@drawable/row_counter_border"-->
         <View
             android:layout_width="23dp"
             android:layout_height="match_parent"
-            android:background="@drawable/row_counter_border"
+            android:background="@color/black"
             >
         </View>
 

@@ -22,13 +22,13 @@ public final class R {
         public static final int abc_action_bar_embed_tabs = 0x7f050000;
     }
     public static final class color {
-        public static final int notification_action_color_filter = 0x7f060062;
-        public static final int notification_icon_bg_color = 0x7f060063;
-        public static final int notification_material_background_media_default_color = 0x7f060064;
-        public static final int primary_text_default_material_dark = 0x7f060069;
-        public static final int ripple_material_light = 0x7f06006e;
-        public static final int secondary_text_default_material_dark = 0x7f060070;
-        public static final int secondary_text_default_material_light = 0x7f060071;
+        public static final int notification_action_color_filter = 0x7f060063;
+        public static final int notification_icon_bg_color = 0x7f060064;
+        public static final int notification_material_background_media_default_color = 0x7f060065;
+        public static final int primary_text_default_material_dark = 0x7f06006a;
+        public static final int ripple_material_light = 0x7f06006f;
+        public static final int secondary_text_default_material_dark = 0x7f060071;
+        public static final int secondary_text_default_material_light = 0x7f060072;
     }
     public static final class dimen {
         public static final int compat_button_inset_horizontal_material = 0x7f07004f;

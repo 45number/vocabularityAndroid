@@ -446,8 +446,8 @@ public class SpellingActivity extends AppCompatActivity implements
             @Override
             public void onClick(View view) {
 
-                String word = mTranslationEdit.getText().toString();
-                String translation = mWordEdit.getText().toString();
+                String word = mTranslationEdit.getText().toString().trim();
+                String translation = mWordEdit.getText().toString().trim();
 
                 Uri currentWordUri = ContentUris.withAppendedId(WordEntry.CONTENT_URI, mWordId);
                 ContentValues values = new ContentValues();

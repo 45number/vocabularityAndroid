@@ -424,11 +424,11 @@ public class MemorizeActivity extends AppCompatActivity implements
             @Override
             public void onClick(View view) {
 
-                String word = mTranslationEdit.getText().toString();
-                String translation = mWordEdit.getText().toString();
+                String word = mTranslationEdit.getText().toString().trim();
+                String translation = mWordEdit.getText().toString().trim();
                 if (mIsDirectionReversed) {
-                    word = mWordEdit.getText().toString();
-                    translation = mTranslationEdit.getText().toString();
+                    word = mWordEdit.getText().toString().trim();
+                    translation = mTranslationEdit.getText().toString().trim();
                 }
 
                 Uri currentWordUri = ContentUris.withAppendedId(WordEntry.CONTENT_URI, mWordId);
