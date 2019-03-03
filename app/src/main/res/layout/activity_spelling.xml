@@ -50,7 +50,7 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="80dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -63,18 +63,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.133">
 
+        <!--android:imeOptions="actionGo"-->
+
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
             <TextView
                 android:id="@+id/word"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
-                android:imeOptions="actionGo"
-                android:textSize="28sp"
+                android:text=""
+                android:gravity="center"
+                android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,8 +88,9 @@
             <!--android:inputType="textNoSuggestions|textVisiblePassword"-->
             <EditText
                 android:id="@+id/wordEdit"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
@@ -108,7 +112,7 @@
                 android:layout_marginTop="16dp"
                 android:imeOptions="actionDone"
                 android:inputType="text"
-
+                android:gravity="center"
                 android:ems="10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +128,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/speak_button"
-                app:layout_constraintBottom_toTopOf="@+id/translation"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
@@ -132,80 +136,92 @@
 
             <TextView
                 android:id="@+id/translation"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:text=""
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/word"
-                app:layout_constraintVertical_bias="0.409" />
+                app:layout_constraintTop_toBottomOf="@+id/speakButton"
+                app:layout_constraintVertical_bias="0.087" />
 
             <EditText
                 android:id="@+id/translationEdit"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:gravity="center"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wordEdit" />
+                app:layout_constraintTop_toBottomOf="@+id/speakButton"
+                app:layout_constraintVertical_bias="0.0" />
 
 
             <LinearLayout
                 android:id="@+id/editActions"
-                android:layout_width="352dp"
-                android:layout_height="101dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
-                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
 
+                android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1">
+
                 <Button
                     android:id="@+id/deleteButton"
+                    style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/delete_button"
-                    android:textColor="@color/white"
-                    android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/delete_button"
                     android:text="@string/delete"
-                    style="?android:attr/borderlessButtonStyle"/>
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/cancelButton"
+                    style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/cancel_button"
-                    android:textColor="@color/white"
-                    android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/cancel_button"
                     android:text="@string/cancel"
-                    style="?android:attr/borderlessButtonStyle"/>
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/saveButton"
+                    style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/save_button"
-                    android:textColor="@color/white"
-                    android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/save_button"
                     android:text="@string/save"
-                    style="?android:attr/borderlessButtonStyle"/>
+                    android:textColor="@color/white" />
             </LinearLayout>
 
 

@@ -1,23 +1,31 @@
 #Internal package file, do not edit.
-#Sun Mar 03 22:48:30 GST 2019
-2.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\399
+#Mon Mar 04 01:02:35 GST 2019
+2.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\412
+5.set=DEX
 0.path=classes.dex
 2.baseType=DIRECTORY
-3.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\399
+3.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\415
 2.set=DEX
-1.path=classes4.dex
-4.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\assets\\debug
-count=5
-2.path=classes2.dex
-4.set=ASSET
-3.path=classes3.dex
+1.path=classes.dex
+4.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\416
+count=7
+5.baseType=DIRECTORY
+2.path=classes.dex
+5.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\413
+4.set=DEX
+3.path=classes.dex
+6.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\assets\\debug
 3.baseType=DIRECTORY
 1.set=DEX
-4.path=fonts/open_sans_light.ttf
+4.path=classes.dex
+6.set=ASSET
 1.baseType=DIRECTORY
-0.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\399
+6.baseType=DIRECTORY
+5.path=classes.dex
+0.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\414
 0.baseType=DIRECTORY
 3.set=DEX
-1.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\399
+6.path=fonts/open_sans_light.ttf
+1.base=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\411
 4.baseType=DIRECTORY
 0.set=DEX

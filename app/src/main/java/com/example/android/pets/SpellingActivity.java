@@ -1,5 +1,7 @@
 package com.example.android.pets;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.content.ContentUris;
@@ -254,7 +256,7 @@ public class SpellingActivity extends AppCompatActivity implements
 //            }
 //        });
 
-        tts=new TextToSpeech(SpellingActivity.this, new TextToSpeech.OnInitListener() {
+        /*tts=new TextToSpeech(SpellingActivity.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 s = status;
@@ -270,7 +272,9 @@ public class SpellingActivity extends AppCompatActivity implements
                     }
                 }).start();
             }
-        });
+        });*/
+
+        ttsStart();
 
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -384,18 +388,40 @@ public class SpellingActivity extends AppCompatActivity implements
             public void onClick(View v) {
                 mWordEdit.setVisibility(View.VISIBLE);
                 mTranslationEdit.setVisibility(View.VISIBLE);
-                mEditActions.setVisibility(View.VISIBLE);
+//                mEditActions.setVisibility(View.VISIBLE);
+
+
+//                setViewVisibility(mWordEdit, 1);
+//                setViewVisibility(mTranslationEdit, 1);
+                setViewVisibility(mEditActions, 1);
+
+
 
                 wordTextView.setVisibility(View.GONE);
                 translationTextView.setVisibility(View.GONE);
                 mEditButton.setVisibility(View.GONE);
 
+//                setViewVisibility(wordTextView, 0);
+//                setViewVisibility(translationTextView, 0);
+//                setViewVisibility(mEditButton, 0);
+
+
+
                 mWordEdit.requestFocus();
+                mWordEdit.setSelection(mWordEdit.getText().length());
 
 
 //                mWordEditText.setFocusable(false);
                 mWordEditText.setEnabled(false);
                 mWordEditText.setText("");
+//                setViewVisibility(mWordEditText, 0);
+                mWordEditText.animate().alpha(0.0f).setDuration(500).setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                    }
+                });
+
 //                mWordEditText.setCursorVisible(false);
 //                mWordEdit.setKeyListener(null);
 //                mWordEdit.setBackgroundColor(Color.TRANSPARENT);
@@ -489,18 +515,30 @@ public class SpellingActivity extends AppCompatActivity implements
     public void finishEditing() {
         mWordEdit.setVisibility(View.GONE);
         mTranslationEdit.setVisibility(View.GONE);
-        mEditActions.setVisibility(View.GONE);
+//        mEditActions.setVisibility(View.GONE);
+
+//        setViewVisibility(mWordEdit, 0);
+//        setViewVisibility(mTranslationEdit, 0);
+        setViewVisibility(mEditActions, 0);
 
         wordTextView.setVisibility(View.VISIBLE);
         translationTextView.setVisibility(View.VISIBLE);
         mEditButton.setVisibility(View.VISIBLE);
 
 //        mWordEditText.setFocusable(true);
-        mWordEditText.setEnabled(true);
 //        mWordEditText.setCursorVisible(true);
-        mWordEditText.requestFocus();
 //        mWordEdit.setKeyListener(null);
 //        mWordEdit.setBackgroundColor(Color.TRANSPARENT);
+
+        mWordEditText.animate().alpha(1.0f).setDuration(500).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+            }
+        });
+
+        mWordEditText.setEnabled(true);
+        mWordEditText.requestFocus();
     }
 
     public void showDeleteDialog() {
@@ -587,6 +625,26 @@ public class SpellingActivity extends AppCompatActivity implements
 
 
 
+    public void setViewVisibility(final View view, int opacity) {
+        if (opacity == 0) {
+            view.animate().alpha(0.0f).setDuration(500).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    view.setVisibility(View.GONE);
+                }
+            });
+        } else if (opacity == 1) {
+            view.animate().alpha(1.0f).setDuration(500).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+                    super.onAnimationStart(animation);
+                    view.setVisibility(View.VISIBLE);
+                }
+            });
+        }
+    }
+
 
     private void playAudio(final String url) {
         if (mLearningLanguage == 3) {
@@ -645,6 +703,26 @@ public class SpellingActivity extends AppCompatActivity implements
     }
 
 
+    public void ttsStart() {
+        tts=new TextToSpeech(SpellingActivity.this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                s = status;
+                new Thread(new Runnable() {
+                    public void run() {
+                        if(s != TextToSpeech.ERROR) {
+                            tts.setPitch(1.1f);
+                            if (mLearningLanguage==1)
+                                tts.setLanguage(Locale.UK);
+                            else if (mLearningLanguage==2)
+                                tts.setLanguage(new Locale("ru"));
+                        }
+                    }
+                }).start();
+            }
+        });
+    }
+
 
 
     @Override
@@ -657,6 +735,12 @@ public class SpellingActivity extends AppCompatActivity implements
             tts.shutdown();
         }
         super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        ttsStart();
+        super.onResume();
     }
 
 
