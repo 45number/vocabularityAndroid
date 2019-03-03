@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.pets"
+    package="com.vocabularity.android.vocabularity"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -22,7 +22,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.android.pets.CatalogActivity"
+            android:name="com.vocabularity.android.vocabularity.CatalogActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -32,8 +32,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.android.pets.EditorActivity"
-            android:parentActivityName="com.example.android.pets.CatalogActivity"
+            android:name="com.vocabularity.android.vocabularity.EditorActivity"
+            android:parentActivityName="com.vocabularity.android.vocabularity.CatalogActivity"
             android:screenOrientation="portrait"
             android:theme="@style/EditorTheme"
             android:windowSoftInputMode="stateVisible|adjustResize" >
@@ -49,45 +49,45 @@
             android:theme="@style/Base.Theme.AppCompat" />
 
         <provider
-            android:name="com.example.android.pets.data.PetProvider"
-            android:authorities="com.example.android.pets"
+            android:name="com.vocabularity.android.vocabularity.data.PetProvider"
+            android:authorities="com.vocabularity.android.vocabularity"
             android:exported="false" />
 
         <activity
-            android:name="com.example.android.pets.WordEditorActivity"
-            android:parentActivityName="com.example.android.pets.CatalogActivity"
+            android:name="com.vocabularity.android.vocabularity.WordEditorActivity"
+            android:parentActivityName="com.vocabularity.android.vocabularity.CatalogActivity"
             android:screenOrientation="portrait"
             android:theme="@style/EditorTheme"
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
-            android:name="com.example.android.pets.MemorizeActivity"
+            android:name="com.vocabularity.android.vocabularity.MemorizeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.example.android.pets.SpellingActivity"
+            android:name="com.vocabularity.android.vocabularity.SpellingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
-            android:name="com.example.android.pets.SettingsActivity"
+            android:name="com.vocabularity.android.vocabularity.SettingsActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CatalogActivity" />
         </activity>
         <activity
-            android:name="com.example.android.pets.FileChooser"
+            android:name="com.vocabularity.android.vocabularity.FileChooser"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CatalogActivity" />
         </activity>
         <activity
-            android:name="com.example.android.pets.EditorDeckActivity"
+            android:name="com.vocabularity.android.vocabularity.EditorDeckActivity"
             android:screenOrientation="portrait" >
         </activity>
         <!-- <activity android:name=".FileExplorer"></activity> -->
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
-            android:authorities="com.example.android.pets.com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="com.vocabularity.android.vocabularity.com.android.tools.ir.server.InstantRunContentProvider"
             android:multiprocess="true" />
     </application>
 

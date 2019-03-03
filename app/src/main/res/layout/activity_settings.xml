@@ -49,12 +49,12 @@
                     android:textSize="15sp"
                     android:textColor="@color/colorAccent"
                     />
-                <com.example.android.pets.NonScrollListView
+                <com.vocabularity.android.vocabularity.NonScrollListView
                     android:id="@+id/languagesList"
                     android:layout_marginTop="2dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                </com.example.android.pets.NonScrollListView>
+                </com.vocabularity.android.vocabularity.NonScrollListView>
 
                 <!--<ListView-->
                     <!--android:id="@+id/languagesList"-->
@@ -88,7 +88,7 @@
                     android:textSize="15sp"
                     android:textColor="@color/colorAccent"
                     />
-                <com.example.android.pets.NonScrollListView
+                <com.vocabularity.android.vocabularity.NonScrollListView
                     android:id="@+id/wordsAtTimeList"
                     android:layout_marginTop="2dp"
                     android:layout_width="match_parent"
@@ -126,12 +126,12 @@
                     android:textSize="15sp"
                     android:textColor="@color/colorAccent"
                     />
-                <com.example.android.pets.NonScrollListView
+                <com.vocabularity.android.vocabularity.NonScrollListView
                     android:id="@+id/interfaceList"
                     android:layout_marginTop="2dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                </com.example.android.pets.NonScrollListView>
+                </com.vocabularity.android.vocabularity.NonScrollListView>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

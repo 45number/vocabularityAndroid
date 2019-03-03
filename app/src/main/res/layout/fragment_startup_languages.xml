@@ -115,11 +115,11 @@ tools:context=".SettingsActivity">
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp" />
 
-            <com.example.android.pets.NonScrollListView
+            <com.vocabularity.android.vocabularity.NonScrollListView
                 android:id="@+id/languagesList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"></com.example.android.pets.NonScrollListView>
+                android:layout_marginTop="2dp"></com.vocabularity.android.vocabularity.NonScrollListView>
 
             <!--<ListView-->
             <!--android:id="@+id/languagesList"-->

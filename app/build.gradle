@@ -5,7 +5,7 @@ android {
     buildToolsVersion "27.0.3"
 
     defaultConfig {
-        applicationId "com.example.android.pets"
+        applicationId "com.vocabularity.android.vocabularity"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1

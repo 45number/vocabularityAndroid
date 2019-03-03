@@ -32,7 +32,7 @@ INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\m
 INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-80:12
 INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-80:12
 	package
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:3:5-39
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -77,7 +77,7 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\Professional\.
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:14:9-40
-activity#com.example.android.pets.CatalogActivity
+activity#com.vocabularity.android.vocabularity.CatalogActivity
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:15:9-23:20
 	android:screenOrientation
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:18:13-49
@@ -95,7 +95,7 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:21:27-74
-activity#com.example.android.pets.EditorActivity
+activity#com.vocabularity.android.vocabularity.EditorActivity
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:24:9-34:20
 	android:screenOrientation
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:27:13-49
@@ -121,15 +121,15 @@ ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:38:13-56
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:36:13-76
-provider#com.example.android.pets.data.PetProvider
+provider#com.vocabularity.android.vocabularity.data.PetProvider
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:40:9-43:40
 	android:authorities
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:42:13-59
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:42:13-72
 	android:exported
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:43:13-37
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:41:13-45
-activity#com.example.android.pets.WordEditorActivity
+activity#com.vocabularity.android.vocabularity.WordEditorActivity
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:45:9-50:50
 	android:screenOrientation
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:48:13-49
@@ -141,13 +141,13 @@ ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:50:13-47
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:46:13-47
-activity#com.example.android.pets.MemorizeActivity
+activity#com.vocabularity.android.vocabularity.MemorizeActivity
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:51:9-53:52
 	android:screenOrientation
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:53:13-49
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:52:13-45
-activity#com.example.android.pets.SpellingActivity
+activity#com.vocabularity.android.vocabularity.SpellingActivity
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:54:9-58:15
 	android:screenOrientation
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:56:13-49
@@ -155,19 +155,19 @@ ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:57:13-68
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:55:13-45
-activity#com.example.android.pets.SettingsActivity
+activity#com.vocabularity.android.vocabularity.SettingsActivity
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:59:9-65:20
 	android:screenOrientation
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:61:13-49
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:60:13-45
-activity#com.example.android.pets.FileChooser
+activity#com.vocabularity.android.vocabularity.FileChooser
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:66:9-72:20
 	android:screenOrientation
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:68:13-49
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:67:13-40
-activity#com.example.android.pets.EditorDeckActivity
+activity#com.vocabularity.android.vocabularity.EditorDeckActivity
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:73:9-76:20
 	android:screenOrientation
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:75:13-49
