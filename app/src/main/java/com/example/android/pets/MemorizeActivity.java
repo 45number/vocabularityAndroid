@@ -1,6 +1,9 @@
 package com.example.android.pets;
 
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.content.ContentUris;
@@ -21,11 +24,19 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.speech.tts.TextToSpeech;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
+import android.support.transition.TransitionManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.transition.AutoTransition;
+import android.transition.ChangeBounds;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -171,8 +182,14 @@ public class MemorizeActivity extends AppCompatActivity implements
         mWordEdit.setVisibility(View.GONE);
         mTranslationEdit.setVisibility(View.GONE);
 
+//        mWordEdit.setAlpha(0.0f);
+//        mTranslationEdit.setAlpha(0.0f);
+
+
         mEditActions = findViewById(R.id.editActions);
-        mEditActions.setVisibility(View.GONE);
+//        mEditActions.setVisibility(View.GONE);
+
+        mEditActions.setAlpha(0.0f);
 
         mDeleteButton = findViewById(R.id.deleteButton);
         mCancelButton = findViewById(R.id.cancelButton);
@@ -240,7 +257,7 @@ public class MemorizeActivity extends AppCompatActivity implements
             }
         });
 
-        tts=new TextToSpeech(MemorizeActivity.this, new TextToSpeech.OnInitListener() {
+        /*tts=new TextToSpeech(MemorizeActivity.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 s = status;
@@ -256,7 +273,9 @@ public class MemorizeActivity extends AppCompatActivity implements
                     }
                 }).start();
             }
-        });
+        });*/
+
+        ttsStart();
 
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -285,6 +304,7 @@ public class MemorizeActivity extends AppCompatActivity implements
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mCardSwitcher = false;
                 moveToNext();
             }
         });
@@ -293,6 +313,7 @@ public class MemorizeActivity extends AppCompatActivity implements
         previousButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mCardSwitcher = false;
                 moveToPrevious();
             }
         });
@@ -312,15 +333,75 @@ public class MemorizeActivity extends AppCompatActivity implements
         mEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mWordEdit.setVisibility(View.VISIBLE);
+                /*mWordEdit.setVisibility(View.VISIBLE);
                 mTranslationEdit.setVisibility(View.VISIBLE);
-                mEditActions.setVisibility(View.VISIBLE);
+                mEditActions.setVisibility(View.VISIBLE);*/
 
-                wordTextView.setVisibility(View.GONE);
-                translationTextView.setVisibility(View.GONE);
-                mEditButton.setVisibility(View.GONE);
+
+//                setViewVisibility(mWordEdit, 1);
+                setViewVisibility(mTranslationEdit, 1);
+                setViewVisibility(mEditActions, 1);
+
+                mWordEdit.animate().alpha(1.0f).setDuration(500).setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+                        super.onAnimationStart(animation);
+                        mWordEdit.setVisibility(View.VISIBLE);
+                        mWordEdit.requestFocus();
+                        mWordEdit.setSelection(mWordEdit.getText().length());
+
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.showSoftInput(mWordEdit, InputMethodManager.SHOW_IMPLICIT);
+                    }
+                });
+
+
+
+                setViewVisibility(wordTextView, 0);
+                setViewVisibility(translationTextView, 0);
+                setViewVisibility(mEditButton, 0);
+
+                /*mWordEdit.animate().alpha(1.0f).setDuration(500);
+                mTranslationEdit.animate().alpha(1.0f).setDuration(500);
+                mEditActions.animate().alpha(1.0f).setDuration(500);
+
+//                wordTextView.setVisibility(View.GONE);
+//                translationTextView.setVisibility(View.GONE);
+//                mEditButton.setVisibility(View.GONE);
+
+                wordTextView.animate().alpha(0.0f).setDuration(500);
+                translationTextView.animate().alpha(0.0f).setDuration(500);
+                mEditButton.animate().alpha(0.0f).setDuration(500);*/
 
                 card.setOnClickListener(null);
+
+
+                /*ObjectAnimator animation = ObjectAnimator.ofFloat(mSpeakButton, "translationY", -100f);
+                animation.setDuration(500);
+                animation.start();*/
+
+
+                /*ConstraintLayout constraintLayout = findViewById(R.id.cardViewConstraintLayout);
+                ConstraintSet constraintSet = new ConstraintSet();
+                constraintSet.clone(constraintLayout);
+                constraintSet.setVerticalBias(R.id.speakButton, .1f);
+
+                android.support.transition.AutoTransition transition = new android.support.transition.AutoTransition();
+                transition.setDuration(500);
+                transition.setInterpolator(new AccelerateDecelerateInterpolator());
+
+                TransitionManager.beginDelayedTransition(constraintLayout);
+                constraintSet.applyTo(constraintLayout);*/
+
+                setEditingConstraints(R.id.wordEdit, 0f);
+                setEditingConstraints(R.id.word, 0f);
+                setEditingConstraints(R.id.speakButton, .2f);
+                setEditingConstraints(R.id.translation, 0f);
+                setEditingConstraints(R.id.translationEdit, 0f);
+                setEditingConstraints(R.id.editActions, 0f);
+
+
+
             }
         });
 
@@ -479,14 +560,77 @@ public class MemorizeActivity extends AppCompatActivity implements
 
     }
 
-    public void finishEditing() {
-        mWordEdit.setVisibility(View.GONE);
-        mTranslationEdit.setVisibility(View.GONE);
-        mEditActions.setVisibility(View.GONE);
+    public void setViewVisibility(final View view, int opacity) {
+        if (opacity == 0) {
+            view.animate().alpha(0.0f).setDuration(500).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    view.setVisibility(View.GONE);
+                }
+            });
+        } else if (opacity == 1) {
+            view.animate().alpha(1.0f).setDuration(500).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+                    super.onAnimationStart(animation);
+                    view.setVisibility(View.VISIBLE);
+                }
+            });
+        }
+    }
 
-        wordTextView.setVisibility(View.VISIBLE);
+
+
+    public void setEditingConstraints(int object, float bias) {
+        ConstraintLayout constraintLayout = findViewById(R.id.cardViewConstraintLayout);
+        ConstraintSet constraintSet = new ConstraintSet();
+        constraintSet.clone(constraintLayout);
+        constraintSet.setVerticalBias(object, bias);
+
+        android.support.transition.AutoTransition transition = new android.support.transition.AutoTransition();
+        transition.setDuration(500);
+        transition.setInterpolator(new AccelerateDecelerateInterpolator());
+
+        TransitionManager.beginDelayedTransition(constraintLayout);
+        constraintSet.applyTo(constraintLayout);
+    }
+
+    public void finishEditing() {
+        /*mWordEdit.setVisibility(View.GONE);
+        mTranslationEdit.setVisibility(View.GONE);
+        mEditActions.setVisibility(View.GONE);*/
+
+
+        /*mWordEdit.animate().alpha(0.0f).setDuration(500);
+        mTranslationEdit.animate().alpha(0.0f).setDuration(500);
+        mEditActions.animate().alpha(0.0f).setDuration(500);
+
+
+        *//*wordTextView.setVisibility(View.VISIBLE);
         translationTextView.setVisibility(View.VISIBLE);
-        mEditButton.setVisibility(View.VISIBLE);
+        mEditButton.setVisibility(View.VISIBLE);*//*
+
+        wordTextView.animate().alpha(1.0f).setDuration(500);
+        translationTextView.animate().alpha(1.0f).setDuration(500);
+        mEditButton.animate().alpha(1.0f).setDuration(500);*/
+
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(mWordEdit.getWindowToken(), 0);
+
+
+        setViewVisibility(mWordEdit, 0);
+        setViewVisibility(mTranslationEdit, 0);
+        setViewVisibility(mEditActions, 0);
+
+        setViewVisibility(wordTextView, 1);
+        setViewVisibility(translationTextView, 1);
+        setViewVisibility(mEditButton, 1);
+
+
+//        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+
 
         card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -494,6 +638,15 @@ public class MemorizeActivity extends AppCompatActivity implements
                 onCardClick();
             }
         });
+
+
+        setEditingConstraints(R.id.wordEdit, 0.433f);
+        setEditingConstraints(R.id.word, 0.433f);
+        setEditingConstraints(R.id.speakButton, 0.417f);
+        setEditingConstraints(R.id.translation, 0.204f);
+        setEditingConstraints(R.id.translationEdit, 0.204f);
+        setEditingConstraints(R.id.editActions, 1f);
+
     }
 
     public void showDeleteDialog() {
@@ -631,6 +784,29 @@ public class MemorizeActivity extends AppCompatActivity implements
         }
     }
 
+
+    public void ttsStart() {
+        tts=new TextToSpeech(MemorizeActivity.this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                s = status;
+                new Thread(new Runnable() {
+                    public void run() {
+                        if(s != TextToSpeech.ERROR) {
+                            tts.setPitch(1.1f);
+                            if (mLearningLanguage==1)
+                                tts.setLanguage(Locale.UK);
+                            else if (mLearningLanguage==2)
+                                tts.setLanguage(new Locale("ru"));
+                        }
+                    }
+                }).start();
+            }
+        });
+    }
+
+
+
     @Override
     protected void onPause() {
         // TODO Auto-generated method stub
@@ -641,6 +817,13 @@ public class MemorizeActivity extends AppCompatActivity implements
             tts.shutdown();
         }
         super.onPause();
+    }
+
+
+    @Override
+    protected void onResume() {
+        ttsStart();
+        super.onResume();
     }
 
 
@@ -682,6 +865,7 @@ public class MemorizeActivity extends AppCompatActivity implements
     }
 
     private void moveToNext() {
+
         if (mInitCounterValue < mWordsInDeck - 1) {
             mInitCounterValue++;
             assignValues1(mInitCounterValue);
@@ -697,6 +881,7 @@ public class MemorizeActivity extends AppCompatActivity implements
     }
 
     private void moveToPrevious() {
+
         if (mInitCounterValue > 0) {
             mInitCounterValue--;
             assignValues1(mInitCounterValue);

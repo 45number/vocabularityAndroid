@@ -42,14 +42,14 @@ public final class R {
         public static final int fab_bg_normal = 0x7f08006e;
     }
     public static final class id {
-        public static final int down = 0x7f09005f;
-        public static final int fab_expand_menu_button = 0x7f090076;
-        public static final int fab_label = 0x7f090077;
-        public static final int left = 0x7f090097;
-        public static final int mini = 0x7f0900a5;
-        public static final int normal = 0x7f0900ac;
-        public static final int right = 0x7f0900c7;
-        public static final int up = 0x7f090116;
+        public static final int down = 0x7f090060;
+        public static final int fab_expand_menu_button = 0x7f090077;
+        public static final int fab_label = 0x7f090078;
+        public static final int left = 0x7f090098;
+        public static final int mini = 0x7f0900a6;
+        public static final int normal = 0x7f0900ad;
+        public static final int right = 0x7f0900c8;
+        public static final int up = 0x7f090117;
     }
     public static final class styleable {
         public static final int[] AddFloatingActionButton = { 0x7f0400cb };

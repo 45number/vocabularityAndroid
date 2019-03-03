@@ -1088,6 +1088,10 @@
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\switch_track_on.png"
     },
     {
+        "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\transition_explode.xml.flat",
+        "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\src\\main\\res\\transition\\explode.xml"
+    },
+    {
         "merged": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_words.png.flat",
         "source": "C:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_words.png"
     },

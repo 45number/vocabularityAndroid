@@ -1,10 +1,10 @@
-#Sat Mar 02 21:12:59 GST 2019
+#Sun Mar 03 22:20:55 GST 2019
 path.2=classes3.dex
 path.1=classes2.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\353
-base.1=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\353
-base.0=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\353
+base.2=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\391
+base.1=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\391
+base.0=C\:\\Users\\Professional\\AndroidStudioProjects\\Vocabularity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\391
