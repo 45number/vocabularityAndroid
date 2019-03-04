@@ -72,7 +72,7 @@
             android:fontFamily="sans-serif"
             android:textAppearance="?android:textAppearanceSmall"
             android:textSize="10sp"
-            android:text="Learned"
+            android:text="@string/learned"
             android:textColor="#26b81f" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="menu">
+        <item>Отметить</item>
+        <item>Редактировать</item>
+        <item>Удалить</item>
+    </string-array>
+    <string-array name="menu1">
+        <item>Снять метку</item>
+        <item>Редактировать</item>
+        <item>Удалить</item>
+    </string-array>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Перейти на главный экран"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Перейти вверх"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Другие параметры"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Готово"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Показать все"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Выбрать приложение"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"ОТКЛ."</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"ВКЛ."</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"Поиск"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Удалить запрос"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Поисковый запрос"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Поиск"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Отправить запрос"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Голосовой поиск"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Открыть доступ"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Открыть доступ приложению \"<ns1:g id="APPLICATION_NAME">%s</ns1:g>\""</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Свернуть"</string>
+    <string name="about">О приложении</string>
+    <string name="aboutVocabularity">Vocabularity для android</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_delete_all_entries">Удалить все папки</string>
+    <string name="action_go_to_settings">Настройки</string>
+    <string name="action_insert_dummy_data">Вставить пустые данные</string>
+    <string name="action_save">Сохранить</string>
+    <string name="add_folder">Добавить папку</string>
+    <string name="add_words">Добавить слова</string>
+    <string name="app_name">Vocabularity</string>
+    <string name="arabic">Арабский</string>
+    <string name="are_you_sure">Вы уверены?</string>
+    <string name="cancel">Отмена</string>
+    <string name="cancel_button">Отмена</string>
+    <string name="cancel_deleting">Отмена</string>
+    <string name="card_saved">Карточка сохранена</string>
+    <string name="cards">Карточек</string>
+    <string name="cards_in_deck">Карт в колоде</string>
+    <string name="column_translation_title">Перевод</string>
+    <string name="column_word_title">Слово</string>
+    <string name="create">Создать</string>
+    <string name="create_folder_or_upload_words">Создайте подпапку или выгрузите слова</string>
+    <string name="deck">Колода</string>
+    <string name="deck_dummy">Колода</string>
+    <string name="decks">Колод</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_card_msg">Удалить карточку</string>
+    <string name="delete_card_title">Вы уверены?</string>
+    <string name="delete_deck_msg">Удалить колоду? Остальные колоды будут пересчитаны.</string>
+    <string name="delete_deck_title">Вы уверены?</string>
+    <string name="delete_dialog_msg">Удалить папку?</string>
+    <string name="delete_folder_msg">Удалить папку и все карточки?</string>
+    <string name="delete_folder_title">Вы уверены?</string>
+    <string name="delete_language_alert_text">Это действие удалит все папки и карточки, принадлежащие этому языку</string>
+    <string name="discard">Отменить</string>
+    <string name="do_not_show_again">Не показывать снова</string>
+    <string name="editor_activity_title_edit_pet">Редактировать папку</string>
+    <string name="editor_activity_title_new_pet">Добавить папку</string>
+    <string name="editor_activity_title_new_word">Добавить карточку</string>
+    <string name="editor_delete_pet_failed">Ошибка удаления</string>
+    <string name="editor_delete_pet_successful">Успешно удалено</string>
+    <string name="editor_insert_pet_failed">Ошибка сохранения</string>
+    <string name="editor_update_pet_failed">Ошибка обновления</string>
+    <string name="editor_update_pet_successful">Успешно обновлено</string>
+    <string name="empty_folder">Пустая папка</string>
+    <string name="empty_view_subtitle_text">Чтобы начать, создайте папку</string>
+    <string name="empty_view_title_text">Добро пожаловать</string>
+    <string name="english">Английский</string>
+    <string name="finish">Закончить</string>
+    <string name="folder_image_button_description">Добавить картинку</string>
+    <string name="folder_name">Имя папки</string>
+    <string name="folder_title_cannot_be_empty">Имя папки не может быть пустым</string>
+    <string name="folders">Папок</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_add_word">Слово</string>
+    <string name="hint_add_word_translation">Перевод</string>
+    <string name="hint_folder_name">Название папки</string>
+    <string name="how_many_words">Сколько слов вы планируете изучать в день?</string>
+    <string name="interface_settings">Настройки интерфейса</string>
+    <string name="invalid_data">Неверные данные</string>
+    <string name="keep_editing">Редактировать</string>
+    <string name="learned">Выучено</string>
+    <string name="learning_languages">Изучаемые языки</string>
+    <string name="lets_start">Начнем!</string>
+    <string name="memorize">Запоминание</string>
+    <string name="next">Дальше</string>
+    <string name="ok_button">Ок</string>
+    <string name="ok_delete">Ок</string>
+    <string name="oops">Упс!</string>
+    <string name="options">Варианты</string>
+    <string name="requires_android_5">Для этой функции требуется Android 5.0 или выше</string>
+    <string name="root">Корень</string>
+    <string name="russian">Русский</string>
+    <string name="save">Сохранить</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Поиск"</string>
+    <string name="set_words_at_time">Установите сколько будет слов в колодах</string>
+    <string name="settings">Настройки</string>
+    <string name="show_tips">Показывать подсказки</string>
+    <string name="spelling">Написание</string>
+    <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">">999"</string>
+    <string name="the_folder_is_empty">Папка пуста</string>
+    <string name="unknown_breed">Unknown breed</string>
+    <string name="unsaved_changes_dialog_msg">Отменить изменения?</string>
+    <string name="upload_excel_file">Выгрузить из Excel</string>
+    <string name="upload_words_description">Чтобы создать колоды из Excel файла, ваш Excel файл должен содержать слова в столбце А и их перевод в столбце В и не содержать пустых строк</string>
+    <string name="upload_words_from_excel_file">Выгрузить слова из Excel файла</string>
+    <string name="uploading">Выгрузка</string>
+    <string name="version">Версия 1.0</string>
+    <string name="what_languages_are_you_going_to_learn">Какой язык вы изучаете?</string>
+    <string name="words_at_time">Слов в колоде:</string>
+    <string name="words_at_time_description">Сколько слов вы планируете учить за раз?</string>
+    <string name="you_are_learning">Вы изучаете</string>
+    <string name="you_should_learn_one_language">Вы не можете удалить все языки</string>
+</resources>

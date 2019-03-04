@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Memorize"
+            android:text="@string/memorize"
             android:layout_marginLeft="20dp"
 
             android:textAppearance="?android:textAppearanceMedium"
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Spelling"
+            android:text="@string/spelling"
             android:layout_marginLeft="20dp"
 
             android:textAppearance="?android:textAppearanceMedium"

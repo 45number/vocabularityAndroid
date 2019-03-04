@@ -126,15 +126,15 @@
 
 
     <string-array name="menu">
-        <item>Mark</item>
-        <item>Edit</item>
-        <item>Delete</item>
+        <item>Отметить</item>
+        <item>Редактировать</item>
+        <item>Удалить</item>
     </string-array>
 
     <string-array name="menu1">
-        <item>Uncheck</item>
-        <item>Edit</item>
-        <item>Delete</item>
+        <item>Снять метку</item>
+        <item>Редактировать</item>
+        <item>Удалить</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -183,4 +183,18 @@
     <string name="card_saved">Карточка сохранена</string>
 
     <string name="folder_title_cannot_be_empty">Имя папки не может быть пустым</string>
+    <string name="add_folder">Добавить папку</string>
+    <string name="add_words">Добавить слова</string>
+    <string name="upload_excel_file">Выгрузить из Excel</string>
+    <string name="learned">Выучено</string>
+    <string name="empty_folder">Пустая папка</string>
+    <string name="folders">Папок</string>
+    <string name="decks">Колод</string>
+    <string name="cards">Карточек</string>
+    <string name="deck">Колода</string>
+    <string name="cards_in_deck">Карт в колоде</string>
+    <string name="memorize">Запоминание</string>
+    <string name="spelling">Написание</string>
+    <string name="finish">Закончить</string>
+    <string name="words_at_time_description">Сколько слов вы планируете учить за раз?</string>
 </resources>

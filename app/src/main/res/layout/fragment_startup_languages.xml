@@ -119,7 +119,8 @@ tools:context=".SettingsActivity">
                 android:id="@+id/languagesList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"></com.vocabularity.android.vocabularity.NonScrollListView>
+                android:layout_marginTop="2dp">
+            </com.vocabularity.android.vocabularity.NonScrollListView>
 
             <!--<ListView-->
             <!--android:id="@+id/languagesList"-->

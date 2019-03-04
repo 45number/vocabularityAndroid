@@ -84,7 +84,7 @@
             android:textColor="@color/white"
             android:background="@color/colorAccent"
             style="?android:attr/borderlessButtonStyle"
-            android:text="Cancel" />
+            android:text="@string/cancel" />
 
         <!--android:background="@drawable/save_button"-->
         <Button
@@ -96,7 +96,7 @@
             android:textColor="@color/white"
             android:background="@color/saveButton"
             style="?android:attr/borderlessButtonStyle"
-            android:text="Save" />
+            android:text="@string/save" />
     </LinearLayout>
 
 

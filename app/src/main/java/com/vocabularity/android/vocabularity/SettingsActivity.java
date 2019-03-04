@@ -320,8 +320,8 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
         Integer wat = mSettings.getInt(SettingsContract.WORDS_AT_TIME, 25);
         ThreeViewsListItem wordsAtTimeItem =
                 new ThreeViewsListItem(
-                        "Words at time",
-                        "How many words do you plan to learn every day?",
+                        getString(R.string.words_at_time),
+                        getString(R.string.words_at_time_description),
                         wat.toString());
         adapterWordsAtTime.add(wordsAtTimeItem);
     }

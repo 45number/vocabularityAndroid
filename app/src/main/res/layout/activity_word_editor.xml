@@ -54,7 +54,7 @@
             android:textColor="@color/white"
             android:background="@color/colorAccent"
             style="?android:attr/borderlessButtonStyle"
-            android:text="Finish" />
+            android:text="@string/finish" />
         <Button
             android:id="@+id/ok_button"
             android:layout_width="0dp"
@@ -64,7 +64,7 @@
             android:textColor="@color/white"
             android:background="@color/saveButton"
             style="?android:attr/borderlessButtonStyle"
-            android:text="Save" />
+            android:text="@string/save" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

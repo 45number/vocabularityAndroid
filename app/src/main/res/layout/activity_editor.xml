@@ -100,7 +100,7 @@
             android:textColor="@color/white"
             android:background="@color/colorAccent"
             style="?android:attr/borderlessButtonStyle"
-            android:text="Cancel" />
+            android:text="@string/cancel" />
         <Button
             android:id="@+id/ok_button"
             android:layout_width="0dp"
@@ -110,7 +110,7 @@
             android:textColor="@color/white"
             android:background="@color/saveButton"
             style="?android:attr/borderlessButtonStyle"
-            android:text="Save" />
+            android:text="@string/save" />
     </LinearLayout>
 
     <!--</LinearLayout>-->

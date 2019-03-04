@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.SharedPreferences;
 import android.content.UriMatcher;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.MatrixCursor;
@@ -17,6 +18,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.vocabularity.android.vocabularity.Folder;
+import com.vocabularity.android.vocabularity.R;
 import com.vocabularity.android.vocabularity.data.FolderContract.FolderEntry;
 import com.vocabularity.android.vocabularity.data.WordContract.WordEntry;
 import com.vocabularity.android.vocabularity.data.DeckContract.DeckEntry;
@@ -147,15 +149,24 @@ public class VProvider extends ContentProvider implements SharedPreferences {
                         decksInFolder += countDecks(wordsQuantity);
                     }
 
-                    String stat = "Empty folder";
+                    String stat = "Empty folder"; //Resources.getSystem().getString(R.string.empty_folder);
                     if (childrenAmount != 0 || decksInFolder != 0 || wordsInFolder != 0)
-                        stat = "Folders: " + childrenAmount + " :: Decks: " + decksInFolder + " :: Cards: " + wordsInFolder;
+                        stat = "Folders: " + childrenAmount
+                                + " :: Decks: " + decksInFolder
+                                + " :: Cards: " + wordsInFolder;
+
+                    /*stat = Resources.getSystem().getString(R.string.folders) + "Folders: " + childrenAmount
+                            + " :: " + Resources.getSystem().getString(R.string.decks) + "Decks: " + decksInFolder
+                            + " :: " + Resources.getSystem().getString(R.string.cards) + "Cards: " + wordsInFolder;*/
 
 
                     matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, folderMarked, stat});
                     cursor.moveToNext();
                 }
                 cursor = matrixCursor1;
+
+
+
 
 //                if (selection == FolderEntry.COLUMN_PARENT + " is null AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?")
 //                    Log.e("Case ", "one");
@@ -210,9 +221,13 @@ public class VProvider extends ContentProvider implements SharedPreferences {
                             String deckStatistics;
                             if (deckNumber == decksQuantity) {
                                 deckStatistics = "Cards in deck: " + modulo;
+//                                deckStatistics = Resources.getSystem().getString(R.string.cards_in_deck) + modulo;
                             } else {
-                                deckStatistics = "Cards in deck: " + mSettingWordsAtTime;
+                                deckStatistics = "Cards in deck: " + modulo;
+//                                deckStatistics = Resources.getSystem().getString(R.string.cards_in_deck) + mSettingWordsAtTime;
                             }
+
+//                            matrixCursor.addRow(new Object[] { counter, Resources.getSystem().getString(R.string.deck) + deckNumber, "image dummy", isDeckMarked, deckStatistics});
                             matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "image dummy", isDeckMarked, deckStatistics});
                         }
 

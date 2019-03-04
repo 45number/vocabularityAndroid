@@ -183,4 +183,24 @@
     <string name="card_saved">Card saved</string>
 
     <string name="folder_title_cannot_be_empty">Folder title cannot be empty</string>
+
+    <string name="add_folder">Add folder</string>
+    <string name="add_words">Add words</string>
+    <string name="upload_excel_file">Upload excel file</string>
+
+    <string name="learned">Learned</string>
+
+    <string name="empty_folder">Empty folder</string>
+    <string name="folders">Folders</string>
+    <string name="decks">Decks</string>
+    <string name="cards">Cards</string>
+
+    <string name="deck">Deck </string>
+    <string name="cards_in_deck">Cards in deck: </string>
+
+    <string name="memorize">Memorize</string>
+    <string name="spelling">Spelling</string>
+
+    <string name="finish">Finish</string>
+    <string name="words_at_time_description">How many words do you plan to learn every day?</string>
 </resources>

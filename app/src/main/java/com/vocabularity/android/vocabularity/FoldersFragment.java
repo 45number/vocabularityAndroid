@@ -55,7 +55,7 @@ public class FoldersFragment extends Fragment
 
 
 
-    PetCursorAdapter mCursorAdapter;
+    FolderCursorAdapter mCursorAdapter;
     private int mAdapterNumber;
     ListView petListView;
 
@@ -143,7 +143,7 @@ public class FoldersFragment extends Fragment
         emptyFolderView.setVisibility(View.GONE);
 
 
-        mCursorAdapter = new PetCursorAdapter(getActivity(), null);
+        mCursorAdapter = new FolderCursorAdapter(getActivity(), null);
         petListView.setAdapter(mCursorAdapter);
 
 
@@ -738,7 +738,6 @@ public class FoldersFragment extends Fragment
                     if (((CatalogActivity)getActivity()).getCurrentFolder().getId() != 0L) {
                         TextView emptyTitle = rootView.findViewById(R.id.empty_title_text);
                         emptyTitle.setText(R.string.the_folder_is_empty);
-
                         TextView emptyDescription = rootView.findViewById(R.id.empty_subtitle_text);
                         emptyDescription.setText(R.string.create_folder_or_upload_words);
                     }

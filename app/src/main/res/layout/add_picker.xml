@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Add folder"
+            android:text="@string/add_folder"
             android:layout_marginLeft="20dp"
 
             android:textAppearance="?android:textAppearanceMedium"
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Add words"
+            android:text="@string/add_words"
             android:layout_marginLeft="20dp"
 
             android:textAppearance="?android:textAppearanceMedium"
@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Upload excel file"
+            android:text="@string/upload_excel_file"
             android:layout_marginLeft="20dp"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#2B3D4D"  />
