@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Name for the application [CHAR LIMIT=12] -->
+    <string name="app_name">Vocabularity</string>
+
+    <!-- Label for overflow menu option that inserts fake pet data into the app [CHAR LIMIT=20] -->
+    <string name="action_insert_dummy_data">Вставить пустые данные</string>
+
+    <!-- Label for overflow menu option that deletes all pet data in the app [CHAR LIMIT=20] -->
+    <string name="action_delete_all_entries">Удалить все папки</string>
+
+    <!-- Title for the activity to add a new pet [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_pet">Добавить папку</string>
+
+
+    <string name="editor_activity_title_new_word">Добавить карточку</string>
+
+    <!-- Title for the activity to edit a pet [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_edit_pet">Редактировать папку</string>
+
+    <!-- Label for editor menu option to save pet and leave editor [CHAR LIMIT=20] -->
+    <string name="action_save">Сохранить</string>
+
+    <!-- Label for editor overflow menu option that deletes the current pet [CHAR LIMIT=20] -->
+    <string name="action_delete">Удалить</string>
+
+
+    <!-- Toast message in editor when current pet was successfully updated [CHAR LIMIT=NONE] -->
+    <string name="editor_update_pet_successful">Успешно обновлено</string>
+    <!-- Toast message in editor when current pet has failed to be updated [CHAR LIMIT=NONE] -->
+    <string name="editor_update_pet_failed">Ошибка обновления</string>
+
+    <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
+    <string name="folder_name">Имя папки</string>
+
+    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_folder_name">Название папки</string>
+
+    <!-- Text hint for breed field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_add_word">Слово</string>
+
+    <!-- Text hint for breed field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_add_word_translation">Перевод</string>
+
+    <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_pet_failed">Ошибка сохранения</string>
+
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="unsaved_changes_dialog_msg">Отменить изменения?</string>
+    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
+    <string name="discard">Отменить</string>
+    <!-- Dialog button text for the option to keep editing the current pet [CHAR LIMIT=20] -->
+    <string name="keep_editing">Редактировать</string>
+
+
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="delete_folder_title">Вы уверены?</string>
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="delete_folder_msg">Удалить папку и все карточки?</string>
+    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
+    <string name="cancel_deleting">Отмена</string>
+    <!-- Dialog button text for the option to keep editing the current pet [CHAR LIMIT=20] -->
+    <string name="ok_delete">Ок</string>
+
+
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="delete_card_title">Вы уверены?</string>
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="delete_card_msg">Удалить карточку</string>
+
+
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="delete_deck_title">Вы уверены?</string>
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="delete_deck_msg">Удалить колоду? Остальные колоды будут пересчитаны.</string>
+
+
+    <!-- Toast message in editor when current pet was successfully deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_pet_successful">Успешно удалено</string>
+    <!-- Toast message in editor when current pet has failed to be deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_pet_failed">Ошибка удаления</string>
+    <!-- Dialog message to ask the user to confirm deleting the current pet [CHAR LIMIT=NONE] -->
+    <string name="delete_dialog_msg">Удалить папку?</string>
+    <!-- Dialog button text for the option to confirm deleting the current pet [CHAR LIMIT=20] -->
+    <string name="delete">Удалить</string>
+    <!-- Dialog button text for the option to cancel deletion of the current pet [CHAR LIMIT=20] -->
+    <string name="cancel">Отмена</string>
+
+    <!-- Dialog button text for the option to cancel deletion of the current pet [CHAR LIMIT=20] -->
+    <string name="deck_dummy">Колода</string>
+
+
+    <!-- Title text for the empty view, which describes the empty dog house image [CHAR LIMIT=50] -->
+    <string name="empty_view_title_text">Добро пожаловать</string>
+
+    <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
+    <string name="empty_view_subtitle_text">Чтобы начать, создайте папку</string>
+
+    <!-- Label for the pet's breed if the breed is unknown [CHAR LIMIT=20] -->
+    <string name="unknown_breed">Unknown breed</string>
+
+    <string name="folder_image_button_description">Добавить картинку</string>
+    <string name="ok_button">Ок</string>
+    <string name="cancel_button">Отмена</string>
+    <string name="options">Варианты</string>
+
+
+    <string name="action_go_to_settings">Настройки</string>
+
+    <string name="words_at_time">Слов в колоде:</string>
+
+    <string name="set_words_at_time">Установите сколько будет слов в колодах</string>
+
+    <string name="you_are_learning">Вы изучаете</string>
+
+    <string name="column_word_title">Слово</string>
+    <string name="column_translation_title">Перевод</string>
+
+
+    <string name="english">Английский</string>
+    <string name="russian">Русский</string>
+    <string name="arabic">Арабский</string>
+
+    <string name="next">Дальше</string>
+    <string name="lets_start">Начнем!</string>
+
+
+    <string-array name="menu">
+        <item>Mark</item>
+        <item>Edit</item>
+        <item>Delete</item>
+    </string-array>
+
+    <string-array name="menu1">
+        <item>Uncheck</item>
+        <item>Edit</item>
+        <item>Delete</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="root">Корень</string>
+
+    <string name="learning_languages">Изучаемые языки</string>
+    <!--<string name="words_at_time">Learning languages</string>-->
+
+    <string name="settings">Настройки</string>
+
+    <string name="are_you_sure">Вы уверены?</string>
+
+    <string name="delete_language_alert_text">Это действие удалит все папки и карточки, принадлежащие этому языку</string>
+    <string name="about">О приложении</string>
+    <string name="aboutVocabularity">Vocabularity для android</string>
+    <string name="version">Версия 1.0</string>
+
+    <string name="oops">Упс!</string>
+    <string name="you_should_learn_one_language">Вы не можете удалить все языки</string>
+
+    <string name="what_languages_are_you_going_to_learn">Какой язык вы изучаете?</string>
+
+    <string name="how_many_words">Сколько слов вы планируете изучать в день?</string>
+
+    <string name="the_folder_is_empty">Папка пуста</string>
+    <string name="create_folder_or_upload_words">Создайте подпапку или выгрузите слова</string>
+
+
+    <string name="upload_words_from_excel_file">Выгрузить слова из Excel файла</string>
+    <string name="upload_words_description">Чтобы создать колоды из Excel файла, ваш Excel файл должен содержать слова в столбце А и их перевод в столбце В и не содержать пустых строк</string>
+    <string name="do_not_show_again">Не показывать снова</string>
+
+    <string name="show_tips">Показывать подсказки</string>
+    <string name="interface_settings">Настройки интерфейса</string>
+
+    <string name="uploading">Выгрузка</string>
+
+    <string name="invalid_data">Неверные данные</string>
+    <string name="requires_android_5">Для этой функции требуется Android 5.0 или выше</string>
+
+    <string name="create">Создать</string>
+    <string name="save">Сохранить</string>
+
+    <string name="card_saved">Карточка сохранена</string>
+
+    <string name="folder_title_cannot_be_empty">Имя папки не может быть пустым</string>
+</resources>

@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
-    <string-array name="array_gender_options">
-        <item>@string/gender_unknown</item>
-        <item>@string/gender_male</item>
-        <item>@string/gender_female</item>
-    </string-array>
     <string-array name="languages">
         <item>@string/english</item>
         <item>@string/russian</item>
@@ -906,8 +901,6 @@
     <string name="cancel_button">Cancel</string>
     <string name="cancel_deleting">Cancel</string>
     <string name="card_saved">Card saved</string>
-    <string name="category_gender">Gender</string>
-    <string name="category_measurement">Measurement</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="column_translation_title">Translation</string>
     <string name="column_word_title">Word</string>
@@ -927,19 +920,18 @@
     <string name="delete_card_title">Are you sure?</string>
     <string name="delete_deck_msg">Delete the deck? All decks will be recalculated.</string>
     <string name="delete_deck_title">Are you sure?</string>
-    <string name="delete_dialog_msg">Delete this pet?</string>
+    <string name="delete_dialog_msg">Delete this folder?</string>
     <string name="delete_folder_msg">Delete the folder and all cards?</string>
     <string name="delete_folder_title">Are you sure?</string>
     <string name="delete_language_alert_text">This action will delete all folders and cards that belong to this language</string>
     <string name="discard">Discard</string>
     <string name="do_not_show_again">Do not show again</string>
-    <string name="editor_activity_title_edit_pet">Edit a folder</string>
+    <string name="editor_activity_title_edit_pet">Edit the folder</string>
     <string name="editor_activity_title_new_pet">Add a folder</string>
-    <string name="editor_activity_title_new_word">Add new card</string>
+    <string name="editor_activity_title_new_word">Add a card</string>
     <string name="editor_delete_pet_failed">Error with deleting</string>
     <string name="editor_delete_pet_successful">Deleted successful</string>
     <string name="editor_insert_pet_failed">Error with saving folder</string>
-    <string name="editor_insert_pet_successful">Pet saved</string>
     <string name="editor_update_pet_failed">Error with updating</string>
     <string name="editor_update_pet_successful">Updated successful</string>
     <string name="empty_view_subtitle_text">To begin, create a folder</string>
@@ -947,15 +939,11 @@
     <string name="english">English</string>
     <string name="folder_image_button_description">Add image to the folder</string>
     <string name="folder_name">Folder name</string>
-    <string name="gender_female">Female</string>
-    <string name="gender_male">Male</string>
-    <string name="gender_unknown">Unknown</string>
+    <string name="folder_title_cannot_be_empty">Folder title cannot be empty</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hint_add_word">Word</string>
     <string name="hint_add_word_translation">Translation</string>
     <string name="hint_folder_name">Folder title</string>
-    <string name="hint_pet_breed">Breed</string>
-    <string name="hint_pet_weight">Weight</string>
     <string name="how_many_words">How many words do you plan to learn every day?</string>
     <string name="interface_settings">Interface settings</string>
     <string name="invalid_data">Invalid data</string>
@@ -983,7 +971,6 @@
     <string name="show_tips">Show tips</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="the_folder_is_empty">The folder is empty</string>
-    <string name="unit_pet_weight">kg</string>
     <string name="unknown_breed">Unknown breed</string>
     <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
     <string name="upload_words_description">To create decks from excel put words in the A column and translation into B column</string>

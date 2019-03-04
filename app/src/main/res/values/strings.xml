@@ -181,4 +181,6 @@
     <string name="save">Save</string>
 
     <string name="card_saved">Card saved</string>
+
+    <string name="folder_title_cannot_be_empty">Folder title cannot be empty</string>
 </resources>

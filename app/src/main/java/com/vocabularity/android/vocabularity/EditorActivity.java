@@ -250,7 +250,7 @@ public class EditorActivity extends AppCompatActivity implements
         String nameString = mNameEditText.getText().toString().trim();
 
         if (nameString.isEmpty()) {
-            Toast.makeText(this, "Folder title cannot be empty", Toast.LENGTH_LONG);
+            Toast.makeText(this, getString(R.string.folder_title_cannot_be_empty), Toast.LENGTH_LONG);
             return;
         }
 
