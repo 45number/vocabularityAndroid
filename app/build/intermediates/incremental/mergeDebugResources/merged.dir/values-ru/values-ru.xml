@@ -44,7 +44,7 @@
     <string name="cancel_deleting">Отмена</string>
     <string name="card_saved">Карточка сохранена</string>
     <string name="cards">Карточек</string>
-    <string name="cards_in_deck">Карт в колоде</string>
+    <string name="cards_in_deck">Карт в колоде: </string>
     <string name="column_translation_title">Перевод</string>
     <string name="column_word_title">Слово</string>
     <string name="create">Создать</string>

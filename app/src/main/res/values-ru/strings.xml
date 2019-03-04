@@ -192,7 +192,7 @@
     <string name="decks">Колод</string>
     <string name="cards">Карточек</string>
     <string name="deck">Колода</string>
-    <string name="cards_in_deck">Карт в колоде</string>
+    <string name="cards_in_deck">Карт в колоде: </string>
     <string name="memorize">Запоминание</string>
     <string name="spelling">Написание</string>
     <string name="finish">Закончить</string>

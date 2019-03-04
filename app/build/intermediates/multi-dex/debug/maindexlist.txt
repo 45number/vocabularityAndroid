@@ -157,5 +157,6 @@ com/bumptech/glide/annotation/compiler/Index.class
 com/bumptech/glide/gifdecoder/GifDecoder$GifDecodeStatus.class
 com/bumptech/glide/util/Synthetic.class
 com/getbase/floatingactionbutton/FloatingActionButton$FAB_SIZE.class
+com/vocabularity/android/vocabularity/App.class
 org/apache/poi/util/Beta.class
 org/apache/poi/util/Internal.class

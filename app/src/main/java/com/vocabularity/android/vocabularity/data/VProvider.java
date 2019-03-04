@@ -220,15 +220,15 @@ public class VProvider extends ContentProvider implements SharedPreferences {
 
                             String deckStatistics;
                             if (deckNumber == decksQuantity) {
-                                deckStatistics = "Cards in deck: " + modulo;
+                                deckStatistics = "" + modulo;
 //                                deckStatistics = Resources.getSystem().getString(R.string.cards_in_deck) + modulo;
                             } else {
-                                deckStatistics = "Cards in deck: " + modulo;
+                                deckStatistics = "" + modulo;
 //                                deckStatistics = Resources.getSystem().getString(R.string.cards_in_deck) + mSettingWordsAtTime;
                             }
 
 //                            matrixCursor.addRow(new Object[] { counter, Resources.getSystem().getString(R.string.deck) + deckNumber, "image dummy", isDeckMarked, deckStatistics});
-                            matrixCursor.addRow(new Object[] { counter, "Deck " + deckNumber, "image dummy", isDeckMarked, deckStatistics});
+                            matrixCursor.addRow(new Object[] { counter, deckNumber, "image dummy", isDeckMarked, deckStatistics});
                         }
 
                         // Merge your existing cursor with the matrixCursor you created.

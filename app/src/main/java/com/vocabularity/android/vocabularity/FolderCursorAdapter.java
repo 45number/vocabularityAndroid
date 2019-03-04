@@ -74,10 +74,13 @@ public class FolderCursorAdapter extends CursorAdapter {
         } else if ( !".png".equals(lastCharacters) ) {
             pictureImageView.setImageResource(R.drawable.ic_deck);
 
-            String s = Resources.getSystem().getString(android.R.string.cancel);
-            s = s + " " + petName;
-            nameTextView.setText(s);
-            summaryTextView.setText(folderSummary);
+            String deckString = view.getContext().getString(R.string.deck);//((TextView) view.findViewById(R.id.name)).getText().toString();
+            deckString += " " + petName;
+            nameTextView.setText(deckString);
+
+            String cardsInDeckString = view.getContext().getString(R.string.cards_in_deck);
+            cardsInDeckString += " " + folderSummary;
+            summaryTextView.setText(cardsInDeckString);
 
         } else {
             try {
