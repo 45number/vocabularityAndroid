@@ -17,13 +17,11 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.vocabularity.android.vocabularity.Folder;
-import com.vocabularity.android.vocabularity.R;
-import com.vocabularity.android.vocabularity.data.PetContract.PetEntry;
+import com.vocabularity.android.vocabularity.data.FolderContract.FolderEntry;
 import com.vocabularity.android.vocabularity.data.WordContract.WordEntry;
 import com.vocabularity.android.vocabularity.data.DeckContract.DeckEntry;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
@@ -31,13 +29,13 @@ import java.util.Set;
 /**
  * {@link ContentProvider} for Pets app.
  */
-public class PetProvider extends ContentProvider implements SharedPreferences {
+public class VProvider extends ContentProvider implements SharedPreferences {
 
     /** URI matcher code for the content URI for the pets table */
-    private static final int PETS = 100;
+    private static final int FOLDERS = 100;
 
     /** URI matcher code for the content URI for a single pet in the pets table */
-    private static final int PET_ID = 101;
+    private static final int FOLDER_ID = 101;
 
 
     private static final int WORDS = 200;
@@ -69,8 +67,8 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         // should recognize. All paths added to the UriMatcher have a corresponding code to return
         // when a match is found.
 
-        sUriMatcher.addURI(PetContract.CONTENT_AUTHORITY, PetContract.PATH_PETS, PETS);
-        sUriMatcher.addURI(PetContract.CONTENT_AUTHORITY, PetContract.PATH_PETS + "/#", PET_ID);
+        sUriMatcher.addURI(FolderContract.CONTENT_AUTHORITY, FolderContract.PATH_FOLDERS, FOLDERS);
+        sUriMatcher.addURI(FolderContract.CONTENT_AUTHORITY, FolderContract.PATH_FOLDERS + "/#", FOLDER_ID);
 
         sUriMatcher.addURI(WordContract.CONTENT_AUTHORITY, WordContract.PATH_WORDS, WORDS);
         sUriMatcher.addURI(WordContract.CONTENT_AUTHORITY, WordContract.PATH_WORDS + "/#", WORD_ID);
@@ -85,17 +83,17 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
 
     /** Tag for the log messages */
-    public static final String LOG_TAG = PetProvider.class.getSimpleName();
+    public static final String LOG_TAG = VProvider.class.getSimpleName();
 
     /** Database helper object */
-    private PetDbHelper mDbHelper;
+    private VDbHelper mDbHelper;
 
     /**
      * Initialize the provider and the database helper object.
      */
     @Override
     public boolean onCreate() {
-        mDbHelper = new PetDbHelper(getContext());
+        mDbHelper = new VDbHelper(getContext());
 
         mSettings = getContext().getSharedPreferences(SettingsContract.APP_PREFERENCES, getContext().MODE_PRIVATE);
 
@@ -116,23 +114,23 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
         int match = sUriMatcher.match(uri);
         switch (match) {
-            case PETS:
-                cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, selection,
+            case FOLDERS:
+                cursor = database.query(FolderEntry.TABLE_NAME, projection, selection,
                         selectionArgs, null, null, sortOrder);
 
                 MatrixCursor matrixCursor1 = new MatrixCursor(new String[] {
-                        PetEntry._ID,
-                        PetEntry.COLUMN_FOLDER_NAME,
-                        PetEntry.COLUMN_IMAGE,
-                        PetEntry.COLUMN_MARKED,
-                        PetEntry.COLUMN_STATISTICS
+                        FolderContract.FolderEntry._ID,
+                        FolderEntry.COLUMN_FOLDER_NAME,
+                        FolderEntry.COLUMN_IMAGE,
+                        FolderContract.FolderEntry.COLUMN_MARKED,
+                        FolderEntry.COLUMN_STATISTICS
                 });
                 cursor.moveToFirst();
                 for (int counter = 0; counter< cursor.getCount(); counter++) {
-                    int idColumnIndex = cursor.getColumnIndex(PetEntry._ID);
-                    int nameColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
-                    int imageColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
-                    int markedColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_MARKED);
+                    int idColumnIndex = cursor.getColumnIndex(FolderEntry._ID);
+                    int nameColumnIndex = cursor.getColumnIndex(FolderEntry.COLUMN_FOLDER_NAME);
+                    int imageColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_IMAGE);
+                    int markedColumnIndex = cursor.getColumnIndex(FolderEntry.COLUMN_MARKED);
 
                     Integer folderId = cursor.getInt(idColumnIndex);
                     String folderName = cursor.getString(nameColumnIndex);
@@ -161,15 +159,15 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 }
                 cursor = matrixCursor1;
 
-//                if (selection == PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?")
+//                if (selection == FolderEntry.COLUMN_PARENT + " is null AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?")
 //                    Log.e("Case ", "one");
 //                else
 //                    Log.e("Case ", "two");
 
-//                selection == PetEntry.COLUMN_PARENT + " = ?"
-//                String selection1 =  PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?";
-                String selection2 = PetEntry.COLUMN_PARENT + " = ?";
-                String selection3 = PetEntry.COLUMN_PARENT + " = ? AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?";
+//                selection == FolderEntry.COLUMN_PARENT + " = ?"
+//                String selection1 =  FolderEntry.COLUMN_PARENT + " is null AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?";
+                String selection2 = FolderContract.FolderEntry.COLUMN_PARENT + " = ?";
+                String selection3 = FolderContract.FolderEntry.COLUMN_PARENT + " = ? AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?";
 
 
                 if (
@@ -194,11 +192,11 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                             modulo = mSettingWordsAtTime;
 
                         MatrixCursor matrixCursor = new MatrixCursor(new String[] {
-                                PetEntry._ID,
-                                PetEntry.COLUMN_FOLDER_NAME,
-                                PetEntry.COLUMN_IMAGE,
-                                PetEntry.COLUMN_MARKED,
-                                PetEntry.COLUMN_STATISTICS
+                                FolderContract.FolderEntry._ID,
+                                FolderContract.FolderEntry.COLUMN_FOLDER_NAME,
+                                FolderContract.FolderEntry.COLUMN_IMAGE,
+                                FolderEntry.COLUMN_MARKED,
+                                FolderContract.FolderEntry.COLUMN_STATISTICS
                         });
 
                         for (int counter = 0; counter < decksQuantity; counter++) {
@@ -228,10 +226,10 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                     }
                 }
                 break;
-            case PET_ID:
-                selection = PetContract.PetEntry._ID + "=?";
+            case FOLDER_ID:
+                selection = FolderEntry._ID + "=?";
                 selectionArgs = new String[]{ String.valueOf(ContentUris.parseId(uri)) };
-                cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, selection,
+                cursor = database.query(FolderContract.FolderEntry.TABLE_NAME, projection, selection,
                         selectionArgs, null, null, sortOrder);
                 break;
 
@@ -246,7 +244,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                 break;
 
             case FOLDER_TO_REPEAT:
-//                Log.e("PetProvider", selectionArgs.toString());
+//                Log.e("VProvider", selectionArgs.toString());
 //                selectionArgs = new String[]{ "1", "1" };
 //                String[] selectionArgs1 = { "1", "1" };
 //                Log.e("uuuuu", selectionArgs[0]);
@@ -275,7 +273,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
             case WORD_ID:
                 selection = WordContract.WordEntry._ID + "=?";
                 selectionArgs = new String[]{ String.valueOf(ContentUris.parseId(uri)) };
-                cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, selection,
+                cursor = database.query(FolderContract.FolderEntry.TABLE_NAME, projection, selection,
                         selectionArgs, null, null, sortOrder);
                 break;
 
@@ -301,22 +299,22 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
     public Folder getFolder(Integer folderId) {
         SQLiteDatabase database = mDbHelper.getReadableDatabase();
         String[] projection = {
-                PetEntry._ID,
-                PetEntry.COLUMN_FOLDER_NAME,
-                PetEntry.COLUMN_IMAGE,
-                PetEntry.COLUMN_MARKED
+                FolderEntry._ID,
+                FolderContract.FolderEntry.COLUMN_FOLDER_NAME,
+                FolderContract.FolderEntry.COLUMN_IMAGE,
+                FolderContract.FolderEntry.COLUMN_MARKED
         };
 
-        String selection = PetEntry._ID + " = ?";
+        String selection = FolderContract.FolderEntry._ID + " = ?";
         String[] childrenSelectionArgs = {folderId.toString()};
-        Cursor cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, selection,
+        Cursor cursor = database.query(FolderContract.FolderEntry.TABLE_NAME, projection, selection,
                 childrenSelectionArgs, null, null, null);
         cursor.moveToFirst();
 
-//        int idColumnIndex = cursor.getColumnIndex(PetEntry._ID);
-        int nameColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
-        int imageColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
-        int markedColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
+//        int idColumnIndex = cursor.getColumnIndex(FolderEntry._ID);
+        int nameColumnIndex = cursor.getColumnIndex(FolderEntry.COLUMN_FOLDER_NAME);
+        int imageColumnIndex = cursor.getColumnIndex(FolderEntry.COLUMN_IMAGE);
+        int markedColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_IMAGE);
 
 //        Integer folderId = cursor.getInt(idColumnIndex);
         String folderName = cursor.getString(nameColumnIndex);
@@ -333,21 +331,21 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
     public ArrayList<Integer> getChildrenIds(Integer folderId) {
         SQLiteDatabase database = mDbHelper.getReadableDatabase();
         String[] projection = {
-                PetEntry._ID,
-                PetEntry.COLUMN_FOLDER_NAME,
-                PetEntry.COLUMN_IMAGE
+                FolderEntry._ID,
+                FolderEntry.COLUMN_FOLDER_NAME,
+                FolderContract.FolderEntry.COLUMN_IMAGE
         };
 
-        String childrenSelection = PetEntry.COLUMN_PARENT + " = ?";
+        String childrenSelection = FolderEntry.COLUMN_PARENT + " = ?";
         String[] childrenSelectionArgs = {folderId.toString()};
-        Cursor cursor = database.query(PetContract.PetEntry.TABLE_NAME, projection, childrenSelection,
+        Cursor cursor = database.query(FolderContract.FolderEntry.TABLE_NAME, projection, childrenSelection,
                 childrenSelectionArgs, null, null, null);
 
 
         ArrayList<Integer> children = new ArrayList<>();
         cursor.moveToFirst();
         for (int counter = 0; counter< cursor.getCount(); counter++) {
-            int idColumnIndex = cursor.getColumnIndex(PetEntry._ID);
+            int idColumnIndex = cursor.getColumnIndex(FolderEntry._ID);
 
             Integer childId = cursor.getInt(idColumnIndex);
             children.add(childId);
@@ -432,7 +430,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
     public Uri insert(Uri uri, ContentValues contentValues) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case PETS:
+            case FOLDERS:
                 return insertPet(uri, contentValues);
             case WORDS:
                 return insertWord(uri, contentValues);
@@ -450,7 +448,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
     private Uri insertPet(Uri uri, ContentValues values) {
 
         // Check that the name is not null
-        String name = values.getAsString(PetEntry.COLUMN_FOLDER_NAME);
+        String name = values.getAsString(FolderContract.FolderEntry.COLUMN_FOLDER_NAME);
         if (name == null) {
             throw new IllegalArgumentException("Pet requires a name");
         }
@@ -461,7 +459,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
 
         // Insert the new pet with the given values
-        long id = database.insert(PetEntry.TABLE_NAME, null, values);
+        long id = database.insert(FolderEntry.TABLE_NAME, null, values);
         // If the ID is -1, then the insertion failed. Log an error and return null.
         if (id == -1) {
             Log.e(LOG_TAG, "Failed to insert row for " + uri);
@@ -546,13 +544,13 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
                       String[] selectionArgs) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case PETS:
+            case FOLDERS:
                 return updatePet(uri, contentValues, selection, selectionArgs);
-            case PET_ID:
-                // For the PET_ID code, extract out the ID from the URI,
+            case FOLDER_ID:
+                // For the FOLDER_ID code, extract out the ID from the URI,
                 // so we know which row to update. Selection will be "_id=?" and selection
                 // arguments will be a String array containing the actual ID.
-                selection = PetEntry._ID + "=?";
+                selection = FolderContract.FolderEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
                 return updatePet(uri, contentValues, selection, selectionArgs);
 
@@ -574,12 +572,12 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
      * Return the number of rows that were successfully updated.
      */
     private int updatePet(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        // If the {@link PetEntry#COLUMN_PET_NAME} key is present,
+        // If the {@link FolderEntry#COLUMN_PET_NAME} key is present,
         // check that the name value is not null.
         /**TODO There is a mistake here - need to fix
          * */
-        if (values.containsKey(PetEntry.COLUMN_FOLDER_NAME)) {
-            String name = values.getAsString(PetEntry.COLUMN_FOLDER_NAME);
+        if (values.containsKey(FolderContract.FolderEntry.COLUMN_FOLDER_NAME)) {
+            String name = values.getAsString(FolderEntry.COLUMN_FOLDER_NAME);
             if (name == null) {
                 throw new IllegalArgumentException("Pet requires a name");
             }
@@ -594,7 +592,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
 
         // Perform the update on the database and get the number of rows affected
-        int rowsUpdated = database.update(PetEntry.TABLE_NAME, values, selection, selectionArgs);
+        int rowsUpdated = database.update(FolderContract.FolderEntry.TABLE_NAME, values, selection, selectionArgs);
         // If 1 or more rows were updated, then notify all listeners that the data at the
         // given URI has changed
         if (rowsUpdated != 0) {
@@ -609,7 +607,7 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
 
     private int updateWord(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        // If the {@link PetEntry#COLUMN_PET_NAME} key is present,
+        // If the {@link FolderEntry#COLUMN_PET_NAME} key is present,
         // check that the name value is not null.
         /**TODO There is a mistake here - need to fix
          * */
@@ -662,23 +660,23 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case PETS:
+            case FOLDERS:
 
                 String[] projection1 = {
-                        PetEntry._ID,
-                        PetEntry.COLUMN_FOLDER_NAME,
-                        PetEntry.COLUMN_IMAGE,
-                        PetEntry.COLUMN_MARKED
+                        FolderContract.FolderEntry._ID,
+                        FolderContract.FolderEntry.COLUMN_FOLDER_NAME,
+                        FolderEntry.COLUMN_IMAGE,
+                        FolderContract.FolderEntry.COLUMN_MARKED
                 };
                 Cursor cursor1 = query(uri, projection1 ,selection, selectionArgs, null);
                 cursor1.moveToFirst();
 
                 for (int c = 0; c < cursor1.getCount(); c++) {
 
-                    int idColumnIndex = cursor1.getColumnIndex(PetEntry._ID);
-                    int nameColumnIndex = cursor1.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
-                    int imageColumnIndex = cursor1.getColumnIndex(PetEntry.COLUMN_IMAGE);
-                    int markedColumnIndex = cursor1.getColumnIndex(PetEntry.COLUMN_MARKED);
+                    int idColumnIndex = cursor1.getColumnIndex(FolderContract.FolderEntry._ID);
+                    int nameColumnIndex = cursor1.getColumnIndex(FolderContract.FolderEntry.COLUMN_FOLDER_NAME);
+                    int imageColumnIndex = cursor1.getColumnIndex(FolderEntry.COLUMN_IMAGE);
+                    int markedColumnIndex = cursor1.getColumnIndex(FolderEntry.COLUMN_MARKED);
 
                     Integer id = cursor1.getInt(idColumnIndex);
                     String name = cursor1.getString(nameColumnIndex);
@@ -711,27 +709,27 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
 
                 // Delete all rows that match the selection and selection args
-                rowsDeleted = database.delete(PetEntry.TABLE_NAME, selection, selectionArgs);
+                rowsDeleted = database.delete(FolderEntry.TABLE_NAME, selection, selectionArgs);
                 break;
-            case PET_ID:
+            case FOLDER_ID:
                 // Delete a single row given by the ID in the URI
 
                 long folderId = ContentUris.parseId(uri);
 
                 String[] projection = {
-                        PetEntry._ID,
-                        PetEntry.COLUMN_FOLDER_NAME,
-                        PetEntry.COLUMN_IMAGE,
-                        PetEntry.COLUMN_MARKED
+                        FolderContract.FolderEntry._ID,
+                        FolderEntry.COLUMN_FOLDER_NAME,
+                        FolderContract.FolderEntry.COLUMN_IMAGE,
+                        FolderEntry.COLUMN_MARKED
                 };
 
                 Cursor cursor = query(uri, projection ,selection, selectionArgs, null);
                 cursor.moveToFirst();
 
-                int idColumnIndex = cursor.getColumnIndex(PetEntry._ID);
-                int nameColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
-                int imageColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
-                int markedColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_MARKED);
+                int idColumnIndex = cursor.getColumnIndex(FolderEntry._ID);
+                int nameColumnIndex = cursor.getColumnIndex(FolderEntry.COLUMN_FOLDER_NAME);
+                int imageColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_IMAGE);
+                int markedColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_MARKED);
 
                 Integer id = cursor.getInt(idColumnIndex);
                 String name = cursor.getString(nameColumnIndex);
@@ -758,9 +756,9 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
 
                 }
 
-                selection = PetEntry._ID + "=?";
+                selection = FolderEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(folderId) };
-                rowsDeleted = database.delete(PetEntry.TABLE_NAME, selection, selectionArgs);
+                rowsDeleted = database.delete(FolderEntry.TABLE_NAME, selection, selectionArgs);
 //                rowsDeleted = 0;
                 break;
 
@@ -949,10 +947,10 @@ public class PetProvider extends ContentProvider implements SharedPreferences {
     public String getType(Uri uri) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case PETS:
-                return PetEntry.CONTENT_LIST_TYPE;
-            case PET_ID:
-                return PetEntry.CONTENT_ITEM_TYPE;
+            case FOLDERS:
+                return FolderContract.FolderEntry.CONTENT_LIST_TYPE;
+            case FOLDER_ID:
+                return FolderContract.FolderEntry.CONTENT_ITEM_TYPE;
 
             case WORDS:
                 return WordEntry.CONTENT_LIST_TYPE;

@@ -49,7 +49,7 @@
             android:theme="@style/Base.Theme.AppCompat" />
 
         <provider
-            android:name="com.vocabularity.android.vocabularity.data.PetProvider"
+            android:name="com.vocabularity.android.vocabularity.data.VProvider"
             android:authorities="com.vocabularity.android.vocabularity"
             android:exported="false" />
 

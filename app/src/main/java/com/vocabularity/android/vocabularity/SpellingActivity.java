@@ -614,7 +614,7 @@ public class SpellingActivity extends AppCompatActivity implements
                     }
 //                    assignValues1(mInitCounterValue);
                 } else {
-//                    PetProvider.shiftDecks();
+//                    VProvider.shiftDecks();
                     setResult(6);
                     finish();
                 }

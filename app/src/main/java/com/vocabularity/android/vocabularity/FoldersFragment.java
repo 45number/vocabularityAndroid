@@ -1,27 +1,20 @@
 package com.vocabularity.android.vocabularity;
 
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -29,21 +22,20 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vocabularity.android.vocabularity.data.DeckContract;
+import com.vocabularity.android.vocabularity.data.FolderContract;
 import com.vocabularity.android.vocabularity.data.SettingsContract;
 import com.vocabularity.android.vocabularity.data.WordContract;
-import com.vocabularity.android.vocabularity.data.PetContract.PetEntry;
+import com.vocabularity.android.vocabularity.data.FolderContract.FolderEntry;
 import com.vocabularity.android.vocabularity.data.pathItem;
 
 import java.util.ArrayList;
@@ -52,10 +44,6 @@ import java.util.Locale;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v4.content.CursorLoader;
-
-
-import android.os.Handler;
-
 
 
 public class FoldersFragment extends Fragment
@@ -182,7 +170,7 @@ public class FoldersFragment extends Fragment
                     mTreePath.add(new pathItem(id, folderName));
 
                     Bundle args=new Bundle();
-                    args.putString("selection", PetEntry.COLUMN_PARENT + " = ?");
+                    args.putString("selection", FolderContract.FolderEntry.COLUMN_PARENT + " = ?");
                     Long idLong = id;
                     String idString = idLong.toString();
                     String[] selectionArgs = {idString};
@@ -221,12 +209,12 @@ public class FoldersFragment extends Fragment
 
         setHasOptionsMenu(true);
 //        folder_name is null or folder_name = ?
-//        or " + PetEntry.COLUMN_PARENT + "= ?
+//        or " + FolderEntry.COLUMN_PARENT + "= ?
 
 
 
         Bundle args=new Bundle();
-        args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+        args.putString("selection", FolderEntry.COLUMN_PARENT + " is null AND " + FolderContract.FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
         Integer langLearningInteger = getArguments().getInt("language_learning");
         String langLearning = langLearningInteger.toString();
 //        Log.e("Line 159, learn lang is", langLearning);
@@ -269,15 +257,15 @@ public class FoldersFragment extends Fragment
 /* private void insertPet() {
 
         ContentValues values = new ContentValues();
-        values.put(PetEntry.COLUMN_FOLDER_NAME, "Toto");
-        values.put(PetEntry.COLUMN_IMAGE, "");
-        values.put(PetEntry.COLUMN_PARENT, mTreePath.get(mTreePath.size() - 1));
+        values.put(FolderEntry.COLUMN_FOLDER_NAME, "Toto");
+        values.put(FolderEntry.COLUMN_IMAGE, "");
+        values.put(FolderEntry.COLUMN_PARENT, mTreePath.get(mTreePath.size() - 1));
 
-        Uri newUri = getContentResolver().insert(PetEntry.CONTENT_URI, values);
+        Uri newUri = getContentResolver().insert(FolderEntry.CONTENT_URI, values);
     }
 
     private void deleteAllPets() {
-        int rowsDeleted = getContentResolver().delete(PetEntry.CONTENT_URI, null, null);
+        int rowsDeleted = getContentResolver().delete(FolderEntry.CONTENT_URI, null, null);
         Log.v("CatalogActivity", rowsDeleted + " rows deleted from pet database");
     }*/
 
@@ -537,7 +525,7 @@ public class FoldersFragment extends Fragment
 
 //        if (mSettings.getLong(SettingsContract.LAST_FOLDER, 0) != 0L) {
         if (((CatalogActivity)getActivity()).getCurrentFolder().getId() != 0L) {
-            args.putString("selection", PetEntry.COLUMN_PARENT + " = ? AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+            args.putString("selection", FolderContract.FolderEntry.COLUMN_PARENT + " = ? AND " + FolderContract.FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
 
 //            Long parentLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
             Long parentLong = ((CatalogActivity)getActivity()).getCurrentFolder().getId();
@@ -554,7 +542,7 @@ public class FoldersFragment extends Fragment
 //            Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
 
         } else {
-            args.putString("selection", PetEntry.COLUMN_PARENT + " is null AND " + PetEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+            args.putString("selection", FolderContract.FolderEntry.COLUMN_PARENT + " is null AND " + FolderContract.FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
             String[] selectionArgs = {landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
 
@@ -687,10 +675,10 @@ public class FoldersFragment extends Fragment
 
         } else {
             String[] projection = {
-                    PetEntry._ID,
-                    PetEntry.COLUMN_FOLDER_NAME,
-                    PetEntry.COLUMN_IMAGE,
-                    PetEntry.COLUMN_MARKED
+                    FolderEntry._ID,
+                    FolderContract.FolderEntry.COLUMN_FOLDER_NAME,
+                    FolderEntry.COLUMN_IMAGE,
+                    FolderEntry.COLUMN_MARKED
             };
 
             String selection = null;
@@ -703,11 +691,11 @@ public class FoldersFragment extends Fragment
 
 
             return new CursorLoader(getActivity(),
-                    PetEntry.CONTENT_URI,
+                    FolderContract.FolderEntry.CONTENT_URI,
                     projection,
                     selection,
                     selectionArgs,
-                    PetEntry._ID + " DESC");
+                    FolderContract.FolderEntry._ID + " DESC");
         }
     }
 
@@ -738,7 +726,7 @@ public class FoldersFragment extends Fragment
 
             if (mFoldersQuantity != 0) {
                 data.moveToFirst();
-                Integer deckNumber = data.getInt(data.getColumnIndex(PetEntry._ID));
+                Integer deckNumber = data.getInt(data.getColumnIndex(FolderEntry._ID));
                 if (deckNumber == 0) {
                     mAdapterNumber = 1;
                 }
@@ -892,7 +880,7 @@ public class FoldersFragment extends Fragment
                 if (isFolder(folderImage)) {
                     Class activityClass = EditorActivity.class;
                     Intent intent = new Intent(getActivity(), activityClass);
-                    Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
+                    Uri currentPetUri = ContentUris.withAppendedId(FolderContract.FolderEntry.CONTENT_URI, infoId);
                     intent.setData(currentPetUri);
                     startActivity(intent);
                 } else {
@@ -973,9 +961,9 @@ public class FoldersFragment extends Fragment
     private void deleteFolder(Long folder) {
         String [] arguments = new String[1];
         arguments[0] = folder.toString();
-        String selectionClause = PetEntry._ID + " = ?";
-        Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, folder);
-//        int rowsDeleted = getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
+        String selectionClause = FolderEntry._ID + " = ?";
+        Uri currentPetUri = ContentUris.withAppendedId(FolderContract.FolderEntry.CONTENT_URI, folder);
+//        int rowsDeleted = getActivity().getContentResolver().delete(FolderEntry.CONTENT_URI, selectionClause, arguments);
 //        Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
         getActivity().getContentResolver().delete(currentPetUri, selectionClause, arguments);
 
@@ -988,7 +976,7 @@ public class FoldersFragment extends Fragment
         String [] arguments = new String[2];
         arguments[0] = folder.toString();
         arguments[1] = deck.toString();
-        String selectionClause = PetEntry._ID + " = ?";
+        String selectionClause = FolderContract.FolderEntry._ID + " = ?";
         getActivity().getContentResolver().delete(WordContract.WordEntry.CONTENT_URI, selectionClause, arguments);
 
         ((CatalogActivity)getActivity()).refreshDecks();
@@ -1038,12 +1026,12 @@ public class FoldersFragment extends Fragment
 
 
     private void markFolder(Long infoId, boolean markValue) {
-        Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, infoId);
+        Uri currentPetUri = ContentUris.withAppendedId(FolderContract.FolderEntry.CONTENT_URI, infoId);
         ContentValues values = new ContentValues();
         int value = 0;
         if (markValue)
             value = 1;
-        values.put(PetEntry.COLUMN_MARKED, value);
+        values.put(FolderContract.FolderEntry.COLUMN_MARKED, value);
 //        int rowsAffected =
                 getActivity().getContentResolver().update(currentPetUri, values, null, null);
     }
@@ -1080,7 +1068,7 @@ public class FoldersFragment extends Fragment
 
 //        refreshDecks();
 //        Bundle args=new Bundle();
-//        args.putString("selection", PetEntry.COLUMN_PARENT + " = ?");
+//        args.putString("selection", FolderEntry.COLUMN_PARENT + " = ?");
 //        Long idLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
 //        String idString = idLong.toString();
 //        String[] selectionArgs = {idString};

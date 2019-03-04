@@ -38,7 +38,7 @@
             android:theme="@style/Base.Theme.AppCompat" />
 
         <provider
-            android:name=".data.PetProvider"
+            android:name=".data.VProvider"
             android:authorities="com.vocabularity.android.vocabularity"
             android:exported="false" />
 

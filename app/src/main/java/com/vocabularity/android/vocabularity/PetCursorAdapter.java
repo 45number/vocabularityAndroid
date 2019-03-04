@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.text.TextUtils;
 
-import com.vocabularity.android.vocabularity.data.PetContract;
+import com.vocabularity.android.vocabularity.data.FolderContract;
 
 import java.io.File;
 
@@ -43,10 +42,10 @@ public class PetCursorAdapter extends CursorAdapter {
         TextView summaryTextView = (TextView) view.findViewById(R.id.summary);
         ImageView pictureImageView = (ImageView) view.findViewById(R.id.folderImage);
 
-        int nameColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_FOLDER_NAME);
-        int breedColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_IMAGE);
-        int summaryColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_STATISTICS);
-        int markedColumnIndex = cursor.getColumnIndex(PetContract.PetEntry.COLUMN_MARKED);
+        int nameColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_FOLDER_NAME);
+        int breedColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_IMAGE);
+        int summaryColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_STATISTICS);
+        int markedColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_MARKED);
 
         String petName = cursor.getString(nameColumnIndex);
         String petBreed = cursor.getString(breedColumnIndex);

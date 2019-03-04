@@ -19,7 +19,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.vocabularity.android.vocabularity.data.PetContract.PetEntry;
+import com.vocabularity.android.vocabularity.data.FolderContract.FolderEntry;
 import com.vocabularity.android.vocabularity.data.WordContract.WordEntry;
 import com.vocabularity.android.vocabularity.data.DeckContract.DeckEntry;
 //import com.example.android.pets.data.LanguagesContract.LanguagesEntry;
@@ -27,9 +27,9 @@ import com.vocabularity.android.vocabularity.data.DeckContract.DeckEntry;
 /**
  * Database helper for Pets app. Manages database creation and version management.
  */
-public class PetDbHelper extends SQLiteOpenHelper {
+public class VDbHelper extends SQLiteOpenHelper {
 
-    public static final String LOG_TAG = PetDbHelper.class.getSimpleName();
+    public static final String LOG_TAG = VDbHelper.class.getSimpleName();
 
     /** Name of the database file */
     private static final String DATABASE_NAME = "shelter.db";
@@ -40,11 +40,11 @@ public class PetDbHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     /**
-     * Constructs a new instance of {@link PetDbHelper}.
+     * Constructs a new instance of {@link VDbHelper}.
      *
      * @param context of the app
      */
-    public PetDbHelper(Context context) {
+    public VDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -54,14 +54,14 @@ public class PetDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Create a String that contains the SQL statement to create the pets table
-        String SQL_CREATE_PETS_TABLE =  "CREATE TABLE " + PetEntry.TABLE_NAME + " ("
-                + PetEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + PetEntry.COLUMN_LEARNING_LANGUAGE + " INTEGER NOT NULL, "
-                + PetEntry.COLUMN_FOLDER_NAME + " TEXT NOT NULL, "
-                + PetEntry.COLUMN_IMAGE + " TEXT, "
-                + PetEntry.COLUMN_PARENT + " INTEGER,"
-                + PetEntry.COLUMN_MARKED + " INTEGER NOT NULL DEFAULT 0,"
-                + " FOREIGN KEY (" + PetEntry.COLUMN_PARENT + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
+        String SQL_CREATE_PETS_TABLE =  "CREATE TABLE " + FolderEntry.TABLE_NAME + " ("
+                + FolderContract.FolderEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + FolderEntry.COLUMN_LEARNING_LANGUAGE + " INTEGER NOT NULL, "
+                + FolderEntry.COLUMN_FOLDER_NAME + " TEXT NOT NULL, "
+                + FolderContract.FolderEntry.COLUMN_IMAGE + " TEXT, "
+                + FolderEntry.COLUMN_PARENT + " INTEGER,"
+                + FolderEntry.COLUMN_MARKED + " INTEGER NOT NULL DEFAULT 0,"
+                + " FOREIGN KEY (" + FolderEntry.COLUMN_PARENT + ") REFERENCES "+ FolderEntry.TABLE_NAME +"(" + FolderEntry._ID + ") ON DELETE CASCADE"
                 + ");";
 //                + ");";
 
@@ -78,7 +78,7 @@ public class PetDbHelper extends SQLiteOpenHelper {
                 + WordEntry.COLUMN_LANGUAGE_LEARNING + " INTEGER NOT NULL,"
                 + WordEntry.COLUMN_REPEAT_MEM + " INTEGER NOT NULL DEFAULT 0,"
                 + WordEntry.COLUMN_REPEAT_SPELL + " INTEGER NOT NULL DEFAULT 0,"
-                + " FOREIGN KEY (" + WordEntry.COLUMN_FOLDER + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
+                + " FOREIGN KEY (" + WordEntry.COLUMN_FOLDER + ") REFERENCES "+ FolderEntry.TABLE_NAME +"(" + FolderEntry._ID + ") ON DELETE CASCADE"
                 + ");";
 
         // Execute the SQL statement
@@ -91,7 +91,7 @@ public class PetDbHelper extends SQLiteOpenHelper {
                 + DeckEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + DeckEntry.COLUMN_DECK + " INTEGER NOT NULL, "
                 + DeckEntry.COLUMN_FOLDER + " INTEGER NOT NULL,"
-                + " FOREIGN KEY (" + DeckEntry.COLUMN_FOLDER + ") REFERENCES "+ PetEntry.TABLE_NAME +"(" + PetEntry._ID + ") ON DELETE CASCADE"
+                + " FOREIGN KEY (" + DeckEntry.COLUMN_FOLDER + ") REFERENCES "+ FolderContract.FolderEntry.TABLE_NAME +"(" + FolderEntry._ID + ") ON DELETE CASCADE"
                 + ");";
 
         // Execute the SQL statement

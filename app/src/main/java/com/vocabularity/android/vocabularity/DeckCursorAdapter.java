@@ -1,22 +1,14 @@
 package com.vocabularity.android.vocabularity;
 
 import android.content.Context;
-import android.content.ContextWrapper;
 import android.database.Cursor;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.text.TextUtils;
-import com.vocabularity.android.vocabularity.data.PetContract.PetEntry;
 
-
-import com.vocabularity.android.vocabularity.data.PetContract;
-
-import java.io.File;
+import com.vocabularity.android.vocabularity.data.FolderContract.FolderEntry;
 
 public class DeckCursorAdapter extends CursorAdapter {
 
@@ -36,9 +28,9 @@ public class DeckCursorAdapter extends CursorAdapter {
         TextView summaryTextView = (TextView) view.findViewById(R.id.summary);
 
 
-        int numberColumnIndex = cursor.getColumnIndex(PetEntry._ID);
-        int nameColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
-        int breedColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
+        int numberColumnIndex = cursor.getColumnIndex(FolderEntry._ID);
+        int nameColumnIndex = cursor.getColumnIndex(FolderEntry.COLUMN_FOLDER_NAME);
+        int breedColumnIndex = cursor.getColumnIndex(FolderEntry.COLUMN_IMAGE);
 
         String deckNumber = cursor.getString(numberColumnIndex);
         String petName = cursor.getString(nameColumnIndex);

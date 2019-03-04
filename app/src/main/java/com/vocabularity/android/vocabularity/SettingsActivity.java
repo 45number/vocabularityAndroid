@@ -1,10 +1,8 @@
 package com.vocabularity.android.vocabularity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,28 +10,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckedTextView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import com.vocabularity.android.vocabularity.data.DeckContract;
-import com.vocabularity.android.vocabularity.data.PetContract;
+import com.vocabularity.android.vocabularity.data.FolderContract;
 import com.vocabularity.android.vocabularity.data.SettingsContract;
 
-import org.json.JSONArray;
-
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 
 public class SettingsActivity extends AppCompatActivity  implements NumberPicker.OnValueChangeListener{
@@ -342,11 +327,11 @@ public class SettingsActivity extends AppCompatActivity  implements NumberPicker
     }
 
     private void deleteFolders(Integer language) {
-        String selection = PetContract.PetEntry.COLUMN_LEARNING_LANGUAGE + " = ? ";
+        String selection = FolderContract.FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ? ";
         String [] arguments = new String[1];
         arguments[0] = language.toString();
 //        int rowsDeleted =
-        getContentResolver().delete(PetContract.PetEntry.CONTENT_URI, selection, arguments);
+        getContentResolver().delete(FolderContract.FolderEntry.CONTENT_URI, selection, arguments);
     }
 
     @Override

@@ -121,14 +121,14 @@ ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:38:13-56
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:36:13-76
-provider#com.vocabularity.android.vocabularity.data.PetProvider
+provider#com.vocabularity.android.vocabularity.data.VProvider
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:40:9-43:40
 	android:authorities
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:42:13-72
 	android:exported
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:43:13-37
 	android:name
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:41:13-45
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:41:13-43
 activity#com.vocabularity.android.vocabularity.WordEditorActivity
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:45:9-50:50
 	android:screenOrientation

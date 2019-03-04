@@ -3,22 +3,17 @@ package com.vocabularity.android.vocabularity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -30,11 +25,8 @@ import android.support.transition.TransitionManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.transition.AutoTransition;
-import android.transition.ChangeBounds;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -45,7 +37,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.vocabularity.android.vocabularity.data.PetProvider;
 import com.vocabularity.android.vocabularity.data.SettingsContract;
 import com.vocabularity.android.vocabularity.data.WordContract.WordEntry;
 
@@ -54,7 +45,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -775,7 +765,7 @@ public class MemorizeActivity extends AppCompatActivity implements
                     }
 //                    assignValues1(mInitCounterValue);
                 } else {
-//                    PetProvider.shiftDecks();
+//                    VProvider.shiftDecks();
                     setResult(6);
                     finish();
                 }

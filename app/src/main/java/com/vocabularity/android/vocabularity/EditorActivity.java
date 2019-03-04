@@ -26,42 +26,30 @@ import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.vocabularity.android.vocabularity.data.PetContract.PetEntry;
+import com.vocabularity.android.vocabularity.data.FolderContract;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -277,7 +265,7 @@ public class EditorActivity extends AppCompatActivity implements
         }
 
         ContentValues values = new ContentValues();
-        values.put(PetEntry.COLUMN_FOLDER_NAME, nameString);
+        values.put(FolderContract.FolderEntry.COLUMN_FOLDER_NAME, nameString);
 
         // Determine if this is a new or existing pet by checking if mCurrentPetUri is null or not
         if (mCurrentPetUri == null) {
@@ -285,15 +273,15 @@ public class EditorActivity extends AppCompatActivity implements
             // returning the content URI for the new pet.
 
 //            if (folderIdLong == 0L)
-//                values.put(PetEntry.COLUMN_PARENT, "null");
+//                values.put(FolderEntry.COLUMN_PARENT, "null");
 
             if (folderIdLong != 0L)
-                values.put(PetEntry.COLUMN_PARENT, folderIdLong);
+                values.put(FolderContract.FolderEntry.COLUMN_PARENT, folderIdLong);
 
-            values.put(PetEntry.COLUMN_IMAGE, mImageName);
-            values.put(PetEntry.COLUMN_LEARNING_LANGUAGE, languageLearningId);
+            values.put(FolderContract.FolderEntry.COLUMN_IMAGE, mImageName);
+            values.put(FolderContract.FolderEntry.COLUMN_LEARNING_LANGUAGE, languageLearningId);
 
-            Uri newUri = getContentResolver().insert(PetEntry.CONTENT_URI, values);
+            Uri newUri = getContentResolver().insert(FolderContract.FolderEntry.CONTENT_URI, values);
             // Show a toast message depending on whether or not the insertion was successful.
             if (newUri == null) {
                 // If the new content URI is null, then there was an error with insertion.
@@ -325,14 +313,14 @@ public class EditorActivity extends AppCompatActivity implements
                     boolean deleted = file.delete();
 
                 }
-                values.put(PetEntry.COLUMN_IMAGE, mImageName);
+                values.put(FolderContract.FolderEntry.COLUMN_IMAGE, mImageName);
             }
             else {
 
                 if (mExistingImage == null) {
-                    values.put(PetEntry.COLUMN_IMAGE, "");
+                    values.put(FolderContract.FolderEntry.COLUMN_IMAGE, "");
                 } else {
-                    values.put(PetEntry.COLUMN_IMAGE, mExistingImage);
+                    values.put(FolderContract.FolderEntry.COLUMN_IMAGE, mExistingImage);
                 }
 
             }
@@ -447,9 +435,9 @@ public class EditorActivity extends AppCompatActivity implements
         // Since the editor shows all pet attributes, define a projection that contains
         // all columns from the pet table
         String[] projection = {
-                PetEntry._ID,
-                PetEntry.COLUMN_FOLDER_NAME,
-                PetEntry.COLUMN_IMAGE,
+                FolderContract.FolderEntry._ID,
+                FolderContract.FolderEntry.COLUMN_FOLDER_NAME,
+                FolderContract.FolderEntry.COLUMN_IMAGE,
         };
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,   // Parent activity context
@@ -469,8 +457,8 @@ public class EditorActivity extends AppCompatActivity implements
         // Proceed with moving to the first row of the cursor and reading data from it
         // (This should be the only row in the cursor)
         if (cursor.moveToFirst()) { // Find the columns of pet attributes that we're interested in
-            int nameColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_FOLDER_NAME);
-            int breedColumnIndex = cursor.getColumnIndex(PetEntry.COLUMN_IMAGE);
+            int nameColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_FOLDER_NAME);
+            int breedColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_IMAGE);
             // Extract out the value from the Cursor for the given column index
             String name = cursor.getString(nameColumnIndex);
             mExistingImage = cursor.getString(breedColumnIndex);
