@@ -14,13 +14,9 @@ public class WordContract {
 
     public static final String PATH_REPEAT_COUNT = "repeat_count";
 
-    /**
-     * Inner class that defines constant values for the pets database table.
-     * Each entry in the table represents a single pet.
-     */
     public static final class WordEntry implements BaseColumns {
 
-        /** Name of database table for pets */
+        /** Name of database table for words */
         public final static String TABLE_NAME = "words";
 
 
@@ -31,13 +27,13 @@ public class WordContract {
 
 
         /**
-         * The MIME type of the {@link #CONTENT_URI} for a list of pets.
+         * The MIME type of the {@link #CONTENT_URI} for a list of words.
          */
         public static final String CONTENT_LIST_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_WORDS;
 
         /**
-         * The MIME type of the {@link #CONTENT_URI} for a single pet.
+         * The MIME type of the {@link #CONTENT_URI} for a single word.
          */
         public static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_WORDS;

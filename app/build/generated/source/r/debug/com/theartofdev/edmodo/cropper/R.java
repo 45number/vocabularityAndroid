@@ -831,17 +831,17 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f0e001a;
         public static final int abc_shareactionprovider_share_with_application = 0x7f0e001b;
         public static final int abc_toolbar_collapse_description = 0x7f0e001c;
-        public static final int crop_image_activity_no_permissions = 0x7f0e0033;
-        public static final int crop_image_activity_title = 0x7f0e0034;
-        public static final int crop_image_menu_crop = 0x7f0e0035;
-        public static final int crop_image_menu_flip = 0x7f0e0036;
-        public static final int crop_image_menu_flip_horizontally = 0x7f0e0037;
-        public static final int crop_image_menu_flip_vertically = 0x7f0e0038;
-        public static final int crop_image_menu_rotate_left = 0x7f0e0039;
-        public static final int crop_image_menu_rotate_right = 0x7f0e003a;
-        public static final int pick_image_intent_chooser_title = 0x7f0e006e;
-        public static final int search_menu_title = 0x7f0e0073;
-        public static final int status_bar_notification_info_overflow = 0x7f0e0077;
+        public static final int crop_image_activity_no_permissions = 0x7f0e0034;
+        public static final int crop_image_activity_title = 0x7f0e0035;
+        public static final int crop_image_menu_crop = 0x7f0e0036;
+        public static final int crop_image_menu_flip = 0x7f0e0037;
+        public static final int crop_image_menu_flip_horizontally = 0x7f0e0038;
+        public static final int crop_image_menu_flip_vertically = 0x7f0e0039;
+        public static final int crop_image_menu_rotate_left = 0x7f0e003a;
+        public static final int crop_image_menu_rotate_right = 0x7f0e003b;
+        public static final int pick_image_intent_chooser_title = 0x7f0e006f;
+        public static final int search_menu_title = 0x7f0e0074;
+        public static final int status_bar_notification_info_overflow = 0x7f0e0078;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f0f0000;

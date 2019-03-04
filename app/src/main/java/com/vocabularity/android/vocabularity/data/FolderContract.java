@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 /**
- * API Contract for the Pets app.
+ * API Contract for the Vocabularity app.
  */
 public final class FolderContract {
 
@@ -19,23 +19,23 @@ public final class FolderContract {
     public static final String PATH_FOLDERS = "folders";
 
     /**
-     * Inner class that defines constant values for the pets database table.
-     * Each entry in the table represents a single pet.
+     * Inner class that defines constant values for the Folders database table.
+     * Each entry in the table represents a single folder.
      */
     public static final class FolderEntry implements BaseColumns {
 
-        /** Name of database table for pets */
+        /** Name of database table for folders */
         public final static String TABLE_NAME = "voca";
         public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_FOLDERS);
 
         /**
-         * The MIME type of the {@link #CONTENT_URI} for a list of pets.
+         * The MIME type of the {@link #CONTENT_URI} for a list of folders.
          */
         public static final String CONTENT_LIST_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_FOLDERS;
 
         /**
-         * The MIME type of the {@link #CONTENT_URI} for a single pet.
+         * The MIME type of the {@link #CONTENT_URI} for a single folder.
          */
         public static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_FOLDERS;

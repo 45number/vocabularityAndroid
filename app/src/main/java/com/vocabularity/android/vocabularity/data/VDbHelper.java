@@ -22,17 +22,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.vocabularity.android.vocabularity.data.FolderContract.FolderEntry;
 import com.vocabularity.android.vocabularity.data.WordContract.WordEntry;
 import com.vocabularity.android.vocabularity.data.DeckContract.DeckEntry;
-//import com.example.android.pets.data.LanguagesContract.LanguagesEntry;
 
 /**
- * Database helper for Pets app. Manages database creation and version management.
+ * Database helper for Vocabularity app. Manages database creation and version management.
  */
 public class VDbHelper extends SQLiteOpenHelper {
 
     public static final String LOG_TAG = VDbHelper.class.getSimpleName();
 
     /** Name of the database file */
-    private static final String DATABASE_NAME = "shelter.db";
+    private static final String DATABASE_NAME = "vocabularity.db";
 
     /**
      * Database version. If you change the database schema, you must increment the database version.
@@ -53,8 +52,8 @@ public class VDbHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Create a String that contains the SQL statement to create the pets table
-        String SQL_CREATE_PETS_TABLE =  "CREATE TABLE " + FolderEntry.TABLE_NAME + " ("
+        // Create a String that contains the SQL statement to create the folders table
+        String SQL_CREATE_FOLDERS_TABLE =  "CREATE TABLE " + FolderEntry.TABLE_NAME + " ("
                 + FolderContract.FolderEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + FolderEntry.COLUMN_LEARNING_LANGUAGE + " INTEGER NOT NULL, "
                 + FolderEntry.COLUMN_FOLDER_NAME + " TEXT NOT NULL, "
@@ -67,9 +66,9 @@ public class VDbHelper extends SQLiteOpenHelper {
 
 //        NOT NULL DEFAULT 0
         // Execute the SQL statement
-        db.execSQL(SQL_CREATE_PETS_TABLE);
+        db.execSQL(SQL_CREATE_FOLDERS_TABLE);
 
-        // Create a String that contains the SQL statement to create the pets table
+        // Create a String that contains the SQL statement to create the words table
         String SQL_CREATE_WORDS_TABLE =  "CREATE TABLE " + WordEntry.TABLE_NAME + " ("
                 + WordEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + WordEntry.COLUMN_WORD + " TEXT NOT NULL, "
@@ -86,7 +85,7 @@ public class VDbHelper extends SQLiteOpenHelper {
 
 
 
-        // Create a String that contains the SQL statement to create the pets table
+        // Create a String that contains the SQL statement to create the decks table
         String SQL_CREATE_DECKS_TABLE =  "CREATE TABLE " + DeckEntry.TABLE_NAME + " ("
                 + DeckEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + DeckEntry.COLUMN_DECK + " INTEGER NOT NULL, "

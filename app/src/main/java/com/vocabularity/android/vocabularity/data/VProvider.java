@@ -26,15 +26,13 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * {@link ContentProvider} for Pets app.
- */
+
 public class VProvider extends ContentProvider implements SharedPreferences {
 
-    /** URI matcher code for the content URI for the pets table */
+    /** URI matcher code for the content URI for the folders table */
     private static final int FOLDERS = 100;
 
-    /** URI matcher code for the content URI for a single pet in the pets table */
+    /** URI matcher code for the content URI for a single folder in the folders table */
     private static final int FOLDER_ID = 101;
 
 
@@ -422,7 +420,7 @@ public class VProvider extends ContentProvider implements SharedPreferences {
         final int match = sUriMatcher.match(uri);
         switch (match) {
             case FOLDERS:
-                return insertPet(uri, contentValues);
+                return insertFolder(uri, contentValues);
             case WORDS:
                 return insertWord(uri, contentValues);
             case DECKS:
@@ -432,16 +430,12 @@ public class VProvider extends ContentProvider implements SharedPreferences {
         }
     }
 
-    /**
-     * Insert a pet into the database with the given content values. Return the new content URI
-     * for that specific row in the database.
-     */
-    private Uri insertPet(Uri uri, ContentValues values) {
+    private Uri insertFolder(Uri uri, ContentValues values) {
 
         // Check that the name is not null
         String name = values.getAsString(FolderContract.FolderEntry.COLUMN_FOLDER_NAME);
         if (name == null) {
-            throw new IllegalArgumentException("Pet requires a name");
+            throw new IllegalArgumentException("Folder requires a name");
         }
 
         // No need to check the breed, any value is valid (including null).
@@ -449,7 +443,7 @@ public class VProvider extends ContentProvider implements SharedPreferences {
         // Get writeable database
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
 
-        // Insert the new pet with the given values
+        // Insert the new folder with the given values
         long id = database.insert(FolderEntry.TABLE_NAME, null, values);
         // If the ID is -1, then the insertion failed. Log an error and return null.
         if (id == -1) {
@@ -458,7 +452,7 @@ public class VProvider extends ContentProvider implements SharedPreferences {
         }
 
 
-        // Notify all listeners that the data has changed for the pet content URI
+        // Notify all listeners that the data has changed for the folder content URI
         getContext().getContentResolver().notifyChange(uri, null);
 
         // Return the new URI with the ID (of the newly inserted row) appended at the end
@@ -488,14 +482,14 @@ public class VProvider extends ContentProvider implements SharedPreferences {
 
         // Get writeable database
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
-        // Insert the new pet with the given values
+        // Insert the new folder with the given values
         long id = database.insert(WordEntry.TABLE_NAME, null, values);
         // If the ID is -1, then the insertion failed. Log an error and return null.
         if (id == -1) {
             Log.e(LOG_TAG, "Failed to insert row for " + uri);
             return null;
         }
-        // Notify all listeners that the data has changed for the pet content URI
+        // Notify all listeners that the data has changed for the folder content URI
         getContext().getContentResolver().notifyChange(uri, null);
         // Return the new URI with the ID (of the newly inserted row) appended at the end
         return ContentUris.withAppendedId(uri, id);
@@ -516,14 +510,15 @@ public class VProvider extends ContentProvider implements SharedPreferences {
 
         // Get writeable database
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
-        // Insert the new pet with the given values
+        // Insert the new folder with the given values
         long id = database.insert(DeckEntry.TABLE_NAME, null, values);
         // If the ID is -1, then the insertion failed. Log an error and return null.
         if (id == -1) {
-            Log.e(LOG_TAG, "Failed to insert row for " + uri);
+//            Log.e(LOG_TAG, "Failed to insert row for " + uri);
             return null;
-        } else {Log.e(LOG_TAG, "uhuuuuuuuuuuuuuuuuuu " + id);}
-        // Notify all listeners that the data has changed for the pet content URI
+        }
+//        else {Log.e(LOG_TAG, "uhuuuuuuuuuuuuuuuuuu " + id);}
+        // Notify all listeners that the data has changed for the folder content URI
         getContext().getContentResolver().notifyChange(uri, null);
         // Return the new URI with the ID (of the newly inserted row) appended at the end
         return ContentUris.withAppendedId(uri, id);
@@ -536,14 +531,14 @@ public class VProvider extends ContentProvider implements SharedPreferences {
         final int match = sUriMatcher.match(uri);
         switch (match) {
             case FOLDERS:
-                return updatePet(uri, contentValues, selection, selectionArgs);
+                return updateFolder(uri, contentValues, selection, selectionArgs);
             case FOLDER_ID:
                 // For the FOLDER_ID code, extract out the ID from the URI,
                 // so we know which row to update. Selection will be "_id=?" and selection
                 // arguments will be a String array containing the actual ID.
                 selection = FolderContract.FolderEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
-                return updatePet(uri, contentValues, selection, selectionArgs);
+                return updateFolder(uri, contentValues, selection, selectionArgs);
 
             case WORDS:
                 return updateWord(uri, contentValues, selection, selectionArgs);
@@ -557,20 +552,14 @@ public class VProvider extends ContentProvider implements SharedPreferences {
         }
     }
 
-    /**
-     * Update pets in the database with the given content values. Apply the changes to the rows
-     * specified in the selection and selection arguments (which could be 0 or 1 or more pets).
-     * Return the number of rows that were successfully updated.
-     */
-    private int updatePet(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        // If the {@link FolderEntry#COLUMN_PET_NAME} key is present,
+    private int updateFolder(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
         // check that the name value is not null.
         /**TODO There is a mistake here - need to fix
          * */
         if (values.containsKey(FolderContract.FolderEntry.COLUMN_FOLDER_NAME)) {
             String name = values.getAsString(FolderEntry.COLUMN_FOLDER_NAME);
             if (name == null) {
-                throw new IllegalArgumentException("Pet requires a name");
+                throw new IllegalArgumentException("Folder requires a name");
             }
         }
 
@@ -598,7 +587,6 @@ public class VProvider extends ContentProvider implements SharedPreferences {
 
 
     private int updateWord(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        // If the {@link FolderEntry#COLUMN_PET_NAME} key is present,
         // check that the name value is not null.
         /**TODO There is a mistake here - need to fix
          * */

@@ -177,9 +177,9 @@ public class MemorizeActivity extends AppCompatActivity implements
 
 
         mEditActions = findViewById(R.id.editActions);
-//        mEditActions.setVisibility(View.GONE);
+        mEditActions.setVisibility(View.GONE);
 
-        mEditActions.setAlpha(0.0f);
+//        mEditActions.setAlpha(0.0f);
 
         mDeleteButton = findViewById(R.id.deleteButton);
         mCancelButton = findViewById(R.id.cancelButton);

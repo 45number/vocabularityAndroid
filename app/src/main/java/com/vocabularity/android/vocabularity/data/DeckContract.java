@@ -16,7 +16,7 @@ public class DeckContract {
 
     public static final class DeckEntry implements BaseColumns {
 
-        /** Name of database table for pets */
+        /** Name of database table for decks */
         public final static String TABLE_NAME = "decks";
 
         public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_DECKS);
@@ -24,14 +24,11 @@ public class DeckContract {
         public static final Uri TO_REP_COUNT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_REPEAT_COUNT);
 
 
-        /**
-         * The MIME type of the {@link #CONTENT_URI} for a list of pets.
-         */
         public static final String CONTENT_LIST_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_DECKS;
 
         /**
-         * The MIME type of the {@link #CONTENT_URI} for a single pet.
+         * The MIME type of the {@link #CONTENT_URI} for a single deck.
          */
         public static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_DECKS;
