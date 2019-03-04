@@ -13,10 +13,10 @@
     <string name="editor_activity_title_new_pet">Add a folder</string>
 
 
-    <string name="editor_activity_title_new_word">Add new card</string>
+    <string name="editor_activity_title_new_word">Add a card</string>
 
     <!-- Title for the activity to edit a pet [CHAR LIMIT=20] -->
-    <string name="editor_activity_title_edit_pet">Edit a folder</string>
+    <string name="editor_activity_title_edit_pet">Edit the folder</string>
 
     <!-- Label for editor menu option to save pet and leave editor [CHAR LIMIT=20] -->
     <string name="action_save">Save</string>
@@ -33,41 +33,14 @@
     <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
     <string name="folder_name">Folder name</string>
 
-    <!-- Label for gender information in the editor [CHAR LIMIT=30] -->
-    <string name="category_gender">Gender</string>
-
-    <!-- Label for measurement information in the editor [CHAR LIMIT=30] -->
-    <string name="category_measurement">Measurement</string>
-
     <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
     <string name="hint_folder_name">Folder title</string>
-
-    <!-- Text hint for breed field in the editor [CHAR LIMIT=30] -->
-    <string name="hint_pet_breed">Breed</string>
 
     <!-- Text hint for breed field in the editor [CHAR LIMIT=30] -->
     <string name="hint_add_word">Word</string>
 
     <!-- Text hint for breed field in the editor [CHAR LIMIT=30] -->
     <string name="hint_add_word_translation">Translation</string>
-
-    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
-    <string name="hint_pet_weight">Weight</string>
-
-    <!-- Units for weight of the pet (kilograms) [CHAR LIMIT=5] -->
-    <string name="unit_pet_weight">kg</string>
-
-    <!-- Label for dropdown menu option if the pet's gender is unknown [CHAR LIMIT=20] -->
-    <string name="gender_unknown">Unknown</string>
-
-    <!-- Label for dropdown menu option if the pet is male [CHAR LIMIT=20] -->
-    <string name="gender_male">Male</string>
-
-    <!-- Label for dropdown menu option if the pet is female [CHAR LIMIT=20] -->
-    <string name="gender_female">Female</string>
-
-    <!-- Toast message in editor when new pet has been successfully inserted [CHAR LIMIT=NONE] -->
-    <string name="editor_insert_pet_successful">Pet saved</string>
 
     <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
     <string name="editor_insert_pet_failed">Error with saving folder</string>
@@ -107,7 +80,7 @@
     <!-- Toast message in editor when current pet has failed to be deleted [CHAR LIMIT=NONE] -->
     <string name="editor_delete_pet_failed">Error with deleting</string>
     <!-- Dialog message to ask the user to confirm deleting the current pet [CHAR LIMIT=NONE] -->
-    <string name="delete_dialog_msg">Delete this pet?</string>
+    <string name="delete_dialog_msg">Delete this folder?</string>
     <!-- Dialog button text for the option to confirm deleting the current pet [CHAR LIMIT=20] -->
     <string name="delete">Delete</string>
     <!-- Dialog button text for the option to cancel deletion of the current pet [CHAR LIMIT=20] -->

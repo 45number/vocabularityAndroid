@@ -49,9 +49,20 @@ public class WordContract {
 
         public final static String COLUMN_LANGUAGE_LEARNING = "language_learning";
 
+        public final static String COLUMN_USERS_LANGUAGE = "users_language";
+
         public final static String COLUMN_REPEAT_MEM = "to_repeat_mem";
 
         public final static String COLUMN_REPEAT_SPELL = "to_repeat_spell";
 
+        public final static String COLUMN_EXAMPLE = "example";
+        public final static String COLUMN_EXAMPLE_TRANSLATION = "example_translation";
+
+        public final static String COLUMN_IMAGE = "image";
+        public final static String COLUMN_SOUND = "sound";
+
+        public final static String COLUMN_SYNC_ID = "sync_id";
+        public final static String COLUMN_TRANSCRIPTION = "transcription";
+        public final static String COLUMN_VIDEO = "video";
     }
 }

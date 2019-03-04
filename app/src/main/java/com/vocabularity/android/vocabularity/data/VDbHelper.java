@@ -19,6 +19,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.vocabularity.android.vocabularity.Word;
 import com.vocabularity.android.vocabularity.data.FolderContract.FolderEntry;
 import com.vocabularity.android.vocabularity.data.WordContract.WordEntry;
 import com.vocabularity.android.vocabularity.data.DeckContract.DeckEntry;
@@ -56,6 +57,7 @@ public class VDbHelper extends SQLiteOpenHelper {
         String SQL_CREATE_FOLDERS_TABLE =  "CREATE TABLE " + FolderEntry.TABLE_NAME + " ("
                 + FolderContract.FolderEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + FolderEntry.COLUMN_LEARNING_LANGUAGE + " INTEGER NOT NULL, "
+                + FolderEntry.COLUMN_USERS_LANGUAGE + " INTEGER NOT NULL DEFAULT 0, "
                 + FolderEntry.COLUMN_FOLDER_NAME + " TEXT NOT NULL, "
                 + FolderContract.FolderEntry.COLUMN_IMAGE + " TEXT, "
                 + FolderEntry.COLUMN_PARENT + " INTEGER,"
@@ -75,8 +77,16 @@ public class VDbHelper extends SQLiteOpenHelper {
                 + WordEntry.COLUMN_TRANSLATION + " TEXT NOT NULL, "
                 + WordEntry.COLUMN_FOLDER + " INTEGER NOT NULL,"
                 + WordEntry.COLUMN_LANGUAGE_LEARNING + " INTEGER NOT NULL,"
+                + WordEntry.COLUMN_USERS_LANGUAGE + " INTEGER NOT NULL DEFAULT 0,"
                 + WordEntry.COLUMN_REPEAT_MEM + " INTEGER NOT NULL DEFAULT 0,"
                 + WordEntry.COLUMN_REPEAT_SPELL + " INTEGER NOT NULL DEFAULT 0,"
+                + WordEntry.COLUMN_EXAMPLE + " TEXT,"
+                + WordEntry.COLUMN_EXAMPLE_TRANSLATION + " TEXT,"
+                + WordEntry.COLUMN_IMAGE + " TEXT,"
+                + WordEntry.COLUMN_SOUND + " TEXT,"
+                + WordEntry.COLUMN_SYNC_ID + " INTEGER,"
+                + WordEntry.COLUMN_TRANSCRIPTION + " TEXT,"
+                + WordEntry.COLUMN_VIDEO + " TEXT,"
                 + " FOREIGN KEY (" + WordEntry.COLUMN_FOLDER + ") REFERENCES "+ FolderEntry.TABLE_NAME +"(" + FolderEntry._ID + ") ON DELETE CASCADE"
                 + ");";
 

@@ -43,11 +43,13 @@ public final class FolderContract {
 
         public final static String _ID = BaseColumns._ID;
         public final static String COLUMN_LEARNING_LANGUAGE ="learning_language";
+        public final static String COLUMN_USERS_LANGUAGE = "users_language";
         public final static String COLUMN_STATISTICS = "statistics";
         public final static String COLUMN_FOLDER_NAME ="name";
         public final static String COLUMN_IMAGE = "image";
         public final static String COLUMN_PARENT = "parent_id";
         public final static String COLUMN_MARKED ="marked";
+
 
     }
 
