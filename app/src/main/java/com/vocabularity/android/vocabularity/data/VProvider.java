@@ -244,15 +244,6 @@ public class VProvider extends ContentProvider implements SharedPreferences {
                 break;
 
             case FOLDER_TO_REPEAT:
-//                Log.e("VProvider", selectionArgs.toString());
-//                selectionArgs = new String[]{ "1", "1" };
-//                String[] selectionArgs1 = { "1", "1" };
-//                Log.e("uuuuu", selectionArgs[0]);
-//                Log.e("uuuuu", selectionArgs[1]);
-//                String uu = selectionArgs[1];
-//                selectionArgs = new String[] { "1", "1" };
-
-//                Log.e("uuuuu", selectionArgs[1]);
                 Long wordsToRepMem = DatabaseUtils.queryNumEntries(database, WordEntry.TABLE_NAME,
                         WordEntry.COLUMN_REPEAT_MEM + "=? AND " + WordEntry.COLUMN_LANGUAGE_LEARNING + " = ?", selectionArgs);
 

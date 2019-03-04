@@ -186,7 +186,7 @@ public class WordEditorActivity extends AppCompatActivity  implements
                         Toast.LENGTH_SHORT).show();
             } else {
                 // Otherwise, the insertion was successful and we can display a toast.
-                Toast.makeText(this, getString(R.string.editor_insert_pet_successful),
+                Toast.makeText(this, getString(R.string.card_saved),
                         Toast.LENGTH_SHORT).show();
 
                 mWordEditText.setText("");
