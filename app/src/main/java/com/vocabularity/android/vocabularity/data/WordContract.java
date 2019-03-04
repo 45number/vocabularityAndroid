@@ -8,7 +8,7 @@ public class WordContract {
 
     private WordContract() {}
 
-    public static final String CONTENT_AUTHORITY = "com.example.android.pets";
+    public static final String CONTENT_AUTHORITY = "com.vocabularity.android.vocabularity";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
     public static final String PATH_WORDS = "words";
 
