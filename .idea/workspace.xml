@@ -9,7 +9,52 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5e2b63f-b925-4f84-afbe-93a19f2f8cb9" name="Default" comment="" />
+    <list default="true" id="d5e2b63f-b925-4f84-afbe-93a19f2f8cb9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$10.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$11.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$11.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$12.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$13.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$14.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$15.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$3$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$3.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$4.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$5.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$6.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$7.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$8.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$9.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$10.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$10.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$11.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$11.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$12.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$12.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$13.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$13.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$14.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$14.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$15.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$15.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$3$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$3.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$3.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$4.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$4.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$5.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$5.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$6.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$6.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$7.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$7.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$8.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$8.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$9.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$9.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/171/classes2.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/171/classes2.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FoldersFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FoldersFragment.java" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,55 +105,57 @@
       <file leaf-file-name="FoldersFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FoldersFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="226" column="84" lean-forward="false" selection-start-line="226" selection-start-column="84" selection-end-line="226" selection-end-column="84" />
+            <state relative-caret-position="-469">
+              <caret line="367" column="41" lean-forward="true" selection-start-line="367" selection-start-column="41" selection-end-line="367" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3376#3400#0" expanded="true" />
-                <element signature="e#4218#4373#0" expanded="true" />
-                <element signature="e#4372#4373#0" expanded="true" />
-                <element signature="e#5053#6321#0" expanded="true" />
-                <element signature="e#6320#6321#0" expanded="true" />
-                <element signature="e#6370#6863#0" expanded="true" />
-                <element signature="e#6528#6829#0" expanded="true" />
-                <element signature="e#6828#6829#0" expanded="true" />
-                <element signature="e#6862#6863#0" expanded="true" />
-                <element signature="e#10139#10277#0" expanded="true" />
-                <element signature="e#10276#10277#0" expanded="true" />
-                <element signature="e#15977#16164#0" expanded="true" />
-                <element signature="e#16163#16164#0" expanded="true" />
-                <element signature="e#16207#16393#0" expanded="true" />
-                <element signature="e#16392#16393#0" expanded="true" />
-                <element signature="e#16436#16625#0" expanded="true" />
-                <element signature="e#16624#16625#0" expanded="true" />
-                <element signature="e#20244#20664#0" expanded="true" />
-                <element signature="e#20663#20664#0" expanded="true" />
-                <element signature="e#20777#21194#0" expanded="true" />
-                <element signature="e#21193#21194#0" expanded="true" />
-                <element signature="e#22772#23146#0" expanded="true" />
-                <element signature="e#23145#23146#0" expanded="true" />
-                <element signature="e#23186#23560#0" expanded="true" />
-                <element signature="e#23559#23560#0" expanded="true" />
-                <element signature="e#31512#31540#0" expanded="true" />
-                <element signature="e#31570#31596#0" expanded="true" />
-                <element signature="e#31633#31651#0" expanded="true" />
-                <element signature="e#31653#31820#0" expanded="true" />
-                <element signature="e#31819#31820#0" expanded="true" />
-                <element signature="e#31857#31881#0" expanded="true" />
-                <element signature="e#31883#32106#0" expanded="true" />
-                <element signature="e#32105#32106#0" expanded="true" />
-                <element signature="e#32559#32585#0" expanded="true" />
-                <element signature="e#32615#32639#0" expanded="true" />
-                <element signature="e#32676#32694#0" expanded="true" />
-                <element signature="e#32696#32867#0" expanded="true" />
-                <element signature="e#32866#32867#0" expanded="true" />
-                <element signature="e#32904#32928#0" expanded="true" />
-                <element signature="e#32930#33153#0" expanded="true" />
-                <element signature="e#33152#33153#0" expanded="true" />
-                <element signature="e#36138#36139#0" expanded="true" />
-                <element signature="e#36196#36197#0" expanded="true" />
-                <element signature="e#39646#39647#0" expanded="true" />
-                <element signature="e#39693#39694#0" expanded="true" />
+                <element signature="e#3402#3426#0" expanded="true" />
+                <element signature="e#4244#4399#0" expanded="true" />
+                <element signature="e#4398#4399#0" expanded="true" />
+                <element signature="e#5079#6347#0" expanded="true" />
+                <element signature="e#6346#6347#0" expanded="true" />
+                <element signature="e#6463#6612#0" expanded="true" />
+                <element signature="e#6611#6612#0" expanded="true" />
+                <element signature="e#6661#7154#0" expanded="true" />
+                <element signature="e#6819#7120#0" expanded="true" />
+                <element signature="e#7119#7120#0" expanded="true" />
+                <element signature="e#7153#7154#0" expanded="true" />
+                <element signature="e#10430#10568#0" expanded="true" />
+                <element signature="e#10567#10568#0" expanded="true" />
+                <element signature="e#16708#16895#0" expanded="true" />
+                <element signature="e#16894#16895#0" expanded="true" />
+                <element signature="e#16938#17124#0" expanded="true" />
+                <element signature="e#17123#17124#0" expanded="true" />
+                <element signature="e#17167#17356#0" expanded="true" />
+                <element signature="e#17355#17356#0" expanded="true" />
+                <element signature="e#20975#21395#0" expanded="true" />
+                <element signature="e#21394#21395#0" expanded="true" />
+                <element signature="e#21508#21925#0" expanded="true" />
+                <element signature="e#21924#21925#0" expanded="true" />
+                <element signature="e#23503#23877#0" expanded="true" />
+                <element signature="e#23876#23877#0" expanded="true" />
+                <element signature="e#23917#24291#0" expanded="true" />
+                <element signature="e#24290#24291#0" expanded="true" />
+                <element signature="e#32243#32271#0" expanded="true" />
+                <element signature="e#32301#32327#0" expanded="true" />
+                <element signature="e#32364#32382#0" expanded="true" />
+                <element signature="e#32384#32551#0" expanded="true" />
+                <element signature="e#32550#32551#0" expanded="true" />
+                <element signature="e#32588#32612#0" expanded="true" />
+                <element signature="e#32614#32837#0" expanded="true" />
+                <element signature="e#32836#32837#0" expanded="true" />
+                <element signature="e#33290#33316#0" expanded="true" />
+                <element signature="e#33346#33370#0" expanded="true" />
+                <element signature="e#33407#33425#0" expanded="true" />
+                <element signature="e#33427#33598#0" expanded="true" />
+                <element signature="e#33597#33598#0" expanded="true" />
+                <element signature="e#33635#33659#0" expanded="true" />
+                <element signature="e#33661#33884#0" expanded="true" />
+                <element signature="e#33883#33884#0" expanded="true" />
+                <element signature="e#36869#36870#0" expanded="true" />
+                <element signature="e#36927#36928#0" expanded="true" />
+                <element signature="e#40377#40378#0" expanded="true" />
+                <element signature="e#40424#40425#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,8 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>chooseadd</find>
-      <find>foldercur</find>
       <find>mcu</find>
       <find>mark</find>
       <find>deck</find>
@@ -168,6 +213,8 @@
       <find>getCurren</find>
       <find>getCurrentFol</find>
       <find>SettingsContract.LAST_FOLDER</find>
+      <find>addButtonEmpty</find>
+      <find>chooseAddMode(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -3008,55 +3055,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FoldersFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="226" column="84" lean-forward="false" selection-start-line="226" selection-start-column="84" selection-end-line="226" selection-end-column="84" />
+        <state relative-caret-position="-469">
+          <caret line="367" column="41" lean-forward="true" selection-start-line="367" selection-start-column="41" selection-end-line="367" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3376#3400#0" expanded="true" />
-            <element signature="e#4218#4373#0" expanded="true" />
-            <element signature="e#4372#4373#0" expanded="true" />
-            <element signature="e#5053#6321#0" expanded="true" />
-            <element signature="e#6320#6321#0" expanded="true" />
-            <element signature="e#6370#6863#0" expanded="true" />
-            <element signature="e#6528#6829#0" expanded="true" />
-            <element signature="e#6828#6829#0" expanded="true" />
-            <element signature="e#6862#6863#0" expanded="true" />
-            <element signature="e#10139#10277#0" expanded="true" />
-            <element signature="e#10276#10277#0" expanded="true" />
-            <element signature="e#15977#16164#0" expanded="true" />
-            <element signature="e#16163#16164#0" expanded="true" />
-            <element signature="e#16207#16393#0" expanded="true" />
-            <element signature="e#16392#16393#0" expanded="true" />
-            <element signature="e#16436#16625#0" expanded="true" />
-            <element signature="e#16624#16625#0" expanded="true" />
-            <element signature="e#20244#20664#0" expanded="true" />
-            <element signature="e#20663#20664#0" expanded="true" />
-            <element signature="e#20777#21194#0" expanded="true" />
-            <element signature="e#21193#21194#0" expanded="true" />
-            <element signature="e#22772#23146#0" expanded="true" />
-            <element signature="e#23145#23146#0" expanded="true" />
-            <element signature="e#23186#23560#0" expanded="true" />
-            <element signature="e#23559#23560#0" expanded="true" />
-            <element signature="e#31512#31540#0" expanded="true" />
-            <element signature="e#31570#31596#0" expanded="true" />
-            <element signature="e#31633#31651#0" expanded="true" />
-            <element signature="e#31653#31820#0" expanded="true" />
-            <element signature="e#31819#31820#0" expanded="true" />
-            <element signature="e#31857#31881#0" expanded="true" />
-            <element signature="e#31883#32106#0" expanded="true" />
-            <element signature="e#32105#32106#0" expanded="true" />
-            <element signature="e#32559#32585#0" expanded="true" />
-            <element signature="e#32615#32639#0" expanded="true" />
-            <element signature="e#32676#32694#0" expanded="true" />
-            <element signature="e#32696#32867#0" expanded="true" />
-            <element signature="e#32866#32867#0" expanded="true" />
-            <element signature="e#32904#32928#0" expanded="true" />
-            <element signature="e#32930#33153#0" expanded="true" />
-            <element signature="e#33152#33153#0" expanded="true" />
-            <element signature="e#36138#36139#0" expanded="true" />
-            <element signature="e#36196#36197#0" expanded="true" />
-            <element signature="e#39646#39647#0" expanded="true" />
-            <element signature="e#39693#39694#0" expanded="true" />
+            <element signature="e#3402#3426#0" expanded="true" />
+            <element signature="e#4244#4399#0" expanded="true" />
+            <element signature="e#4398#4399#0" expanded="true" />
+            <element signature="e#5079#6347#0" expanded="true" />
+            <element signature="e#6346#6347#0" expanded="true" />
+            <element signature="e#6463#6612#0" expanded="true" />
+            <element signature="e#6611#6612#0" expanded="true" />
+            <element signature="e#6661#7154#0" expanded="true" />
+            <element signature="e#6819#7120#0" expanded="true" />
+            <element signature="e#7119#7120#0" expanded="true" />
+            <element signature="e#7153#7154#0" expanded="true" />
+            <element signature="e#10430#10568#0" expanded="true" />
+            <element signature="e#10567#10568#0" expanded="true" />
+            <element signature="e#16708#16895#0" expanded="true" />
+            <element signature="e#16894#16895#0" expanded="true" />
+            <element signature="e#16938#17124#0" expanded="true" />
+            <element signature="e#17123#17124#0" expanded="true" />
+            <element signature="e#17167#17356#0" expanded="true" />
+            <element signature="e#17355#17356#0" expanded="true" />
+            <element signature="e#20975#21395#0" expanded="true" />
+            <element signature="e#21394#21395#0" expanded="true" />
+            <element signature="e#21508#21925#0" expanded="true" />
+            <element signature="e#21924#21925#0" expanded="true" />
+            <element signature="e#23503#23877#0" expanded="true" />
+            <element signature="e#23876#23877#0" expanded="true" />
+            <element signature="e#23917#24291#0" expanded="true" />
+            <element signature="e#24290#24291#0" expanded="true" />
+            <element signature="e#32243#32271#0" expanded="true" />
+            <element signature="e#32301#32327#0" expanded="true" />
+            <element signature="e#32364#32382#0" expanded="true" />
+            <element signature="e#32384#32551#0" expanded="true" />
+            <element signature="e#32550#32551#0" expanded="true" />
+            <element signature="e#32588#32612#0" expanded="true" />
+            <element signature="e#32614#32837#0" expanded="true" />
+            <element signature="e#32836#32837#0" expanded="true" />
+            <element signature="e#33290#33316#0" expanded="true" />
+            <element signature="e#33346#33370#0" expanded="true" />
+            <element signature="e#33407#33425#0" expanded="true" />
+            <element signature="e#33427#33598#0" expanded="true" />
+            <element signature="e#33597#33598#0" expanded="true" />
+            <element signature="e#33635#33659#0" expanded="true" />
+            <element signature="e#33661#33884#0" expanded="true" />
+            <element signature="e#33883#33884#0" expanded="true" />
+            <element signature="e#36869#36870#0" expanded="true" />
+            <element signature="e#36927#36928#0" expanded="true" />
+            <element signature="e#40377#40378#0" expanded="true" />
+            <element signature="e#40424#40425#0" expanded="true" />
           </folding>
         </state>
       </provider>

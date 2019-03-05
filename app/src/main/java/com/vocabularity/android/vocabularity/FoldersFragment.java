@@ -67,7 +67,7 @@ public class FoldersFragment extends Fragment
     View rootView;
     FloatingActionButton fab;
 //    LinearLayout markedBadge;
-
+    Button addButtonEmpty;
     TextView pathTextView;
     View emptyFolderView;
     View emptyView;
@@ -196,6 +196,15 @@ public class FoldersFragment extends Fragment
                 }
 
 
+            }
+        });
+
+
+        addButtonEmpty = rootView.findViewById(R.id.addButtonEmpty);
+        addButtonEmpty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addOptions();
             }
         });
 
@@ -341,7 +350,8 @@ public class FoldersFragment extends Fragment
 
             // Respond to a click on the "Add" menu option
             case R.id.action_add:
-                if ( mTreePath.size() == 1 || (mFoldersQuantity > 0 &&  mAdapterNumber == 0) ) {
+                addOptions();
+                /*if ( mTreePath.size() == 1 || (mFoldersQuantity > 0 &&  mAdapterNumber == 0) ) {
 //                    DialogSelection ds = new DialogSelection();
 //                    Bundle args=new Bundle();
 //                    String[] selectionArgs = {"Hello", "opa"};
@@ -361,7 +371,7 @@ public class FoldersFragment extends Fragment
 //                    pickAddingOption();
                     chooseAddMode(true,true,true);
                     return true;
-                }
+                }*/
         }
         return super.onOptionsItemSelected(item);
     }
@@ -395,10 +405,18 @@ public class FoldersFragment extends Fragment
 
 
 
-
-
-
-
+    private boolean addOptions() {
+        if ( mTreePath.size() == 1 || (mFoldersQuantity > 0 &&  mAdapterNumber == 0) ) {
+            chooseAddMode(true, false, false);
+            return true;
+        } else if (mAdapterNumber == 1) {
+            chooseAddMode(false, true, true);
+            return true;
+        } else {
+            chooseAddMode(true,true,true);
+            return true;
+        }
+    }
 
 
     private void chooseAddMode(boolean folderEnabled, boolean wordsEnabled, boolean excelEnabled) {
