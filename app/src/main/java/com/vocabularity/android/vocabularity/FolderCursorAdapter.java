@@ -2,7 +2,6 @@ package com.vocabularity.android.vocabularity;
 
 import android.content.Context;
 import android.content.ContextWrapper;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
@@ -44,30 +43,70 @@ public class FolderCursorAdapter extends CursorAdapter {
         ImageView pictureImageView = (ImageView) view.findViewById(R.id.folderImage);
 
         int nameColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_FOLDER_NAME);
-        int breedColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_IMAGE);
+        int imageColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_IMAGE);
         int summaryColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_STATISTICS);
         int markedColumnIndex = cursor.getColumnIndex(FolderContract.FolderEntry.COLUMN_MARKED);
 
-        String petName = cursor.getString(nameColumnIndex);
-        String petBreed = cursor.getString(breedColumnIndex);
+        String folderName = cursor.getString(nameColumnIndex);
+        String folderImage = cursor.getString(imageColumnIndex);
         String folderSummary = cursor.getString(summaryColumnIndex);
         int folderMarked = cursor.getInt(markedColumnIndex);
 
-//        String lastCharacters = petBreed.charAt(petBreed.length() - 4);
-//        Integer symbolsInImageName = petBreed.length();
+//        String lastCharacters = folderImage.charAt(folderImage.length() - 4);
+//        Integer symbolsInImageName = folderImage.length();
 //        Log.e("last symbols are ", ": " + symbolsInImageName);
 
 
-        String lastCharacters = getLastCharacters(petBreed, 4);
+        String lastCharacters = getLastCharacters(folderImage, 4);
 //        Log.e("last symbols are ", "--" + lastCharacters + "--");
 
         // If the pet breed is empty string or null, then use some default text
         // that says "Unknown breed", so the TextView isn't blank.
 
+        /*if ( !".png".equals(lastCharacters) ) {
 
-        
-        if (TextUtils.isEmpty(petBreed)) {
-//            petBreed = context.getString(R.string.unknown_breed);
+            pictureImageView.setImageResource(R.drawable.ic_deck);
+
+            String deckString = view.getContext().getString(R.string.deck);//((TextView) view.findViewById(R.id.name)).getText().toString();
+            deckString += " " + folderName;
+            nameTextView.setText(deckString);
+
+            String cardsInDeckString = view.getContext().getString(R.string.cards_in_deck);
+            cardsInDeckString += " " + folderSummary;
+            summaryTextView.setText(cardsInDeckString);
+
+        } else {
+            if (TextUtils.isEmpty(folderImage)) {
+                pictureImageView.setImageResource(R.drawable.ic_add_folder_image);
+            } else {
+                try {
+                    ContextWrapper cw = new ContextWrapper(context);
+                    File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+                    File mypath=new File(directory,folderImage);
+                    pictureImageView.setImageDrawable(Drawable.createFromPath(mypath.toString()));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            String fs;
+            if ("Empty folder".equals(folderSummary)) {
+                fs = view.getContext().getString(R.string.empty_folder);
+            } else {
+                String[] split = folderSummary.split("\\s+");
+                String foldersStr = view.getContext().getString(R.string.folders);
+                String decksStr = view.getContext().getString(R.string.decks);
+                String cardsStr = view.getContext().getString(R.string.cards);
+                fs = foldersStr + ": " + split[0] + " :: " + decksStr + ": " + split[1] + " :: " + cardsStr + ": " + split[2];
+            }
+            nameTextView.setText(folderName);
+            summaryTextView.setText(fs);
+
+        }*/
+
+
+        if (TextUtils.isEmpty(folderImage)) {
+//            folderImage = context.getString(R.string.unknown_breed);
             pictureImageView.setImageResource(R.drawable.ic_add_folder_image);
 
             String fs;
@@ -80,14 +119,14 @@ public class FolderCursorAdapter extends CursorAdapter {
                 String cardsStr = view.getContext().getString(R.string.cards);
                 fs = foldersStr + ": " + split[0] + " :: " + decksStr + ": " + split[1] + " :: " + cardsStr + ": " + split[2];
             }
-            nameTextView.setText(petName);
+            nameTextView.setText(folderName);
             summaryTextView.setText(fs);
 
         } else if ( !".png".equals(lastCharacters) ) {
             pictureImageView.setImageResource(R.drawable.ic_deck);
 
             String deckString = view.getContext().getString(R.string.deck);//((TextView) view.findViewById(R.id.name)).getText().toString();
-            deckString += " " + petName;
+            deckString += " " + folderName;
             nameTextView.setText(deckString);
 
             String cardsInDeckString = view.getContext().getString(R.string.cards_in_deck);
@@ -98,14 +137,29 @@ public class FolderCursorAdapter extends CursorAdapter {
             try {
                 ContextWrapper cw = new ContextWrapper(context);
                 File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-                File mypath=new File(directory,petBreed);
+                File mypath=new File(directory, folderImage);
                 pictureImageView.setImageDrawable(Drawable.createFromPath(mypath.toString()));
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            nameTextView.setText(petName);
-            summaryTextView.setText(folderSummary);
+
+
+
+            String fs;
+            if ("Empty folder".equals(folderSummary)) {
+                fs = view.getContext().getString(R.string.empty_folder);
+            } else {
+                String[] split = folderSummary.split("\\s+");
+                String foldersStr = view.getContext().getString(R.string.folders);
+                String decksStr = view.getContext().getString(R.string.decks);
+                String cardsStr = view.getContext().getString(R.string.cards);
+                fs = foldersStr + ": " + split[0] + " :: " + decksStr + ": " + split[1] + " :: " + cardsStr + ": " + split[2];
+            }
+            nameTextView.setText(folderName);
+            summaryTextView.setText(fs);
+
+
         }
 
 
@@ -114,7 +168,7 @@ public class FolderCursorAdapter extends CursorAdapter {
         }
 
 
-//        nameTextView.setText(petName);
+//        nameTextView.setText(folderName);
 //        summaryTextView.setText(folderSummary);
     }
 
