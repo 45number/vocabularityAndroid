@@ -113,8 +113,19 @@ public class FoldersFragment extends Fragment
 
         if(savedInstanceState == null || !savedInstanceState.containsKey(PATH_TREE)) {
             mTreePath.add(new pathItem(0L, getString(R.string.root)));
+            SharedPreferences.Editor editor = mSettings.edit();
+            editor.putLong(SettingsContract.LAST_FOLDER, 0L);
+            editor.apply();
         } else {
             mTreePath = savedInstanceState.getParcelableArrayList(PATH_TREE);
+
+            Log.e("mTree", mTreePath.toString());
+
+            SharedPreferences.Editor editor = mSettings.edit();
+            editor.putLong(SettingsContract.LAST_FOLDER, mTreePath.get(mTreePath.size() - 1).getId());
+            editor.apply();
+
+            Log.e("sharedPref", mSettings.getLong(SettingsContract.LAST_FOLDER, 500L) + "");
         }
 
 
@@ -211,16 +222,51 @@ public class FoldersFragment extends Fragment
 
 
         Bundle args=new Bundle();
-        args.putString("selection", FolderEntry.COLUMN_PARENT + " is null AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
-//        String idString = "";
-        Integer langLearningInteger = getArguments().getInt("language_learning");
-        String langLearning = langLearningInteger.toString();
-//        Log.e("Line 159, learn lang is", langLearning);
-        String[] selectionArgs = {/*idString, */langLearning};
-        args.putStringArray("selectionArgs", selectionArgs);
+        Integer landId = getArguments().getInt("language_learning");
+
+//        if (savedInstanceState == null || !savedInstanceState.containsKey(PATH_TREE)) {
+        if (mSettings.getLong(SettingsContract.LAST_FOLDER, 0) == 0L) {
+            args.putString("selection", FolderEntry.COLUMN_PARENT + " is null AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+            String[] selectionArgs = {landId.toString()};
+            args.putStringArray("selectionArgs", selectionArgs);
+        } else {
+            args.putString("selection", FolderEntry.COLUMN_PARENT + " = ? AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+            Long parentLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
+            String parent = parentLong.toString();
+            String[] selectionArgs = {parent, landId.toString()};
+            args.putStringArray("selectionArgs", selectionArgs);
+        }
+
+
+
+//        if (savedInstanceState == null || !savedInstanceState.containsKey(PATH_TREE)) {
+//        if (((CatalogActivity)getActivity()).getCurrentFolder().getId() != 0L) {
+        /*if (mSettings.getLong(SettingsContract.LAST_FOLDER, 0) != 0L) {
+            args.putString("selection", FolderEntry.COLUMN_PARENT + " = ? AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+
+            Long parentLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
+            String parent = parentLong.toString();
+//                    mTreePath.get(mTreePath.size() - 1).toString();
+
+            String[] selectionArgs = {parent, landId.toString()};
+            args.putStringArray("selectionArgs", selectionArgs);
+
+        } else {
+            args.putString("selection", FolderEntry.COLUMN_PARENT + " is null AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+            String[] selectionArgs = {landId.toString()};
+            args.putStringArray("selectionArgs", selectionArgs);
+        }*/
         getLoaderManager().initLoader(PET_LOADER, args, FoldersFragment.this);
 
-//        getLoaderManager().initLoader(PET_LOADER, null, FoldersFragment.this);
+
+
+        /*Bundle args=new Bundle();
+        args.putString("selection", FolderEntry.COLUMN_PARENT + " is null AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+        Integer langLearningInteger = getArguments().getInt("language_learning");
+        String langLearning = langLearningInteger.toString();
+        String[] selectionArgs = {*//*idString, *//*langLearning};
+        args.putStringArray("selectionArgs", selectionArgs);
+        getLoaderManager().initLoader(PET_LOADER, args, FoldersFragment.this);*/
 
 
         Bundle repeatArgs = new Bundle();
@@ -488,14 +534,11 @@ public class FoldersFragment extends Fragment
             String[] selectionArgs = {parent, landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
 
-            Log.e("0000000", "0000000000");
-            Log.e("0000000", parent);
         } else {
             args.putString("selection", FolderEntry.COLUMN_PARENT + " is null AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
             String[] selectionArgs = {landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
 
-            Log.e("1111111111", "111111111");
         }
 
         getLoaderManager().restartLoader(PET_LOADER, args, this);
@@ -946,6 +989,9 @@ public class FoldersFragment extends Fragment
     @Override
     public void onPause() {
         super.onPause();
+
+
+
         updatePathTextView();
     }
 
@@ -1022,7 +1068,7 @@ public class FoldersFragment extends Fragment
             editor.apply();
 
             refreshDecks();
-            Log.e("opa", mTreePath.toString());
+//            Log.e("opa", mTreePath.toString());
 
             return;
         } else {
