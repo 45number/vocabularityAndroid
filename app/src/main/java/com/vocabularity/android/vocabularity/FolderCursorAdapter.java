@@ -63,13 +63,25 @@ public class FolderCursorAdapter extends CursorAdapter {
 
         // If the pet breed is empty string or null, then use some default text
         // that says "Unknown breed", so the TextView isn't blank.
+
+
+        
         if (TextUtils.isEmpty(petBreed)) {
 //            petBreed = context.getString(R.string.unknown_breed);
             pictureImageView.setImageResource(R.drawable.ic_add_folder_image);
 
-
+            String fs;
+            if ("Empty folder".equals(folderSummary)) {
+                fs = view.getContext().getString(R.string.empty_folder);
+            } else {
+                String[] split = folderSummary.split("\\s+");
+                String foldersStr = view.getContext().getString(R.string.folders);
+                String decksStr = view.getContext().getString(R.string.decks);
+                String cardsStr = view.getContext().getString(R.string.cards);
+                fs = foldersStr + ": " + split[0] + " :: " + decksStr + ": " + split[1] + " :: " + cardsStr + ": " + split[2];
+            }
             nameTextView.setText(petName);
-            summaryTextView.setText(folderSummary);
+            summaryTextView.setText(fs);
 
         } else if ( !".png".equals(lastCharacters) ) {
             pictureImageView.setImageResource(R.drawable.ic_deck);

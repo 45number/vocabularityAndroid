@@ -150,15 +150,17 @@ public class VProvider extends ContentProvider implements SharedPreferences {
                     }
 
                     String stat = "Empty folder"; //Resources.getSystem().getString(R.string.empty_folder);
-                    if (childrenAmount != 0 || decksInFolder != 0 || wordsInFolder != 0)
-                        stat = "Folders: " + childrenAmount
+                    if (childrenAmount != 0 || decksInFolder != 0 || wordsInFolder != 0) {
+                        /*stat = "Folders: " + childrenAmount
                                 + " :: Decks: " + decksInFolder
-                                + " :: Cards: " + wordsInFolder;
+                                + " :: Cards: " + wordsInFolder;*/
 
-                    /*stat = Resources.getSystem().getString(R.string.folders) + "Folders: " + childrenAmount
+                        stat = childrenAmount + " " + decksInFolder + " " + wordsInFolder;
+
+                        /*stat = Resources.getSystem().getString(R.string.folders) + "Folders: " + childrenAmount
                             + " :: " + Resources.getSystem().getString(R.string.decks) + "Decks: " + decksInFolder
                             + " :: " + Resources.getSystem().getString(R.string.cards) + "Cards: " + wordsInFolder;*/
-
+                    }
 
                     matrixCursor1.addRow(new Object[] { folderId, folderName, folderImage, folderMarked, stat});
                     cursor.moveToNext();
@@ -223,8 +225,7 @@ public class VProvider extends ContentProvider implements SharedPreferences {
                                 deckStatistics = "" + modulo;
 //                                deckStatistics = Resources.getSystem().getString(R.string.cards_in_deck) + modulo;
                             } else {
-                                deckStatistics = "" + modulo;
-//                                deckStatistics = Resources.getSystem().getString(R.string.cards_in_deck) + mSettingWordsAtTime;
+                                deckStatistics = "" + mSettingWordsAtTime;
                             }
 
 //                            matrixCursor.addRow(new Object[] { counter, Resources.getSystem().getString(R.string.deck) + deckNumber, "image dummy", isDeckMarked, deckStatistics});
