@@ -15,6 +15,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -46,6 +47,7 @@ import android.support.v4.content.Loader;
 import android.support.v4.content.CursorLoader;
 
 
+
 public class FoldersFragment extends Fragment
         implements LoaderManager.LoaderCallbacks<Cursor>, OnBackPressed /*, refreshDecksDogNail*/ {
 
@@ -64,12 +66,12 @@ public class FoldersFragment extends Fragment
 
     View rootView;
     FloatingActionButton fab;
-    Button addButtonEmpty;
+//    LinearLayout markedBadge;
+
     TextView pathTextView;
     View emptyFolderView;
     View emptyView;
 
-//    LinearLayout markedBadge;
 //    FloatingActionButton rootFab;
 
 
@@ -82,9 +84,6 @@ public class FoldersFragment extends Fragment
     private static final int RESULT_SETTINGS = 3;
     private static final int RESULT_SETTINGS_LANGUAGES = 4;
     private static final int RESULT_FILE_EXPLORER = 5;
-    private static final int RESULT_DELETED_DECK = 6;
-
-    private static final int RESULT_INVALID_DATA = 7;
 
     private static final String PATH_TREE = "path";
 
@@ -104,7 +103,9 @@ public class FoldersFragment extends Fragment
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_folders, container, false);
 
+
         mSettings = getContext().getSharedPreferences(SettingsContract.APP_PREFERENCES, getContext().MODE_PRIVATE);
+
 
 //        rootFab = ((CatalogActivity)getActivity()).getFab();
 //        rootFab.hide();
@@ -124,6 +125,8 @@ public class FoldersFragment extends Fragment
         fab = rootView.findViewById(R.id.fab);
         fab.hide();
 
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -135,25 +138,19 @@ public class FoldersFragment extends Fragment
         // Find the ListView which will be populated with the pet data
         petListView = rootView.findViewById(R.id.list);
         // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
-//        emptyView = rootView.findViewById(R.id.progress_bar);
+//        View emptyView = rootView.findViewById(R.id.empty_view);
 //        petListView.setEmptyView(emptyView);
+
 
 
         emptyFolderView = rootView.findViewById(R.id.empty_view);
         emptyFolderView.setVisibility(View.GONE);
 
 
+
+
         mCursorAdapter = new FolderCursorAdapter(getActivity(), null);
         petListView.setAdapter(mCursorAdapter);
-
-
-        addButtonEmpty = rootView.findViewById(R.id.addButtonEmpty);
-        addButtonEmpty.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addOptions();
-            }
-        });
 
 
         registerForContextMenu(petListView);
@@ -170,17 +167,18 @@ public class FoldersFragment extends Fragment
                     mTreePath.add(new pathItem(id, folderName));
 
                     Bundle args=new Bundle();
-                    args.putString("selection", FolderContract.FolderEntry.COLUMN_PARENT + " = ?");
+                    args.putString("selection", FolderEntry.COLUMN_PARENT + " = ?");
                     Long idLong = id;
                     String idString = idLong.toString();
                     String[] selectionArgs = {idString};
                     args.putStringArray("selectionArgs", selectionArgs);
                     getLoaderManager().restartLoader(PET_LOADER, args, FoldersFragment.this);
 
-//                    SharedPreferences.Editor editor = mSettings.edit();
-//                    editor.putLong(SettingsContract.LAST_FOLDER, getCurrentFolder().getId());
-//                    editor.apply();
-//                    Log.e(PATH_TREE + " onClick ", mTreePath.toString());
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    editor.putLong(SettingsContract.LAST_FOLDER, getCurrentFolder().getId());
+                    editor.apply();
+
+                    Log.e(PATH_TREE + " onClick ", mTreePath.toString());
 
                 } else {
                     chooseMode(id);
@@ -209,20 +207,20 @@ public class FoldersFragment extends Fragment
 
         setHasOptionsMenu(true);
 //        folder_name is null or folder_name = ?
-//        or " + FolderEntry.COLUMN_PARENT + "= ?
-
+//        or " + PetEntry.COLUMN_PARENT + "= ?
 
 
         Bundle args=new Bundle();
-        args.putString("selection", FolderEntry.COLUMN_PARENT + " is null AND " + FolderContract.FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+        args.putString("selection", FolderEntry.COLUMN_PARENT + " is null AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+//        String idString = "";
         Integer langLearningInteger = getArguments().getInt("language_learning");
         String langLearning = langLearningInteger.toString();
 //        Log.e("Line 159, learn lang is", langLearning);
         String[] selectionArgs = {/*idString, */langLearning};
         args.putStringArray("selectionArgs", selectionArgs);
         getLoaderManager().initLoader(PET_LOADER, args, FoldersFragment.this);
-//        getLoaderManager().initLoader(PET_LOADER, null, FoldersFragment.this);
 
+//        getLoaderManager().initLoader(PET_LOADER, null, FoldersFragment.this);
 
 
         Bundle repeatArgs = new Bundle();
@@ -232,7 +230,6 @@ public class FoldersFragment extends Fragment
         repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
         getLoaderManager().initLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
 
-//        updatePathTextView();
 
         return rootView;
     }
@@ -245,27 +242,19 @@ public class FoldersFragment extends Fragment
         }).start();
     }
 
-    public ArrayList<pathItem> getFoldersPath() {
-        return mTreePath;
-    }
-
-    public void clearTreePath() {
-        mTreePath.clear();
-        mTreePath.add(new pathItem(0L, getString(R.string.root)));
-    }
 
 /* private void insertPet() {
 
         ContentValues values = new ContentValues();
-        values.put(FolderEntry.COLUMN_FOLDER_NAME, "Toto");
-        values.put(FolderEntry.COLUMN_IMAGE, "");
-        values.put(FolderEntry.COLUMN_PARENT, mTreePath.get(mTreePath.size() - 1));
+        values.put(PetEntry.COLUMN_FOLDER_NAME, "Toto");
+        values.put(PetEntry.COLUMN_IMAGE, "");
+        values.put(PetEntry.COLUMN_PARENT, mTreePath.get(mTreePath.size() - 1));
 
-        Uri newUri = getContentResolver().insert(FolderEntry.CONTENT_URI, values);
+        Uri newUri = getContentResolver().insert(PetEntry.CONTENT_URI, values);
     }
 
     private void deleteAllPets() {
-        int rowsDeleted = getContentResolver().delete(FolderEntry.CONTENT_URI, null, null);
+        int rowsDeleted = getContentResolver().delete(PetEntry.CONTENT_URI, null, null);
         Log.v("CatalogActivity", rowsDeleted + " rows deleted from pet database");
     }*/
 
@@ -277,12 +266,6 @@ public class FoldersFragment extends Fragment
         super.onResume();
         //Refresh your stuff here
 
-        /*clearTreePath();
-        ((CatalogActivity)getActivity()).refreshDecks();
-        ((CatalogActivity)getActivity()).refreshMemWords();*/
-
-//        ((CatalogActivity)getActivity()).refreshMemWords();
-
         Bundle repeatArgs = new Bundle();
         Integer repeatLangLearningInteger = getArguments().getInt("language_learning");
         String repeatLangLearning = repeatLangLearningInteger.toString();
@@ -290,12 +273,7 @@ public class FoldersFragment extends Fragment
         repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
         getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
 
-//        clearTreePath();
-//        ((CatalogActivity)getActivity()).refreshDecks();
-
-//        Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
         updatePathTextView();
-//        Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
     }
 
     @Override
@@ -317,24 +295,64 @@ public class FoldersFragment extends Fragment
 
             // Respond to a click on the "Add" menu option
             case R.id.action_add:
-                addOptions();
+                if ( mTreePath.size() == 1 || (mFoldersQuantity > 0 &&  mAdapterNumber == 0) ) {
+//                    DialogSelection ds = new DialogSelection();
+//                    Bundle args=new Bundle();
+//                    String[] selectionArgs = {"Hello", "opa"};
+//                    args.putStringArray("selectionArgs", selectionArgs);
+//                    Dialog alertDialog = ds.onCreateDialog(null);
+//                    alertDialog.show();
+//                    addFolder();
+                    chooseAddMode(true, false, false);
+//                    pickAddingOption();
+                    return true;
+                } else if (mAdapterNumber == 1) {
+//                    addWords();
+                    chooseAddMode(false, true, true);
+//                    pickAddingOption();
+                    return true;
+                } else {
+//                    pickAddingOption();
+                    chooseAddMode(true,true,true);
+                    return true;
+                }
         }
         return super.onOptionsItemSelected(item);
     }
 
+    /*
+    private void pickAddingOption() {
+        final String[] mCatsName ={"Add folder", "Add words", "Upload from excel"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setItems(mCatsName, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                switch (item) {
+                    // Respond to a click on the "Insert dummy data" menu option
+                    case 0:
+                        addFolder();
+                        break;
+                    case 1:
+                        addWords();
+                        break;
+                    case 2:
 
-    private boolean addOptions() {
-        if ( mTreePath.size() == 1 || (mFoldersQuantity > 0 &&  mAdapterNumber == 0) ) {
-            chooseAddMode(true, false, false);
-            return true;
-        } else if (mAdapterNumber == 1) {
-            chooseAddMode(false, true, true);
-            return true;
-        } else {
-            chooseAddMode(true,true,true);
-            return true;
-        }
-    }
+                        break;
+                }
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    } */
+
+
+
+
+
+
+
+
+
 
 
     private void chooseAddMode(boolean folderEnabled, boolean wordsEnabled, boolean excelEnabled) {
@@ -376,6 +394,8 @@ public class FoldersFragment extends Fragment
             excelImage.setColorFilter(disabledItemColor);
         }
 
+
+
         folderOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -396,87 +416,29 @@ public class FoldersFragment extends Fragment
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
-
-                boolean noHelper = mSettings.getBoolean(SettingsContract.DO_NOT_SHOW_EXCEL_HELPER, false);
-                if (noHelper)
-                    uploadExcel();
-                else
-                    showExcelExcelExplanation();
-
-            }
-        });
-    }
-
-
-
-
-
-    private void showExcelExcelExplanation() {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        LayoutInflater inflater = this.getLayoutInflater();
-
-        builder.setView(inflater.inflate(R.layout.excel_explanation, null));
-
-        builder.setPositiveButton(R.string.ok_delete, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
                 uploadExcel();
             }
         });
-        builder.setNegativeButton(R.string.cancel_deleting, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-            }
-        });
-
-
-        final AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-
-        final Switch doNotShowSwitch = alertDialog.findViewById(R.id.doNotShowSwitch);
-        doNotShowSwitch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (doNotShowSwitch.isChecked()) {
-                    SharedPreferences.Editor editor = mSettings.edit();
-                    editor.putBoolean(SettingsContract.DO_NOT_SHOW_EXCEL_HELPER, true);
-                    editor.apply();
-                } else {
-                    SharedPreferences.Editor editor = mSettings.edit();
-                    editor.putBoolean(SettingsContract.DO_NOT_SHOW_EXCEL_HELPER, false);
-                    editor.apply();
-                }
-            }
-        });
 
     }
 
-
-
-
-
     private void addFolder() {
         Intent intent = new Intent(getActivity(), EditorActivity.class);
-//        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
-        intent.putExtra("folder_id", ((CatalogActivity)getActivity()).getCurrentFolder().getId());
+        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
         intent.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivity(intent);
     }
 
     private void addWords() {
         Intent intent = new Intent(getActivity(), WordEditorActivity.class);
-//        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
-        intent.putExtra("folder_id", ((CatalogActivity)getActivity()).getCurrentFolder().getId());
+        intent.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
         intent.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivityForResult(intent, 1);
     }
 
     private void uploadExcel() {
         Intent intent1 = new Intent(getActivity(), FileChooser.class);
-//        intent1.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
-        intent1.putExtra("folder_id", ((CatalogActivity)getActivity()).getCurrentFolder().getId());
+        intent1.putExtra("folder_id", mTreePath.get(mTreePath.size() - 1).getId());
         intent1.putExtra("language_learning", getArguments().getInt("language_learning"));
         startActivityForResult(intent1,RESULT_FILE_EXPLORER);
     }
@@ -485,14 +447,12 @@ public class FoldersFragment extends Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (resultCode) {
             case 1:
-                ((CatalogActivity)getActivity()).refreshDecks();
-//                refreshDecks();
+                refreshDecks();
                 break;
             case 2:
                 break;
             case RESULT_SETTINGS:
-                ((CatalogActivity)getActivity()).refreshDecks();
-//                refreshDecks();
+                refreshDecks();
                 break;
             case RESULT_SETTINGS_LANGUAGES:
                 ((CatalogActivity)getActivity()).setTabs();
@@ -504,15 +464,7 @@ public class FoldersFragment extends Fragment
                     curFileName = data.getStringExtra("GetFileName");
                     edittext.setText(curFileName);
                 }*/
-                ((CatalogActivity)getActivity()).refreshDecks();
-//                refreshDecks();
-                break;
-            case RESULT_DELETED_DECK:
-                ((CatalogActivity)getActivity()).refreshDecks();
-                break;
-            case RESULT_INVALID_DATA:
-                Toast.makeText(getActivity(), getString(R.string.invalid_data),
-                        Toast.LENGTH_SHORT).show();
+                refreshDecks();
                 break;
         }
     }
@@ -523,33 +475,31 @@ public class FoldersFragment extends Fragment
 
         Integer landId = getArguments().getInt("language_learning");
 
-//        if (mSettings.getLong(SettingsContract.LAST_FOLDER, 0) != 0L) {
-        if (((CatalogActivity)getActivity()).getCurrentFolder().getId() != 0L) {
-            args.putString("selection", FolderContract.FolderEntry.COLUMN_PARENT + " = ? AND " + FolderContract.FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+//        pathItem currentFolder = getCurrentFolder();
 
-//            Long parentLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
-            Long parentLong = ((CatalogActivity)getActivity()).getCurrentFolder().getId();
 
+        if (mSettings.getLong(SettingsContract.LAST_FOLDER, 0) != 0L) {
+            args.putString("selection", FolderEntry.COLUMN_PARENT + " = ? AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+
+            Long parentLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
             String parent = parentLong.toString();
+//                    mTreePath.get(mTreePath.size() - 1).toString();
 
             String[] selectionArgs = {parent, landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
 
-
-
-
-//            ((CatalogActivity)getActivity()).getFoldersPath();
-//            Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
-
+            Log.e("0000000", "0000000000");
+            Log.e("0000000", parent);
         } else {
-            args.putString("selection", FolderContract.FolderEntry.COLUMN_PARENT + " is null AND " + FolderContract.FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
+            args.putString("selection", FolderEntry.COLUMN_PARENT + " is null AND " + FolderEntry.COLUMN_LEARNING_LANGUAGE + " = ?");
             String[] selectionArgs = {landId.toString()};
             args.putStringArray("selectionArgs", selectionArgs);
 
-//            Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
+            Log.e("1111111111", "111111111");
         }
 
         getLoaderManager().restartLoader(PET_LOADER, args, this);
+
 
     }
 
@@ -577,9 +527,7 @@ public class FoldersFragment extends Fragment
                 Intent intent = new Intent(getActivity(), MemorizeActivity.class);
                 intent.putExtra("folder", mTreePath.get(mTreePath.size() - 1).getId());
                 intent.putExtra("deck", deckId);
-//                startActivity(intent);
-
-                startActivityForResult(intent, RESULT_SETTINGS);
+                startActivity(intent);
 
 
             }
@@ -666,6 +614,7 @@ public class FoldersFragment extends Fragment
             if (bundle != null)
                 selectionArgs = bundle.getStringArray("selectionArgs");
 
+//            Log.e("uuuuu", selectionArgs.toString());
             return new CursorLoader(getActivity(),
                     WordContract.WordEntry.TO_REP_COUNT_URI,
                     null,
@@ -676,7 +625,7 @@ public class FoldersFragment extends Fragment
         } else {
             String[] projection = {
                     FolderEntry._ID,
-                    FolderContract.FolderEntry.COLUMN_FOLDER_NAME,
+                    FolderEntry.COLUMN_FOLDER_NAME,
                     FolderEntry.COLUMN_IMAGE,
                     FolderEntry.COLUMN_MARKED
             };
@@ -691,11 +640,11 @@ public class FoldersFragment extends Fragment
 
 
             return new CursorLoader(getActivity(),
-                    FolderContract.FolderEntry.CONTENT_URI,
+                    FolderEntry.CONTENT_URI,
                     projection,
                     selection,
                     selectionArgs,
-                    FolderContract.FolderEntry._ID + " DESC");
+                    null);
         }
     }
 
@@ -715,9 +664,15 @@ public class FoldersFragment extends Fragment
                 fab = rootView.findViewById(R.id.fab);
                 fab.show();
             } else {
+//                Log.e("jk", "Sraka");
+//                fab.setVisibility(View.GONE);
+//                rootFab = ((CatalogActivity)getActivity()).getFab();
+
                 fab = rootView.findViewById(R.id.fab);
                 fab.hide();
+
             }
+
 
         } else {
 
@@ -731,67 +686,14 @@ public class FoldersFragment extends Fragment
                     mAdapterNumber = 1;
                 }
                 emptyFolderView.setVisibility(View.GONE);
-
             } else {
-
-                if (((CatalogActivity)getActivity()).getCurrentFolder() != null) {
-                    if (((CatalogActivity)getActivity()).getCurrentFolder().getId() != 0L) {
-                        TextView emptyTitle = rootView.findViewById(R.id.empty_title_text);
-                        emptyTitle.setText(R.string.the_folder_is_empty);
-                        TextView emptyDescription = rootView.findViewById(R.id.empty_subtitle_text);
-                        emptyDescription.setText(R.string.create_folder_or_upload_words);
-                    }
-                }
-
                 emptyFolderView.setVisibility(View.VISIBLE);
-//                emptyView.setVisibility(View.INVISIBLE);
             }
             mCursorAdapter.swapCursor(data);
 
-//            pathTextView.setText( ((CatalogActivity)getActivity()).getPath() );
-//            Log.e("reload", "yes");
-            ((CatalogActivity)getActivity()).updatePathTextView();
-//            Log.e("reload", "yes");
-//            ((CatalogActivity)getActivity()).updateFolderPageAdapter();
-//            ((CatalogActivity)getActivity()).updateFolderPageAdapter();
-//            Log.e("path", ((CatalogActivity)getActivity()).getFoldersPath().toString());
-
+            updatePathTextView();
         }
     }
-
-/*    public String getPath() {
-        String path = "";
-
-//        FoldersFragment.this.mTreePath.size();
-
-        for (int c = 0; c < ((CatalogActivity)getActivity()).getFoldersPath().size(); c++) {
-//            for (int c = 0; c < ((CatalogActivity)getActivity()).getFoldersPath().size(); c++) {
-            path += PATH_SEPARATOR + ((CatalogActivity)getActivity()).getFoldersPath().get(c).getName();
-        }
-        StringBuilder sb = new StringBuilder(path);
-        sb.deleteCharAt(0);
-        path = sb.toString();
-        return path;
-    }*/
-
-
-    public String getPath() {
-        String path = "";
-        for (int c = 0; c < FoldersFragment.this.mTreePath.size(); c++) {
-            path += PATH_SEPARATOR + FoldersFragment.this.mTreePath.get(c).getName();
-        }
-        StringBuilder sb = new StringBuilder(path);
-        sb.deleteCharAt(0);
-        path = sb.toString();
-        return path;
-    }
-
-
-    public void updatePathTextView() {
-//        pathTextView.setText( ((CatalogActivity)getActivity()).getPath() );
-        pathTextView.setText(getPath());
-    }
-
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
@@ -850,50 +752,63 @@ public class FoldersFragment extends Fragment
 
         switch (menuItemIndex) {
             case 0:
+//                fab.setBackgroundColor(Color.RED);
+//                Fragment f = getActivity().getFragmentManager().findFragmentById(R.id.fragment_container);
+//                fab = rootView.findViewById(R.id.fab);
+//                fab.hide();
 
+//                if ( !".png".equals(lastCharacters) ) {
                 if (isFolder(folderImage)) {
+//                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
+//                            Toast.LENGTH_SHORT).show();
+//                    Log.e("opa", "0");
                     if (markedBadge.getVisibility() == View.VISIBLE) {
                         // Its visible
                         markFolder(infoId, false);
+//                        Log.e("opa", "0 1");
                     } else {
                         // Either gone or invisible
                         markFolder(infoId, true);
+//                        Log.e("opa", "0 2");
                     }
 
                 } else {
 
+//                    View view1 = info.targetView;
+//                    LinearLayout markedBadge1 = view1.findViewById(R.id.markedBadge);
+//                    Log.e("opa", "1");
+
                     if (markedBadge.getVisibility() == View.VISIBLE) {
                         markDeckSwitch(infoId, false);
+//                        Log.e("opa", "1 1 " + getCurrentFolder());
                         markedBadge.setVisibility(View.INVISIBLE);
 
                     } else {
                         markDeckSwitch(infoId, true);
+//                        Log.e("opa", "1 2 " + getCurrentFolder());
                         markedBadge.setVisibility(View.VISIBLE);
 
                     }
 
+//                    Log.e("Da da da", mTreePath.toString());
+//                    refreshDecks();
+//                    Toast.makeText(getActivity(), String.format("Selected %s for item %s", menuItemName, infoId),
+//                            Toast.LENGTH_SHORT).show();
+
                 }
                 return true;
             case 1:
-
-                if (isFolder(folderImage)) {
-                    Class activityClass = EditorActivity.class;
-                    Intent intent = new Intent(getActivity(), activityClass);
-                    Uri currentPetUri = ContentUris.withAppendedId(FolderContract.FolderEntry.CONTENT_URI, infoId);
-                    intent.setData(currentPetUri);
-                    startActivity(intent);
-                } else {
-                    Class activityClass = EditorDeckActivity.class; // Need to be changed
-                    Intent intent = new Intent(getActivity(), activityClass);
-                    intent.putExtra("folder", ((CatalogActivity)getActivity()).getCurrentFolder().getId() );
-                    intent.putExtra("deck", infoId);
-                    startActivityForResult(intent, RESULT_SETTINGS);
-//                    Log.e("folder id is", getCurrentFolder().getId() + "");
-                }
-
+                Class activityClass = EditorActivity.class;
+                if (mAdapterNumber == 1)
+                    activityClass = EditorActivity.class; // Need to be changed
+                Intent intent = new Intent(getActivity(), activityClass);
+                Uri currentPetUri = ContentUris.withAppendedId(FolderEntry.CONTENT_URI, infoId);
+                intent.setData(currentPetUri);
+                startActivity(intent);
                 return true;
             case 2:
                 if (isFolder(folderImage)) {
+//                if (mAdapterNumber == 0) {
                     onDeletePressed(infoId);
                 } else {
                     onDeleteWordsPressed(infoId);
@@ -932,10 +847,8 @@ public class FoldersFragment extends Fragment
 
     private void onDeleteWordsPressed(final Long deck) {
 
-        final pathItem folder = new pathItem(
-                    ((CatalogActivity)getActivity()).getCurrentFolder().getId(),
-                    ((CatalogActivity)getActivity()).getCurrentFolder().getName()
-                );
+        final pathItem folder = new pathItem(mSettings.getLong(SettingsContract.LAST_FOLDER, 0), ((CatalogActivity)getActivity()).getCurrentFolder().getName());
+//                getCurrentFolder();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.delete_deck_title);
@@ -961,13 +874,12 @@ public class FoldersFragment extends Fragment
         String [] arguments = new String[1];
         arguments[0] = folder.toString();
         String selectionClause = FolderEntry._ID + " = ?";
-        Uri currentPetUri = ContentUris.withAppendedId(FolderContract.FolderEntry.CONTENT_URI, folder);
-//        int rowsDeleted = getActivity().getContentResolver().delete(FolderEntry.CONTENT_URI, selectionClause, arguments);
+        Uri currentPetUri = ContentUris.withAppendedId(FolderEntry.CONTENT_URI, folder);
+//        int rowsDeleted = getActivity().getContentResolver().delete(PetEntry.CONTENT_URI, selectionClause, arguments);
 //        Log.e("CatalogActivity", rowsDeleted + " rows deleted from pet database");
         getActivity().getContentResolver().delete(currentPetUri, selectionClause, arguments);
 
-//        refreshMemWords();
-        ((CatalogActivity)getActivity()).refreshMemWords();
+        refreshMemWords();
     }
 
 
@@ -975,11 +887,37 @@ public class FoldersFragment extends Fragment
         String [] arguments = new String[2];
         arguments[0] = folder.toString();
         arguments[1] = deck.toString();
-        String selectionClause = FolderContract.FolderEntry._ID + " = ?";
+//        String selectionClause = PetEntry._ID + " = ?";
+        String selectionClause = FolderEntry._ID + " = ?";
+//        Uri currentPetUri = ContentUris.withAppendedId(PetEntry.CONTENT_URI, folder);
         getActivity().getContentResolver().delete(WordContract.WordEntry.CONTENT_URI, selectionClause, arguments);
+
+//        petListView.remove
+//        mCursorAdapter.remove
+//        petListView.removeViewsInLayout(1, 2);
+//        petListView.removeView(petListView.getChildAt(2));
+
+//        mCursorAdapter.
+
+//        petListView.
+
+//        refreshMemWords();
+//        refreshDecks();
+
+//        petListView.set
+//        View emptyView = rootView.findViewById(R.id.empty_view);
+//        petListView.setEmptyView(emptyView);
+
+
+//        ((CatalogActivity.java).getActivity()).opop();
+//        mTreePath.remove(mTreePath.size() - 1);
+
+
+//        ((CatalogActivity)getActivity()).refreshDecksDogNail();
 
         ((CatalogActivity)getActivity()).refreshDecks();
         ((CatalogActivity)getActivity()).refreshMemWords();
+
 
         mCursorAdapter.notifyDataSetChanged();
     }
@@ -996,9 +934,6 @@ public class FoldersFragment extends Fragment
         repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
         getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
 
-
-//        pathTextView.setText(getPath());
-
 //        DetailOnPageChangeListener
 //        ((CatalogActivity)getActivity()).re
 //        Integer opa = ((CatalogActivity) getActivity()).getCurrentFragment();
@@ -1008,16 +943,11 @@ public class FoldersFragment extends Fragment
     }
 
 
-
     @Override
     public void onPause() {
         super.onPause();
-//        clearTreePath();
-//        ((CatalogActivity)getActivity()).refreshDecks();
         updatePathTextView();
     }
-
-
 
     public pathItem getCurrentFolder() {
         return mTreePath.get(mTreePath.size() - 1);
@@ -1025,36 +955,39 @@ public class FoldersFragment extends Fragment
 
 
     private void markFolder(Long infoId, boolean markValue) {
-        Uri currentPetUri = ContentUris.withAppendedId(FolderContract.FolderEntry.CONTENT_URI, infoId);
+        Uri currentPetUri = ContentUris.withAppendedId(FolderEntry.CONTENT_URI, infoId);
         ContentValues values = new ContentValues();
         int value = 0;
         if (markValue)
             value = 1;
-        values.put(FolderContract.FolderEntry.COLUMN_MARKED, value);
+        values.put(FolderEntry.COLUMN_MARKED, value);
 //        int rowsAffected =
-                getActivity().getContentResolver().update(currentPetUri, values, null, null);
+        getActivity().getContentResolver().update(currentPetUri, values, null, null);
     }
 
 
     private void markDeckSwitch(Long infoId, boolean isToCreate) {
 
-        if (isToCreate) {
+//        Uri currentPetUri = ContentUris.withAppendedId(DeckContract.DeckEntry.CONTENT_URI, infoId);
 
-//            Log.e(PATH_TREE + " onMark ", mTreePath.toString());
+        if (isToCreate) {
+//            Log.e("Mark", "Mark");
+            //        Uri newUri =
+            Log.e(PATH_TREE + " onMark ", mTreePath.toString());
             ContentValues values = new ContentValues();
             values.put(DeckContract.DeckEntry.COLUMN_DECK, infoId);
-//            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, mSettings.getLong(SettingsContract.LAST_FOLDER, 0));
+            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, mSettings.getLong(SettingsContract.LAST_FOLDER, 0));
 
-            values.put(DeckContract.DeckEntry.COLUMN_FOLDER, ((CatalogActivity)getActivity()).getCurrentFolder().getId());
+//            getCurrentFolder().toString()
 
             getActivity().getContentResolver().insert(DeckContract.DeckEntry.CONTENT_URI, values);
-//            Log.e(PATH_TREE + " onMark ", mTreePath.toString());
+            Log.e(PATH_TREE + " onMark ", mTreePath.toString());
         } else {
+//            Log.e("UnMark", "UnMark");
 
             String selection = DeckContract.DeckEntry.COLUMN_FOLDER + " = ? AND " + DeckContract.DeckEntry.COLUMN_DECK + " = ?";
             String[] selectionArgs = new String[2];
-//            Long folderLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
-            Long folderLong = ((CatalogActivity)getActivity()).getCurrentFolder().getId();
+            Long folderLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
             selectionArgs[0] = folderLong.toString();
             selectionArgs[1] = infoId.toString();
 
@@ -1063,11 +996,10 @@ public class FoldersFragment extends Fragment
 
         }
 
-        ((CatalogActivity)getActivity()).refreshDecks();
+        refreshDecks();
 
-//        refreshDecks();
 //        Bundle args=new Bundle();
-//        args.putString("selection", FolderEntry.COLUMN_PARENT + " = ?");
+//        args.putString("selection", PetEntry.COLUMN_PARENT + " = ?");
 //        Long idLong = mSettings.getLong(SettingsContract.LAST_FOLDER, 0);
 //        String idString = idLong.toString();
 //        String[] selectionArgs = {idString};
@@ -1081,20 +1013,19 @@ public class FoldersFragment extends Fragment
     public void onBackPressed() {
         if (FoldersFragment.this.mTreePath.size() > 1) {
 
+            Log.e("mTreePath", mTreePath.toString());
 
             mTreePath.remove(mTreePath.size() - 1);
 
-//            SharedPreferences.Editor editor = mSettings.edit();
-//            editor.putLong(SettingsContract.LAST_FOLDER, mTreePath.get(mTreePath.size() - 1).getId());
-//            editor.apply();
+            SharedPreferences.Editor editor = mSettings.edit();
+            editor.putLong(SettingsContract.LAST_FOLDER, mTreePath.get(mTreePath.size() - 1).getId());
+            editor.apply();
 
-            ((CatalogActivity)getActivity()).refreshDecks();
-//            refreshDecks();
-//            Log.e("opa", mTreePath.toString());
+            refreshDecks();
+            Log.e("opa", mTreePath.toString());
 
             return;
-        }
-        else {
+        } else {
             this.getActivity().finish();
             return;
         }
@@ -1112,11 +1043,27 @@ public class FoldersFragment extends Fragment
         return true;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        clearTreePath();
 
+//    private boolean isDeckMarked(ImageView v) {
+//        if (v.getDrawable().getConstantState() == getResources().getDrawable( R.drawable.ic_deck).getConstantState())
+//            return false;
+//        return true;
+//    }
+
+
+    public void updatePathTextView() {
+        pathTextView.setText(getPath());
+    }
+
+    public String getPath() {
+        String path = "";
+        for (int c = 0; c < FoldersFragment.this.mTreePath.size(); c++) {
+            path += PATH_SEPARATOR + FoldersFragment.this.mTreePath.get(c).getName();
+        }
+        StringBuilder sb = new StringBuilder(path);
+        sb.deleteCharAt(0);
+        path = sb.toString();
+        return path;
     }
 
 }
