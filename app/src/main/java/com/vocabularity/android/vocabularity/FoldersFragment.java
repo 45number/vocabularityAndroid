@@ -705,7 +705,7 @@ public class FoldersFragment extends Fragment
                     projection,
                     selection,
                     selectionArgs,
-                    null);
+                    FolderContract.FolderEntry._ID + " DESC" );
         }
     }
 
