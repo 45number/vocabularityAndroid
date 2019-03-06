@@ -748,6 +748,38 @@ public class FoldersFragment extends Fragment
                 }
                 emptyFolderView.setVisibility(View.GONE);
             } else {
+
+                TextView emptyTitle = rootView.findViewById(R.id.empty_title_text);
+                TextView emptyDescription = rootView.findViewById(R.id.empty_subtitle_text);
+
+                if (mTreePath.get(mTreePath.size() - 1).getId() == 0) {
+                    emptyTitle.setText(R.string.empty_view_title_text);
+                    emptyDescription.setText(R.string.empty_view_subtitle_text);
+                } else {
+                    emptyTitle.setText(R.string.the_folder_is_empty);
+                    emptyDescription.setText(R.string.create_folder_or_upload_words);
+                }
+
+
+
+                /*if (mSettings.getLong(SettingsContract.LAST_FOLDER, 0L) != 0) {
+                    emptyTitle.setText(R.string.the_folder_is_empty);
+                    emptyDescription.setText(R.string.create_folder_or_upload_words);
+                } else {
+                    emptyTitle.setText(R.string.empty_view_title_text);
+                    emptyDescription.setText(R.string.empty_view_subtitle_text);
+                }*/
+
+                /*if (((CatalogActivity)getActivity()).getCurrentFolder() != null) {
+                    if (((CatalogActivity)getActivity()).getCurrentFolder().getId() != 0L) {
+                        TextView emptyTitle = rootView.findViewById(R.id.empty_title_text);
+                        emptyTitle.setText(R.string.the_folder_is_empty);
+                        TextView emptyDescription = rootView.findViewById(R.id.empty_subtitle_text);
+                        emptyDescription.setText(R.string.create_folder_or_upload_words);
+                    }
+                }*/
+
+
                 emptyFolderView.setVisibility(View.VISIBLE);
             }
             mCursorAdapter.swapCursor(data);

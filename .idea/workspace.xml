@@ -19,37 +19,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$10.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$11.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$11.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$12.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$13.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$14.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$15.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$3$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$3.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$4.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$5.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$6.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$7.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$8.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$9.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$16.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment$16.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/FoldersFragment.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$10.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$10.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$11.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$11.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$12.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$12.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$13.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$13.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$14.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$14.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$15.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$15.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$3$1.dex" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$3.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$3.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$4.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$4.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$5.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$5.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$6.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$6.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$7.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$7.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$8.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$8.dex" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$9.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$9.dex" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$16.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment$16.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/234/com/vocabularity/android/vocabularity/FoldersFragment.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/171/classes2.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/171/classes2.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
@@ -105,8 +85,8 @@
       <file leaf-file-name="FoldersFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FoldersFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-469">
-              <caret line="367" column="41" lean-forward="true" selection-start-line="367" selection-start-column="41" selection-end-line="367" selection-end-column="41" />
+            <state relative-caret-position="245">
+              <caret line="770" column="19" lean-forward="true" selection-start-line="770" selection-start-column="19" selection-end-line="770" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3402#3426#0" expanded="true" />
@@ -136,26 +116,45 @@
                 <element signature="e#23876#23877#0" expanded="true" />
                 <element signature="e#23917#24291#0" expanded="true" />
                 <element signature="e#24290#24291#0" expanded="true" />
-                <element signature="e#32243#32271#0" expanded="true" />
-                <element signature="e#32301#32327#0" expanded="true" />
-                <element signature="e#32364#32382#0" expanded="true" />
-                <element signature="e#32384#32551#0" expanded="true" />
-                <element signature="e#32550#32551#0" expanded="true" />
-                <element signature="e#32588#32612#0" expanded="true" />
-                <element signature="e#32614#32837#0" expanded="true" />
-                <element signature="e#32836#32837#0" expanded="true" />
-                <element signature="e#33290#33316#0" expanded="true" />
-                <element signature="e#33346#33370#0" expanded="true" />
-                <element signature="e#33407#33425#0" expanded="true" />
-                <element signature="e#33427#33598#0" expanded="true" />
-                <element signature="e#33597#33598#0" expanded="true" />
-                <element signature="e#33635#33659#0" expanded="true" />
-                <element signature="e#33661#33884#0" expanded="true" />
-                <element signature="e#33883#33884#0" expanded="true" />
-                <element signature="e#36869#36870#0" expanded="true" />
-                <element signature="e#36927#36928#0" expanded="true" />
-                <element signature="e#40377#40378#0" expanded="true" />
-                <element signature="e#40424#40425#0" expanded="true" />
+                <element signature="e#27230#27260#0" expanded="true" />
+                <element signature="e#27308#27341#0" expanded="true" />
+                <element signature="e#27408#27436#0" expanded="true" />
+                <element signature="e#27484#27522#0" expanded="true" />
+                <element signature="e#33865#33893#0" expanded="true" />
+                <element signature="e#33923#33949#0" expanded="true" />
+                <element signature="e#33986#34004#0" expanded="true" />
+                <element signature="e#34006#34173#0" expanded="true" />
+                <element signature="e#34172#34173#0" expanded="true" />
+                <element signature="e#34210#34234#0" expanded="true" />
+                <element signature="e#34236#34459#0" expanded="true" />
+                <element signature="e#34458#34459#0" expanded="true" />
+                <element signature="e#34912#34938#0" expanded="true" />
+                <element signature="e#34968#34992#0" expanded="true" />
+                <element signature="e#35029#35047#0" expanded="true" />
+                <element signature="e#35049#35220#0" expanded="true" />
+                <element signature="e#35219#35220#0" expanded="true" />
+                <element signature="e#35257#35281#0" expanded="true" />
+                <element signature="e#35283#35506#0" expanded="true" />
+                <element signature="e#35505#35506#0" expanded="true" />
+                <element signature="e#38491#38492#0" expanded="true" />
+                <element signature="e#38549#38550#0" expanded="true" />
+                <element signature="e#41999#42000#0" expanded="true" />
+                <element signature="e#42046#42047#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_folders.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_folders.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="72" column="58" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="58" />
+              <folding>
+                <element signature="e#1969#2000#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,7 +184,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mcu</find>
       <find>mark</find>
       <find>deck</find>
       <find>case</find>
@@ -215,6 +213,7 @@
       <find>SettingsContract.LAST_FOLDER</find>
       <find>addButtonEmpty</find>
       <find>chooseAddMode(</find>
+      <find>R.id.action_add:</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2291,9 +2290,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="x" value="310" />
+    <option name="y" value="-21" />
+    <option name="width" value="769" />
+    <option name="height" value="682" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -2333,6 +2333,17 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="vocabularity" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vocabularity" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="Vocabularity" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -2553,6 +2564,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54111844" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2560,7 +2572,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4678179" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2927383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36677632" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2590,7 +2602,6 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2761,16 +2772,6 @@
         <state relative-caret-position="-727">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_folders.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
-          <caret line="61" column="25" lean-forward="true" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -3053,10 +3054,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_folders.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="72" column="58" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="58" />
+          <folding>
+            <element signature="e#1969#2000#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FoldersFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-469">
-          <caret line="367" column="41" lean-forward="true" selection-start-line="367" selection-start-column="41" selection-end-line="367" selection-end-column="41" />
+        <state relative-caret-position="245">
+          <caret line="770" column="19" lean-forward="true" selection-start-line="770" selection-start-column="19" selection-end-line="770" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3402#3426#0" expanded="true" />
@@ -3086,26 +3100,30 @@
             <element signature="e#23876#23877#0" expanded="true" />
             <element signature="e#23917#24291#0" expanded="true" />
             <element signature="e#24290#24291#0" expanded="true" />
-            <element signature="e#32243#32271#0" expanded="true" />
-            <element signature="e#32301#32327#0" expanded="true" />
-            <element signature="e#32364#32382#0" expanded="true" />
-            <element signature="e#32384#32551#0" expanded="true" />
-            <element signature="e#32550#32551#0" expanded="true" />
-            <element signature="e#32588#32612#0" expanded="true" />
-            <element signature="e#32614#32837#0" expanded="true" />
-            <element signature="e#32836#32837#0" expanded="true" />
-            <element signature="e#33290#33316#0" expanded="true" />
-            <element signature="e#33346#33370#0" expanded="true" />
-            <element signature="e#33407#33425#0" expanded="true" />
-            <element signature="e#33427#33598#0" expanded="true" />
-            <element signature="e#33597#33598#0" expanded="true" />
-            <element signature="e#33635#33659#0" expanded="true" />
-            <element signature="e#33661#33884#0" expanded="true" />
-            <element signature="e#33883#33884#0" expanded="true" />
-            <element signature="e#36869#36870#0" expanded="true" />
-            <element signature="e#36927#36928#0" expanded="true" />
-            <element signature="e#40377#40378#0" expanded="true" />
-            <element signature="e#40424#40425#0" expanded="true" />
+            <element signature="e#27230#27260#0" expanded="true" />
+            <element signature="e#27308#27341#0" expanded="true" />
+            <element signature="e#27408#27436#0" expanded="true" />
+            <element signature="e#27484#27522#0" expanded="true" />
+            <element signature="e#33865#33893#0" expanded="true" />
+            <element signature="e#33923#33949#0" expanded="true" />
+            <element signature="e#33986#34004#0" expanded="true" />
+            <element signature="e#34006#34173#0" expanded="true" />
+            <element signature="e#34172#34173#0" expanded="true" />
+            <element signature="e#34210#34234#0" expanded="true" />
+            <element signature="e#34236#34459#0" expanded="true" />
+            <element signature="e#34458#34459#0" expanded="true" />
+            <element signature="e#34912#34938#0" expanded="true" />
+            <element signature="e#34968#34992#0" expanded="true" />
+            <element signature="e#35029#35047#0" expanded="true" />
+            <element signature="e#35049#35220#0" expanded="true" />
+            <element signature="e#35219#35220#0" expanded="true" />
+            <element signature="e#35257#35281#0" expanded="true" />
+            <element signature="e#35283#35506#0" expanded="true" />
+            <element signature="e#35505#35506#0" expanded="true" />
+            <element signature="e#38491#38492#0" expanded="true" />
+            <element signature="e#38549#38550#0" expanded="true" />
+            <element signature="e#41999#42000#0" expanded="true" />
+            <element signature="e#42046#42047#0" expanded="true" />
           </folding>
         </state>
       </provider>
