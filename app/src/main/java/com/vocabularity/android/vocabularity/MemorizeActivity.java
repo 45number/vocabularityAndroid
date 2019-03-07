@@ -19,6 +19,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.speech.tts.TextToSpeech;
+import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
 import android.support.transition.TransitionManager;
@@ -39,6 +40,7 @@ import android.widget.ToggleButton;
 
 import com.vocabularity.android.vocabularity.data.SettingsContract;
 import com.vocabularity.android.vocabularity.data.WordContract.WordEntry;
+import com.vocabularity.android.vocabularity.data.pathItem;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -59,7 +61,7 @@ public class MemorizeActivity extends AppCompatActivity implements
     private static final int DECK_LOADER = 0;
 
 
-    List<Word> mCursorData = new ArrayList<>();
+    ArrayList<Word> mCursorData;
 
 
     TextView wordTextView;
@@ -104,6 +106,7 @@ public class MemorizeActivity extends AppCompatActivity implements
 
     private boolean mIsDirectionReversed = false;
 
+    private static final String WORDS_KEY = "words";
 
     private String mWord;
     private String mTranslation;
@@ -149,6 +152,11 @@ public class MemorizeActivity extends AppCompatActivity implements
         }
 
 
+        if (savedInstanceState == null || !savedInstanceState.containsKey(WORDS_KEY)) {
+            mCursorData = new ArrayList<>();
+        } else {
+            mCursorData = savedInstanceState.getParcelableArrayList(WORDS_KEY);
+        }
 
 
         wordTextView = findViewById(R.id.word);
@@ -548,6 +556,12 @@ public class MemorizeActivity extends AppCompatActivity implements
 
         getLoaderManager().initLoader(DECK_LOADER, args, this);
 
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putParcelableArrayList(WORDS_KEY, mCursorData);
+        super.onSaveInstanceState(outState);
     }
 
     public void setViewVisibility(final View view, int opacity) {
@@ -977,7 +991,7 @@ public class MemorizeActivity extends AppCompatActivity implements
                 Collections.shuffle(mCursorData);
 
             assignValues1(mInitCounterValue);
-            cursor.close();
+//            cursor.close();
 
         }
     }
@@ -1008,7 +1022,7 @@ public class MemorizeActivity extends AppCompatActivity implements
                 URLConnection conexion = url.openConnection();
                 conexion.connect();
                 int lenghtOfFile = conexion.getContentLength();
-                Log.d("ANDRO_ASYNC", "Lenght of file: " + lenghtOfFile);
+//                Log.d("ANDRO_ASYNC", "Lenght of file: " + lenghtOfFile);
                 InputStream input = new BufferedInputStream(url.openStream());
 //                OutputStream output = new FileOutputStream( Environment.getExternalStorageDirectory().getPath() + "/opa/google_translate_audio.mp3");
 

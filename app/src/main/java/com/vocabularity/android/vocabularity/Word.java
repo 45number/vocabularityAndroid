@@ -1,8 +1,10 @@
 package com.vocabularity.android.vocabularity;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
-public class Word implements Comparable {
+public class Word implements Comparable, Parcelable {
 
     private int id;
     private String word;
@@ -17,6 +19,27 @@ public class Word implements Comparable {
         this.toRepeatMem = toRepeatMem;
         this.toRepeatSpell = toRepeatSpell;
     }
+
+    protected Word(Parcel in) {
+        id = in.readInt();
+        word = in.readString();
+        translation = in.readString();
+        toRepeatMem = in.readInt();
+        toRepeatSpell = in.readInt();
+    }
+
+    public static final Creator<Word> CREATOR = new Creator<Word>() {
+        @Override
+        public Word createFromParcel(Parcel in) {
+            return new Word(in);
+        }
+
+        @Override
+        public Word[] newArray(int size) {
+            return new Word[size];
+        }
+    };
+
     public String getWord() {
         return word;
     }
@@ -51,6 +74,16 @@ public class Word implements Comparable {
     public int compareTo(@NonNull Object o) {
         int compareId=((Word)o).getId();
         return this.id-compareId;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeLong(id);
     }
 //    @Override
 //    public String toString() {

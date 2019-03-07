@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-84:12
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-88:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\36253e8c11e0f4d6d37abd5b1a690724\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\3c68720bf122e57ddb8046a86a34a689\AndroidManifest.xml:17:1-22:12
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.7.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\android-image-cropper-2.7.0.aar\1f98fc951444aba8ce60262e1b93c8e4\AndroidManifest.xml:2:1-11:12
@@ -28,20 +28,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Professional\.
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\88fecfceae3b2722dcb719b19926ead2\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f826c7039d3d722a7f8059029dcdf083\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\add6f6dde2c048f8374ea8747e7968bd\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-84:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-88:12
+INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-88:12
 	package
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-84:12
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-88:12
 		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-84:12
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:1-88:12
 		INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:2:11-69
@@ -58,7 +58,7 @@ ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:7:22-64
 application
-ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:12:5-82:19
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:12:5-86:19
 MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\9333cc5ef3566bba002a59e03d0cdd04\AndroidManifest.xml:12:5-20
 MERGED from [com.getbase:floatingactionbutton:1.10.1] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\floatingactionbutton-1.10.1.aar\9333cc5ef3566bba002a59e03d0cdd04\AndroidManifest.xml:12:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Professional\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\dd8daa4119c634f6717da28ac9c0ed7c\AndroidManifest.xml:9:5-20
@@ -94,17 +94,15 @@ ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:25:27-74
 activity#com.vocabularity.android.vocabularity.EditorActivity
-ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:28:9-38:20
-	android:screenOrientation
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:31:13-49
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:29:9-38:20
 	android:parentActivityName
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:30:13-58
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:31:13-58
 	android:windowSoftInputMode
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:32:13-68
 	android:theme
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:33:13-47
 	android:name
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:29:13-43
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:30:13-43
 meta-data#android.support.PARENT_ACTIVITY
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:35:13-37:52
 	android:value
@@ -112,13 +110,11 @@ ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:36:17-63
 activity#com.theartofdev.edmodo.cropper.CropImageActivity
-ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:39:9-42:59
-	android:screenOrientation
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:41:13-49
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:40:9-42:59
 	android:theme
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:42:13-56
 	android:name
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:40:13-76
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:41:13-76
 provider#com.vocabularity.android.vocabularity.data.VProvider
 ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:44:9-47:40
 	android:authorities
@@ -128,49 +124,37 @@ ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main
 	android:name
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:45:13-43
 activity#com.vocabularity.android.vocabularity.WordEditorActivity
-ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:49:9-54:50
-	android:screenOrientation
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:52:13-49
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:50:9-54:50
 	android:parentActivityName
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:51:13-58
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:52:13-58
 	android:windowSoftInputMode
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:53:13-68
 	android:theme
 		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:54:13-47
 	android:name
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:50:13-47
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:51:13-47
 activity#com.vocabularity.android.vocabularity.MemorizeActivity
-ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:55:9-57:52
-	android:screenOrientation
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:57:13-49
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:56:9-58:16
 	android:name
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:56:13-45
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:57:13-45
 activity#com.vocabularity.android.vocabularity.SpellingActivity
-ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:58:9-62:15
-	android:screenOrientation
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:60:13-49
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:60:9-63:15
 	android:windowSoftInputMode
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:61:13-68
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:62:13-68
 	android:name
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:59:13-45
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:61:13-45
 activity#com.vocabularity.android.vocabularity.SettingsActivity
-ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:63:9-69:20
-	android:screenOrientation
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:65:13-49
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:65:9-71:20
 	android:name
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:64:13-45
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:66:13-45
 activity#com.vocabularity.android.vocabularity.FileChooser
-ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:70:9-76:20
-	android:screenOrientation
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:72:13-49
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:73:9-79:20
 	android:name
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:71:13-40
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:74:13-40
 activity#com.vocabularity.android.vocabularity.EditorDeckActivity
-ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:77:9-80:20
-	android:screenOrientation
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:79:13-49
+ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:81:9-84:20
 	android:name
-		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:78:13-47
+		ADDED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml:82:13-47
 uses-sdk
 INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Professional\AndroidStudioProjects\Vocabularity\app\src\main\AndroidManifest.xml

@@ -17,6 +17,7 @@ import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.speech.tts.TextToSpeech;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -57,7 +58,7 @@ public class SpellingActivity extends AppCompatActivity implements
     private static final int DECK_LOADER = 0;
 
 
-    List<Word> mCursorData = new ArrayList<>();
+    ArrayList<Word> mCursorData;
 
     TextView wordTextView;
     TextView translationTextView;
@@ -107,6 +108,7 @@ public class SpellingActivity extends AppCompatActivity implements
 
     private int mLearningLanguage;
 
+    private static final String WORDS_KEY = "words";
 
     private int mWrongWordCursorPosition;
 
@@ -178,6 +180,17 @@ public class SpellingActivity extends AppCompatActivity implements
         if(mSettings.contains(SettingsContract.IS_LOOPED)) {
             mIsLooped = mSettings.getBoolean(SettingsContract.IS_LOOPED, true);
         }
+
+
+
+        if (savedInstanceState == null || !savedInstanceState.containsKey(WORDS_KEY)) {
+            mCursorData = new ArrayList<>();
+        } else {
+            mCursorData = savedInstanceState.getParcelableArrayList(WORDS_KEY);
+        }
+
+
+
 
 
 
@@ -510,6 +523,12 @@ public class SpellingActivity extends AppCompatActivity implements
         getLoaderManager().initLoader(DECK_LOADER, args, this);
     }
 
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putParcelableArrayList(WORDS_KEY, mCursorData);
+        super.onSaveInstanceState(outState);
+    }
 
 
     public void finishEditing() {
@@ -1031,11 +1050,12 @@ public class SpellingActivity extends AppCompatActivity implements
                 Collections.shuffle(mCursorData);
 
             assignValues1(mInitCounterValue);
-            cursor.close();
+//            cursor.close();
 
-        } else {
-            Log.e("4444", "No here");
         }
+//        else {
+//            Log.e("4444", "No here");
+//        }
 
 
     }

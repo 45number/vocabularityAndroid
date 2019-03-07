@@ -209,7 +209,7 @@ public class FoldersFragment extends Fragment
         });
 
 
-        tts=new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
+        /*tts=new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 s = status;
@@ -223,7 +223,9 @@ public class FoldersFragment extends Fragment
                 }).start();
             }
         });
-        ConvertTextToSpeech(" ");
+        ConvertTextToSpeech(" ");*/
+
+        ttsStart();
 
         setHasOptionsMenu(true);
 //        folder_name is null or folder_name = ?
@@ -318,7 +320,7 @@ public class FoldersFragment extends Fragment
     public void onResume()
     {
         // After a pause OR at startup
-        super.onResume();
+
         //Refresh your stuff here
 
         Bundle repeatArgs = new Bundle();
@@ -328,8 +330,34 @@ public class FoldersFragment extends Fragment
         repeatArgs.putStringArray("selectionArgs", repeatSelectionArgs);
         getLoaderManager().restartLoader(REPEAT_LOADER, repeatArgs, FoldersFragment.this);
 
+
+        ttsStart();
+
+
         updatePathTextView();
+
+        super.onResume();
     }
+
+
+    public void ttsStart() {
+        tts=new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                s = status;
+                new Thread(new Runnable() {
+                    public void run() {
+                        if(s != TextToSpeech.ERROR) {
+                            tts.setPitch(1.1f); // saw from internet
+                            tts.setLanguage(Locale.UK);
+                        }
+                    }
+                }).start();
+            }
+        });
+        ConvertTextToSpeech(" ");
+    }
+
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -563,7 +591,6 @@ public class FoldersFragment extends Fragment
 
 
     }
-
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
@@ -891,13 +918,19 @@ public class FoldersFragment extends Fragment
                 }
                 return true;
             case 1:
-                Class activityClass = EditorActivity.class;
-                if (mAdapterNumber == 1)
-                    activityClass = EditorActivity.class; // Need to be changed
-                Intent intent = new Intent(getActivity(), activityClass);
-                Uri currentPetUri = ContentUris.withAppendedId(FolderEntry.CONTENT_URI, infoId);
-                intent.setData(currentPetUri);
-                startActivity(intent);
+                if (isFolder(folderImage)) {
+                    Class activityClass = EditorActivity.class;
+                    Intent intent = new Intent(getActivity(), activityClass);
+                    Uri currentPetUri = ContentUris.withAppendedId(FolderContract.FolderEntry.CONTENT_URI, infoId);
+                    intent.setData(currentPetUri);
+                    startActivity(intent);
+                } else {
+                    Class activityClass = EditorDeckActivity.class; // Need to be changed
+                    Intent intent = new Intent(getActivity(), activityClass);
+                    intent.putExtra("folder", ((CatalogActivity)getActivity()).getCurrentFolder().getId() );
+                    intent.putExtra("deck", infoId);
+                    startActivityForResult(intent, RESULT_SETTINGS);
+                }
                 return true;
             case 2:
                 if (isFolder(folderImage)) {
@@ -1038,12 +1071,24 @@ public class FoldersFragment extends Fragment
 
     @Override
     public void onPause() {
-        super.onPause();
-
-
+        if(tts != null){
+            tts.stop();
+            tts.shutdown();
+        }
 
         updatePathTextView();
+
+        super.onPause();
     }
+
+/*    @Override
+    public void onStop() {
+        if(tts != null){
+            tts.stop();
+            tts.shutdown();
+        }
+        super.onStop();
+    }*/
 
     public pathItem getCurrentFolder() {
         return mTreePath.get(mTreePath.size() - 1);
