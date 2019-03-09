@@ -96,7 +96,7 @@ public class MemorizeActivity extends AppCompatActivity implements
 
     private Integer mWordId;
     int mWordsInDeck;
-    int mInitCounterValue = 0;
+    int mInitCounterValue;
 
     private boolean mIsLooped = false;
     private boolean mIsShuffled = true;
@@ -107,6 +107,7 @@ public class MemorizeActivity extends AppCompatActivity implements
     private boolean mIsDirectionReversed = false;
 
     private static final String WORDS_KEY = "words";
+    private static final String COUNTER_KEY = "counter";
 
     private String mWord;
     private String mTranslation;
@@ -154,8 +155,10 @@ public class MemorizeActivity extends AppCompatActivity implements
 
         if (savedInstanceState == null || !savedInstanceState.containsKey(WORDS_KEY)) {
             mCursorData = new ArrayList<>();
+            mInitCounterValue = 0;
         } else {
             mCursorData = savedInstanceState.getParcelableArrayList(WORDS_KEY);
+            mInitCounterValue = savedInstanceState.getInt(COUNTER_KEY, 0);
         }
 
 
@@ -530,37 +533,47 @@ public class MemorizeActivity extends AppCompatActivity implements
         });
 
 
-        Long folderIdLong = getIntent().getLongExtra("folder", -1L);
-        Long deckIdLong = getIntent().getLongExtra("deck", -1L);
 
-        Bundle args=new Bundle();
-        if (folderIdLong == -1L || deckIdLong == -1L) {
 
-            Integer langId = getIntent().getIntExtra("lang_learning", 1);
-            String langString = langId.toString();
 
-            args.putString("selection", WordEntry.COLUMN_REPEAT_MEM + " = ? AND " + WordEntry.COLUMN_LANGUAGE_LEARNING + "=?");
-            String[] selectionArgs = {"1", langString};
-            args.putStringArray("selectionArgs", selectionArgs);
-            String sortOrder = WordEntry._ID;
-            args.putString("sortOrder", sortOrder);
-        } else {
-            args.putString("selection", WordEntry.COLUMN_FOLDER + " = ?");
-            String folder = folderIdLong.toString();
-            String[] selectionArgs = {folder};
-            args.putStringArray("selectionArgs", selectionArgs);
-            Long skipLong = deckIdLong * mSettingWordsAtTime;
-            String sortOrder = WordEntry._ID + " LIMIT " + skipLong + "," + mSettingWordsAtTime;
-            args.putString("sortOrder", sortOrder);
-        }
+//        if (savedInstanceState == null || !savedInstanceState.containsKey(WORDS_KEY)) {
 
-        getLoaderManager().initLoader(DECK_LOADER, args, this);
+            Long folderIdLong = getIntent().getLongExtra("folder", -1L);
+            Long deckIdLong = getIntent().getLongExtra("deck", -1L);
+
+            Bundle args=new Bundle();
+            if (folderIdLong == -1L || deckIdLong == -1L) {
+
+                Integer langId = getIntent().getIntExtra("lang_learning", 1);
+                String langString = langId.toString();
+
+                args.putString("selection", WordEntry.COLUMN_REPEAT_MEM + " = ? AND " + WordEntry.COLUMN_LANGUAGE_LEARNING + "=?");
+                String[] selectionArgs = {"1", langString};
+                args.putStringArray("selectionArgs", selectionArgs);
+                String sortOrder = WordEntry._ID;
+                args.putString("sortOrder", sortOrder);
+            } else {
+                args.putString("selection", WordEntry.COLUMN_FOLDER + " = ?");
+                String folder = folderIdLong.toString();
+                String[] selectionArgs = {folder};
+                args.putStringArray("selectionArgs", selectionArgs);
+                Long skipLong = deckIdLong * mSettingWordsAtTime;
+                String sortOrder = WordEntry._ID + " LIMIT " + skipLong + "," + mSettingWordsAtTime;
+                args.putString("sortOrder", sortOrder);
+            }
+
+            getLoaderManager().initLoader(DECK_LOADER, args, this);
+
+//        } else {
+//            assignValues1(mInitCounterValue);
+//        }
 
     }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         outState.putParcelableArrayList(WORDS_KEY, mCursorData);
+        outState.putInt(COUNTER_KEY, mInitCounterValue);
         super.onSaveInstanceState(outState);
     }
 

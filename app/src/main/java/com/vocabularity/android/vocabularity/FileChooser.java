@@ -25,6 +25,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
@@ -81,6 +82,8 @@ public class FileChooser extends AppCompatActivity //ListActivity
         progressCard = findViewById(R.id.progressCard);
         progressBackground.setVisibility(View.GONE);
         progressCard.setVisibility(View.GONE);
+
+
 
 
 //        dir = new ArrayList<>();
@@ -210,6 +213,8 @@ public class FileChooser extends AppCompatActivity //ListActivity
             onFileClick(o);
         }
     }*/
+    
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

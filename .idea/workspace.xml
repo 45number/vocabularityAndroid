@@ -10,8 +10,467 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5e2b63f-b925-4f84-afbe-93a19f2f8cb9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$10.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$11.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$11.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$12.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$13.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$14.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$15.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$16.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$16.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$17.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$17.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$18.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$18.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$19.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$19.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$2.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$20.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$20.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$21$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$21$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$21.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$21.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$3.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$4.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$5.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$6.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$7$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$7$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$7.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$8.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$9.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$DownloadFileAsync.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity$DownloadFileAsync.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/MemorizeActivity.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$10.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$10.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$11.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$11.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$12.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$12.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$13.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$13.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$14.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$14.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$15.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$15.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$16.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$16.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$17.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$17.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$18.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$18.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$19.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$19.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$2.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$20$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$20$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$20.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$20.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$3.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$4.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$5.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$6.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$7.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$8.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$9$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$9$1.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity$9.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/vocabularity/android/vocabularity/SpellingActivity.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/6yTnh4E8Oov+vHFZ4rv2jACeMjQ=" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0.jar" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/1.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/1.jar" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/2.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/2.jar" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/256.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/257.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/258.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/259.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/260.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/262.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/arch/lifecycle/livedata/core/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/compat/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$anim.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$animator.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/design/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/fragment/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/mediacompat/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/v7/cardview/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/v7/cardview/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/v7/cardview/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/v7/cardview/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/v7/cardview/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/android/support/v7/cardview/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/266/com/android/tools/ir/dummy/slice_0.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/267/android/arch/lifecycle/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/267/com/android/tools/ir/dummy/slice_1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/coreutils/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v4/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$anim.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/android/support/v7/appcompat/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/268/com/android/tools/ir/dummy/slice_2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/graphics/drawable/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/android/support/transition/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/269/com/android/tools/ir/dummy/slice_3.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/android/arch/core/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/android/tools/ir/dummy/slice_4.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/bumptech/glide/gifdecoder/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$anim.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$menu.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/theartofdev/edmodo/cropper/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/App.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/BuildConfig.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/CatalogActivity.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/DeckCursorAdapter.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorActivity$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorActivity$2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorActivity$3.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorActivity$4.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorActivity$5.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorActivity$6.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorActivity$7.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorActivity$8.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorActivity$9.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorActivity.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorDeckActivity$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorDeckActivity$2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/EditorDeckActivity.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FileArrayAdapter.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FileChooser$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FileChooser$2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FileChooser$3.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FileChooser.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FilesItem.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/Folder.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FolderCursorAdapter.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$10.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$11.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$12.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$13.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$14.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$15.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$16.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$3.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$4.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$5$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$5.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$6.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$7.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$8.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment$9.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersFragment.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FoldersPagerAdapter.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/FragmentChangeListener.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/LanguageSettingAdapter.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/LanguageSettingListItem.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$10.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$11.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$12.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$13.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$14.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$15.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$16.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$17.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$18.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$19.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$20.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$21$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$21.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$3.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$4.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$5.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$6.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$7$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$7.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$8.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$9.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity$DownloadFileAsync.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/MemorizeActivity.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/NonScrollListView.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/OnBackPressed.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$anim.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$animator.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$array.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$menu.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$mipmap.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R$transition.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/RoundedBackgroundSpan.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SettingsActivity$1$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SettingsActivity$1$2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SettingsActivity$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SettingsActivity$2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SettingsActivity$3.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SettingsActivity$4.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SettingsActivity$5.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SettingsActivity$6.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SettingsActivity.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$10.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$11.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$12.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$13.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$14.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$15.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$16.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$17.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$18.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$19.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$20$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$20.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$3.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$4.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$5.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$6.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$7.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$8.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$9$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity$9.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/SpellingActivity.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/StartupLanguagesFragment$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/StartupLanguagesFragment$2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/StartupLanguagesFragment.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/StartupPagerAdapter.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/StartupQuantityFragment$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/StartupQuantityFragment.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/ThreeViewsAdapter.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/ThreeViewsListItem.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/Word$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/Word.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/WordCursorAdapter.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/WordEditorActivity$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/WordEditorActivity$2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/WordEditorActivity$3.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/WordEditorActivity.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/270/com/vocabularity/android/vocabularity/XYValue.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/271/android/arch/lifecycle/viewmodel/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/271/com/android/tools/ir/dummy/slice_5.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/272/com/android/tools/ir/dummy/slice_6.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/272/com/getbase/floatingactionbutton/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/272/com/getbase/floatingactionbutton/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/272/com/getbase/floatingactionbutton/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/272/com/getbase/floatingactionbutton/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/272/com/getbase/floatingactionbutton/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/272/com/getbase/floatingactionbutton/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/coreui/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/android/support/v7/recyclerview/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/273/com/android/tools/ir/dummy/slice_7.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/graphics/drawable/animated/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/android/support/multidex/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/android/tools/ir/dummy/slice_8.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$bool.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$color.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$dimen.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$drawable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$integer.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$layout.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$string.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$style.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/bumptech/glide/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/DeckContract$DeckEntry.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/DeckContract.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/FolderContract$FolderEntry.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/FolderContract.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/SettingsContract.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/VDbHelper.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/VProvider.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/WordContract$WordEntry.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/WordContract.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/pathItem$1.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/274/com/vocabularity/android/vocabularity/data/pathItem.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/275/android/support/constraint/R$attr.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/275/android/support/constraint/R$id.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/275/android/support/constraint/R$styleable.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/275/android/support/constraint/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/275/android/support/exifinterface/R.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/275/com/android/tools/ir/dummy/slice_9.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/3.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/3.jar" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/4.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/4.jar" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/5.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/5.jar" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/6.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/6.jar" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/7.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/7.jar" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/8.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/8.jar" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/9.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/9.jar" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/__content__.json" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/__content__.json" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/191/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/192/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/193/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/194/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/195/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/196/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/197/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/198/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/199/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/200/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/201/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/201/classes2.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/201/classes3.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/202/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/203/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/204/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/205/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/206/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/207/classes.dex" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FileChooser.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FileChooser.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/MemorizeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/MemorizeActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/SpellingActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/SpellingActivity.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,23 +505,90 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1394">
               <caret line="82" column="13" lean-forward="false" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
         </entry>
       </file>
       <file leaf-file-name="MemorizeActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/MemorizeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8585">
-              <caret line="564" column="5" lean-forward="false" selection-start-line="560" selection-start-column="4" selection-end-line="564" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="221">
+              <caret line="577" column="5" lean-forward="true" selection-start-line="572" selection-start-column="4" selection-end-line="577" selection-end-column="5" />
+              <folding>
+                <element signature="e#6985#7813#0" expanded="true" />
+                <element signature="e#7812#7813#0" expanded="true" />
+                <element signature="e#8656#8801#0" expanded="true" />
+                <element signature="e#8800#8801#0" expanded="true" />
+                <element signature="e#9107#9257#0" expanded="true" />
+                <element signature="e#9256#9257#0" expanded="true" />
+                <element signature="e#9364#9552#0" expanded="true" />
+                <element signature="e#9551#9552#0" expanded="true" />
+                <element signature="e#9670#9862#0" expanded="true" />
+                <element signature="e#9861#9862#0" expanded="true" />
+                <element signature="e#9909#10220#0" expanded="true" />
+                <element signature="e#10219#10220#0" expanded="true" />
+                <element signature="e#10263#13480#0" expanded="true" />
+                <element signature="e#10774#11403#0" expanded="true" />
+                <element signature="e#11402#11403#0" expanded="true" />
+                <element signature="e#13479#13480#0" expanded="true" />
+                <element signature="e#13526#13681#0" expanded="true" />
+                <element signature="e#13680#13681#0" expanded="true" />
+                <element signature="e#13726#13878#0" expanded="true" />
+                <element signature="e#13877#13878#0" expanded="true" />
+                <element signature="e#13921#16041#0" expanded="true" />
+                <element signature="e#14865#14909#0" expanded="true" />
+                <element signature="e#16040#16041#0" expanded="true" />
+                <element signature="e#16086#16759#0" expanded="true" />
+                <element signature="e#16758#16759#0" expanded="true" />
+                <element signature="e#16805#17704#0" expanded="true" />
+                <element signature="e#17703#17704#0" expanded="true" />
+                <element signature="e#17749#18262#0" expanded="true" />
+                <element signature="e#18261#18262#0" expanded="true" />
+                <element signature="e#20189#20447#0" expanded="true" />
+                <element signature="e#20446#20447#0" expanded="true" />
+                <element signature="e#20553#20818#0" expanded="true" />
+                <element signature="e#20817#20818#0" expanded="true" />
+                <element signature="e#22815#22965#0" expanded="true" />
+                <element signature="e#22964#22965#0" expanded="true" />
+                <element signature="e#23441#23467#0" expanded="true" />
+                <element signature="e#23497#23521#0" expanded="true" />
+                <element signature="e#23558#23576#0" expanded="true" />
+                <element signature="e#23578#23739#0" expanded="true" />
+                <element signature="e#23738#23739#0" expanded="true" />
+                <element signature="e#23776#23800#0" expanded="true" />
+                <element signature="e#23802#24025#0" expanded="true" />
+                <element signature="e#24024#24025#0" expanded="true" />
+                <element signature="e#24247#24845#0" expanded="true" />
+                <element signature="e#24844#24845#0" expanded="true" />
+                <element signature="e#25229#25584#0" expanded="true" />
+                <element signature="e#25583#25584#0" expanded="true" />
+                <element signature="e#26787#26831#0" expanded="true" />
+                <element signature="e#27920#28576#0" expanded="true" />
+                <element signature="e#28078#28542#0" expanded="true" />
+                <element signature="e#28541#28542#0" expanded="true" />
+                <element signature="e#28575#28576#0" expanded="true" />
+                <element signature="e#29367#29411#0" expanded="true" />
+                <marker date="1552088990649" expanded="true" signature="19698:19766" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileChooser.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FileChooser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2550">
+              <caret line="215" column="4" lean-forward="false" selection-start-line="215" selection-start-column="4" selection-end-line="215" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,9 +596,61 @@
       <file leaf-file-name="SpellingActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/SpellingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16915">
-              <caret line="1057" column="11" lean-forward="false" selection-start-line="1055" selection-start-column="10" selection-end-line="1057" selection-end-column="11" />
-              <folding />
+            <state relative-caret-position="611">
+              <caret line="500" column="0" lean-forward="false" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="0" />
+              <folding>
+                <element signature="e#6847#7345#0" expanded="true" />
+                <element signature="e#7344#7345#0" expanded="true" />
+                <element signature="e#9210#9355#0" expanded="true" />
+                <element signature="e#9354#9355#0" expanded="true" />
+                <element signature="e#9657#9806#0" expanded="true" />
+                <element signature="e#9805#9806#0" expanded="true" />
+                <element signature="e#9924#10077#0" expanded="true" />
+                <element signature="e#10076#10077#0" expanded="true" />
+                <element signature="e#10124#10473#0" expanded="true" />
+                <element signature="e#10472#10473#0" expanded="true" />
+                <element signature="e#10517#11227#0" expanded="true" />
+                <element signature="e#11226#11227#0" expanded="true" />
+                <element signature="e#11273#12209#0" expanded="true" />
+                <element signature="e#12208#12209#0" expanded="true" />
+                <element signature="e#12254#12461#0" expanded="true" />
+                <element signature="e#12460#12461#0" expanded="true" />
+                <element signature="e#12505#14107#0" expanded="true" />
+                <element signature="e#13679#13906#0" expanded="true" />
+                <element signature="e#13905#13906#0" expanded="true" />
+                <element signature="e#14106#14107#0" expanded="true" />
+                <element signature="e#14152#14307#0" expanded="true" />
+                <element signature="e#14306#14307#0" expanded="true" />
+                <element signature="e#14352#14504#0" expanded="true" />
+                <element signature="e#14503#14504#0" expanded="true" />
+                <element signature="e#14547#16058#0" expanded="true" />
+                <element signature="e#15283#15327#0" expanded="true" />
+                <element signature="e#16057#16058#0" expanded="true" />
+                <element signature="e#18567#18754#0" expanded="true" />
+                <element signature="e#18753#18754#0" expanded="true" />
+                <element signature="e#18974#19000#0" expanded="true" />
+                <element signature="e#19030#19054#0" expanded="true" />
+                <element signature="e#19091#19109#0" expanded="true" />
+                <element signature="e#19111#19272#0" expanded="true" />
+                <element signature="e#19271#19272#0" expanded="true" />
+                <element signature="e#19309#19333#0" expanded="true" />
+                <element signature="e#19335#19558#0" expanded="true" />
+                <element signature="e#19557#19558#0" expanded="true" />
+                <element signature="e#20833#20877#0" expanded="true" />
+                <element signature="e#22048#22306#0" expanded="true" />
+                <element signature="e#22305#22306#0" expanded="true" />
+                <element signature="e#22412#22677#0" expanded="true" />
+                <element signature="e#22676#22677#0" expanded="true" />
+                <element signature="e#22806#23404#0" expanded="true" />
+                <element signature="e#23403#23404#0" expanded="true" />
+                <element signature="e#23993#24348#0" expanded="true" />
+                <element signature="e#24347#24348#0" expanded="true" />
+                <element signature="e#24448#25104#0" expanded="true" />
+                <element signature="e#24606#25070#0" expanded="true" />
+                <element signature="e#25069#25070#0" expanded="true" />
+                <element signature="e#25103#25104#0" expanded="true" />
+                <element signature="e#25895#25939#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,10 +685,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FoldersFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FoldersFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FoldersFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
+            <state relative-caret-position="2924">
               <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -137,12 +715,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>LAST_FOLDER</find>
-      <find>refreshMemWords() {</find>
-      <find>getCurrentFolder() {</find>
-      <find>getName</find>
-      <find>updatePathTextView</find>
-      <find>onpause</find>
       <find>onResume</find>
       <find>markFolder</find>
       <find>onloaderre</find>
@@ -167,6 +739,12 @@
       <find>data.clo</find>
       <find>ttsStart</find>
       <find>close</find>
+      <find>mInitCounterValue</find>
+      <find>onCardClick</find>
+      <find>mIsDirectionReversed</find>
+      <find>onSaveInstanceState</find>
+      <find>COUNTER_KEY</find>
+      <find>onloa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2210,7 +2788,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/WordEditorActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/pets/FileChooser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/vocabularity/FileChooser.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FileChooser.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/data/PetContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/WordEditorActivity.java" />
@@ -2235,10 +2812,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/data/VProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FolderCursorAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/Word.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/MemorizeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/SpellingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FoldersFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/MemorizeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/SpellingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FileChooser.java" />
       </list>
     </option>
   </component>
@@ -2264,8 +2842,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2287,13 +2863,6 @@
             <path>
               <item name="Vocabularity" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="vocabularity" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Vocabularity" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
@@ -2306,15 +2875,17 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="last_opened_file_path" value="D:/Android_projects_backups/Vocabularity_122_branch-37/Vocabularity" />
-    <property name="device.picker.selection" value="294ca51212047ece" />
+    <property name="device.picker.selection" value="000e26a86ad88f" />
     <property name="android.profiler.active" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="lastFolderRoot" value="C:/temp/excel_screenshot.PNG" />
@@ -2510,8 +3081,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2586,116 +3158,107 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_spelling.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3991">
-          <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_startup.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_startup.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_word_editor.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_word_editor.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="66" column="38" lean-forward="false" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/add_picker.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/add_picker.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="83" column="50" lean-forward="true" selection-start-line="83" selection-start-column="50" selection-end-line="83" selection-end-column="50" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/deck_item.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/deck_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-302">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/excel_explanation.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/excel_explanation.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-727">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_startup_languages.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-523">
           <caret line="121" column="47" lean-forward="false" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="47" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_startup_quantity.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_startup_quantity.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1067">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_files.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_files.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-472">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/mode_picker.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/mode_picker.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="52" column="43" lean-forward="true" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/set_words_at_time_dialog.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/set_words_at_time_dialog.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-200">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/SettingsActivity.java">
@@ -2720,43 +3283,46 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/word_list_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/startup_languages.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-47">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/settings_row_words_at_time.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/settings_row_words_at_time.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-472">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/settings_row.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-557">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/App.java">
@@ -2772,13 +3338,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="36" column="47" lean-forward="false" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FoldersPagerAdapter.java">
@@ -2907,13 +3473,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_folders.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="72" column="58" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="58" />
+          <folding>
+            <element signature="e#1969#2000#0" expanded="false" />
+          </folding>
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/data/pathItem.java">
@@ -2943,45 +3512,30 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_memorize.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3604">
-          <caret line="212" column="52" lean-forward="true" selection-start-line="212" selection-start-column="52" selection-end-line="212" selection-end-column="52" />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/MemorizeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8585">
-          <caret line="564" column="5" lean-forward="false" selection-start-line="560" selection-start-column="4" selection-end-line="564" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/SpellingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16915">
-          <caret line="1057" column="11" lean-forward="false" selection-start-line="1055" selection-start-column="10" selection-end-line="1057" selection-end-column="11" />
+        <state relative-caret-position="3604">
+          <caret line="212" column="52" lean-forward="true" selection-start-line="212" selection-start-column="52" selection-end-line="212" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1394">
           <caret line="82" column="13" lean-forward="false" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FoldersFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
+        <state relative-caret-position="2924">
           <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2989,6 +3543,139 @@
             <element signature="e#39897#39898#0" expanded="true" />
             <element signature="e#43347#43348#0" expanded="true" />
             <element signature="e#43394#43395#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/SpellingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="500" column="0" lean-forward="false" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="0" />
+          <folding>
+            <element signature="e#6847#7345#0" expanded="true" />
+            <element signature="e#7344#7345#0" expanded="true" />
+            <element signature="e#9210#9355#0" expanded="true" />
+            <element signature="e#9354#9355#0" expanded="true" />
+            <element signature="e#9657#9806#0" expanded="true" />
+            <element signature="e#9805#9806#0" expanded="true" />
+            <element signature="e#9924#10077#0" expanded="true" />
+            <element signature="e#10076#10077#0" expanded="true" />
+            <element signature="e#10124#10473#0" expanded="true" />
+            <element signature="e#10472#10473#0" expanded="true" />
+            <element signature="e#10517#11227#0" expanded="true" />
+            <element signature="e#11226#11227#0" expanded="true" />
+            <element signature="e#11273#12209#0" expanded="true" />
+            <element signature="e#12208#12209#0" expanded="true" />
+            <element signature="e#12254#12461#0" expanded="true" />
+            <element signature="e#12460#12461#0" expanded="true" />
+            <element signature="e#12505#14107#0" expanded="true" />
+            <element signature="e#13679#13906#0" expanded="true" />
+            <element signature="e#13905#13906#0" expanded="true" />
+            <element signature="e#14106#14107#0" expanded="true" />
+            <element signature="e#14152#14307#0" expanded="true" />
+            <element signature="e#14306#14307#0" expanded="true" />
+            <element signature="e#14352#14504#0" expanded="true" />
+            <element signature="e#14503#14504#0" expanded="true" />
+            <element signature="e#14547#16058#0" expanded="true" />
+            <element signature="e#15283#15327#0" expanded="true" />
+            <element signature="e#16057#16058#0" expanded="true" />
+            <element signature="e#18567#18754#0" expanded="true" />
+            <element signature="e#18753#18754#0" expanded="true" />
+            <element signature="e#18974#19000#0" expanded="true" />
+            <element signature="e#19030#19054#0" expanded="true" />
+            <element signature="e#19091#19109#0" expanded="true" />
+            <element signature="e#19111#19272#0" expanded="true" />
+            <element signature="e#19271#19272#0" expanded="true" />
+            <element signature="e#19309#19333#0" expanded="true" />
+            <element signature="e#19335#19558#0" expanded="true" />
+            <element signature="e#19557#19558#0" expanded="true" />
+            <element signature="e#20833#20877#0" expanded="true" />
+            <element signature="e#22048#22306#0" expanded="true" />
+            <element signature="e#22305#22306#0" expanded="true" />
+            <element signature="e#22412#22677#0" expanded="true" />
+            <element signature="e#22676#22677#0" expanded="true" />
+            <element signature="e#22806#23404#0" expanded="true" />
+            <element signature="e#23403#23404#0" expanded="true" />
+            <element signature="e#23993#24348#0" expanded="true" />
+            <element signature="e#24347#24348#0" expanded="true" />
+            <element signature="e#24448#25104#0" expanded="true" />
+            <element signature="e#24606#25070#0" expanded="true" />
+            <element signature="e#25069#25070#0" expanded="true" />
+            <element signature="e#25103#25104#0" expanded="true" />
+            <element signature="e#25895#25939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/MemorizeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="577" column="5" lean-forward="true" selection-start-line="572" selection-start-column="4" selection-end-line="577" selection-end-column="5" />
+          <folding>
+            <element signature="e#6985#7813#0" expanded="true" />
+            <element signature="e#7812#7813#0" expanded="true" />
+            <element signature="e#8656#8801#0" expanded="true" />
+            <element signature="e#8800#8801#0" expanded="true" />
+            <element signature="e#9107#9257#0" expanded="true" />
+            <element signature="e#9256#9257#0" expanded="true" />
+            <element signature="e#9364#9552#0" expanded="true" />
+            <element signature="e#9551#9552#0" expanded="true" />
+            <element signature="e#9670#9862#0" expanded="true" />
+            <element signature="e#9861#9862#0" expanded="true" />
+            <element signature="e#9909#10220#0" expanded="true" />
+            <element signature="e#10219#10220#0" expanded="true" />
+            <element signature="e#10263#13480#0" expanded="true" />
+            <element signature="e#10774#11403#0" expanded="true" />
+            <element signature="e#11402#11403#0" expanded="true" />
+            <element signature="e#13479#13480#0" expanded="true" />
+            <element signature="e#13526#13681#0" expanded="true" />
+            <element signature="e#13680#13681#0" expanded="true" />
+            <element signature="e#13726#13878#0" expanded="true" />
+            <element signature="e#13877#13878#0" expanded="true" />
+            <element signature="e#13921#16041#0" expanded="true" />
+            <element signature="e#14865#14909#0" expanded="true" />
+            <element signature="e#16040#16041#0" expanded="true" />
+            <element signature="e#16086#16759#0" expanded="true" />
+            <element signature="e#16758#16759#0" expanded="true" />
+            <element signature="e#16805#17704#0" expanded="true" />
+            <element signature="e#17703#17704#0" expanded="true" />
+            <element signature="e#17749#18262#0" expanded="true" />
+            <element signature="e#18261#18262#0" expanded="true" />
+            <element signature="e#20189#20447#0" expanded="true" />
+            <element signature="e#20446#20447#0" expanded="true" />
+            <element signature="e#20553#20818#0" expanded="true" />
+            <element signature="e#20817#20818#0" expanded="true" />
+            <element signature="e#22815#22965#0" expanded="true" />
+            <element signature="e#22964#22965#0" expanded="true" />
+            <element signature="e#23441#23467#0" expanded="true" />
+            <element signature="e#23497#23521#0" expanded="true" />
+            <element signature="e#23558#23576#0" expanded="true" />
+            <element signature="e#23578#23739#0" expanded="true" />
+            <element signature="e#23738#23739#0" expanded="true" />
+            <element signature="e#23776#23800#0" expanded="true" />
+            <element signature="e#23802#24025#0" expanded="true" />
+            <element signature="e#24024#24025#0" expanded="true" />
+            <element signature="e#24247#24845#0" expanded="true" />
+            <element signature="e#24844#24845#0" expanded="true" />
+            <element signature="e#25229#25584#0" expanded="true" />
+            <element signature="e#25583#25584#0" expanded="true" />
+            <element signature="e#26787#26831#0" expanded="true" />
+            <element signature="e#27920#28576#0" expanded="true" />
+            <element signature="e#28078#28542#0" expanded="true" />
+            <element signature="e#28541#28542#0" expanded="true" />
+            <element signature="e#28575#28576#0" expanded="true" />
+            <element signature="e#29367#29411#0" expanded="true" />
+            <marker date="1552088990649" expanded="true" signature="19698:19766" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vocabularity/android/vocabularity/FileChooser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="215" column="4" lean-forward="false" selection-start-line="215" selection-start-column="4" selection-end-line="215" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
