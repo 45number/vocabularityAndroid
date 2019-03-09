@@ -213,7 +213,7 @@ public class FileChooser extends AppCompatActivity //ListActivity
             onFileClick(o);
         }
     }*/
-    
+
 
 
     @Override
@@ -245,6 +245,7 @@ public class FileChooser extends AppCompatActivity //ListActivity
 
         progressBackground.setVisibility(View.VISIBLE);
         progressCard.setVisibility(View.VISIBLE);
+        listView.setEnabled(false);
 
         AsyncTask.execute(new Runnable() {
             @Override
@@ -260,6 +261,8 @@ public class FileChooser extends AppCompatActivity //ListActivity
     }
 
     private void readExcelData(String filePath) {
+
+//        listView.setEnabled(false);
 
         File inputFile = new File(filePath);
 

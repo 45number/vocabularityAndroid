@@ -15,11 +15,15 @@ import android.net.Uri;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -86,6 +90,158 @@ public class WordEditorActivity extends AppCompatActivity  implements
             }
         });
 
+
+
+
+
+
+        /*mWordEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                final String wordString = mWordEditText.getText().toString().trim();
+                final String translationString = mTranslationEditText.getText().toString().trim();
+
+                if ("".equals(wordString) || "".equals(translationString)
+                        || TextUtils.isEmpty(wordString) || TextUtils.isEmpty(translationString)) {
+                    mWordEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+                    mTranslationEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+                    setSwitchableFocusForEditText(mWordEditText);
+                    setSwitchableFocusForEditText(mTranslationEditText);
+                } else {
+                    mWordEditText.setImeOptions(EditorInfo.IME_ACTION_GO);
+                    mTranslationEditText.setImeOptions(EditorInfo.IME_ACTION_GO);
+
+                    saveWordOnEnter(mWordEditText);
+                    saveWordOnEnter(mTranslationEditText);
+
+//                    setSwitchableFocusForEditText(mWordEditText);
+//                    setSwitchableFocusForEditText(mTranslationEditText);
+                }
+            }
+        });
+
+        mTranslationEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                final String wordString = mWordEditText.getText().toString().trim();
+                final String translationString = mTranslationEditText.getText().toString().trim();
+
+                if ("".equals(wordString) || "".equals(translationString)
+                        || TextUtils.isEmpty(wordString) || TextUtils.isEmpty(translationString)) {
+                    mWordEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+                    mTranslationEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+                    setSwitchableFocusForEditText(mWordEditText);
+                    setSwitchableFocusForEditText(mTranslationEditText);
+                } else {
+                    mWordEditText.setImeOptions(EditorInfo.IME_ACTION_GO);
+                    mTranslationEditText.setImeOptions(EditorInfo.IME_ACTION_GO);
+
+                    saveWordOnEnter(mWordEditText);
+                    saveWordOnEnter(mTranslationEditText);
+
+//                    setSwitchableFocusForEditText(mWordEditText);
+//                    setSwitchableFocusForEditText(mTranslationEditText);
+
+
+                }
+            }
+        });*/
+
+
+
+        mWordEditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_ENTER) {
+
+                    if ("".equals(mWordEditText.getText().toString().trim()) || "".equals(mTranslationEditText.getText().toString().trim())
+                            || TextUtils.isEmpty(mWordEditText.getText().toString().trim()) || TextUtils.isEmpty(mTranslationEditText.getText().toString().trim())) {
+                        mWordEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+                        mTranslationEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+                        setSwitchableFocusForEditText(mWordEditText);
+                        setSwitchableFocusForEditText(mTranslationEditText);
+                    } else {
+                        mWordEditText.setImeOptions(EditorInfo.IME_ACTION_GO);
+                        mTranslationEditText.setImeOptions(EditorInfo.IME_ACTION_GO);
+
+                        saveWordOnEnter(mWordEditText);
+                        saveWordOnEnter(mTranslationEditText);
+
+//                    setSwitchableFocusForEditText(mWordEditText);
+//                    setSwitchableFocusForEditText(mTranslationEditText);
+                    }
+                    return true;
+
+                }
+                return false;
+            }
+        });
+
+        mTranslationEditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_ENTER) {
+
+                    if ("".equals(mWordEditText.getText().toString().trim()) || "".equals(mTranslationEditText.getText().toString().trim())
+                            || TextUtils.isEmpty(mWordEditText.getText().toString().trim()) || TextUtils.isEmpty(mTranslationEditText.getText().toString().trim())) {
+                        mWordEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+                        mTranslationEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+
+                        setSwitchableFocusForEditText(mWordEditText);
+                        setSwitchableFocusForEditText(mTranslationEditText);
+                    } else {
+                        mWordEditText.setImeOptions(EditorInfo.IME_ACTION_GO);
+                        mTranslationEditText.setImeOptions(EditorInfo.IME_ACTION_GO);
+
+                        saveWordOnEnter(mWordEditText);
+                        saveWordOnEnter(mTranslationEditText);
+
+//                    setSwitchableFocusForEditText(mWordEditText);
+//                    setSwitchableFocusForEditText(mTranslationEditText);
+
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
+
+//        if (mWordEditText.getText().toString().trim() == "") {
+//            mWordEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+//            mTranslationEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+//
+//            goToEditText(mTranslationEditText);
+//        }
+//
+//        if (mTranslationEditText.getText().toString().trim() == "") {
+//            mWordEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+//            mTranslationEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+//
+//            goToEditText(mWordEditText);
+//        }
+
+//        mWordEditText
+//        mTranslationEditText;
+
     }
 
     /*@Override
@@ -139,6 +295,38 @@ public class WordEditorActivity extends AppCompatActivity  implements
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+    public void saveWordOnEnter(EditText editText) {
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if(keyCode == KeyEvent.KEYCODE_ENTER ){
+                    saveWord();
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
+
+    public void setSwitchableFocusForEditText(final EditText editText) {
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if(keyCode == KeyEvent.KEYCODE_ENTER ){
+                    if (mWordEditText.hasFocus())
+                        mTranslationEditText.requestFocus();
+                    if (mTranslationEditText.hasFocus())
+                        mWordEditText.requestFocus();
+//                    editText.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
+
 
     /**
      * Get user input from editor and save pet into database.
